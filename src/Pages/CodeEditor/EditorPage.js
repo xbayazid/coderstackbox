@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from "react";
-import Editor from "./Editor/Editor";
 import './CodeEditor.css'
+import EditorComponent from "./Editor/EditorComponent";
 
 const EditorPage = () => {
   const [html, setHtml] = useState('')
@@ -25,19 +25,19 @@ const EditorPage = () => {
   return (
     <>
       <div className="pane top-pane">
-        <Editor
+        <EditorComponent
           language="xml"
           displayName="HTML"
           value={html}
           onChange={setHtml}
         />
-        <Editor
+        <EditorComponent
           language="css"
           displayName="CSS"
           value={css}
           onChange={setCss}
         />
-        <Editor
+        <EditorComponent
           language="javascript"
           displayName="JS"
           value={js}
