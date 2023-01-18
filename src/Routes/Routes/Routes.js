@@ -2,6 +2,7 @@ import { createBrowserRouter } from "react-router-dom";
 import Error from "../../Error";
 import Main from "../../Layout/Main";
 import AboutUs from "../../Pages/AboutUs/AboutUs";
+import EditorPage from "../../Pages/CodeEditor/EditorPage";
 import CommunitySupport from "../../Pages/CommunitySupport/CommunitySupport";
 import Documentation from "../../Pages/Documentation/Documentation";
 import Doc from "../../Pages/Home/Doc/Doc";
@@ -54,6 +55,10 @@ const router = createBrowserRouter([
         element: <SingUp></SingUp>
       }
     ],
+  },
+  {
+    path: '/code-editor',
+    element: <EditorPage />
   },
   {
     path: "*",
