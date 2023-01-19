@@ -1,9 +1,12 @@
 import React from 'react';
+import Right from '../Home/Doc/Right';
+import Leftcategory from './Leftcategory';
 
 const Catagories = () => {
     return (
         <div className='text-white'>
-            <h1>This is catagories section</h1>
+           <Leftcategory></Leftcategory>
+            <Right></Right>
         </div>
     );
 };
