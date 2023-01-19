@@ -18,3 +18,6 @@
 
 ***Register***
 ![](images/register.png)
+
+***Error Page***
+![](images/error.png)
