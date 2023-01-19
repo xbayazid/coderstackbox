@@ -7,6 +7,7 @@ const Catagories = () => {
         <div className='md:flex sm:flex'>
             <Leftcategory></Leftcategory>
             <HelpCategories></HelpCategories>
+            <p>Category pagr ready</p>
         </div>
     );
 };
