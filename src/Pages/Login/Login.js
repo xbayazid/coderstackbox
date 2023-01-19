@@ -61,7 +61,7 @@ const Login = () => {
     return (
         <div className='grid gap-4 md:grid-cols-1 lg:grid-cols-2'>
             <div  className={`${layout.sectionCol}`}>
-                <img className='extra-img w-4/5' src="https://i.ibb.co/y0x4bqb/107385-login.gif" alt="" />
+                <img className='extra-img w-4/5' src="https://i.ibb.co/y0x4bqb/107385-login.gif" alt="  " />
             </div>
             <div className='extra p-2'>
                 <div className='text-white text-center xl:mt-20'>

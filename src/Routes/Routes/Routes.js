@@ -12,7 +12,6 @@ import Services from "../../Pages/Home/Services/Services";
 import Login from "../../Pages/Login/Login";
 import SingUp from "../../Pages/SignUp/SignUp";
 
-
 // CodersStackBox
 // Home
 // About Us
@@ -20,7 +19,6 @@ import SingUp from "../../Pages/SignUp/SignUp";
 // Community Support
 // Login
 // Sign Up
-
 
 const router = createBrowserRouter([
   {
@@ -49,26 +47,22 @@ const router = createBrowserRouter([
       },
       {
         path: "login",
-        element: <Login></Login>
+        element: <Login></Login>,
       },
       {
-        path: "/doc", 
-        element: <Doc></Doc>
+        path: "/register",
+        element: <SingUp></SingUp>,
       },
-      {
-        path: '/register',
-        element: <SingUp></SingUp>
-      }
     ],
   },
   {
-    path: '/code-editor',
-    element: <EditorPage />
+    path: "/code-editor",
+    element: <EditorPage />,
   },
   {
     path: "*",
-    element: <Error></Error>
+    element: <div className="texl-3xl text-center">Page is not available</div>,
   },
 ]);
 
-export default router
+export default router;
