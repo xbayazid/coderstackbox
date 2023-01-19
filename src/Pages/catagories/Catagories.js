@@ -1,7 +1,7 @@
 import { useQuery } from "@tanstack/react-query";
 import React from "react";
 import { Link } from "react-router-dom";
-import { layout } from "../../style";
+import styles, { layout } from "../../style";
 import Category from "./Category";
 
 const Catagories = () => {
@@ -30,22 +30,22 @@ const Catagories = () => {
   return (
     <div className={`grid grid-cols-4 gap-4${layout.sectionCol}`}>
       <div className="">
-        <h2 className="text-lg text-white text-center my-4">
+        <h2 className="text-lg text-white text-center my-4 others font-semibold">
           Projects Category
         </h2>
         <div className="">
           {categories?.map((category) => (
             <Link>
-              <p className="text-white text-lg mt-2">{category.categoryName}</p>
+              <p className="text-white text-lg mt-2 others">{category.categoryName}</p>
             </Link>
           ))}
         </div>
       </div>
       <div className="col-span-3 m-4">
-        <h2 className="hidden md:visible lg:block text-left text-3xl font-bold text-white mt-2">
+        <h2 className={`${styles.heading2} `}>
           Look up our awesome projects.
         </h2>
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 mt-6">
+        <div className="grid grid-cols-1 md:grid-cols-1 lg:grid-cols-2 gap-4 mt-6">
           {projects?.map((project) => (
             <Category key={project._id} project={project}></Category>
           ))}
