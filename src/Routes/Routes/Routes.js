@@ -6,6 +6,7 @@ import Catagories from "../../Pages/catagories/Catagories";
 import EditorPage from "../../Pages/CodeEditor/EditorPage";
 import CommunitySupport from "../../Pages/CommunitySupport/CommunitySupport";
 import Documentation from "../../Pages/Documentation/Documentation";
+import ErrorPage from "../../Pages/ErrorPage/ErrorPage";
 import Doc from "../../Pages/Home/Doc/Doc";
 import Home from "../../Pages/Home/Home/Home";
 import Services from "../../Pages/Home/Services/Services";
@@ -61,7 +62,7 @@ const router = createBrowserRouter([
   },
   {
     path: "*",
-    element: <div className="texl-3xl text-center">Page is not available</div>,
+    element: <ErrorPage></ErrorPage>
   },
 ]);
 

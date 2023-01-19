@@ -87,13 +87,13 @@ const SingUp = () => {
             <div className='mt-6'>
                 <form onSubmit={handleSubmit}>
                 <div className='mb-5'>
-                <input type="name" name='name' placeholder="Full Name" className="input input-bordered w-full max-w-xs required:" />
+                <input type="name" name='name' placeholder="Full Name" className="input input-bordered w-full max-w-xs text-black" required/>
                 </div>
                 <div>
-                <input type="email" name='email' placeholder="Email Address" className="input input-bordered w-full max-w-xs required:" />
+                <input type="email" name='email' placeholder="Email Address" className="input input-bordered w-full max-w-xs text-black" required />
                 </div>
                 <div className='my-5'>
-                <input type="password" name='password' placeholder="Password" className="input input-bordered w-full max-w-xs required:" />
+                <input type="password" name='password' placeholder="Password" className="input input-bordered w-full max-w-xs text-black" required />
                 </div>
                 <div>
                     <button className='bg-black px-32 py-3 text-white rounded-md' type='submit'>Register</button>

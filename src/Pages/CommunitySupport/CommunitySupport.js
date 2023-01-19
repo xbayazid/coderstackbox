@@ -7,6 +7,7 @@ const CommunitySupport = () => {
   return (
     <div>
       <HelpCategories></HelpCategories>
+      <FAQ></FAQ>
       <ContactUs></ContactUs>
     </div>
   );
