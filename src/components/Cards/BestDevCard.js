@@ -26,7 +26,7 @@ const BestDevCard = ({ props }) => {
           style={{ height: "2px" }}
         />
         </div>
-      <div className="p-4">
+      <div className="p-4 text-justify">
         <div className={`${styles.paragraph}`}>{props.details}</div>
       </div>
     </div>

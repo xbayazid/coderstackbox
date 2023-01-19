@@ -2,7 +2,7 @@ import React from 'react';
 
 const Catagories = () => {
     return (
-        <div>
+        <div className='text-white'>
             <h1>This is catagories section</h1>
         </div>
     );
