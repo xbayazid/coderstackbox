@@ -4,7 +4,7 @@ import Right from './Right';
 
 const Doc = () => {
     return (
-        <div className='flex'>
+        <div className='md:flex'>
             <Left></Left>
             <Right></Right>
         </div>

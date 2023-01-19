@@ -4,7 +4,7 @@ import './Right.css';
 
 const Right = () => {
     return (
-        <div className='w-full rightside'>
+        <div className='w-full rightside px-10 '>
             <div className=''>
                 <div className={`md:text-8xl text-4xl font-bold`}>
                     Code anything from idea to production.

@@ -4,7 +4,7 @@ import './Left.css'
 
 const Left = () => {
     return (
-        <div className="left w-48 sidebar">
+        <div className="left w-64 sidebar">
             <div className=''>
             <div className='text-2xl text-gray-200'>
                 <Link>Introduction</Link>

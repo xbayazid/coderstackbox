@@ -47,8 +47,8 @@ body {
     border-top-left-radius: .5rem;
   }
   
-  .CodeMirror {
-    height: 100% !important;
+  .monaco-editor {
+    height: 50% !important;
   }
   
   .code-mirror-wrapper {

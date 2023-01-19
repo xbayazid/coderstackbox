@@ -2,6 +2,7 @@ import { createBrowserRouter } from "react-router-dom";
 import Error from "../../Error";
 import Main from "../../Layout/Main";
 import AboutUs from "../../Pages/AboutUs/AboutUs";
+import Catagories from "../../Pages/catagories/Catagories";
 import EditorPage from "../../Pages/CodeEditor/EditorPage";
 import CommunitySupport from "../../Pages/CommunitySupport/CommunitySupport";
 import Documentation from "../../Pages/Documentation/Documentation";
@@ -43,7 +44,11 @@ const router = createBrowserRouter([
         element: <Documentation></Documentation>,
       },
       {
-        path: "login", 
+        path: "/catagories",
+        element: <Catagories></Catagories>,
+      },
+      {
+        path: "login",
         element: <Login></Login>
       },
       {
