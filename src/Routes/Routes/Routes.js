@@ -4,12 +4,12 @@ import AboutUs from "../../Pages/AboutUs/AboutUs";
 import Catagories from "../../Pages/catagories/Catagories";
 import EditorPage from "../../Pages/CodeEditor/EditorPage";
 import CommunitySupport from "../../Pages/CommunitySupport/CommunitySupport";
+import FAQ from "../../Pages/CommunitySupport/subsections/FAQ/FAQ";
 import Documentation from "../../Pages/Documentation/Documentation";
 import Home from "../../Pages/Home/Home/Home";
 import Services from "../../Pages/Home/Services/Services";
 import Login from "../../Pages/Login/Login";
 import SingUp from "../../Pages/SignUp/SignUp";
-
 
 // CodersStackBox
 // Home
@@ -18,7 +18,6 @@ import SingUp from "../../Pages/SignUp/SignUp";
 // Community Support
 // Login
 // Sign Up
-
 
 const router = createBrowserRouter([
   {
@@ -47,17 +46,17 @@ const router = createBrowserRouter([
       },
       {
         path: "login",
-        element: <Login></Login>
+        element: <Login></Login>,
       },
       {
-        path: '/register',
-        element: <SingUp></SingUp>
-      }
+        path: "/register",
+        element: <SingUp></SingUp>,
+      },
     ],
   },
   {
-    path: '/code-editor',
-    element: <EditorPage />
+    path: "/code-editor",
+    element: <EditorPage />,
   },
   {
     path: "*",
@@ -65,4 +64,4 @@ const router = createBrowserRouter([
   },
 ]);
 
-export default router
+export default router;
