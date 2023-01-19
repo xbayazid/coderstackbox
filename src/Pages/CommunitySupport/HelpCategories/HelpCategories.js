@@ -1,5 +1,7 @@
 import React, { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
+
+
 const HelpCategories = () => {
   const [data, setData] = useState([]);
   console.log(data);
@@ -8,8 +10,9 @@ const HelpCategories = () => {
       .then((res) => res.json())
       .then((data) => setData(data));
   }, []);
+
   return (
-    <div className="my-6">
+    <div className="my-6 w-full helpcategory px-10 ">
       <fieldset className="w-full text-gray-100  lg:flex justify-center">
         <div className="relative">
           <span className="absolute inset-y-0 left-0 flex items-center pl-2">
