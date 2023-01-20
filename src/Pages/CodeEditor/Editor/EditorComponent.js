@@ -31,6 +31,9 @@ const EditorComponent = (props) => {
       </button>
     </div>
     <Editor
+    height="80vh"
+    theme="vs-dark"
+
     onChange={handleChange}
    defaultLanguage={language}
    defaultValue={value}
