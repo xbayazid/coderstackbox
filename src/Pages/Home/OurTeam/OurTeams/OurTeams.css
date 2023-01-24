@@ -6,10 +6,10 @@
 .section-title{
     font-family: 'Libre Baskerville', serif;
 }
-.name{
+.name, .project-description, .others{
     font-family: 'Poppins', sans-serif;
 }
-.designation{
+.designation, .title, .categories-title{
     font-family: 'PT Serif', serif;
 }
 
@@ -27,4 +27,3 @@
     border-top-left-radius: 20px;
     border-bottom-right-radius: 20px;
 }
-

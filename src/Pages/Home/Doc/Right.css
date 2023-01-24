@@ -1,0 +1,19 @@
+.rightside{
+    height: calc(100vh - 50px);
+    overflow-y: scroll;
+    position: sticky;
+    
+    top: 50px;
+}
+::-webkit-scrollbar{
+    width: 0;
+}
+::-webkit-scrollbar-track{
+    background-color: #f1f1f1;
+}
+::-webkit-scrollbar-thumb{
+   background-color: rgb(79, 75, 75);
+}
+.rightside:hover::-webkit-scrollbar-track{
+    background-color: green;
+}

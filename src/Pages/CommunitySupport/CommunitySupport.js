@@ -1,7 +1,7 @@
-import React from 'react';
-import ContactUs from '../Home/ConactUs/ContactUs';
+import React from "react";
+import ContactUs from "../Home/ConactUs/ContactUs";
 import FAQ from "./subsections/FAQ/FAQ";
-import HelpCategories from './subsections/HelpCategories/HelpCategories';
+import HelpCategories from "./subsections/HelpCategories/HelpCategories";
 
 const CommunitySupport = () => {
   return (

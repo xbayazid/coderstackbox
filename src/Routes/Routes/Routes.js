@@ -1,14 +1,17 @@
 import { createBrowserRouter } from "react-router-dom";
+import Error from "../../Error";
 import Main from "../../Layout/Main";
 import AboutUs from "../../Pages/AboutUs/AboutUs";
+import Catagories from "../../Pages/catagories/Catagories";
 import EditorPage from "../../Pages/CodeEditor/EditorPage";
 import CommunitySupport from "../../Pages/CommunitySupport/CommunitySupport";
 import Documentation from "../../Pages/Documentation/Documentation";
+import ErrorPage from "../../Pages/ErrorPage/ErrorPage";
+import Doc from "../../Pages/Home/Doc/Doc";
 import Home from "../../Pages/Home/Home/Home";
 import Services from "../../Pages/Home/Services/Services";
 import Login from "../../Pages/Login/Login";
 import SingUp from "../../Pages/SignUp/SignUp";
-
 
 // CodersStackBox
 // Home
@@ -17,7 +20,6 @@ import SingUp from "../../Pages/SignUp/SignUp";
 // Community Support
 // Login
 // Sign Up
-
 
 const router = createBrowserRouter([
   {
@@ -41,23 +43,27 @@ const router = createBrowserRouter([
         element: <Documentation></Documentation>,
       },
       {
-        path: "login", 
-        element: <Login></Login>
+        path: "/catagories",
+        element: <Catagories></Catagories>,
       },
       {
-        path: '/register',
-        element: <SingUp></SingUp>
-      }
+        path: "login",
+        element: <Login></Login>,
+      },
+      {
+        path: "/register",
+        element: <SingUp></SingUp>,
+      },
     ],
   },
   {
-    path: '/code-editor',
-    element: <EditorPage />
+    path: "/code-editor",
+    element: <EditorPage />,
   },
   {
     path: "*",
-    element: <div className="texl-3xl text-center">Page is not available</div>,
+    element: <ErrorPage></ErrorPage>
   },
 ]);
 
-export default router
+export default router;
