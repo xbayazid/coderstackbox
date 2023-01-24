@@ -80,10 +80,6 @@ const Documentation = () => {
                 To switch between open files, use the keyboard shortcut
                 "ctrl+tab"
               </li>
-              <li>
-                To switch between open files, use the keyboard shortcut
-                "ctrl+tab"
-              </li>
             </ul>
           </div>
         </div>

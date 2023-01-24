@@ -1,7 +1,7 @@
 import { useQuery } from "@tanstack/react-query";
 import React from "react";
 import { Link } from "react-router-dom";
-import { layout } from "../../style";
+import styles, { layout } from "../../style";
 import Category from "./Category";
 
 const Catagories = () => {
@@ -30,7 +30,7 @@ const Catagories = () => {
   return (
     <div className={`grid grid-cols-4 gap-4${layout.sectionCol}`}>
       <div className="">
-        <h2 className="text-lg text-white text-center my-4">
+        <h2 className="text-lg text-white text-center my-4 others font-semibold">
           Projects Category
         </h2>
         <div className="">

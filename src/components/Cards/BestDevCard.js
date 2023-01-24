@@ -10,7 +10,7 @@ const BestDevCard = ({ props }) => {
       />
       <div className={`${styles.flexStart} gap-4 m-5`}>
         <img
-          className="w-24 h-24 rounded-full p-1 ring-2 "
+          className="w-20 h-20 rounded-full p-1 ring-2 "
           src={props.image}
           alt={props.alt}
         />

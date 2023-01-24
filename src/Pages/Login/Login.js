@@ -4,6 +4,7 @@ import { Link, useLocation, useNavigate } from 'react-router-dom';
 import { AuthContext } from '../../context/AuthProvider';
 import { toast } from 'react-hot-toast';
 import { layout } from '../../style';
+import Navbar from '../Shared/Navbar/Navbar';
 
 const Login = () => {
     const [error, setError] = useState('');
@@ -20,7 +21,7 @@ const Login = () => {
         providerLogin(googleAuthProvider)
             .then(result => {
                 const user = result.user;
-                toast('User Login Successfully')
+                toast.success('User Login Successfully')
                 navigate(from, { replace: true });
             })
             .catch(error => {
@@ -32,7 +33,7 @@ const Login = () => {
         githubProviderLogin(githubProvider)
             .then(result => {
                 const user = result.user;
-                toast('User Login Successfully');
+                toast.success('User Login Successfully');
                 navigate(from, { replace: true });
             })
             .catch(error => {
@@ -50,7 +51,8 @@ const Login = () => {
                 const user = result.user;
                 form.reset();
                 setError('');
-                setLoginUserEmail(email);
+                toast.success('User Login Successfully');
+                navigate(from, {replace: true});
             })
             .catch(error => {
                 console.error(error);
@@ -61,7 +63,7 @@ const Login = () => {
     return (
         <div className='grid gap-4 md:grid-cols-1 lg:grid-cols-2'>
             <div  className={`${layout.sectionCol}`}>
-                <img className='extra-img w-4/5' src="https://i.ibb.co/y0x4bqb/107385-login.gif" alt="" />
+                <img className='extra-img w-4/5' src="https://i.ibb.co/y0x4bqb/107385-login.gif" alt="  " />
             </div>
             <div className='extra p-2'>
                 <div className='text-white text-center xl:mt-20'>

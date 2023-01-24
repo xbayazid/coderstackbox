@@ -7,9 +7,10 @@ const CommunitySupport = () => {
   return (
     <div>
       <HelpCategories></HelpCategories>
+      <FAQ></FAQ>
       <ContactUs></ContactUs>
     </div>
   );
 };
 
-export default CommunitySupport;
+export default CommunitySupport ;
