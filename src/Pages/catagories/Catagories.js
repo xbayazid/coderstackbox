@@ -15,6 +15,7 @@ const Catagories = () => {
       return data;
     },
   });
+
   const { data: projects } = useQuery({
     queryKey: ["projects"],
     queryFn: async () => {
@@ -25,7 +26,6 @@ const Catagories = () => {
       return data;
     },
   });
-  console.log(projects);
 
   return (
     <div className={`grid grid-cols-4 gap-4${layout.sectionCol}`}>
@@ -35,7 +35,7 @@ const Catagories = () => {
         </h2>
         <div className="">
           {categories?.map((category) => (
-            <Link>
+            <Link to={`/category/${category._id}`}>
               <p className="text-white text-lg mt-2">{category.categoryName}</p>
             </Link>
           ))}

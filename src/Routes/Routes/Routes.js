@@ -3,6 +3,7 @@ import Error from "../../Error";
 import Main from "../../Layout/Main";
 import AboutUs from "../../Pages/AboutUs/AboutUs";
 import Catagories from "../../Pages/catagories/Catagories";
+import SingleCategory from "../../Pages/catagories/SingleCategory";
 import EditorPage from "../../Pages/CodeEditor/EditorPage";
 import CommunitySupport from "../../Pages/CommunitySupport/CommunitySupport";
 import Documentation from "../../Pages/Documentation/Documentation";
@@ -44,6 +45,14 @@ const router = createBrowserRouter([
       {
         path: "/catagories",
         element: <Catagories></Catagories>,
+      },
+      {
+        path: "/category/:id",
+        element: <SingleCategory></SingleCategory>,
+        loader: ({ params }) =>
+          fetch(
+            `https://coderstackbox-server.vercel.app/projects/${params.id}`
+          ),
       },
       {
         path: "login",

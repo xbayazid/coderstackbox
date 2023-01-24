@@ -1,4 +1,5 @@
 import React from "react";
+import SingleCategory from "./SingleCategory";
 
 const Category = ({ project }) => {
   const {
@@ -9,8 +10,10 @@ const Category = ({ project }) => {
     projectDescription,
     projectTitle,
     projectImage,
+
+    categoryId,
   } = project;
-  console.log(project);
+
   return (
     <div>
       <div className="max-w-xs p-6 rounded-md shadow-md bg-gray-900 text-gray-50">
