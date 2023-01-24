@@ -4,13 +4,9 @@ const Category = ({ project }) => {
   const {
     categoryName,
     OnnerName,
-    onnerEmail,
-    createdDate,
     projectDescription,
     projectTitle,
     projectImage,
-
-    categoryId,
   } = project;
 
   return (

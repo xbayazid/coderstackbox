@@ -1,3 +1,4 @@
+import { useQuery } from "@tanstack/react-query";
 import React from "react";
 import { Link, useLoaderData } from "react-router-dom";
 import Button from "../../components/Buttons/Button";
@@ -5,13 +6,34 @@ import { layout } from "../../style";
 
 const SingleCategory = () => {
   const projects = useLoaderData();
-  console.log(projects);
+  const { data: categories } = useQuery({
+    queryKey: ["categories"],
+    queryFn: async () => {
+      const res = await fetch(
+        "https://coderstackbox-server.vercel.app/projectCategories"
+      );
+      const data = await res.json();
+      return data;
+    },
+  });
   return (
-    <div>
-      <h2 className="text-white text-5xl font-bold">Single Category</h2>;
+    <div className={`grid grid-cols-2 gap-2 ${layout.sectionCol}`}>
+      <div className="">
+        <h2 className="text-lg text-emerald-400  my-4 others font-semibold">
+          Projects Category
+        </h2>
+        <div className="">
+          {categories?.map((category) => (
+            <Link to={`/category/${category._id}`}>
+              <p className="text-white text-lg mt-2">{category.categoryName}</p>
+            </Link>
+          ))}
+        </div>
+      </div>
       <div
-        className={`grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4${layout.sectionCol}`}
+        className={`grid grid-cols-1 md:grid-cols-1 lg:grid-cols-2 gap-4  ${layout.sectionCol}`}
       >
+        <h2 className="text-emerald-200 text-center text-3xl font-bold">Single Category</h2>;
         {projects.map((p) => (
           <div className="max-w-xs p-6 rounded-md shadow-md bg-gray-900 text-gray-50">
             <img
@@ -35,10 +57,12 @@ const SingleCategory = () => {
           </div>
         ))}
       </div>
-      <Link to="/catagories">
-        {" "}
-        <Button>go back</Button>
-      </Link>
+      <div className="grid justify-items-end">
+        <Link to="/catagories">
+          {" "}
+          <Button>go back</Button>
+        </Link>
+      </div>
     </div>
   );
 };
