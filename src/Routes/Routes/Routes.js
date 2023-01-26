@@ -50,6 +50,10 @@ const router = createBrowserRouter([
           ),
       },
       {
+        path: "/adminDashboard",
+        element: <AdminDashboard></AdminDashboard>
+      },
+      {
         path: "login",
         element: <Login></Login>,
       },
@@ -62,10 +66,6 @@ const router = createBrowserRouter([
   {
     path: "/code-editor",
     element: <EditorPage />,
-  },
-  {
-    path: "/adminDashboard",
-    element: <AdminDashboard></AdminDashboard>
   },
   {
     path: "*",

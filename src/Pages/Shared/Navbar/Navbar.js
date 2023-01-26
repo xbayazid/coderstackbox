@@ -57,7 +57,14 @@ const Navbar = () => {
             <li className="lg:ml-8 ml-0">
               {
                 user?.uid ?
-                  <li><button onClick={handleLogOut}>Log Out</button></li>
+                <>
+                <div className='lg:flex'>
+                  <div><li className='lg:mr-8'><Link to="/adminDashboard">Dashboard</Link></li></div>
+                  <div><li><button onClick={handleLogOut}>Log Out</button></li></div>
+                </div>
+                  
+                  
+                </>
                   :
                   <li>
                     <Link to="/login">Login</Link>

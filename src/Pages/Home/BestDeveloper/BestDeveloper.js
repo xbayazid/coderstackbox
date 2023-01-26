@@ -16,8 +16,7 @@ const BestDeveloper = () => {
       <div className={`${layout.sectionInfo} text-center z-10`}>
         <div className={`${styles.heading2} `}>Best Developers</div>
         <div className={`${styles.paragraph} `}>
-          Lorem ipsum dolor sit amet consectetur adipisicing elit. Nam
-          necessitatibus
+          Meet our top contributors
         </div>
       </div>
       <div className="grid gap-7 md:grid-cols-2 lg:grid-cols-3 mx-auto my-5">
