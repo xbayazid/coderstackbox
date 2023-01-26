@@ -4,12 +4,11 @@ const Category = ({ project }) => {
   const {
     categoryName,
     OnnerName,
-    onnerEmail,
-    createdDate,
     projectDescription,
     projectTitle,
     projectImage,
   } = project;
+
   return (
     <div>
       <div className=" p-6 rounded-md shadow-md bg-gray-900 text-gray-50">
@@ -20,16 +19,21 @@ const Category = ({ project }) => {
         />
         <div className="mt-6 mb-2">
           <p className="text-xl categories-title">
-            Project Type: <span className="text-orange-300">{categoryName}</span>
+            Project Type:{" "}
+            <span className="text-orange-300">{categoryName}</span>
           </p>
           <h2 className="text-xl tracking-wide">
-            <span className="title"> Title: </span><span className="font-semibold others">{projectTitle}</span>
+            <span className="title"> Title: </span>
+            <span className="font-semibold others">{projectTitle}</span>
           </h2>
           <h2 className="text-xltracking-wide">
-           <span className="title">Project Owner: </span> <span className=" font-semibold others">{OnnerName}</span>
+            <span className="title">Project Owner: </span>{" "}
+            <span className=" font-semibold others">{OnnerName}</span>
           </h2>
         </div>
-        <p className="text-gray-100 project-description">{projectDescription.slice(0, 80)}</p>
+        <p className="text-gray-100 project-description">
+          {projectDescription.slice(0, 80)}
+        </p>
       </div>
     </div>
   );

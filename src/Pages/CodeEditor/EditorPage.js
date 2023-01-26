@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from "react";
 import './CodeEditor.css'
 import EditorComponent from "./Editor/EditorComponent";
+import { code } from "./files";
 
 const EditorPage = () => {
   const [html, setHtml] = useState('')
@@ -28,19 +29,19 @@ const EditorPage = () => {
         <EditorComponent
           language="xml"
           displayName="HTML"
-          value={html}
+          value={code.html}
           onChange={setHtml}
         />
         <EditorComponent
           language="css"
           displayName="CSS"
-          value={css}
+          value={code.css}
           onChange={setCss}
         />
         <EditorComponent
           language="javascript"
           displayName="JS"
-          value={js}
+          value={code.js}
           onChange={setJs}
         />
       </div>
