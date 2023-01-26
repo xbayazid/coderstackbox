@@ -1,0 +1,38 @@
+:root {
+    --main-color: #DD2F6E;
+    --dark-color: #21283c;
+    --text-grey: #8390A2;
+}
+
+.sidebar-icon{
+    display: inline-block;
+    margin-right: 5px;
+    margin-top: -8px;
+}
+
+.sidebar-menu ul li{
+    /* background-color: var(--main-color); */
+    padding: 1.1rem 30px;
+}
+
+.sidebar-menu ul li:hover{
+    background-color: #001419;
+    border-top-left-radius: 50px;
+    border-bottom-left-radius: 50px;
+}
+
+.sidebar-menu ul li:active{
+    background-color: #001419;
+    border-top-left-radius: 50px;
+    border-bottom-left-radius: 50px;
+}
+
+.search-wrapper input {
+    max-width: 260px;
+    padding: 10px 15px;
+    border-radius: 50px;
+}
+
+.bg-dark-1 {
+    background-color: var(--dark-color);
+}

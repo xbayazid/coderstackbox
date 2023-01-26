@@ -181,6 +181,50 @@ body {
   );
 }
 
+/* .bg-blue-green-gradient {
+  background: linear-gradient(
+    157.81deg,
+    #0ac830 -43.27%,
+    #0738cd -21.24%,
+    rgb(64 219 108),
+    #5421c3 29.82%,
+    #12a390 51.94%,
+    rgb(10, 105, 201) 90.29%
+  );
+} */
+
+.bg-blue-green-gradient {
+  background: linear-gradient(
+    157.81deg,
+    #0a39c8 -43.27%,
+    #07cd28 -21.24%,
+    rgb(4, 64, 21),
+    #5421c3 29.82%,
+    #12a39e 51.94%,
+    rgb(10, 105, 201) 90.29%
+  );
+}
+
+.hover-bg-blue-green-gradient:hover {
+  background: linear-gradient(
+    157.81deg,
+    
+    
+    
+    #5421c3 29.82%,
+    #12a39e 51.94%,
+    rgb(10, 105, 201) 90.29%,
+    #0a39c8 -43.27%,
+    #07cd28 -21.24%,
+    rgb(4, 64, 21)
+  );
+}
+
+
+.bg-dark-1 {
+  background-color: #001419;
+}
+
 .bg-black-gradient {
   background: linear-gradient(
     144.39deg,

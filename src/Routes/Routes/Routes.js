@@ -2,6 +2,7 @@ import { createBrowserRouter } from "react-router-dom";
 import Error from "../../Error";
 import Main from "../../Layout/Main";
 import AboutUs from "../../Pages/AboutUs/AboutUs";
+import AdminDashboard from "../../Pages/AdminDashboard/AdminDashboard";
 import Catagories from "../../Pages/catagories/Catagories";
 import SingleCategory from "../../Pages/catagories/SingleCategory";
 import EditorPage from "../../Pages/CodeEditor/EditorPage";
@@ -14,13 +15,6 @@ import Services from "../../Pages/Home/Services/Services";
 import Login from "../../Pages/Login/Login";
 import SingUp from "../../Pages/SignUp/SignUp";
 
-// CodersStackBox
-// Home
-// About Us
-// Documentation
-// Community Support
-// Login
-// Sign Up
 
 const router = createBrowserRouter([
   {
@@ -68,6 +62,10 @@ const router = createBrowserRouter([
   {
     path: "/code-editor",
     element: <EditorPage />,
+  },
+  {
+    path: "/adminDashboard",
+    element: <AdminDashboard></AdminDashboard>
   },
   {
     path: "*",
