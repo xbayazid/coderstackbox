@@ -30,7 +30,7 @@ const Catagories = () => {
     return (
         <div className={`grid grid-cols-4 gap-4${layout.sectionCol}`}>
             <div className="">
-                <h2 className="text-lg text-emerald-400 text-center my-4 others font-semibold">
+                <h2 className="text-lg text-emerald-400 my-4 others font-semibold">
                     Projects Category
                 </h2>
                 <div className="">
