@@ -27,6 +27,7 @@ const Catagories = () => {
         },
     });
 
+
     return (
         <div className={`grid grid-cols-4 gap-4${layout.sectionCol}`}>
             <div className="">
