@@ -46,7 +46,7 @@ const HelpCategories = () => {
                   className="rounded-xl w-24 mx-auto"
                 />
               </figure>
-              <div className="card-body items-center text-center">
+              <div className="card-body items-center text-center text-black">
                 <h2 className="card-title">{d.title}</h2>
                 <p>{d.about}</p>
               </div>
