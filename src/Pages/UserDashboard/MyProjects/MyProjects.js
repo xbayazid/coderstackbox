@@ -40,7 +40,7 @@ const MyProjects = () => {
 
                 <main className='py-5 px-10'>
                 {/* we will load the username here from email */}
-                    <h2 className='text-3xl mb-5 others'>My projects</h2> 
+                    <h2 className='text-3xl mb-5 others'>My project</h2> 
                     
                 </main>
             </div>
