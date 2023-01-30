@@ -42,25 +42,25 @@ const SingleCategory = () => {
               className="object-cover object-center w-full rounded-md h-72 bg-gray-500"
             />
             <div className="mt-6 mb-2">
-              <p className="text-xl">
+              <p className="text-xl categories-title">
                 Project Type:{" "}
                 <span className="text-secondary">{p.categoryName}</span>
               </p>
-              <h2 className="text-xl font-semibold tracking-wide">
-                Title: <span className="">{p.projectTitle}</span>
+              <h2 className="text-xl font-semibold tracking-wide title">
+                Title: <span className="others">{p.projectTitle}</span>
               </h2>
-              <h2 className="text-xl font-semibold tracking-wide">
-                Project Owner: <span className="">{p.OnnerName}</span>
+              <h2 className="text-xl font-semibold tracking-wide title">
+                Project Owner: <span className="others">{p.OnnerName}</span>
               </h2>
             </div>
-            <p className="text-gray-100">{p.projectDescription.slice(0, 80)}</p>
+            <p className="text-gray-100 project-description">{p.projectDescription.slice(0, 80)}</p>
           </div>
         ))}
       </div>
       <div className="grid justify-items-end">
         <Link to="/catagories">
           {" "}
-          <Button>go back</Button>
+          <Button>back to all projects</Button>
         </Link>
       </div>
     </div>
