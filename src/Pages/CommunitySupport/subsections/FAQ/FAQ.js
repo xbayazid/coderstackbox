@@ -59,15 +59,8 @@ const FAQ = () => {
                     </div>
                 </div>
                 <div className='flex flex-col'>
-<<<<<<< HEAD
-                    <textarea className="textarea textarea-bordered mb-2 max-w-lg border-accent bg-gray-900 text-white" placeholder="Question"></textarea>
-=======
                     <textarea className="textarea textarea-bordered mb-2 max-w-lg border-gradient-to-r from-accent to-secondary text-white" placeholder="Question"></textarea>
->>>>>>> 7396cf2a6ea9e7d944ad91ee2612eedd69b79524
                     <Button styles={'w-56'} htmlFor="my-modal-3">Ask A Question</Button>
-
-
-
                 </div>
             </section>
         </div>

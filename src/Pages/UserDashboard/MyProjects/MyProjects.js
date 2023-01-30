@@ -7,7 +7,7 @@ const MyProjects = () => {
     return (
         <div>
             <div className="flex text-white">
-            <div className='hidden lg:block md:w-3/12 h-[100vh] bg-blue-green-gradient z-50'>
+            <div className='hidden lg:block md:w-3/12 h-[60vh] bg-teal-400'>
                 <div className='absolute sidebar-menu ml-3 text-white text-2xl'>
                     <ul className='mt-20'>
                     <li>
