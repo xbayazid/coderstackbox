@@ -2,6 +2,7 @@ import { createBrowserRouter } from "react-router-dom";
 import Error from "../../Error";
 import Main from "../../Layout/Main";
 import AboutUs from "../../Pages/AboutUs/AboutUs";
+import AdminDashboard from "../../Pages/AdminDashboard/AdminDashboard";
 import Catagories from "../../Pages/catagories/Catagories";
 import SingleCategory from "../../Pages/catagories/SingleCategory";
 import EditorPage from "../../Pages/CodeEditor/EditorPage";
@@ -13,14 +14,10 @@ import Home from "../../Pages/Home/Home/Home";
 import Services from "../../Pages/Home/Services/Services";
 import Login from "../../Pages/Login/Login";
 import SingUp from "../../Pages/SignUp/SignUp";
+import MyProjects from "../../Pages/UserDashboard/MyProjects/MyProjects";
+import UserDashboard from "../../Pages/UserDashboard/UserDashboard/UserDashboard";
+import UserProfile from "../../Pages/UserDashboard/UserProfile/UserProfile";
 
-// CodersStackBox
-// Home
-// About Us
-// Documentation
-// Community Support
-// Login
-// Sign Up
 
 const router = createBrowserRouter([
   {
@@ -56,6 +53,10 @@ const router = createBrowserRouter([
           ),
       },
       {
+        path: "/adminDashboard",
+        element: <AdminDashboard></AdminDashboard>
+      },
+      {
         path: "login",
         element: <Login></Login>,
       },
@@ -63,6 +64,18 @@ const router = createBrowserRouter([
         path: "/register",
         element: <SingUp></SingUp>,
       },
+      {
+        path: "/userDashboard",
+        element: <UserDashboard></UserDashboard>
+      },   
+      {
+        path: '/userProfile',
+        element: <UserProfile></UserProfile>
+      },
+      {
+        path: '/myProjects',
+        element: <MyProjects></MyProjects>
+      }
     ],
   },
   {
