@@ -111,7 +111,7 @@ const AdminDashboard = () => {
                                     </tr>
                                 </thead>
                                 <tbody>
-                                    <tr class="bg-white border-b dark:bg-gray-800 dark:border-gray-700">
+                                    <tr class="bg-white border-b dark:bg-gray-800 dark:border-gray-700 .hover-bg-dark-1">
                                         <th scope="row" class="px-6 py-4 font-medium text-gray-900 whitespace-nowrap dark:text-white">
                                             Apple MacBook Pro 17"
                                         </th>
@@ -122,7 +122,7 @@ const AdminDashboard = () => {
                                             Laptop
                                         </td>
                                     </tr>
-                                    <tr class="bg-white border-b dark:bg-gray-800 dark:border-gray-700">
+                                    <tr class="bg-white border-b dark:bg-gray-800 dark:border-gray-700 .hover-bg-dark-1">
                                         <th scope="row" class="px-6 py-4 font-medium text-gray-900 whitespace-nowrap dark:text-white">
                                             Microsoft Surface Pro
                                         </th>
@@ -131,17 +131,6 @@ const AdminDashboard = () => {
                                         </td>
                                         <td class="px-6 py-4">
                                             Laptop PC
-                                        </td>
-                                    </tr>
-                                    <tr class="bg-white dark:bg-gray-800">
-                                        <th scope="row" class="px-6 py-4 font-medium text-gray-900 whitespace-nowrap dark:text-white">
-                                            Magic Mouse 2
-                                        </th>
-                                        <td class="px-6 py-4">
-                                            Black
-                                        </td>
-                                        <td class="px-6 py-4">
-                                            Accessories
                                         </td>
                                     </tr>
                                 </tbody>
