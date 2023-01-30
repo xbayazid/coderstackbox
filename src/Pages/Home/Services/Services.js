@@ -4,7 +4,7 @@ import styles, { layout } from '../../../style';
 const Services = () => {
     return (
 
-        <div className={`${layout.sectionCol} text-white`}>
+        <div id='service' className={`${layout.sectionCol} text-white`}>
             <div className={`${layout.sectionInfo} text-center`}>
                 <h1 className={`${styles.heading2} `}>Our Services</h1>
                 <p className={`${styles.paragraph} `}>Codestack is a platform that allows you to build, run, and share code in three different programming languages HTMl, CSS and JAVASCRIPT.</p>
