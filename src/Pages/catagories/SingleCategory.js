@@ -11,7 +11,7 @@ const SingleCategory = () => {
       <div
         className={`grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4${layout.sectionCol}`}
       >
-        {projects.map((p) => (
+        {projects?.map((p) => (
           <div>
             <h2 className="text-lg text-white font-bold m-2">
               Example for{" "}
