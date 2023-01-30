@@ -14,6 +14,9 @@ import Home from "../../Pages/Home/Home/Home";
 import Services from "../../Pages/Home/Services/Services";
 import Login from "../../Pages/Login/Login";
 import SingUp from "../../Pages/SignUp/SignUp";
+import MyProjects from "../../Pages/UserDashboard/MyProjects/MyProjects";
+import UserDashboard from "../../Pages/UserDashboard/UserDashboard/UserDashboard";
+import UserProfile from "../../Pages/UserDashboard/UserProfile/UserProfile";
 
 
 const router = createBrowserRouter([
@@ -61,6 +64,18 @@ const router = createBrowserRouter([
         path: "/register",
         element: <SingUp></SingUp>,
       },
+      {
+        path: "/userDashboard",
+        element: <UserDashboard></UserDashboard>
+      },   
+      {
+        path: '/userProfile',
+        element: <UserProfile></UserProfile>
+      },
+      {
+        path: '/myProjects',
+        element: <MyProjects></MyProjects>
+      }
     ],
   },
   {
