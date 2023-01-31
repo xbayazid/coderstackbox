@@ -1,5 +1,6 @@
+import Editor from '@monaco-editor/react'
 import React, { useEffect, useState } from 'react'
-
+import { FaCompressAlt, FaExpandAlt } from 'react-icons/fa'
 
 const EditorComponent = (props) => {
   const {
@@ -16,25 +17,36 @@ const EditorComponent = (props) => {
 
 
   return (
-    <div className={`editor-container ${open ? '' : 'collapsed'}`}>
+    <div className={`flex-grow basis-0 flex
+    flex-col p-2 ${open ? 'scale-x-100' : 'scale-x-50'} `}>
     <div className="editor-title">
       {displayName}
-      {/* <button
+      <button
         type="button"
         className="expand-collapse-btn"
         onClick={() => setOpen(prevOpen => !prevOpen)}
-      >
-        <FontAwesomeIcon icon={open ? faCompressAlt : faExpandAlt} />
-      </button> */}
+      >{open ? 
+        <FaCompressAlt/>
+        :
+        <FaExpandAlt/>
+        }
+      </button>
     </div>
-    {/* <Editor
-    height="80vh"
+    <Editor
     theme="vs-dark"
-
+    options={{
+      wordWrap: "on",
+      minimap: { enabled: false },
+      showUnused: false,
+      folding: false,
+      lineNumbersMinChars: 3,
+      fontSize: 16,
+      scrollBeyondLastLine: false,
+    }}
     onChange={handleChange}
-   defaultLanguage={language}
-   defaultValue={value}
- /> */}
+    defaultLanguage={language}
+    defaultValue={value}
+ />
   </div>
   )
 }
