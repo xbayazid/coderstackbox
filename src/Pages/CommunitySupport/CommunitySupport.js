@@ -2,7 +2,7 @@ import React from "react";
 import ContactUs from "../Home/ConactUs/ContactUs";
 import FAQ from "./subsections/FAQ/FAQ";
 import HelpCategories from "./subsections/HelpCategories/HelpCategories";
-
+import { Helmet } from "react-helmet";
 const CommunitySupport = () => {
   return (
     <div>
@@ -13,4 +13,4 @@ const CommunitySupport = () => {
   );
 };
 
-export default CommunitySupport ;
+export default CommunitySupport;
