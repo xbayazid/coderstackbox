@@ -17,7 +17,6 @@ const Home = () => {
         <Hero />
         <div className="relative">
           <Services />
-
           <div className="gradient-03 z-0" />
           <BestDeveloper />
         </div>

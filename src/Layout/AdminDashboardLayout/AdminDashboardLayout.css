@@ -36,3 +36,7 @@
 .bg-dark-1 {
     background-color: var(--dark-color);
 }
+
+.hover-bg-dark-1:hover {
+    background-color: #001419;
+}
