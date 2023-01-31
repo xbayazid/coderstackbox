@@ -6,10 +6,6 @@ import { Helmet } from "react-helmet";
 const CommunitySupport = () => {
   return (
     <div>
-      <Helmet>
-        <meta charSet="utf-8" />
-        <title>CodersStackBox - CommunitySupport</title>
-      </Helmet>
       <HelpCategories></HelpCategories>
       <FAQ></FAQ>
       <ContactUs></ContactUs>

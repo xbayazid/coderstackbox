@@ -2,39 +2,9 @@ import React from "react";
 import styles, { layout } from "../../../../style";
 import FAQCard from "./FAQCard";
 import Button from "../../../../components/Buttons/Button";
+import { quesAnsAns } from "../../../../constants";
 
-export const quesAnsAns = [
-  {
-    id: "1",
-    Ques: "What is an online code editor?",
-    Ans: "An online code editor is a web-based tool that allows users to write, edit, and run code directly in a browser, without the need for any local software or installations.",
-  },
-  {
-    id: "2",
-    Ques: "What languages are supported in this online code editor?",
-    Ans: "Coderstackbox support HTML, CSS, JavaScript.",
-  },
-  {
-    id: "3",
-    Ques: "Is there a cost associated with using an online code editor?",
-    Ans: "Coderstackbox is free to use.",
-  },
-  {
-    id: "4",
-    Ques: "Can I save and download my code from the online editor?",
-    Ans: "Yes, coderstackbox allow users to save their code online, either by creating an account ",
-  },
-  {
-    id: "5",
-    Ques: "Can I run my code on an online code editor?",
-    Ans: "Yes, User can run their code directly to the online browser.",
-  },
-  {
-    id: "6",
-    Ques: "Are there any additional features or resources provided to help me learn the language or troubleshoot my code?",
-    Ans: "Yes, coderstackbox has some special features that helps users to find errors in their code.",
-  },
-];
+
 const FAQ = () => {
   return (
     <div>
