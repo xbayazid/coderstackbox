@@ -52,6 +52,7 @@ const Navbar = () => {
             <li><Link className="lg:ml-8 ml-0" to='/'>Home</Link></li>
             <li><Link className="lg:ml-8 ml-0" to='/about'>About Us</Link></li>
             <li><Link className="lg:ml-8 ml-0" to='/documentation'>Documentation</Link></li>
+            <li><Link className="lg:ml-8 ml-0" to='/doc'>Docs</Link></li>
             <li><Link className="lg:ml-8 ml-0" to='/community'>Community Support</Link></li>
             <li><Link className="lg:ml-8 ml-0" to='/catagories'>Catagories</Link></li>
             <li><Link className="lg:ml-8 ml-0" to='/userDashboard'>UserDashboard</Link></li>
