@@ -53,19 +53,19 @@ const Navbar = () => {
             <li><Link className="lg:ml-8 ml-0" to='/about'>About Us</Link></li>
             <li><Link className="lg:ml-8 ml-0" to='/documentation'>Documentation</Link></li>
             <li><Link className="lg:ml-8 ml-0" to='/community'>Community Support</Link></li>
-            <li><Link className="lg:ml-8 ml-0" to='/catagories'>Catagories</Link></li>
+            <li><Link className="lg:ml-8 ml-0" to='/catagories'>Categories</Link></li>
             <li><Link className="lg:ml-8 ml-0" to='/userDashboard'>UserDashboard</Link></li>
             <li className="lg:ml-8 ml-0">
               {
                 user?.uid ?
-                <>
-                <div className='lg:flex'>
-                  <div><li className='lg:mr-8'><Link to="/adminDashboard">Dashboard</Link></li></div>
-                  <div><li><button onClick={handleLogOut}>Log Out</button></li></div>
-                </div>
-                  
-                  
-                </>
+                  <>
+                    <div className='lg:flex'>
+                      <div><li className='lg:mr-8'><Link to="/adminDashboard">Dashboard</Link></li></div>
+                      <div><li><button onClick={handleLogOut}>Log Out</button></li></div>
+                    </div>
+
+
+                  </>
                   :
                   <li>
                     <Link to="/login">Login</Link>

@@ -17,23 +17,11 @@ const SingleCategory = () => {
     },
   });
   return (
-    <div className={`grid grid-cols-2 gap-2 ${layout.sectionCol}`}>
-      <div className="">
-        <h2 className="text-lg text-emerald-400  my-4 others font-semibold">
-          Projects Category
-        </h2>
-        <div className="">
-          {categories?.map((category) => (
-            <Link to={`/category/${category._id}`}>
-              <p className="text-white text-lg mt-2">{category.categoryName}</p>
-            </Link>
-          ))}
-        </div>
-      </div>
+    <div>
+      <h2 className="text-white text-5xl font-bold">Single Category</h2>;
       <div
         className={`grid grid-cols-1 md:grid-cols-1 lg:grid-cols-2 gap-4  ${layout.sectionCol}`}
       >
-        <h2 className="text-emerald-200 text-center text-3xl font-bold">Single Category</h2>;
         {projects.map((p) => (
           <div className="max-w-xs p-6 rounded-md shadow-md bg-gray-900 text-gray-50">
             <img
@@ -42,18 +30,18 @@ const SingleCategory = () => {
               className="object-cover object-center w-full rounded-md h-72 bg-gray-500"
             />
             <div className="mt-6 mb-2">
-              <p className="text-xl categories-title">
+              <p className="text-xl">
                 Project Type:{" "}
                 <span className="text-secondary">{p.categoryName}</span>
               </p>
-              <h2 className="text-xl font-semibold tracking-wide title">
-                Title: <span className="others">{p.projectTitle}</span>
+              <h2 className="text-xl font-semibold tracking-wide">
+                Title: <span className="">{p.projectTitle}</span>
               </h2>
-              <h2 className="text-xl font-semibold tracking-wide title">
-                Project Owner: <span className="others">{p.OnnerName}</span>
+              <h2 className="text-xl font-semibold tracking-wide">
+                Project Owner: <span className="">{p.OnnerName}</span>
               </h2>
             </div>
-            <p className="text-gray-100 project-description">{p.projectDescription.slice(0, 80)}</p>
+            <p className="text-gray-100">{p.projectDescription.slice(0, 80)}</p>
           </div>
         ))}
       </div>
