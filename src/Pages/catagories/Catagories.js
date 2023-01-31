@@ -40,11 +40,11 @@ const Catagories = () => {
                         Projects Category
                     </h2>
                     <div className="">
-                        {categories?.map((category) => (
-                            <Link to={`/category/${category._id}`}>
+                        {categories?.map((category) => 
+                            <Link to={`/category/${category._id}` }>
                                 <p className="text-white text-lg mt-2">{category.categoryName}</p>
                             </Link>
-                        ))}
+                        )}
                     </div>
                 </div>
                 <div className="col-span-3 m-4">
