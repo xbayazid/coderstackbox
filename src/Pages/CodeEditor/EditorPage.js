@@ -1,4 +1,5 @@
 import React, { useEffect, useState } from "react";
+import { Helmet } from "react-helmet";
 import './CodeEditor.css'
 import EditorComponent from "./Editor/EditorComponent";
 import { code } from "./files";
@@ -25,6 +26,10 @@ const EditorPage = () => {
 
   return (
     <>
+      <Helmet>
+        <meta charSet="utf-8" />
+        <title>CodersStackBox - EditorPage</title>
+      </Helmet>
       <div className="pane top-pane">
         <EditorComponent
           language="xml"

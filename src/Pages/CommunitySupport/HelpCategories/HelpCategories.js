@@ -1,5 +1,7 @@
 import React, { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
+
+
 const HelpCategories = () => {
   const [data, setData] = useState([]);
   console.log(data);
@@ -8,8 +10,9 @@ const HelpCategories = () => {
       .then((res) => res.json())
       .then((data) => setData(data));
   }, []);
+
   return (
-    <div className="my-6">
+    <div className="my-6 w-full helpcategory px-10 ">
       <fieldset className="w-full text-gray-100  lg:flex justify-center">
         <div className="relative">
           <span className="absolute inset-y-0 left-0 flex items-center pl-2">
@@ -37,24 +40,19 @@ const HelpCategories = () => {
       <p className="text-center text-white my-6">Or choose an option </p>
       <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
         {data?.map((d) => (
-          <Link to={`/categories/:${d._id}`}>
-            {" "}
-            (
-            <div className=" w-80 bg-gradient-to-r from-accent to-secondary shadow-2xl border border-lime-500">
-              <figure className="px-10 pt-10">
-                <img
-                  src={d.picture}
-                  alt="Shoes"
-                  className="rounded-xl w-24 mx-auto"
-                />
-              </figure>
-              <div className="card-body items-center text-center">
-                <h2 className="card-title">{d.title}</h2>
-                <p>{d.about}</p>
-              </div>
+          <div className=" w-80 bg-gradient-to-r from-accent to-secondary shadow-2xl border border-lime-500">
+            <figure className="px-10 pt-10">
+              <img
+                src={d.picture}
+                alt="Shoes"
+                className="rounded-xl w-24 mx-auto"
+              />
+            </figure>
+            <div className="card-body items-center text-center">
+              <h2 className="card-title">{d.title}</h2>
+              <p>{d.about}</p>
             </div>
-            )
-          </Link>
+          </div>
         ))}
       </div>
     </div>
