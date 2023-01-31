@@ -1,64 +1,31 @@
-import React from 'react';
+import React, { useContext } from 'react';
 import { Helmet } from 'react-helmet';
 import { FaHome, FaUsers, FaSwatchbook, FaUserCircle, FaRegEnvelope, FaSignOutAlt, FaExclamationTriangle, FaBars, FaSearch } from 'react-icons/fa';
-import { Link } from 'react-router-dom';
-import BrandIcon from '../../components/BrandIcon/BrandIcon';
-import Button from '../../components/Buttons/Button';
-import './AdminDashboard.css';
+import { Link, Outlet } from 'react-router-dom';
+import Button from '../../../../components/Buttons/Button';
+import BrandIcon from '../../../../components/BrandIcon/BrandIcon';
+import { AuthContext } from '../../../../context/AuthProvider';
+
 
 const AdminDashboard = () => {
+
+    const { user } = useContext(AuthContext);
+
     return (
         <div>
             <Helmet>
                 <meta charSet="utf-8" />
                 <title>CodersStackBox - AdminDashboard</title>
             </Helmet>
-            <div className="flex text-white">
-                <div className='hidden lg:block md:w-3/12 h-[100vh] bg-blue-green-gradient z-50'>
-                    <div className='absliute sidebar-menu ml-3 text-white text-2xl'>
-                        <ul>
-                            <li>
-                                <Link to="/dashboard"> <FaHome className='sidebar-icon'></FaHome> <span>Dashboard</span> </Link>
-                            </li>
-                            <li>
-                                <Link to="/developers"> <FaUsers className='sidebar-icon'></FaUsers> <span>Developers</span> </Link>
-                            </li>
-                            <li>
-                                <Link to="/projects"> <FaSwatchbook className='sidebar-icon'></FaSwatchbook> <span>Projects</span> </Link>
-                            </li>
-                            <li>
-                                <Link to="/inbox"> <FaRegEnvelope className='sidebar-icon'></FaRegEnvelope> <span>Inbox</span> </Link>
-                            </li>
-                            <li>
-                                <Link to="/report"> <FaExclamationTriangle className='sidebar-icon'></FaExclamationTriangle> <span>Report</span> </Link>
-                            </li>
-                            <li>
-                                <Link to="/profile"> <FaUserCircle className='sidebar-icon'></FaUserCircle> <span>Profile</span> </Link>
-                            </li>
-                        </ul>
-
-                        <div>
-                            <FaSignOutAlt className=''></FaSignOutAlt>
-                        </div>
-                    </div>
-                </div>
+            <div className="text-white">
+            
 
                 <div className='main-content w-full'>
+                <h2 className='text-3xl mb-5 others'>Hello, Wellcome back!</h2> 
 
-                    <header className='bg-dark-1 p-4'>
-                        <div className='flex justify-between items-center'>
-                            <div className='header-title text-3xl flex gap-x-5 items-center'>
-                                <label htmlFor=""><FaBars></FaBars></label>Overview
-                            </div>
-                            <div className='user-wrapper text-3xl '>
-                                <FaUserCircle></FaUserCircle>
-                            </div>
-                        </div>
-                    </header>
-
-                    <main className='py-5 px-10'>
+                    <main className='py-5 px-5'>
                         {/* we will load the username here from email */}
-                        <h2 className='text-3xl mb-5 others'>Hello, Wellcome back!</h2>
+                        
                         <div className='grid lg:grid-cols-3 gap-10 md:grid-cols-2 grid-cols-1 justify-between items-center font-semibold'>
                             <div className='flex justify-between items-center bg-dark-1 rounded-md hover-bg-blue-green-gradient text-3xl p-10'>
                                 <div className='flex flex-col justify-center items-center'>
