@@ -1,87 +1,26 @@
 import React from 'react';
+import { sidebarMenuItem } from '../../constants';
+
 import './Leftcatagory.css';
 
 const Leftcategory = () => {
+
+
+
+
     return (
         <div className='category left w-64 '>
             <div className=' leftcatagory pl-10'>
-            <h1 className='text-xl text-white'>User Gide</h1>
-            <div
-                className="bg-gradient-to-r mr-5 from-accent to-secondary my-5"
-                style={{ height: "1px" }}
-            />
-            <h1 className='text-xl text-white'>F A Q</h1>
-            <div
-                className="bg-gradient-to-r mr-5 from-accent to-secondary my-5"
-                style={{ height: "1px" }}
-            />
-            <h1 className='text-xl text-white'>Community</h1>
-            <div
-                className="bg-gradient-to-r mr-5 from-accent to-secondary my-5"
-                style={{ height: "1px" }}
-            />
-            <h1 className='text-xl text-white'>User Gide</h1>
-            <div
-                className="bg-gradient-to-r mr-5 from-accent to-secondary my-5"
-                style={{ height: "1px" }}
-            />
-            <h1 className='text-xl text-white'>F A Q</h1>
-            <div
-                className="bg-gradient-to-r mr-5 from-accent to-secondary my-5"
-                style={{ height: "1px" }}
-            />
-            <h1 className='text-xl text-white'>Community</h1>
-            <div
-                className="bg-gradient-to-r mr-5 from-accent to-secondary my-5"
-                style={{ height: "1px" }}
-            />
-            <h1 className='text-xl text-white'>User Gide</h1>
-            <div
-                className="bg-gradient-to-r mr-5 from-accent to-secondary my-5"
-                style={{ height: "1px" }}
-            />
-            <h1 className='text-xl text-white'>F A Q</h1>
-            <div
-                className="bg-gradient-to-r mr-5 from-accent to-secondary my-5"
-                style={{ height: "1px" }}
-            />
-            <h1 className='text-xl text-white'>Community</h1>
-            <div
-                className="bg-gradient-to-r mr-5 from-accent to-secondary my-5"
-                style={{ height: "1px" }}
-            />
-            <h1 className='text-xl text-white'>User Gide</h1>
-            <div
-                className="bg-gradient-to-r mr-5 from-accent to-secondary my-5"
-                style={{ height: "1px" }}
-            />
-            <h1 className='text-xl text-white'>F A Q</h1>
-            <div
-                className="bg-gradient-to-r mr-5 from-accent to-secondary my-5"
-                style={{ height: "1px" }}
-            />
-            <h1 className='text-xl text-white'>Community</h1>
-            <div
-                className="bg-gradient-to-r mr-5 from-accent to-secondary my-5"
-                style={{ height: "1px" }}
-            />
-            <h1 className='text-xl text-white'>User Gide</h1>
-            <div
-                className="bg-gradient-to-r mr-5 from-accent to-secondary my-5"
-                style={{ height: "1px" }}
-            />
-            <h1 className='text-xl text-white'>F A Q</h1>
-            <div
-                className="bg-gradient-to-r mr-5 from-accent to-secondary my-5"
-                style={{ height: "1px" }}
-            />
-            <h1 className='text-xl text-white'>Community</h1>
-            <div
-                className="bg-gradient-to-r mr-5 from-accent to-secondary my-5"
-                style={{ height: "1px" }}
-            />
-            
-        </div>
+                <ul className=''>
+                   {
+                    sidebarMenuItem.map(m => <li className='text-xl text-white mb-10' key={m.id}><a href={m.href}>{m.name}</a></li>)
+                   }
+
+                </ul>
+
+
+
+            </div>
         </div>
     );
 };

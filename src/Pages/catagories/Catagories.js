@@ -28,6 +28,7 @@ const Catagories = () => {
     },
   });
 
+
   if (isLoading) {
     return <Loading></Loading>;
   }

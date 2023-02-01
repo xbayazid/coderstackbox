@@ -1,5 +1,5 @@
 import { createBrowserRouter } from "react-router-dom";
-import Error from "../../Error";
+// import Error from "../../Error";
 import Main from "../../Layout/Main";
 import AboutUs from "../../Pages/AboutUs/AboutUs";
 import AdminDashboardLayout from "../../Layout/AdminDashboardLayout/AdminDashboardLayout";
@@ -11,7 +11,7 @@ import Documentation from "../../Pages/Documentation/Documentation";
 import ErrorPage from "../../Pages/ErrorPage/ErrorPage";
 import Doc from "../../Pages/Home/Doc/Doc";
 import Home from "../../Pages/Home/Home/Home";
-import Services from "../../Pages/Home/Services/Services";
+// import Services from "../../Pages/Home/Services/Services";
 import Login from "../../Pages/Login/Login";
 import SingUp from "../../Pages/SignUp/SignUp";
 import MyProjects from "../../Pages/UserDashboard/MyProjects/MyProjects";
@@ -47,6 +47,11 @@ const router = createBrowserRouter([
         path: "/documentation",
         element: <Documentation></Documentation>,
       },
+      {
+        path: "/doc",
+        element: <Doc></Doc>,
+      },
+      
       {
         path: "/catagories",
         element: <Catagories></Catagories>,
