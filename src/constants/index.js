@@ -1,3 +1,4 @@
+import { FaEnvelope, FaFileInvoice, FaHome } from "react-icons/fa";
 
 export const sidebarMenuItem = [
   {
@@ -136,4 +137,23 @@ export const bestDevs = [
     title: "Software Engineer"
 
   }
+];
+export const navLinks = [
+  {
+    id: "/",
+    title: "Home",
+    icon: <FaHome />,
+  },
+  {
+    id: "/media",
+    title: "Media",
+    icon: <FaFileInvoice />,
+  },
+  {
+    id: "/message",
+    title: "Message",
+    icon: <FaEnvelope />,
+  },
+  
+  
 ];

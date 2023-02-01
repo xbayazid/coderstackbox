@@ -11,6 +11,8 @@
     "axios": "^1.2.6",
     "daisyui": "^2.46.1",
     "firebase": "^9.15.0",
+    "monaco-editor": "^0.34.1",
+    "monaco-languageclient": "^4.0.3",
     "prettier": "^2.8.3",
     "re-resizable": "^6.9.9",
     "react": "^18.2.0",
