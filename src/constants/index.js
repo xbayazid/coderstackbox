@@ -1,3 +1,61 @@
+
+export const sidebarMenuItem = [
+  {
+      id:'1',
+      href:'#introduction',
+      name:'Introduction'
+  },
+  {
+      id:'2',
+      href:'#overview',
+      name:'Overview'
+  },
+  {
+      id:'3',
+      href:'#work',
+      name:'Workplace'
+  },
+  {
+      id:'4',
+      href:'#started',
+      name:'Getting Started'
+  },
+  {
+      id:'5',
+      href:'#sandbox',
+      name:'Sandboxes'
+  },
+  {
+      id:'6',
+      href:'#docker',
+      name:'Environment'
+  },
+  {
+      id:'7',
+      href:'#intigra',
+      name:'Intigretion'
+  },
+  {
+      id:'8',
+      href:'#team',
+      name:'Team and access'
+  },
+  {
+      id:'9',
+      href:'#trips',
+      name:'Trips and Tricks'
+  },
+  {
+      id:'10',
+      href:'#cloud',
+      name:'Cloud web editor'
+  },
+  {
+      id:'11',
+      href:'#plan',
+      name:'Plans and Billing'
+  },
+]
 export const quesAnsAns = [
   {
     id: "1",
