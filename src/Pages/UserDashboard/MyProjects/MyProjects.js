@@ -1,5 +1,6 @@
 import { useQuery } from "@tanstack/react-query";
 import React from "react";
+import { Helmet } from "react-helmet";
 import {
   FaHome,
   FaUsers,
@@ -28,6 +29,10 @@ const MyProjects = () => {
   //   }
   return (
     <div>
+      <Helmet>
+        <meta charSet="utf-8" />
+        <title>CodersStackBox - MyProjects</title>
+      </Helmet>
       <div className="flex text-white">
         <div className="hidden lg:block md:w-3/12 h-[100vh] bg-blue-green-gradient z-50">
           <div className="absolute sidebar-menu ml-3 text-white text-2xl">

@@ -1,10 +1,17 @@
 import React from 'react';
+import { Helmet } from 'react-helmet';
 
 const Projects = () => {
     return (
-        <div>
-            <h2>Projects page</h2>
-        </div>
+        <>
+            <Helmet>
+                <meta charSet="utf-8" />
+                <title>CodersStackBox - Projects</title>
+            </Helmet>
+            <div>
+                <h2>Projects page</h2>
+            </div>
+        </>
     );
 };
 

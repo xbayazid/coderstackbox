@@ -10,11 +10,16 @@ import {
 import { Link } from "react-router-dom";
 import styles from "../../../style";
 import UserModal from "./UserModal/UserModal";
+import { Helmet } from "react-helmet";
 
 const UserProfile = () => {
   const [isOpen, setIsOpen] = useState(false);
   return (
     <div>
+      <Helmet>
+        <meta charSet="utf-8" />
+        <title>CodersStackBox - UserProfile</title>
+      </Helmet>
       <div className="flex text-white my-16">
         <div className="hidden lg:block md:w-3/12 h-[60vh] bg-teal-400">
           <div className="absolute sidebar-menu ml-3 text-white text-2xl">
@@ -69,8 +74,8 @@ const UserProfile = () => {
               </div>
             </div>
             <div>
-            <button className="bg-blue-500 text-white p-2 rounded-lg hover:bg-blue-600 ml-4" onClick={() => setIsOpen(true)}>
-             Edit Profile </button>
+              <button className="bg-blue-500 text-white p-2 rounded-lg hover:bg-blue-600 ml-4" onClick={() => setIsOpen(true)}>
+                Edit Profile </button>
             </div>
           </main>
         </div>
