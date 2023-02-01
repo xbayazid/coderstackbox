@@ -1,13 +1,21 @@
-import React, { useEffect, useState } from "react";
+import { useQuery } from "@tanstack/react-query";
 import { Link } from "react-router-dom";
 import { layout } from "../../../../style";
+import Loading from "../../../Loading/Loading";
 const HelpCategories = () => {
-  const [data, setData] = useState([]);
-  useEffect(() => {
-    fetch("/HelpCategories.json")
-      .then((res) => res.json())
-      .then((data) => setData(data));
-  }, []);
+  const { data = [], isLoading } = useQuery({
+    queryKey: ["categories"],
+    queryFn: async () => {
+      const res = await fetch("/HelpCategories.json");
+      const data = await res.json();
+      return data;
+    },
+  });
+
+  if (isLoading) {
+    return <Loading></Loading>;
+  }
+
   return (
     <div className={`${layout.sectionCol}`}>
       <fieldset className="w-full text-gray-100  lg:flex justify-center">
