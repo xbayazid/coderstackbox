@@ -30,7 +30,7 @@ const EditorPage = () => {
         <meta charSet="utf-8" />
         <title>CodersStackBox - EditorPage</title>
       </Helmet>
-      <div className="pane top-pane">
+      <div className="h-[50vh] grid md:grid-cols-2 lg:grid-cols-3 top-pane">
         <EditorComponent
           language="xml"
           displayName="HTML"
