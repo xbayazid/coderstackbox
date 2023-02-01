@@ -1,6 +1,5 @@
 import React, { useEffect, useState } from 'react'
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
-import { faCompressAlt, faExpandAlt } from '@fortawesome/free-solid-svg-icons'
+
 import Editor, { useMonaco } from "@monaco-editor/react";
 
 
@@ -22,13 +21,13 @@ const EditorComponent = (props) => {
     <div className={`editor-container ${open ? '' : 'collapsed'}`}>
     <div className="editor-title">
       {displayName}
-      <button
+      {/* <button
         type="button"
         className="expand-collapse-btn"
         onClick={() => setOpen(prevOpen => !prevOpen)}
       >
         <FontAwesomeIcon icon={open ? faCompressAlt : faExpandAlt} />
-      </button>
+      </button> */}
     </div>
     <Editor
     height="80vh"
