@@ -24,6 +24,7 @@ import Report from "../../Pages/Dashboard/AdminPannel/Report/Report";
 import Profile from "../../Pages/Dashboard/AdminPannel/Profile/Profile";
 import PrivateRoutes from "../Routes/PrivateRoutes/PrivateRoutes";
 import AdminDashboard from "../../Pages/Dashboard/AdminPannel/AdminDashboard/AdminDashboard";
+import CodeEditor from "../../Pages/CodeEditor/CodeEditor/CodeEditor";
 
 
 const router = createBrowserRouter([
@@ -88,7 +89,10 @@ const router = createBrowserRouter([
   },
   {
     path: "/code-editor",
-    element: <EditorPage />,
+    element: <CodeEditor />,
+    children: [
+
+    ]
   },
   {
     path: "/adminDashboard",
