@@ -26,8 +26,12 @@ import {
 } from "recharts";
 import Loading from "../../Loading/Loading";
 import styles, { layout } from "../../../style";
+import { useState } from "react";
+import UserModal from "./UserModal/UserModal";
 
 const UserProfile = () => {
+  //modal
+  const [isOpen, setIsOpen] = useState(false);
   const { data = [], isLoading } = useQuery({
     queryKey: ["usersActivityData"],
     queryFn: async () => {
@@ -56,7 +60,7 @@ const UserProfile = () => {
         <title>CodersStackBox - UserProfile</title>
       </Helmet>
       <div className="flex text-white">
-        <div className="hidden lg:block md:w-3/12 h-[100vh] bg-blue-green-gradient z-50">
+        <div className="hidden lg:block md:w-3/12 bg-gradient-to-b from-cyan-400 to-cyan-800">
           <div className="absolute sidebar-menu ml-3 text-white text-2xl">
             <ul className="mt-20">
               <li>
@@ -74,10 +78,6 @@ const UserProfile = () => {
                 </Link>
               </li>
             </ul>
-
-            <div>
-              <FaSignOutAlt className=""></FaSignOutAlt>
-            </div>
           </div>
         </div>
 
@@ -120,11 +120,25 @@ const UserProfile = () => {
               </div>
             </div>
 
-            <div className={`grid grid-cols-3 gap-4 ${layout.sectionCol}`}>
-              <div class="bg-gray-100 rounded-xl shadow-xl flex justify-center items-center">
-                <h2 className="text-gray-900 text-lg font-bold ">
-                  Hey, user info coming sooooon...
-                </h2>
+            <div className="flex flex-col lg:flex-row gap-3 my-8">
+              <div class="bg-gray-100 rounded-xl shadow-xl lg:w-1/2">
+                <div>
+                  <div className="w-1/2 mx-auto">
+                    <img
+                      className="h-28 w-28 rounded-full mt-10"
+                      src="https://i.ibb.co/199wc0y/3d-illustration-person-23-2149436179.webp"
+                      alt=""
+                    />
+                  </div>
+                  <div className="text-black w-2/3 mx-auto mt-5">
+                    <h2>Name:</h2>
+                    <p>Email:</p>
+                    <p>Phone:</p>
+                  </div>
+                  <div className="w-2/3 mx-auto my-4">
+                    <button onClick={() => setIsOpen(true)} className="bg-blue-500 text-white py-2 px-4 rounded-lg hover:bg-blue-600">Edit Profile</button>
+                  </div>
+                </div>
               </div>
               <div class={`col-span-2 bg-gray-100 rounded-xl shadow-xl`}>
                 <h2 className="text-gray-800 m-4 font-semibold">
@@ -155,9 +169,20 @@ const UserProfile = () => {
                 </LineChart>
               </div>
             </div>
+            <div className="bg-indigo-400 p-5 text-black rounded">
+              <form className="lg:flex gap-4 justify-center items-center">
+              <div>
+                <textarea name="review" className="lg:w-96 p-5 rounded-md outline-none" placeholder="Your Comment"></textarea>
+              </div>
+              <div>
+              <button className="bg-amber-300 text-black p-4 rounded-3xl mt-3 lg:mt-0">Add Review</button>
+              </div>
+              </form>
+            </div>
           </main>
         </div>
       </div>
+      {isOpen && <UserModal setIsOpen={setIsOpen}></UserModal>}
     </div>
   );
 };

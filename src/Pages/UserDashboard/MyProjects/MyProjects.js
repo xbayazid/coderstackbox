@@ -35,7 +35,7 @@ const MyProjects = () => {
         <title>CodersStackBox - MyProjects</title>
       </Helmet>
       <div className="flex text-white">
-        <div className="hidden lg:block md:w-3/12 h-[100vh] bg-blue-green-gradient z-50">
+        <div className="hidden lg:block md:w-3/12 bg-gradient-to-b from-cyan-400 to-cyan-800">
           <div className="absolute sidebar-menu ml-3 text-white text-2xl">
             <ul className="mt-20">
               <li>
@@ -53,10 +53,6 @@ const MyProjects = () => {
                 </Link>
               </li>
             </ul>
-
-            <div>
-              <FaSignOutAlt className=""></FaSignOutAlt>
-            </div>
           </div>
         </div>
 
