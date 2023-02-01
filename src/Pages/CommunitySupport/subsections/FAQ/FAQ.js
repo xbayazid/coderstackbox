@@ -3,9 +3,17 @@ import styles, { layout } from "../../../../style";
 import FAQCard from "./FAQCard";
 import Button from "../../../../components/Buttons/Button";
 import { quesAnsAns } from "../../../../constants";
+import { useForm } from "react-hook-form";
 
 
 const FAQ = () => {
+  const {
+    register,
+    handleSubmit,
+  } = useForm();
+  const handleSubmitContact = (data) => {
+    console.log(data);
+  };
   return (
     <div>
       <section className={`${layout.sectionCol}`}>
@@ -22,13 +30,21 @@ const FAQ = () => {
           </div>
         </div>
         <div className="flex flex-col">
-          <textarea
-            className="textarea textarea-bordered mb-2 max-w-lg border-gradient-to-r from-accent to-secondary text-white"
-            placeholder="Question"
-          ></textarea>
-          <Button styles={"w-56"} htmlFor="my-modal-3">
-            Ask A Question
-          </Button>
+          <form
+            onSubmit={handleSubmit(handleSubmitContact)}
+            className="flex flex-col py-6 space-y-6 md:py-0 md:px-6 ng-untouched ng-pristine ng-valid w-96"
+          >
+            <label className="block">
+              <span className="mb-1 text-white">Question</span>
+              <textarea
+                {...register("message")}
+                rows="3"
+                className="block w-full rounded-md p-2"
+                placeholder="Type Here"
+              ></textarea>
+            </label>
+            <Button>Ask A Question</Button>
+          </form>
         </div>
       </section>
     </div>
