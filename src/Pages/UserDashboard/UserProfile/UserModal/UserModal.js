@@ -24,10 +24,10 @@ const UserModal = ({setIsOpen}) => {
 
               <div className="mt-5">
                 <Form>
-                    <input type="text" placeholder='Your Full Name' />
-                    <input type="text" placeholder='Email Address' />
-                    <input type="text" placeholder='Phone Number' />
-                    <button type='submit' onClick={() => setIsOpen(false)}>Update</button>
+                    <input type="text" className='w-full border-2 my-2 p-2 rounded-md' placeholder='Your Full Name' />
+                    <input type="text" className='w-full border-2 my-2 p-2 rounded-md' placeholder='Email Address' />
+                    <input type="text" className='w-full border-2 my-2 p-2 rounded-md' placeholder='Phone Number' />
+                    <button className='uppercase bg-cyan-700 text-white px-5 py-3 rounded-md' type='submit'onClick={() => setIsOpen(false)}>Update</button>
                 </Form>
               </div>
             </div>

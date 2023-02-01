@@ -20,16 +20,13 @@ const EditorComponent = (props) => {
     flex-col p-2 ${open ? 'scale-x-100' : 'scale-x-50'} `}>
     <div className="flex justify-between text-white p-[.5rem .5rem .5rem 1rem] rounded-t-lg navglassmorphism px-2 py-3">
       {displayName}
-      <button
+      {/* <button
         type="button"
         className="ml-2 bg-none border-none cursor-pointer"
         onClick={() => setOpen(prevOpen => !prevOpen)}
-      >{open ? 
-        <FaCompressAlt/>
-        :
-        <FaExpandAlt/>
-        }
-      </button>
+      >
+        <FontAwesomeIcon icon={open ? faCompressAlt : faExpandAlt} />
+      </button> */}
     </div>
     <Editor
     theme="vs-dark"
