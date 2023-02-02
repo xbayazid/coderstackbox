@@ -49,11 +49,10 @@ const Navbar = () => {
                 pb-12 absolute md:static text-white z-10 
                 left-0 w-full md:w-auto md:pl-0 pl-9 transition-all duration-500 ease-in
                 ${open ? 'top-20 opacity-100 navglassmorphism p-5 ' : 'top-[-490px]'} `}>
-            <li><a href='#testimonial' className="lg:ml-8 ml-0 text-yellow-200" >Slider</a></li>
             <li><Link className="lg:ml-8 ml-0" to='/'>Home</Link></li>
             <li><Link className="lg:ml-8 ml-0" to='/about'>About Us</Link></li>
-            <li><Link className="lg:ml-8 ml-0" to='/documentation'>Documentation</Link></li>
-            <li><Link className="lg:ml-8 ml-0" to='/doc'>Docs</Link></li>
+            {/* <li><Link className="lg:ml-8 ml-0" to='/documentation'>Documentation</Link></li> */}
+            <li><Link className="lg:ml-8 ml-0" to='/doc'>Documentation</Link></li>
             <li><Link className="lg:ml-8 ml-0" to='/community'>Community Support</Link></li>
             <li><Link className="lg:ml-8 ml-0" to='/catagories'>Categories</Link></li>
             <li><Link className="lg:ml-8 ml-0" to='/userDashboard'>UserDashboard</Link></li>

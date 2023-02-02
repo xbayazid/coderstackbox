@@ -9,6 +9,7 @@ import 'swiper/css/pagination';
 import 'swiper/css/scrollbar';
 import { userSlider } from '../../../constants';
 import TestimonialCard from '../../../components/Cards/TestimonialCard';
+import styles from '../../../style';
 
 SwiperCore.use([ Navigation, Pagination, Scrollbar,  A11y]);
 
@@ -19,14 +20,13 @@ const UserReviewSlider = () => {
 
 
     return (
-        <div id='testimonial' className='m-5'>
-        <h1 className="text-4xl text-center mb-5 mt-5 font-bold text-white">Testimonial's </h1>
+        <div id='testimonial' className='my-11'>
+        <div className='text-center mb-3'>
+        <h1 className={`${styles.heading2} `}>What Clients Says</h1>
+        </div>
             <Swiper
                 spaceBetween={20}
                 slidesPerView={3}
-                
-               
-                
                 onSlideChange={() => console.log('slide change')}
                 onSwiper={(swiper) => console.log(swiper)}
             >

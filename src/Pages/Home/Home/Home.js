@@ -30,7 +30,6 @@ const Home = () => {
         <div className="relative">
           <UserReviewSlider/>
           <div className="gradient-04 z-0" />
-          
         </div>
         <ContactUs />
       </div>

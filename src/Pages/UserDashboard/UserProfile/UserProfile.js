@@ -67,6 +67,13 @@ const UserProfile = () => {
           <div className="absolute sidebar-menu ml-3 text-white text-2xl">
             <ul className="mt-20">
               <li>
+                <Link to="/">
+                  {" "}
+                  <FaUserCircle className="sidebar-icon"></FaUserCircle>{" "}
+                  <span>Home</span>{" "}
+                </Link>
+              </li>
+              <li>
                 <Link to="/userProfile">
                   {" "}
                   <FaUserCircle className="sidebar-icon"></FaUserCircle>{" "}
@@ -102,9 +109,9 @@ const UserProfile = () => {
           <main className="py-5 px-10">
             {/* we will load the username here from email */}
             <div>
-              <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4">
+              <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
                 {aboutUsers?.map((aboutUser) => (
-                  <div class="flex max-w-md bg-dark-1 rounded-md bg-gradient-to-r from-accent to-secondary">
+                  <div class="flex  bg-dark-1 rounded-md bg-gradient-to-l from-accent to-cyan-400">
                     <div class="w-12 flex items-center p-2">
                       <img src={aboutUser.picture} className="" alt="" />
                     </div>
