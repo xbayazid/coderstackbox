@@ -57,6 +57,49 @@ export const sidebarMenuItem = [
       name:'Plans and Billing'
   },
 ]
+
+//user review data //
+
+export const userSlider = [
+  {
+      id: '1',
+      name: 'Tompa Doe',
+      img: 'https://i.ibb.co/199wc0y/3d-illustration-person-23-2149436179.webp',
+      info: 'Quickly create real, working prototypes. Test ideas earlier and iterate more.'
+  },
+  {
+      id: '2',
+      name: 'Jhon Tomas',
+      img: 'https://i.ibb.co/199wc0y/3d-illustration-person-23-2149436179.webp',
+      info: 'Use code, apps, and templates collectively. Learn from each other and bake-in best practice.'
+  },
+  {
+      id: '3',
+      name: 'Doe Thapa ',
+      img: 'https://i.ibb.co/199wc0y/3d-illustration-person-23-2149436179.webp',
+      info: 'Give and get feedback, on code or visuals, right in the editor. Take action and move forward faster..'
+  },
+  {
+      id: '4',
+      name: 'Tompa Doe',
+      img: 'https://i.ibb.co/199wc0y/3d-illustration-person-23-2149436179.webp',
+      info: 'Quickly create real, working prototypes. Test ideas earlier and iterate more.'
+  },
+  {
+      id: '5',
+      name: 'Jhon Tomas',
+      img: 'https://i.ibb.co/199wc0y/3d-illustration-person-23-2149436179.webp',
+      info: 'Use code, apps, and templates collectively. Learn from each other and bake-in best practice.'
+  },
+  {
+      id: '6',
+      name: 'Doe Thapa ',
+      img: 'https://i.ibb.co/199wc0y/3d-illustration-person-23-2149436179.webp',
+      info: 'Give and get feedback, on code or visuals, right in the editor. Take action and move forward faster..'
+  },
+]
+
+
 export const quesAnsAns = [
   {
     id: "1",
