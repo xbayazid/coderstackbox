@@ -1,5 +1,6 @@
 import { useQuery } from "@tanstack/react-query";
 import React from "react";
+import { Helmet } from "react-helmet";
 import {
   FaHome,
   FaUsers,
@@ -12,7 +13,8 @@ import {
   FaSearch,
 } from "react-icons/fa";
 import { Link } from "react-router-dom";
-import Button from "../../../components/Buttons/Button";
+
+import Loading from "../../Loading/Loading";
 
 const MyProjects = () => {
   const { data: myProjects = [], isLoading } = useQuery({
@@ -23,13 +25,17 @@ const MyProjects = () => {
       return data;
     },
   });
-  //   if (isLoading) {
-  //     return <Loading></Loading>;
-  //   }
+  if (isLoading) {
+    return <Loading></Loading>;
+  }
   return (
     <div>
+      <Helmet>
+        <meta charSet="utf-8" />
+        <title>CodersStackBox - MyProjects</title>
+      </Helmet>
       <div className="flex text-white">
-        <div className="hidden lg:block md:w-3/12 h-[100vh] bg-blue-green-gradient z-50">
+        <div className="hidden lg:block md:w-3/12 bg-gradient-to-b from-cyan-400 to-cyan-800">
           <div className="absolute sidebar-menu ml-3 text-white text-2xl">
             <ul className="mt-20">
               <li>
@@ -47,10 +53,6 @@ const MyProjects = () => {
                 </Link>
               </li>
             </ul>
-
-            <div>
-              <FaSignOutAlt className=""></FaSignOutAlt>
-            </div>
           </div>
         </div>
 
@@ -71,7 +73,7 @@ const MyProjects = () => {
 
           <main className="py-5 px-10">
             {/* we will load the username here from email */}
-            <h2 className="text-3xl mb-5 others">My project</h2>
+            <h2 className="text-3xl mb-5 others">My projects</h2>
             <div className="grid grid-cols-1 md:grid-cols-1 lg:grid-cols-2 gap-4">
               {myProjects?.map((myProject) => (
                 <div class="flex max-w-md bg-dark-1 shadow-xl hover:bg-gray-900 duration-300">
@@ -94,7 +96,7 @@ const MyProjects = () => {
                       </h1>
 
                       <button class="px-2 py-1 text-sm font-medium text-white uppercase transition-colors duration-300 transform bg-gray-800 rounded dark:bg-gray-700 hover:bg-red-700 dark:hover:bg-gray-600 focus:outline-none focus:bg-gray-700 dark:focus:bg-gray-600">
-                        Remove projects
+                        Remove project
                       </button>
                     </div>
                   </div>

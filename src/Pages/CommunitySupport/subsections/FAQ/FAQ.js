@@ -2,40 +2,18 @@ import React from "react";
 import styles, { layout } from "../../../../style";
 import FAQCard from "./FAQCard";
 import Button from "../../../../components/Buttons/Button";
+import { quesAnsAns } from "../../../../constants";
+import { useForm } from "react-hook-form";
 
-export const quesAnsAns = [
-  {
-    id: "1",
-    Ques: "What is an online code editor?",
-    Ans: "An online code editor is a web-based tool that allows users to write, edit, and run code directly in a browser, without the need for any local software or installations.",
-  },
-  {
-    id: "2",
-    Ques: "What languages are supported in this online code editor?",
-    Ans: "Coderstackbox support HTML, CSS, JavaScript.",
-  },
-  {
-    id: "3",
-    Ques: "Is there a cost associated with using an online code editor?",
-    Ans: "Coderstackbox is free to use.",
-  },
-  {
-    id: "4",
-    Ques: "Can I save and download my code from the online editor?",
-    Ans: "Yes, coderstackbox allow users to save their code online, either by creating an account ",
-  },
-  {
-    id: "5",
-    Ques: "Can I run my code on an online code editor?",
-    Ans: "Yes, User can run their code directly to the online browser.",
-  },
-  {
-    id: "6",
-    Ques: "Are there any additional features or resources provided to help me learn the language or troubleshoot my code?",
-    Ans: "Yes, coderstackbox has some special features that helps users to find errors in their code.",
-  },
-];
+
 const FAQ = () => {
+  const {
+    register,
+    handleSubmit,
+  } = useForm();
+  const handleSubmitContact = (data) => {
+    console.log(data);
+  };
   return (
     <div>
       <section className={`${layout.sectionCol}`}>
@@ -52,13 +30,21 @@ const FAQ = () => {
           </div>
         </div>
         <div className="flex flex-col">
-          <textarea
-            className="textarea textarea-bordered mb-2 max-w-lg border-gradient-to-r from-accent to-secondary text-white"
-            placeholder="Question"
-          ></textarea>
-          <Button styles={"w-56"} htmlFor="my-modal-3">
-            Ask A Question
-          </Button>
+          <form
+            onSubmit={handleSubmit(handleSubmitContact)}
+            className="flex flex-col py-6 space-y-6 md:py-0 md:px-6 ng-untouched ng-pristine ng-valid w-96"
+          >
+            <label className="block">
+              <span className="mb-1 text-white">Question</span>
+              <textarea
+                {...register("message")}
+                rows="3"
+                className="block w-full rounded-md p-2"
+                placeholder="Type Here"
+              ></textarea>
+            </label>
+            <Button>Ask A Question</Button>
+          </form>
         </div>
       </section>
     </div>

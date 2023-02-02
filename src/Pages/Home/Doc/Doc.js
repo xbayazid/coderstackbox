@@ -1,11 +1,12 @@
 import React from 'react';
-import Left from './Left';
+import Leftcategory from '../../catagories/Leftcategory';
+// import Left from './Left';
 import Right from './Right';
 
 const Doc = () => {
     return (
         <div className='md:flex'>
-            <Left></Left>
+            <Leftcategory></Leftcategory>
             <Right></Right>
         </div>
     );

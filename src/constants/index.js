@@ -1,4 +1,137 @@
+import { FaEnvelope, FaFileInvoice, FaHome } from "react-icons/fa";
 
+export const sidebarMenuItem = [
+  {
+      id:'1',
+      href:'#introduction',
+      name:'Introduction'
+  },
+  {
+      id:'2',
+      href:'#overview',
+      name:'Overview'
+  },
+  {
+      id:'3',
+      href:'#work',
+      name:'Workplace'
+  },
+  {
+      id:'4',
+      href:'#started',
+      name:'Getting Started'
+  },
+  {
+      id:'5',
+      href:'#sandbox',
+      name:'Sandboxes'
+  },
+  {
+      id:'6',
+      href:'#docker',
+      name:'Environment'
+  },
+  {
+      id:'7',
+      href:'#intigra',
+      name:'Intigretion'
+  },
+  {
+      id:'8',
+      href:'#team',
+      name:'Team and access'
+  },
+  {
+      id:'9',
+      href:'#trips',
+      name:'Trips and Tricks'
+  },
+  {
+      id:'10',
+      href:'#cloud',
+      name:'Cloud web editor'
+  },
+  {
+      id:'11',
+      href:'#plan',
+      name:'Plans and Billing'
+  },
+]
+
+//user review data //
+
+export const userSlider = [
+  {
+      id: '1',
+      name: 'Tompa Doe',
+      img: 'https://i.ibb.co/199wc0y/3d-illustration-person-23-2149436179.webp',
+      info: 'Quickly create real, working prototypes. Test ideas earlier and iterate more.'
+  },
+  {
+      id: '2',
+      name: 'Jhon Tomas',
+      img: 'https://i.ibb.co/199wc0y/3d-illustration-person-23-2149436179.webp',
+      info: 'Use code, apps, and templates collectively. Learn from each other and bake-in best practice.'
+  },
+  {
+      id: '3',
+      name: 'Doe Thapa ',
+      img: 'https://i.ibb.co/199wc0y/3d-illustration-person-23-2149436179.webp',
+      info: 'Give and get feedback, on code or visuals, right in the editor. Take action and move forward faster..'
+  },
+  {
+      id: '4',
+      name: 'Tompa Doe',
+      img: 'https://i.ibb.co/199wc0y/3d-illustration-person-23-2149436179.webp',
+      info: 'Quickly create real, working prototypes. Test ideas earlier and iterate more.'
+  },
+  {
+      id: '5',
+      name: 'Jhon Tomas',
+      img: 'https://i.ibb.co/199wc0y/3d-illustration-person-23-2149436179.webp',
+      info: 'Use code, apps, and templates collectively. Learn from each other and bake-in best practice.'
+  },
+  {
+      id: '6',
+      name: 'Doe Thapa ',
+      img: 'https://i.ibb.co/199wc0y/3d-illustration-person-23-2149436179.webp',
+      info: 'Give and get feedback, on code or visuals, right in the editor. Take action and move forward faster..'
+  },
+]
+
+
+export const quesAnsAns = [
+  {
+    id: "1",
+    Ques: "What is an online code editor?",
+    Ans: "An online code editor is a web-based tool that allows users to write, edit, and run code directly in a browser, without the need for any local software or installations.",
+  },
+  {
+    id: "2",
+    Ques: "What languages are supported in this online code editor?",
+    Ans: "Coderstackbox support HTML, CSS, JavaScript.",
+  },
+  {
+    id: "3",
+    Ques: "Is there a cost associated with using an online code editor?",
+    Ans: "Coderstackbox is free to use.",
+  },
+  {
+    id: "4",
+    Ques: "Can I save and download my code from the online editor?",
+    Ans: "Yes, coderstackbox allow users to save their code online, either by creating an account ",
+  },
+  {
+    id: "5",
+    Ques: "Can I run my code on an online code editor?",
+    Ans: "Yes, User can run their code directly to the online browser.",
+  },
+  {
+    id: "6",
+    Ques: "Are there any additional features or resources provided to help me learn the language or troubleshoot my code?",
+    Ans: "Yes, coderstackbox has some special features that helps users to find errors in their code.",
+  },
+];
 
 
 export const collabs = [
@@ -47,4 +180,23 @@ export const bestDevs = [
     title: "Software Engineer"
 
   }
+];
+export const navLinks = [
+  {
+    id: "/",
+    title: "Home",
+    icon: <FaHome />,
+  },
+  {
+    id: "/media",
+    title: "Media",
+    icon: <FaFileInvoice />,
+  },
+  {
+    id: "/message",
+    title: "Message",
+    icon: <FaEnvelope />,
+  },
+  
+  
 ];

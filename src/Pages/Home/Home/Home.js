@@ -6,6 +6,8 @@ import Hero from "../Hero/Hero";
 import OurTeam from "../OurTeam/OurTeam";
 import Services from "../Services/Services";
 import { Helmet } from "react-helmet";
+import UserReviewSlider from "../../UserDashboard/UserReviewSlider/UserReviewSlider";
+
 const Home = () => {
   return (
     <div>
@@ -17,7 +19,6 @@ const Home = () => {
         <Hero />
         <div className="relative">
           <Services />
-
           <div className="gradient-03 z-0" />
           <BestDeveloper />
         </div>
@@ -26,8 +27,14 @@ const Home = () => {
           <div className="gradient-04 z-0" />
           <OurTeam />
         </div>
+        <div className="relative">
+          <UserReviewSlider/>
+          <div className="gradient-04 z-0" />
+          
+        </div>
         <ContactUs />
       </div>
+      
     </div>
 
   );
