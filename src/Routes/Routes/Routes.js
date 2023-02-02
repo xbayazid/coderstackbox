@@ -20,7 +20,6 @@ import UserProfile from "../../Pages/UserDashboard/UserProfile/UserProfile";
 import Developers from "../../Pages/Dashboard/AdminPannel/Developers/Developers";
 import Projects from "../../Pages/Dashboard/AdminPannel/Projects/Projects";
 import Inbox from "../../Pages/Dashboard/AdminPannel/Inbox/Inbox";
-import Report from "../../Pages/Dashboard/AdminPannel/Report/Report";
 import Profile from "../../Pages/Dashboard/AdminPannel/Profile/Profile";
 import PrivateRoutes from "../Routes/PrivateRoutes/PrivateRoutes";
 import AdminDashboard from "../../Pages/Dashboard/AdminPannel/AdminDashboard/AdminDashboard";
@@ -115,10 +114,6 @@ const router = createBrowserRouter([
       {
         path: "/adminDashboard/inbox",
         element: <Inbox></Inbox>
-      },
-      {
-        path: "/adminDashboard/report",
-        element: <Report></Report>
       },
       {
         path: "/adminDashboard/profile",
