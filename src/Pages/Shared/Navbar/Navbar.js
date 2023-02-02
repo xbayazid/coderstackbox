@@ -51,8 +51,8 @@ const Navbar = () => {
                 ${open ? 'top-20 opacity-100 navglassmorphism p-5 ' : 'top-[-490px]'} `}>
             <li><Link className="lg:ml-8 ml-0" to='/'>Home</Link></li>
             <li><Link className="lg:ml-8 ml-0" to='/about'>About Us</Link></li>
-            <li><Link className="lg:ml-8 ml-0" to='/documentation'>Documentation</Link></li>
-            <li><Link className="lg:ml-8 ml-0" to='/doc'>Docs</Link></li>
+            {/* <li><Link className="lg:ml-8 ml-0" to='/documentation'>Documentation</Link></li> */}
+            <li><Link className="lg:ml-8 ml-0" to='/doc'>Documentation</Link></li>
             <li><Link className="lg:ml-8 ml-0" to='/community'>Community Support</Link></li>
             <li><Link className="lg:ml-8 ml-0" to='/catagories'>Categories</Link></li>
             <li><Link className="lg:ml-8 ml-0" to='/userDashboard'>UserDashboard</Link></li>
@@ -74,6 +74,7 @@ const Navbar = () => {
               }
             </li>
           </ul>
+
         </div>
       </div>
 

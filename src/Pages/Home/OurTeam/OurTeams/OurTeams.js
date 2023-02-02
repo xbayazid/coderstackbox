@@ -8,9 +8,9 @@ import "./OurTeams.css";
 const OurTeams = ({ card }) => {
   const { id, image, designation, name, github } = card;
   return (
-    <div>
+    <div className="bg-gradient-to-b from-indigo-500 to-slate-700 rounded-lg">
       <div className="rounded-lg shadow-lg pt-8 text-white">
-        <div className="bg-white mx-12 rounded-xl">
+        <div className="bg-emerald-100 mx-12 rounded-xl">
           <img
             className="w-full mx-auto align-center rounded-full p-5 h-52 w-52"
             src={image}

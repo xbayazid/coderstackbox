@@ -27,6 +27,7 @@ import AdminDashboard from "../../Pages/Dashboard/AdminPannel/AdminDashboard/Adm
 import CodeEditor from "../../Pages/CodeEditor/CodeEditor/CodeEditor";
 
 
+
 const router = createBrowserRouter([
   {
     path: "/",
@@ -74,10 +75,6 @@ const router = createBrowserRouter([
         element: <SingUp></SingUp>,
       },
       {
-        path: "/userDashboard",
-        element: <UserDashboard></UserDashboard>
-      },   
-      {
         path: '/userProfile',
         element: <UserProfile></UserProfile>
       },
@@ -89,10 +86,7 @@ const router = createBrowserRouter([
   },
   {
     path: "/code-editor",
-    element: <CodeEditor />,
-    children: [
-
-    ]
+    element: <CodeEditor />
   },
   {
     path: "/adminDashboard",
@@ -124,6 +118,20 @@ const router = createBrowserRouter([
       }
     ]
   },
+  {
+    path: "/userDashboard",
+    element: <PrivateRoutes><UserDashboard></UserDashboard></PrivateRoutes>,
+    children:[
+      {
+        path: '/userDashboard',
+        element: <PrivateRoutes><UserDashboard></UserDashboard></PrivateRoutes>
+      },
+      {
+        path: '/myProjects',
+        element: <MyProjects></MyProjects>
+      }
+    ]
+  },   
   {
     path: "*",
     element: <ErrorPage></ErrorPage>
