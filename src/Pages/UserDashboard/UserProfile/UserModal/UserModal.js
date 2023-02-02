@@ -1,8 +1,11 @@
 import React from 'react';
+import { useContext } from 'react';
 import { FaRegWindowClose } from 'react-icons/fa';
 import { Form } from 'react-router-dom';
+import { AuthContext } from '../../../../context/AuthProvider';
 
 const UserModal = ({setIsOpen}) => {
+  const {user} = useContext(AuthContext)
     return (
         <div className="fixed inset-0 overflow-hidden">
           <div className="relative w-full h-full top-1/4">
@@ -24,9 +27,9 @@ const UserModal = ({setIsOpen}) => {
 
               <div className="mt-5">
                 <Form>
-                    <input type="text" className='w-full border-2 my-2 p-2 rounded-md outline-none' placeholder='Email Address' />
-                    <input type="text" className='w-full border-2 my-2 p-2 rounded-md outline-none' placeholder='Phone Number' />
-                    <input type="text" className='w-full border-2 my-2 p-2 rounded-md outline-none' placeholder='Your Full Name' />
+                    <input type="text" name='name' defaultValue={user?.displayName} disabled className='w-full border-2 my-2 p-2 rounded-md outline-none' placeholder='Your Full Name' />
+                    <input type="text" name='email' defaultValue={user?.email} disabled className='w-full border-2 my-2 p-2 rounded-md outline-none' placeholder='Email Address' />
+                    <input type="text" name='phone' className='w-full border-2 my-2 p-2 rounded-md outline-none' placeholder='Phone Number' />
                     <button className='uppercase bg-cyan-700 text-white px-5 py-3 rounded-md' type='submit'onClick={() => setIsOpen(false)}>Update</button>
                 </Form>
               </div>

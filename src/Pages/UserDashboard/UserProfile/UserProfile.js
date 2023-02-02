@@ -28,10 +28,13 @@ import Loading from "../../Loading/Loading";
 import styles, { layout } from "../../../style";
 import { useState } from "react";
 import UserModal from "./UserModal/UserModal";
+import { useContext } from "react";
+import { AuthContext } from "../../../context/AuthProvider";
 
 const UserProfile = () => {
   //modal
   const [isOpen, setIsOpen] = useState(false);
+  const {user} = useContext(AuthContext)
   const { data = [], isLoading } = useQuery({
     queryKey: ["usersActivityData"],
     queryFn: async () => {
@@ -63,6 +66,13 @@ const UserProfile = () => {
         <div className="hidden lg:block md:w-3/12 bg-gradient-to-b from-cyan-400 to-cyan-800">
           <div className="absolute sidebar-menu ml-3 text-white text-2xl">
             <ul className="mt-20">
+              <li>
+                <Link to="/">
+                  {" "}
+                  <FaUserCircle className="sidebar-icon"></FaUserCircle>{" "}
+                  <span>Home</span>{" "}
+                </Link>
+              </li>
               <li>
                 <Link to="/userProfile">
                   {" "}
@@ -99,9 +109,9 @@ const UserProfile = () => {
           <main className="py-5 px-10">
             {/* we will load the username here from email */}
             <div>
-              <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4">
+              <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
                 {aboutUsers?.map((aboutUser) => (
-                  <div class="flex max-w-md bg-dark-1 rounded-md bg-gradient-to-r from-accent to-secondary">
+                  <div class="flex  bg-dark-1 rounded-md bg-gradient-to-l from-accent to-cyan-400">
                     <div class="w-12 flex items-center p-2">
                       <img src={aboutUser.picture} className="" alt="" />
                     </div>
@@ -124,16 +134,21 @@ const UserProfile = () => {
               <div class="bg-gray-100 rounded-xl shadow-xl lg:w-1/2">
                 <div>
                   <div className="w-1/2 mx-auto">
+                    {
+                      user?.photoURL ?
+                      <img className="h-28 w-28 rounded-full mt-10" src="{user?.photoURL}" alt="userImg"></img>
+                      : 
                     <img
-                      className="h-28 w-28 rounded-full mt-10"
-                      src="https://i.ibb.co/199wc0y/3d-illustration-person-23-2149436179.webp"
-                      alt=""
-                    />
+                    className="h-28 w-28 rounded-full mt-10"
+                    src="https://i.ibb.co/199wc0y/3d-illustration-person-23-2149436179.webp"
+                    alt="userImg"
+                  />
+                    }
                   </div>
                   <div className="text-black w-2/3 mx-auto mt-5">
-                    <h2>Name:</h2>
-                    <p>Email:</p>
-                    <p>Phone:</p>
+                    <h2 className="font-semibold">Name: {user?.displayName}</h2>
+                    <p>Email: {user?.email}</p>
+                    <p>Phone: </p>
                   </div>
                   <div className="w-2/3 mx-auto my-4">
                     <button onClick={() => setIsOpen(true)} className="bg-blue-500 text-white py-2 px-4 rounded-lg hover:bg-blue-600">Edit Profile</button>
@@ -142,7 +157,7 @@ const UserProfile = () => {
               </div>
               <div class={`col-span-2 bg-gray-100 rounded-xl shadow-xl`}>
                 <h2 className="text-gray-800 m-4 font-semibold">
-                  Web Development
+                  User Track
                 </h2>
                 <LineChart width={600} height={300} data={data}>
                   {/* <CartesianGrid strokeDasharray="3 3" /> */}
