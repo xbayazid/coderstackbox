@@ -26,6 +26,7 @@ import PrivateRoutes from "../Routes/PrivateRoutes/PrivateRoutes";
 import AdminDashboard from "../../Pages/Dashboard/AdminPannel/AdminDashboard/AdminDashboard";
 
 
+
 const router = createBrowserRouter([
   {
     path: "/",
@@ -76,6 +77,7 @@ const router = createBrowserRouter([
         path: "/userDashboard",
         element: <UserDashboard></UserDashboard>
       },   
+         
       {
         path: '/userProfile',
         element: <UserProfile></UserProfile>
