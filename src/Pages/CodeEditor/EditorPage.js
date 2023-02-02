@@ -30,7 +30,7 @@ const EditorPage = () => {
         <meta charSet="utf-8" />
         <title>CodersStackBox - EditorPage</title>
       </Helmet>
-      <div className="h-[50vh] grid md:grid-cols-2 lg:grid-cols-3 top-pane">
+      <div className="h-[50vh] grid md:grid-cols-2 lg:grid-cols-3">
         <EditorComponent
           language="xml"
           displayName="HTML"
@@ -50,7 +50,7 @@ const EditorPage = () => {
           onChange={setJs}
         />
       </div>
-      <div className="pane">
+      <div className="h-[50vh]">
         <iframe
           srcDoc={srcDoc}
           title="output"
