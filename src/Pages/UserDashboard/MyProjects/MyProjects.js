@@ -15,6 +15,7 @@ import {
 import { Link } from "react-router-dom";
 
 import Loading from "../../Loading/Loading";
+import UserDashboardNavbar from "../UserDashboard/UserDashboardNavbar/UserDashboardNavbar";
 
 const MyProjects = () => {
   const { data: myProjects = [], isLoading } = useQuery({
@@ -34,43 +35,9 @@ const MyProjects = () => {
         <meta charSet="utf-8" />
         <title>CodersStackBox - MyProjects</title>
       </Helmet>
-      <div className="flex text-white">
-        <div className="hidden lg:block md:w-3/12 bg-gradient-to-b from-cyan-400 to-cyan-800">
-          <div className="absolute sidebar-menu ml-3 text-white text-2xl">
-            <ul className="mt-20">
-              <li>
-                <Link to="/userProfile">
-                  {" "}
-                  <FaUserCircle className="sidebar-icon"></FaUserCircle>{" "}
-                  <span>Profile</span>{" "}
-                </Link>
-              </li>
-              <li>
-                <Link to="/myProjects">
-                  {" "}
-                  <FaSwatchbook className="sidebar-icon"></FaSwatchbook>{" "}
-                  <span>My Projects</span>{" "}
-                </Link>
-              </li>
-            </ul>
-          </div>
-        </div>
-
+      <UserDashboardNavbar></UserDashboardNavbar>
+      <div className="flex text-white lg:w-3/4 mx-auto">
         <div className="main-content w-full">
-          <header className="bg-dark-1 p-4">
-            <div className="flex justify-between items-center">
-              <div className="header-title text-3xl flex gap-x-5 items-center">
-                <label htmlFor="">
-                  <FaBars></FaBars>
-                </label>
-                Overview
-              </div>
-              <div className="user-wrapper text-3xl ">
-                <FaUserCircle></FaUserCircle>
-              </div>
-            </div>
-          </header>
-
           <main className="py-5 px-10">
             {/* we will load the username here from email */}
             <h2 className="text-3xl mb-5 others">My projects</h2>
