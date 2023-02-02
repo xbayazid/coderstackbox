@@ -26,9 +26,6 @@ const AdminDashboard = () => {
                             <Link to="/adminDashboard/inbox"> <FaRegEnvelope className='sidebar-icon'></FaRegEnvelope> <span>Inbox</span> </Link>
                         </li>
                         <li>
-                            <Link to="/adminDashboard/report"> <FaExclamationTriangle className='sidebar-icon'></FaExclamationTriangle> <span>Report</span> </Link>
-                        </li>
-                        <li>
                             <Link to="/adminDashboard/profile"> <FaUserCircle className='sidebar-icon'></FaUserCircle> <span>Profile</span> </Link>
                         </li>
                     </ul>
