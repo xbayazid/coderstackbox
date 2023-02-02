@@ -3,6 +3,7 @@
   "version": "0.1.0",
   "private": true,
   "dependencies": {
+    "@monaco-editor/react": "^4.4.6",
     "@tanstack/react-query": "^4.24.4",
     "@testing-library/jest-dom": "^5.16.5",
     "@testing-library/react": "^13.4.0",
@@ -10,6 +11,10 @@
     "axios": "^1.2.6",
     "daisyui": "^2.46.1",
     "firebase": "^9.15.0",
+    "monaco-editor": "^0.34.1",
+    "monaco-languageclient": "^4.0.3",
+    "prettier": "^2.8.3",
+    "re-resizable": "^6.9.9",
     "react": "^18.2.0",
     "react-countup": "^6.4.0",
     "react-dom": "^18.2.0",
@@ -24,6 +29,8 @@
     "react-scripts": "5.0.1",
     "react-scroll-trigger": "^0.6.14",
     "swiper": "^9.0.0",
+    "rechart": "^0.0.1",
+    "recharts": "^2.3.2",
     "web-vitals": "^2.1.4"
   },
   "scripts": {
