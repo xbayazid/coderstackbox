@@ -127,7 +127,7 @@ const router = createBrowserRouter([
         element: <PrivateRoutes><UserDashboard></UserDashboard></PrivateRoutes>
       },
       {
-        path: '/myProjects',
+        path: '/userDashboard/myProjects',
         element: <MyProjects></MyProjects>
       }
     ]
