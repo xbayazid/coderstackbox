@@ -72,7 +72,7 @@ const ContactUs = () => {
               <input
                 {...register("fullName", { required: true })}
                 type="text"
-                placeholder="Full Name"
+                placeholder=""
                 className="block w-full rounded-md shadow-sm p-2"
               />
               {errors.fullName && (
@@ -84,7 +84,7 @@ const ContactUs = () => {
               <input
                 {...register("email")}
                 type="email"
-                placeholder="Email"
+                placeholder=""
                 className="block w-full rounded-md shadow-sm p-2"
               />
             </label>
@@ -94,7 +94,7 @@ const ContactUs = () => {
                 {...register("message")}
                 rows="3"
                 className="block w-full rounded-md p-2"
-                placeholder="Type Here"
+                placeholder="Write your message in details"
               ></textarea>
             </label>
             <Button>submit</Button>

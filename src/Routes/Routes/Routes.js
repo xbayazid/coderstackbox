@@ -20,10 +20,10 @@ import UserProfile from "../../Pages/UserDashboard/UserProfile/UserProfile";
 import Developers from "../../Pages/Dashboard/AdminPannel/Developers/Developers";
 import Projects from "../../Pages/Dashboard/AdminPannel/Projects/Projects";
 import Inbox from "../../Pages/Dashboard/AdminPannel/Inbox/Inbox";
-import Report from "../../Pages/Dashboard/AdminPannel/Report/Report";
 import Profile from "../../Pages/Dashboard/AdminPannel/Profile/Profile";
 import PrivateRoutes from "../Routes/PrivateRoutes/PrivateRoutes";
 import AdminDashboard from "../../Pages/Dashboard/AdminPannel/AdminDashboard/AdminDashboard";
+
 
 
 const router = createBrowserRouter([
@@ -73,10 +73,6 @@ const router = createBrowserRouter([
         element: <SingUp></SingUp>,
       },
       {
-        path: "/userDashboard",
-        element: <UserDashboard></UserDashboard>
-      },   
-      {
         path: '/userProfile',
         element: <UserProfile></UserProfile>
       },
@@ -88,7 +84,7 @@ const router = createBrowserRouter([
   },
   {
     path: "/code-editor",
-    element: <EditorPage />,
+    element: <EditorPage />
   },
   {
     path: "/adminDashboard",
@@ -111,15 +107,25 @@ const router = createBrowserRouter([
         element: <Inbox></Inbox>
       },
       {
-        path: "/adminDashboard/report",
-        element: <Report></Report>
-      },
-      {
         path: "/adminDashboard/profile",
         element: <Profile></Profile>
       }
     ]
   },
+  {
+    path: "/userDashboard",
+    element: <PrivateRoutes><UserDashboard></UserDashboard></PrivateRoutes>,
+    children:[
+      {
+        path: '/userDashboard',
+        element: <PrivateRoutes><UserDashboard></UserDashboard></PrivateRoutes>
+      },
+      {
+        path: '/userDashboard/myProjects',
+        element: <MyProjects></MyProjects>
+      }
+    ]
+  },   
   {
     path: "*",
     element: <ErrorPage></ErrorPage>

@@ -2,13 +2,13 @@
   {
     "_id": "63c5661661b27d26c2e668ec",
     "picture": "https://cdn4.vectorstock.com/i/1000x1000/13/13/white-calendar-icon-vector-7151313.jpg",
-    "title": "Interviews Schedule",
+    "title": "Total Projects",
     "numbers": 66
   },
   {
     "_id": "63c5661661b27d26c2e668ed",
     "picture": "https://static.thenounproject.com/png/440104-200.png",
-    "title": "Application Sent",
+    "title": "Top Views Projects",
     "numbers": 45
   },
   {
@@ -16,11 +16,5 @@
     "picture": "https://thumbs.dreamstime.com/b/profile-icon-vector-male-user-person-avatar-flat-color-glyph-pictogram-illustration-117610301.jpg",
     "title": "Profile Viewed",
     "numbers": "75,435"
-  },
-  {
-    "_id": "63c5661661b27d26c2e668ef",
-    "picture": "https://www.clipartmax.com/png/full/249-2499200_message-icon-black-and-white.png",
-    "title": "Unread Message",
-    "numbers": 99
   }
 ]

@@ -1,16 +1,26 @@
 import React from 'react';
+import { TitleText, TypingText } from '../../../components/CustomText/CustomText';
 import styles, { layout } from '../../../style';
-
+import { motion } from "framer-motion";
+import { fadeIn, staggerContainer } from '../../../utils/motion';
 const Services = () => {
     return (
 
         <div id='service' className={`${layout.sectionCol} text-white`}>
-            <div className={`${layout.sectionInfo} text-center`}>
-                <h1 className={`${styles.heading2} `}>Our Services</h1>
-                <p className={`${styles.paragraph} `}>Codestack is a platform that allows you to build, run, and share code in three different programming languages HTMl, CSS and JAVASCRIPT.</p>
+           <motion.div
+      variants={staggerContainer}
+      initial="hidden"
+      whileInView="show"
+      viewport={{ once: false, amount: 0.25 }}>
+           <div className={`${layout.sectionInfo} text-center`}>
+            <TypingText title="| Our Services" />
+        <TitleText title={<>Codestack is a platform that allows you to build, run, and share </>} />
+                {/* <h1 className={`${styles.heading2} `}>Our Services</h1>
+                <p className={`${styles.paragraph} `}>Codestack is a platform that allows you to build, run, and share code in three different programming languages HTMl, CSS and JAVASCRIPT.</p> */}
             </div>
             <div className='grid grid-cols-1 lg:grid-cols-3 gap-4 md:grid-cols-2 mt-10 z-10'>
-                <div className=' border border-lime-500 rounded-md mt-10'>
+                <motion.div
+        variants={fadeIn('right', 'tween', 0.2, 1)} className=' border border-lime-500 rounded-md mt-10'>
                     <div className="card-body">
                         <img className="h-16 w-16 bg-emerald-100 rounded-md -mt-16" src="https://i.ibb.co/jHqX7ZS/app-development.png" alt="" />
                         <h2 className="text-center font-bold text-xl lg:-mt-6">Build & Test</h2>
@@ -19,8 +29,9 @@ const Services = () => {
                     <div className=' flex justify-end'>
                         <button className="btn glass mr-2 mb-2">Learn More</button>
                     </div>
-                </div>
-                <div className=" border border-lime-500 rounded-md mt-10">
+                </motion.div>
+                <motion.div
+        variants={fadeIn('right', 'tween', 0.3, 1)} className=" border border-lime-500 rounded-md mt-10">
                     <div className="card-body">
                         <img className="h-16 w-16 bg-emerald-100 rounded-md -mt-16" src="https://i.ibb.co/YjT1n8q/exploring.png" alt="" />
                         <h2 className="text-center font-bold text-xl lg:-mt-6">Learn and Discover</h2>
@@ -29,8 +40,9 @@ const Services = () => {
                     <div className=' flex justify-end'>
                         <button className="btn glass mr-2 mb-2">Learn More</button>
                     </div>
-                </div>
-                <div className=" border border-lime-500 rounded-md mt-10">
+                </motion.div>
+                <motion.div
+        variants={fadeIn('right', 'tween', 0.4, 1)} className=" border border-lime-500 rounded-md mt-10">
                     <div className="card-body">
                         <img className="h-16 w-16 bg-emerald-100 rounded-md -mt-16" src="https://i.ibb.co/c8S3575/share-1.png" alt="" />
                         <h2 className="text-center font-bold text-xl lg:-mt-6">Share Your Work</h2>
@@ -39,8 +51,9 @@ const Services = () => {
                     <div className=' flex justify-end'>
                         <button className="btn glass mr-2 mb-2">Learn More</button>
                     </div>
-                </div>
+                </motion.div>
             </div>
+           </motion.div>
         </div>
     );
 };

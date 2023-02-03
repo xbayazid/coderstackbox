@@ -3,23 +3,57 @@ import { FaArrowRight } from "react-icons/fa";
 import { Link } from "react-router-dom";
 import heroImage from "../../../assets/heroImage.gif";
 import Button from "../../../components/Buttons/Button";
-
+import styles from "../../../style";
+import { motion } from "framer-motion";
+import { slideIn, staggerContainer, textVariant } from "../../../utils/motion";
 const Hero = () => {
   return (
-    <header className="my-10 ">
-      <div className="grid md:grid-cols-2 grid-cols-1 md:mt-24 text-white gap-10 mx-5 items-center justify-center ">
-        <div className="">
-          <h1 className="text-5xl font-bold mr-5 font-italic">C<span className='text-secondary text-6xl'>o</span>ders Stack<span className='text-secondary'>Box</span> is the best place to build, test, and discover front-end code.</h1>
-          <p className="my-10 text-justify">Build your Fron-End Web Application. Get work done quicker by building out entire projects or isolating code to test features and animations. Want to keep it all  under wraps? Become a part of the most active front-end community in the world by sharing work. Presenting at a conference? Show your code directly in the browser with Presentation Mode.</p>
-          <Link to="/code-editor"><Button>Start Coding <FaArrowRight className='ml-2'></FaArrowRight> </Button></Link>
-
+    <section className={` ${styles.paddingY} relative`}>
+      <motion.div
+        variants={staggerContainer}
+        initial="hidden"
+        whileInView="show"
+        viewport={{ once: false, amount: 0.25 }}
+        className={`flex md:flex-row flex-col`}
+      >
+        <div
+          className={`flex-1 ${styles.flexStart} flex-col xl:px-0 sm:px-16 px-6`}
+        >
+          <motion.h1 variants={textVariant(0.5)} className="flex-1 font-poppins font-semibold ss:text-[72px] text-[52px] text-white ss:leading-[100.8px] leading-[75px]">
+            Code Smarter, <br className="sm:block hidden" />{" "}
+            <span className="">Not Harder</span>{" "}
+          </motion.h1>
+          <motion.div
+          variants={textVariant(0.6)} className="font-poppins font-semibold ss:text-[68px] text-[52px] text-white ss:leading-[100.8px] leading-[75px] w-full">
+            with <span className="text-secondary">StackBox</span>.
+          </motion.div>
+          <motion.div
+          variants={textVariant(0.7)} className={`${styles.paragraph} max-w-[470px] my-5`}>
+            Build your Fron-End Web Application. Get work done quicker by
+            building out entire projects. Isolating code to test features and
+            animations. Want to keep it all under wraps?
+          </motion.div>
+          <motion.div
+          variants={textVariant(0.8)}>
+          <Link to="/code-editor">
+            <Button>
+              Start Coding <FaArrowRight className="ml-2"></FaArrowRight>{" "}
+            </Button>
+          </Link>
+          </motion.div>
         </div>
-        <div className="overflow">
-          <img className="w-full shadow-green-500 shadow-2xl rounded-xl" src={heroImage} alt="" />
-        </div>
-        </div>
-        </header>
-    );
+        <motion.div variants={slideIn('right', 'tween', 0.5, 1.2)}
+          className={`flex-1 hidden lg:flex ${styles.flexCenter} md:my-0 my-10 relative`}
+        >
+          <img
+            src={heroImage}
+            alt="heroImage"
+            className="w-[100%]relative z-[5] rounded-xl"
+          />
+        </motion.div>
+      </motion.div>
+    </section>
+  );
 };
 
 export default Hero;

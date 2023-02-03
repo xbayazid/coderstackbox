@@ -4,6 +4,8 @@ import { useState } from 'react';
 import { Link } from 'react-router-dom';
 import { AuthContext } from '../../../context/AuthProvider';
 import styles from '../../../style';
+import { navVariants } from '../../../utils/motion';
+import { motion } from 'framer-motion';
 
 const Navbar = () => {
   const { user, logOut } = useContext(AuthContext);
@@ -30,11 +32,17 @@ const Navbar = () => {
   }, []);
 
   return (
-    <div className={` w-full z-50 top-0 left-0 transition-all duration-300 ease-in-out ${fix ? "fixed top-0 z-10  navglassmorphism " : "relative"} `} >
-      <div className="absolute w-[50% inset-0 gradient-01" />
-      <div className={`${styles.boxWidth} mx-auto sm:px-10 xs:px-5 px-0 `}>
+    <motion.nav
+    variants={navVariants}
+    initial="hidden"
+    whileInView="show"
+    /* className={` w-full z-50 top-0 left-0 transition-all duration-300 ease-in-out ${fix ? "fixed top-0 z-50  navglassmorphism " : "relative"} `}  */
+    className={`py-5 relative`}
+    >
+      <div className="absolute w-[50%] inset-0 gradient-01" />
+      <div className={`${styles.paddingX} mx-auto`}>
         <div className="flex justify-between py-4 ">
-          <div className='font-bold text-2xl cursor-pointer flex items-center font-[poppins] text-gray-800 xs:scale-100 scale-90 transition-all duration-300 ease-in-out'>
+          <div className='font-bold text-2xl cursor-pointer flex items-center gap-2 font-[poppins] text-gray-800 xs:scale-100 scale-90 transition-all duration-300 ease-in-out'>
             <span className='text-3xl text-secondary  pt-2'>
               <ion-icon name="logo-slack"></ion-icon>
             </span>
@@ -51,8 +59,8 @@ const Navbar = () => {
                 ${open ? 'top-20 opacity-100 navglassmorphism p-5 ' : 'top-[-490px]'} `}>
             <li><Link className="lg:ml-8 ml-0" to='/'>Home</Link></li>
             <li><Link className="lg:ml-8 ml-0" to='/about'>About Us</Link></li>
-            <li><Link className="lg:ml-8 ml-0" to='/documentation'>Documentation</Link></li>
-            <li><Link className="lg:ml-8 ml-0" to='/doc'>Docs</Link></li>
+            {/* <li><Link className="lg:ml-8 ml-0" to='/documentation'>Documentation</Link></li> */}
+            <li><Link className="lg:ml-8 ml-0" to='/doc'>Documentation</Link></li>
             <li><Link className="lg:ml-8 ml-0" to='/community'>Community Support</Link></li>
             <li><Link className="lg:ml-8 ml-0" to='/catagories'>Categories</Link></li>
             <li><Link className="lg:ml-8 ml-0" to='/userDashboard'>UserDashboard</Link></li>
@@ -74,10 +82,11 @@ const Navbar = () => {
               }
             </li>
           </ul>
+
         </div>
       </div>
 
-    </div>
+    </motion.nav>
   );
 };
 
