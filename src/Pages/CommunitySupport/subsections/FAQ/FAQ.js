@@ -1,18 +1,40 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import styles, { layout } from "../../../../style";
 import FAQCard from "./FAQCard";
 import Button from "../../../../components/Buttons/Button";
 import { quesAnsAns } from "../../../../constants";
 import { useForm } from "react-hook-form";
 
-
 const FAQ = () => {
   const {
     register,
     handleSubmit,
   } = useForm();
-  const handleSubmitContact = (data) => {
-    console.log(data);
+  const [quesAndAns, setQuesAndAns] = useState([]);
+  console.log(quesAnsAns)
+  useEffect(() => {
+    fetch('https://coderstackbox-server-codersstackbox-gmailcom.vercel.app/questions')
+      .then(res => res.json())
+      .then(data => setQuesAndAns(data))
+  }, []);
+
+  const handleSubmitContact = () => {
+    const postURL = "https://coderstackbox-server-codersstackbox-gmailcom.vercel.app/questions"
+    console.log(postURL)
+    fetch(postURL, {
+      method: 'POST',
+      headers: {
+        'Accept': 'application/json',
+        'Content-Type': 'application/json',
+      },
+      body: JSON.stringify({
+        clockedIn: false,
+        dates: []
+      })
+    })
+      .then(() => {
+        alert('Your question added successfully');
+      })
   };
   return (
     <div>
@@ -24,7 +46,7 @@ const FAQ = () => {
             </h1>
           </div>
           <div className="grid grid-cols-1 gap-8 mt-8 lg:mt-16 md:grid-cols-2 xl:grid-cols-3">
-            {quesAnsAns.map((q) => (
+            {quesAndAns.map((q) => (
               <FAQCard key={q.id} q={q}></FAQCard>
             ))}
           </div>
