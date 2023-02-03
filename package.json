@@ -10,6 +10,7 @@
     "@testing-library/user-event": "^13.5.0",
     "firebase": "^9.15.0",
     "force": "^0.0.3",
+    "framer-motion": "^9.0.1",
     "monaco-editor": "^0.34.1",
     "monaco-languageclient": "^4.0.3",
     "prettier": "^2.8.3",
