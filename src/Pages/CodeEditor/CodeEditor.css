@@ -46,9 +46,7 @@ body {
     border-top-left-radius: .5rem;
   }
   
-  .monaco-editor {
-    height: 50% !important;
-  }
+ 
   
   .code-mirror-wrapper {
     flex-grow: 1;

@@ -23,7 +23,6 @@ import Inbox from "../../Pages/Dashboard/AdminPannel/Inbox/Inbox";
 import Profile from "../../Pages/Dashboard/AdminPannel/Profile/Profile";
 import PrivateRoutes from "../Routes/PrivateRoutes/PrivateRoutes";
 import AdminDashboard from "../../Pages/Dashboard/AdminPannel/AdminDashboard/AdminDashboard";
-import CodeEditor from "../../Pages/CodeEditor/CodeEditor/CodeEditor";
 
 
 
@@ -85,7 +84,7 @@ const router = createBrowserRouter([
   },
   {
     path: "/code-editor",
-    element: <CodeEditor />
+    element: <EditorPage />
   },
   {
     path: "/adminDashboard",
@@ -122,7 +121,7 @@ const router = createBrowserRouter([
         element: <PrivateRoutes><UserDashboard></UserDashboard></PrivateRoutes>
       },
       {
-        path: '/myProjects',
+        path: '/userDashboard/myProjects',
         element: <MyProjects></MyProjects>
       }
     ]
