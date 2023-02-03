@@ -1,4 +1,3 @@
-import bgSVG from './bg.svg';
 import wavesOpacity from './wavesOpacity.svg';
 import wavesOpacityTop from './wavesOpacityTop.svg';
 import close from "./close.svg";
@@ -8,7 +7,6 @@ import icon from "./icon.png";
 
 
 export{
-    bgSVG,
 wavesOpacity,
 wavesOpacityTop,
 close,
