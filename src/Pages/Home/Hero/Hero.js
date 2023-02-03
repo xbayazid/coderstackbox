@@ -3,23 +3,44 @@ import { FaArrowRight } from "react-icons/fa";
 import { Link } from "react-router-dom";
 import heroImage from "../../../assets/heroImage.gif";
 import Button from "../../../components/Buttons/Button";
+import styles from "../../../style";
 
 const Hero = () => {
   return (
-    <header className="my-10 ">
-      <div className="grid md:grid-cols-2 grid-cols-1 md:mt-24 text-white gap-10 mx-5 items-center justify-center ">
-        <div className="">
-          <h1 className="text-5xl font-bold mr-5 font-italic">C<span className='text-secondary text-6xl'>o</span>ders Stack<span className='text-secondary'>Box</span> is the best place to build, test, and discover front-end code.</h1>
-          <p className="my-10 text-justify">Build your Fron-End Web Application. Get work done quicker by building out entire projects or isolating code to test features and animations. Want to keep it all  under wraps? Become a part of the most active front-end community in the world by sharing work. Presenting at a conference? Show your code directly in the browser with Presentation Mode.</p>
-          <Link to="/code-editor"><Button>Start Coding <FaArrowRight className='ml-2'></FaArrowRight> </Button></Link>
-
+   
+      <section
+        className={`flex md:flex-row flex-col ${styles.paddingY}`}
+      >
+        <div className={`flex-1 ${styles.flexStart} flex-col xl:px-0 sm:px-16 px-6`}>
+        <h1 className="flex-1 font-poppins font-semibold ss:text-[72px] text-[52px] text-white ss:leading-[100.8px] leading-[75px]">
+        Code Smarter, <br className="sm:block hidden" />{" "}
+            <span className="">Not Harder</span>{" "}
+          </h1>
+          <h1 className="font-poppins font-semibold ss:text-[68px] text-[52px] text-white ss:leading-[100.8px] leading-[75px] w-full">
+          with <span className="text-secondary">StackBox</span>.
+        </h1>
+          <p className={`${styles.paragraph} max-w-[470px] my-5`}>
+            Build your Fron-End Web Application. Get work done quicker by
+            building out entire projects. Isolating code to test features and
+            animations. Want to keep it all under wraps?
+          </p>
+          <Link to="/code-editor">
+            <Button>
+              Start Coding <FaArrowRight className="ml-2"></FaArrowRight>{" "}
+            </Button>
+          </Link>
         </div>
-        <div className="overflow">
-          <img className="w-full shadow-green-500 shadow-2xl rounded-xl" src={heroImage} alt="" />
+        <div
+          className={`flex-1 hidden lg:flex ${styles.flexCenter} md:my-0 my-10 relative`}
+        >
+          <img
+            src={heroImage}
+            alt="heroImage"
+            className="w-[100%]relative z-[5] rounded-xl"
+          />
         </div>
-        </div>
-        </header>
-    );
+      </section>
+  );
 };
 
 export default Hero;
