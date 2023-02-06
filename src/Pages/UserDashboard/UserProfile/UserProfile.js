@@ -1,30 +1,15 @@
 import { useQuery } from "@tanstack/react-query";
 import React from "react";
-import Navbar from "../../Shared/Navbar/Navbar";
-import {
-  FaHome,
-  FaUsers,
-  FaSwatchbook,
-  FaUserCircle,
-  FaRegEnvelope,
-  FaSignOutAlt,
-  FaExclamationTriangle,
-  FaBars,
-} from "react-icons/fa";
-import { Link } from "react-router-dom";
-import Button from "../../../components/Buttons/Button";
 import { Helmet } from "react-helmet";
 import {
   Legend,
   Line,
   LineChart,
-  ResponsiveContainer,
   Tooltip,
   XAxis,
   YAxis,
 } from "recharts";
 import Loading from "../../Loading/Loading";
-import styles, { layout } from "../../../style";
 import { useState } from "react";
 import UserModal from "./UserModal/UserModal";
 import { useContext } from "react";
