@@ -23,7 +23,7 @@ const OurTeams = ({ card }) => {
           <div>
             <ul className="flex justify-center mt-5 text-3xl">
               <li>
-                <a target="_blank" href={`${github}`}>
+                <a target="_blank" href={`${github}`} rel="noreferrer">
                   <Button>
                     <FaGithubAlt></FaGithubAlt>
                   </Button>
