@@ -6,6 +6,7 @@ import { AuthContext } from '../../../context/AuthProvider';
 import styles from '../../../style';
 import { navVariants } from '../../../utils/motion';
 import { motion } from 'framer-motion';
+import Button from '../../../components/Buttons/Button';
 
 const Navbar = () => {
   const { user, logOut } = useContext(AuthContext);
@@ -46,25 +47,23 @@ const Navbar = () => {
             <span className='text-3xl text-secondary  pt-2'>
               <ion-icon name="logo-slack"></ion-icon>
             </span>
-            <h1 className='text-white'>Coders<span className='text-secondary'>StackBox</span></h1>
+            <Link to='/'><h1 className='text-white'>Coders<span className='text-secondary'>StackBox</span></h1></Link>
           </div>
           <div onClick={() => setOpen(!open)} className='text-3xl text-white absolute right-8 top-6
                 cursor-pointer md:hidden block
                 '>
             <ion-icon name={open ? 'close' : 'menu'}></ion-icon>
           </div>
-          <ul className={`md:flex md:items-center md:pb-0
+          <ul className={`md:flex md:items-center mr-12 md:pb-0
                 pb-12 absolute md:static text-white z-10 
                 left-0 w-full md:w-auto md:pl-0 pl-9 transition-all duration-500 ease-in
                 ${open ? 'top-20 opacity-100 navglassmorphism p-5 ' : 'top-[-490px]'} `}>
-            <li><Link className="lg:ml-8 ml-0" to='/'>Home</Link></li>
-            <li><Link className="lg:ml-8 ml-0" to='/about'>About Us</Link></li>
-            {/* <li><Link className="lg:ml-8 ml-0" to='/documentation'>Documentation</Link></li> */}
-            <li><Link className="lg:ml-8 ml-0" to='/doc'>Documentation</Link></li>
-            <li><Link className="lg:ml-8 ml-0" to='/community'>Community Support</Link></li>
-            <li><Link className="lg:ml-8 ml-0" to='/catagories'>Categories</Link></li>
-            <li><Link className="lg:ml-8 ml-0" to='/userDashboard'>UserDashboard</Link></li>
-            <li className="lg:ml-8 ml-0">
+  
+            <li><Link className="lg:ml-8 ml-0 mr-5" to='/doc'>Documentation</Link></li>
+            
+            <li><Link className="lg:ml-8 ml-0 mr-5" to='/blog'>Blog</Link></li>
+            <li><Link className="lg:ml-8 ml-0 mr-5" to='/userDashboard'>UserDashboard</Link></li>
+            <li className="lg:ml-8 ml-0 mr-5">
               {
                 user?.uid ?
                   <>
@@ -76,8 +75,9 @@ const Navbar = () => {
 
                   </>
                   :
-                  <li>
-                    <Link to="/login">Login</Link>
+                  <li >
+                  <Button className="border border-outline mr-5 p-2 "><Link to="/login">Login</Link></Button>
+                    
                   </li>
               }
             </li>
