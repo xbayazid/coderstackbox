@@ -61,10 +61,8 @@ const teamData = [
 const OurTeam = () => {
     return (
         <div>
-            <div className='text-white text-center'>
+            <div className='text-white mt-12'>
             <h1 className={`${styles.heading2} `}>Our Creative Team</h1>
-            <p className={`${styles.paragraph} `}>This people work on making CodersStackBox</p>
-            
             </div>
             <div className='grid gap-7 md:grid-cols-2 lg:grid-cols-3 mx-auto my-5'>
             {
