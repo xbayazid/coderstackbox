@@ -8,22 +8,59 @@ import "./OurTeams.css";
 const OurTeams = ({ card }) => {
   const { id, image, designation, name, github } = card;
   return (
-    <div className="rounded-lg">
-      <div className="rounded-lg shadow-lg pt-8 text-white">
-        <div className="bg-emerald-100 mx-12 rounded-xl">
-          <img
-            className="w-full mx-auto align-center rounded-full p-5 h-52 w-52"
-            src={image}
-            alt=""
-          />
-        </div>
-        <div className="p-6 text-center">
-          <h1 className="text-3xl font-medium mb-2 name">{name}</h1>
-          <h5 className="designation">{designation}</h5>
-          <div>
-            <ul className="flex justify-center mt-5 text-3xl">
+    // <div className="rounded-lg">
+    //   <div className="rounded-lg shadow-lg pt-8 text-white">
+    //     <div className="bg-emerald-100 mx-12 rounded-xl">
+    //       <img
+    //         className="w-full mx-auto align-center rounded-full p-5 h-52 w-52"
+    //         src={image}
+    //         alt=""
+    //       />
+    //     </div>
+    //     <div className="p-6 text-center">
+    //       <h1 className="text-3xl font-medium mb-2 name">{name}</h1>
+    //       <h5 className="designation">{designation}</h5>
+    //       <div>
+    //         <ul className="flex justify-center mt-5 text-3xl">
+    //           <li>
+    //             <a target="_blank" href={`${github}`}>
+    //               <Button>
+    //                 <FaGithubAlt></FaGithubAlt>
+    //               </Button>
+    //             </a>
+    //           </li>
+    //           <li className="ml-4">
+    //             <Button>
+    //               <FaLinkedinIn></FaLinkedinIn>
+    //             </Button>
+    //           </li>
+    //           <li className="ml-4">
+    //             <Button>
+    //               <HiOutlineDownload></HiOutlineDownload>
+    //             </Button>
+    //           </li>
+    //         </ul>
+    //       </div>
+    //     </div>
+    //   </div>
+    // </div>
+    <div class="wrapper bg-gray-400 antialiased text-gray-900 mb-24 xl:mb-11">
+<div>
+    
+    <img src={image} alt="" />    
+    
+ <div class="relative px-4 -mt-16  ">
+   <div class="bg-white p-6 rounded-lg shadow-lg">
+    
+    <h4 class="mt-1 text-xl font-semibold uppercase leading-tight truncate">{name}</h4>
+ 
+  <div class="mt-1">
+    <h5 className="designation">{designation}</h5>
+  </div>
+  <div class="mt-4">
+  <ul className="flex justify-center mt-5 text-3xl">
               <li>
-                <a target="_blank" href={`${github}`}>
+                <a target="_blank" href={`${github}`} rel="noreferrer">
                   <Button>
                     <FaGithubAlt></FaGithubAlt>
                   </Button>
@@ -40,10 +77,12 @@ const OurTeams = ({ card }) => {
                 </Button>
               </li>
             </ul>
-          </div>
-        </div>
-      </div>
-    </div>
+  </div>  
+  </div>
+ </div>
+  
+</div>
+  </div>
   );
 };
 

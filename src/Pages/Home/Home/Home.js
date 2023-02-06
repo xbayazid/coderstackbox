@@ -19,17 +19,17 @@ const Home = () => {
         <Hero />
         <div className="relative">
           <Services />
-          <div className="gradient-03 z-0" />
+          <div className="gradient-03 z-[-1]" />
           <BestDeveloper />
         </div>
-        <div className="relative">
+        {/* <div className="relative">
           <Collaboration />
-          <div className="gradient-04 z-0" />
+          <div className="gradient-04 z-[-1]" />
           <OurTeam />
-        </div>
+        </div> */}
         <div className="relative">
           <UserReviewSlider/>
-          <div className="gradient-04 z-0" />
+          <div className="gradient-04 z-[-1]" />
         </div>
         <ContactUs />
       </div>

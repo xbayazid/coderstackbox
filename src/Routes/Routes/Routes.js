@@ -70,14 +70,6 @@ const router = createBrowserRouter([
           ),
       },
       {
-        path: "login",
-        element: <Login></Login>,
-      },
-      {
-        path: "/register",
-        element: <SingUp></SingUp>,
-      },
-      {
         path: '/userProfile',
         element: <UserProfile></UserProfile>
       },
@@ -130,7 +122,15 @@ const router = createBrowserRouter([
         element: <MyProjects></MyProjects>
       }
     ]
-  },   
+  },  
+  {
+    path: '/login',
+    element: <Login></Login>
+  } ,
+  {
+    path: "/register",
+    element: <SingUp></SingUp>,
+  },
   {
     path: "*",
     element: <ErrorPage></ErrorPage>

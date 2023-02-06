@@ -2,59 +2,59 @@ import { FaEnvelope, FaFileInvoice, FaHome } from "react-icons/fa";
 
 export const sidebarMenuItem = [
   {
-      id:'1',
-      href:'#introduction',
-      name:'Introduction'
+    id: '1',
+    href: '#introduction',
+    name: 'Introduction'
   },
   {
-      id:'2',
-      href:'#overview',
-      name:'Overview'
+    id: '2',
+    href: '#overview',
+    name: 'Overview'
   },
   {
-      id:'3',
-      href:'#work',
-      name:'Workplace'
+    id: '3',
+    href: '#work',
+    name: 'Workplace'
   },
   {
-      id:'4',
-      href:'#started',
-      name:'Getting Started'
+    id: '4',
+    href: '#started',
+    name: 'Getting Started'
   },
   {
-      id:'5',
-      href:'#sandbox',
-      name:'Sandboxes'
+    id: '5',
+    href: '#sandbox',
+    name: 'Sandboxes'
   },
   {
-      id:'6',
-      href:'#docker',
-      name:'Environment'
+    id: '6',
+    href: '#docker',
+    name: 'Environment'
   },
   {
-      id:'7',
-      href:'#intigra',
-      name:'Intigretion'
+    id: '7',
+    href: '#intigra',
+    name: 'Intigretion'
   },
   {
-      id:'8',
-      href:'#team',
-      name:'Team and access'
+    id: '8',
+    href: '#team',
+    name: 'Team and access'
   },
   {
-      id:'9',
-      href:'#trips',
-      name:'Trips and Tricks'
+    id: '9',
+    href: '#trips',
+    name: 'Trips and Tricks'
   },
   {
-      id:'10',
-      href:'#cloud',
-      name:'Cloud web editor'
+    id: '10',
+    href: '#cloud',
+    name: 'Cloud web editor'
   },
   {
-      id:'11',
-      href:'#plan',
-      name:'Plans and Billing'
+    id: '11',
+    href: '#plan',
+    name: 'Plans and Billing'
   },
 ]
 
@@ -62,40 +62,40 @@ export const sidebarMenuItem = [
 
 export const userSlider = [
   {
-      id: '1',
-      name: 'Tompa Doe',
-      img: 'https://i.ibb.co/199wc0y/3d-illustration-person-23-2149436179.webp',
-      info: 'Quickly create real, working prototypes. Test ideas earlier and iterate more.'
+    id: '1',
+    name: 'Tompa Doe',
+    img: 'https://i.ibb.co/199wc0y/3d-illustration-person-23-2149436179.webp',
+    info: 'Quickly create real, working prototypes. Test ideas earlier and iterate more.'
   },
   {
-      id: '2',
-      name: 'Jhon Tomas',
-      img: 'https://i.ibb.co/199wc0y/3d-illustration-person-23-2149436179.webp',
-      info: 'Use code, apps, and templates collectively. Learn from each other and bake-in best practice.'
+    id: '2',
+    name: 'Jhon Tomas',
+    img: 'https://i.ibb.co/199wc0y/3d-illustration-person-23-2149436179.webp',
+    info: 'Use code, apps, and templates collectively. Learn from each other and bake-in best practice.'
   },
   {
-      id: '3',
-      name: 'Doe Thapa ',
-      img: 'https://i.ibb.co/199wc0y/3d-illustration-person-23-2149436179.webp',
-      info: 'Give and get feedback, on code or visuals, right in the editor. Take action and move forward faster..'
+    id: '3',
+    name: 'Doe Thapa ',
+    img: 'https://i.ibb.co/199wc0y/3d-illustration-person-23-2149436179.webp',
+    info: 'Give and get feedback, on code or visuals, right in the editor. Take action and move forward faster..'
   },
   {
-      id: '4',
-      name: 'Tompa Doe',
-      img: 'https://i.ibb.co/199wc0y/3d-illustration-person-23-2149436179.webp',
-      info: 'Quickly create real, working prototypes. Test ideas earlier and iterate more.'
+    id: '4',
+    name: 'Tompa Doe',
+    img: 'https://i.ibb.co/199wc0y/3d-illustration-person-23-2149436179.webp',
+    info: 'Quickly create real, working prototypes. Test ideas earlier and iterate more.'
   },
   {
-      id: '5',
-      name: 'Jhon Tomas',
-      img: 'https://i.ibb.co/199wc0y/3d-illustration-person-23-2149436179.webp',
-      info: 'Use code, apps, and templates collectively. Learn from each other and bake-in best practice.'
+    id: '5',
+    name: 'Jhon Tomas',
+    img: 'https://i.ibb.co/199wc0y/3d-illustration-person-23-2149436179.webp',
+    info: 'Use code, apps, and templates collectively. Learn from each other and bake-in best practice.'
   },
   {
-      id: '6',
-      name: 'Doe Thapa ',
-      img: 'https://i.ibb.co/199wc0y/3d-illustration-person-23-2149436179.webp',
-      info: 'Give and get feedback, on code or visuals, right in the editor. Take action and move forward faster..'
+    id: '6',
+    name: 'Doe Thapa ',
+    img: 'https://i.ibb.co/199wc0y/3d-illustration-person-23-2149436179.webp',
+    info: 'Give and get feedback, on code or visuals, right in the editor. Take action and move forward faster..'
   },
 ]
 
@@ -197,6 +197,30 @@ export const navLinks = [
     title: "Message",
     icon: <FaEnvelope />,
   },
-  
-  
+
+
+];
+
+export const servicesInfo = [
+  {
+    id: "1",
+    image: "https://i.ibb.co/jHqX7ZS/app-development.png",
+    details: "The only way to learn to program is by writing code. That's why we provides HTML, CSS and Javascript compiler section that you can edit and run your code by yourself. Also user can debug error in code.",
+    title: "Build & Test"
+
+  },
+  {
+    id: "2",
+    image: "https://i.ibb.co/YjT1n8q/exploring.png",
+    details: "It's a wonderful idea to browse, fork, and experiment with codestack to learn how they were created and how code functions. This tool will help you write, test, and debug your code with ease. ",
+    title: "Learn and Discover"
+
+  },
+  {
+    id: "3",
+    image: "https://i.ibb.co/c8S3575/share-1.png",
+    details: "Codestack is an online code editor that allows users to collaborate and share their code in real-time. The platform is built using the latest web technologies and is designed to be user-friendly and intuitive.",
+    title: "Share Your Work"
+
+  }
 ];

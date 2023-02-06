@@ -2,6 +2,7 @@ import React from 'react';
 import { FaGit, FaGithub, FaLinkedin, FaLinkedinIn, FaTwitter } from 'react-icons/fa';
 import CountUp from 'react-countup/build';
 import { Helmet } from "react-helmet";
+import OurTeam from '../Home/OurTeam/OurTeam';
 const AboutUs = () => {
 
     return (
@@ -65,6 +66,7 @@ const AboutUs = () => {
                     We believe in open-source and the power of community,contineue that's why our code editor is open-sourced and available on GitHub. You can find the source code and contributing guidelines here and the license used here.
                 </p>
             </div>
+            <OurTeam></OurTeam>
         </div>
     );
 };
