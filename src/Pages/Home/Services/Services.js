@@ -21,8 +21,9 @@ const Services = () => {
                 </div>
                 <div className='grid grid-cols-1 lg:grid-cols-3 gap-4 md:grid-cols-2 mt-10 z-10'>
                     {
-                        servicesInfo.map(e => <motion.div
-                            variants={fadeIn('right', 'tween', 0.2, 1)} className=' border border-lime-500 rounded-md mt-10'>
+                        servicesInfo.map((e, i) => <motion.div
+                            variants={fadeIn('right', 'tween', 0.2, 1)} className=' border border-lime-500 rounded-md mt-10'
+                            key={i}>
                             <div className='p-6'>
                                 <img className="h-12 w-12 bg-emerald-100 rounded-md -mt-12" src={e.image} alt="" />
                                 <h2 className="text-center font-bold text-xl lg:-mt-6">{e.title}</h2>

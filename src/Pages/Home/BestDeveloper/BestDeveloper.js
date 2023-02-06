@@ -20,7 +20,7 @@ const BestDeveloper = () => {
       initial="hidden"
       whileInView="show"
       viewport={{ once: false, amount: 0.25 }}>
-           <div className={`${layout.sectionInfo} text-center z-10`}>
+           <div className={`${layout.sectionInfo} text-center z-10 text-white`}>
             <TypingText title="| Best Developers" />
         <TitleText title={<>Meet our top contributors</>} />
         
@@ -32,7 +32,7 @@ const BestDeveloper = () => {
       <motion.div
         variants={fadeIn('right', 'tween', 0.2, 1)} className="grid gap-7 md:grid-cols-2 lg:grid-cols-3 mx-auto my-5">
         {developers.map((bestDev) => (
-          <BestDevCard DevCard key={bestDev.id} props={bestDev}></BestDevCard>
+          <BestDevCard key={bestDev._id} props={bestDev} />
         ))}
       </motion.div>
     </motion.div>
