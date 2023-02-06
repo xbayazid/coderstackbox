@@ -67,7 +67,7 @@ const Footer = () => {
           </div>
         </div>
         <div className="text-white flex justify-center">
-          <a className="mt-5 mb-5 pt-10" href="">
+          <a className="mt-5 mb-5 pt-5" href="">
             <ion-icon name="logo-edge"></ion-icon>  2010-2020 Privacy-Terms
           </a>
         </div>
