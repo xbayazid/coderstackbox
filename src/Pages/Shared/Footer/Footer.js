@@ -52,16 +52,16 @@ const Footer = () => {
 
         <div className="text-white flex justify-center">
           <div className="mt-5 mb-5 pt-10">
-            <a className="mr-5 rounded-full ..." href="">
+            <a className="mr-2 rounded-full ..." href="">
             <Button><ion-icon name="logo-github"></ion-icon></Button>
             </a>
-            <a className="mr-5" href="">
+            <a className="mr-2" href="">
               <Button><ion-icon name="logo-linkedin"></ion-icon></Button>
             </a>
-            <a className="mr-5" href="">
+            <a className="mr-2" href="">
               <Button><ion-icon name="logo-facebook"></ion-icon></Button>
             </a>
-            <a className="mr-5" href="">
+            <a className="mr-2" href="">
               <Button><ion-icon name="logo-ionic"></ion-icon></Button>
             </a>
           </div>
