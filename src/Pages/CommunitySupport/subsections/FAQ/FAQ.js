@@ -4,7 +4,7 @@ import FAQCard from "./FAQCard";
 import Button from "../../../../components/Buttons/Button";
 import { quesAnsAns } from "../../../../constants";
 import { useForm } from "react-hook-form";
-
+import { motion } from "framer-motion"
 const FAQ = () => {
   const {
     register,
