@@ -5,7 +5,7 @@ import { Link } from "react-router-dom";
 import styles from "../../../style";
 import { motion } from "framer-motion";
 import { footerVariants } from "../../../utils/motion";
-import Button from "../../../components/Buttons/Button";
+
 
 const Footer = () => {
   return (
