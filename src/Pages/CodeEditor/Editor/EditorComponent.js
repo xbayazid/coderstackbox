@@ -47,7 +47,7 @@ const EditorComponent = (props) => {
 
 function handleChange(value, event) {
   // console.log('onChange', value)
-  // onChange(value);
+  onChange(value);
 }
   return (
     <div
