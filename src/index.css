@@ -14,28 +14,25 @@ body {
 }
 
 :root {
-  --black-gradient: linear-gradient(
-    144.39deg,
-    #ffffff -278.56%,
-    #6d6d6d -78.47%,
-    #11101d 91.61%
-  );
+  --black-gradient: linear-gradient(144.39deg,
+      #ffffff -278.56%,
+      #6d6d6d -78.47%,
+      #11101d 91.61%);
   --card-shadow: 0px 20px 100px -10px rgba(66, 71, 91, 0.1);
 }
 
 * {
   scroll-behavior: smooth;
 }
+
 .bg-green-gradient {
-  background: linear-gradient(
-    157.81deg,
-    #defae7 -43.27%,
-    #bff9c6 -21.24%,
-    #a5ffbf 12.19%,
-    #8bffac 29.82%,
-    #5df488 51.94%,
-    #42e26f 90.29%
-  );
+  background: linear-gradient(157.81deg,
+      #defae7 -43.27%,
+      #bff9c6 -21.24%,
+      #a5ffbf 12.19%,
+      #8bffac 29.82%,
+      #5df488 51.94%,
+      #42e26f 90.29%);
 }
 
 .card {
@@ -48,35 +45,39 @@ body {
 .card:hover {
   box-shadow: 0px 30px 100px -10px rgba(0, 0, 0, 0.4);
 }
+
 .custom-btn {
   box-shadow: inset 2px 2px 10px 0px rgba(255, 255, 255, 0.5),
     2px 2px 2px 0px rgba(0, 0, 0, 0.1), 2px 2px 10px 0px rgba(0, 0, 0, 0.1);
   outline: none;
 }
+
 .btn:after {
   box-shadow: inset 2px 2px 2px 0px rgba(255, 255, 255, 0.5),
     2px 2px 2px 0px rgba(0, 0, 0, 0.1), 2px 2px 10px 0px rgba(0, 0, 0, 0.1);
 }
+
 .btn:hover {
   color: #fff;
 }
+
 .btn:hover:after {
   left: 0;
   width: 100%;
 }
+
 .btn:active {
   top: 2px;
 }
+
 .text-gradient {
-  background: radial-gradient(
-    64.18% 64.18% at 71.16% 35.69%,
-    #def9fa 0.89%,
-    #bef3f5 17.23%,
-    #9dedf0 42.04%,
-    #8ce1df 55.12%,
-    #45d6d1 71.54%,
-    #05c6c1 100%
-  );
+  background: radial-gradient(64.18% 64.18% at 71.16% 35.69%,
+      #def9fa 0.89%,
+      #bef3f5 17.23%,
+      #9dedf0 42.04%,
+      #8ce1df 55.12%,
+      #45d6d1 71.54%,
+      #05c6c1 100%);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   background-clip: text;
@@ -84,26 +85,24 @@ body {
 }
 
 .hero-gradient {
-  background: linear-gradient(
-    97.86deg,
-    #a509ff 0%,
-    #34acc7 53.65%,
-    #a134c7 100%
-  );
+  background: linear-gradient(97.86deg,
+      #a509ff 0%,
+      #34acc7 53.65%,
+      #a134c7 100%);
 }
+
 .gradient-01 {
-  background-image: linear-gradient(
-    270deg,
-    rgb(35, 225, 73) 0%,
-    rgb(138, 234, 157) 26%,
-    rgb(194, 244, 211) 39%,
-    rgb(206, 227, 253) 50%,
-    rgb(169, 200, 244) 61%,
-    rgb(123, 158, 234) 74%,
-    rgb(60, 95, 235) 100%
-  );
+  background-image: linear-gradient(270deg,
+      rgb(35, 225, 73) 0%,
+      rgb(138, 234, 157) 26%,
+      rgb(194, 244, 211) 39%,
+      rgb(206, 227, 253) 50%,
+      rgb(169, 200, 244) 61%,
+      rgb(123, 158, 234) 74%,
+      rgb(60, 95, 235) 100%);
   filter: blur(130px);
 }
+
 .gradient-02 {
   position: absolute;
   width: 200px;
@@ -121,6 +120,7 @@ body {
   -webkit-backdrop-filter: blur(4px);
   border: 1px solid rgba(255, 255, 255, 0.18);
 }
+
 .navglassmorphism {
   background: rgba(0, 0, 0, 0.3);
   box-shadow: 0 8px 32px 0 rgba(23, 103, 35, 0.37);
@@ -131,6 +131,7 @@ body {
   border-image: linear-gradient(270deg, #374df4 0%, #5dd67b 100%);
   border-image-slice: 1;
 }
+
 .gradient-03 {
   position: absolute;
   width: 500px;
@@ -154,32 +155,28 @@ body {
 }
 
 .gradient-05 {
-  background: linear-gradient(
-    180deg,
-    rgba(255, 255, 255, 0.04) 0%,
-    rgba(255, 255, 255, 0) 100%
-  );
+  background: linear-gradient(180deg,
+      rgba(255, 255, 255, 0.04) 0%,
+      rgba(255, 255, 255, 0) 100%);
 }
+
 .bg-blue-gradient {
-  background: linear-gradient(
-    157.81deg,
-    #def9fa -43.27%,
-    #bef3f5 -21.24%,
-    #9dedf0 12.19%,
-    #8ce1df 29.82%,
-    #35c2bd 51.94%,
-    #05c6c1 90.29%
-  );
+  background: linear-gradient(157.81deg,
+      #def9fa -43.27%,
+      #bef3f5 -21.24%,
+      #9dedf0 12.19%,
+      #8ce1df 29.82%,
+      #35c2bd 51.94%,
+      #05c6c1 90.29%);
 }
+
 .bg-green-gradient {
-  background: linear-gradient(
-    157.81deg,
-    rgb(8, 71, 2) 150%,
-    rgba(45, 189, 31, 1) 50%,
-    rgba(102, 230, 90, 1) 75%,
-    rgba(147, 241, 139, 1) 84%,
-    rgba(211, 255, 208, 1) 100%
-  );
+  background: linear-gradient(157.81deg,
+      rgb(8, 71, 2) 150%,
+      rgba(45, 189, 31, 1) 50%,
+      rgba(102, 230, 90, 1) 75%,
+      rgba(147, 241, 139, 1) 84%,
+      rgba(211, 255, 208, 1) 100%);
   filter: blur(123px);
 }
 
@@ -196,27 +193,23 @@ body {
 } */
 
 .bg-blue-green-gradient {
-  background: linear-gradient(
-    157.81deg,
-    #0a39c8 -43.27%,
-    #07cd28 -21.24%,
-    rgb(4, 64, 21),
-    #5421c3 29.82%,
-    #12a39e 51.94%,
-    rgb(10, 105, 201) 90.29%
-  );
+  background: linear-gradient(157.81deg,
+      #0a39c8 -43.27%,
+      #07cd28 -21.24%,
+      rgb(4, 64, 21),
+      #5421c3 29.82%,
+      #12a39e 51.94%,
+      rgb(10, 105, 201) 90.29%);
 }
 
 .hover-bg-blue-green-gradient:hover {
-  background: linear-gradient(
-    157.81deg,
-    #5421c3 29.82%,
-    #12a39e 51.94%,
-    rgb(10, 105, 201) 90.29%,
-    #0a39c8 -43.27%,
-    #07cd28 -21.24%,
-    rgb(4, 64, 21)
-  );
+  background: linear-gradient(157.81deg,
+      #5421c3 29.82%,
+      #12a39e 51.94%,
+      rgb(10, 105, 201) 90.29%,
+      #0a39c8 -43.27%,
+      #07cd28 -21.24%,
+      rgb(4, 64, 21));
 }
 
 .bg-dark-1 {
@@ -224,37 +217,30 @@ body {
 }
 
 .bg-black-gradient {
-  background: linear-gradient(
-    144.39deg,
-    #ffffff -278.56%,
-    #6d6d6d -78.47%,
-    #11101d 91.61%
-  );
+  background: linear-gradient(144.39deg,
+      #ffffff -278.56%,
+      #6d6d6d -78.47%,
+      #11101d 91.61%);
 }
 
 .bg-black-gradient-2 {
-  background: linear-gradient(
-    -168.39deg,
-    #ffffff -278.56%,
-    #6d6d6d -78.47%,
-    #11101d 91.61%
-  );
+  background: linear-gradient(-168.39deg,
+      #ffffff -278.56%,
+      #6d6d6d -78.47%,
+      #11101d 91.61%);
 }
+
 .bg-black-gradient-3:hover {
-  background: linear-gradient(
-    168.39deg,
-    #ffffff -278.56%,
-    #6d6d6d -78.47%,
-    #11101d 91.61%
-  );
+  background: linear-gradient(168.39deg,
+      #ffffff -278.56%,
+      #6d6d6d -78.47%,
+      #11101d 91.61%);
 }
 
 .bg-gray-gradient {
-  background: linear-gradient(
-    153.47deg,
-    rgba(255, 255, 255, 0) -341.94%,
-    #14101d 95.11%
-  );
+  background: linear-gradient(153.47deg,
+      rgba(255, 255, 255, 0) -341.94%,
+      #14101d 95.11%);
 }
 
 .bg-discount-gradient {
@@ -275,6 +261,7 @@ body {
     -webkit-transform: translateX(100px);
     transform: translateX(100px);
   }
+
   100% {
     -webkit-transform: translateX(0);
     transform: translateX(0);
@@ -286,6 +273,7 @@ body {
     -webkit-transform: translateX(100px);
     transform: translateX(100px);
   }
+
   100% {
     -webkit-transform: translateX(0);
     transform: translateX(0);
