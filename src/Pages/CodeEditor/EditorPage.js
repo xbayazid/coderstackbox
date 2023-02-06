@@ -1,11 +1,15 @@
 import React, { useEffect, useState } from "react";
+import { useContext } from "react";
 import { Helmet } from "react-helmet";
 import { Link } from "react-router-dom";
 import { close, menu } from "../../assets";
 import CloudButton from "../../components/Buttons/CloudButton";
+import { AuthContext } from "../../context/AuthProvider";
 import "./CodeEditor.css";
 import EditorComponent from "./Editor/EditorComponent";
 import { code } from "./files";
+import axios from 'axios';
+import { toast } from 'react-hot-toast'
 
 const EditorPage = () => {
   const [html, setHtml] = useState("");
@@ -14,22 +18,40 @@ const EditorPage = () => {
   const [srcDoc, setSrcDoc] = useState("");
   const [toggle, setToggle] = useState(false);
 
+  const {user} = useContext(AuthContext)
+
   useEffect(() => {
     const timeout = setTimeout(() => {
       setSrcDoc(`
         <html>
-          <body>${code.html}</body>
-          <style>${code.css}</style>
-          <script>${code.js}</script>
+          <body>${html}</body>
+          <style>${css}</style>
+          <script>${js}</script>
         </html>
       `);
     }, 250);
 
     return () => clearTimeout(timeout);
   }, [html, css, js]);
-
+  
   const handleSubmit = () => {
-    console.log(srcDoc);
+    const code = {
+      html: html,
+      css: css,
+      js: js,
+    };
+    const url = ``;
+    axios.put(url, code)
+      .then((res) => {
+        toast.success(`Code save successfully`);
+        if (res.data.modifiedCount > 0) {
+          console.log("first")
+        }
+      })
+      .catch((err) => {
+        console.error(err);
+      });
+    console.log(code);
   };
 
   return (
@@ -85,24 +107,25 @@ const EditorPage = () => {
         <EditorComponent
           language="xml"
           displayName="HTML"
-          value={code.html}
+          value={html}
           onChange={setHtml}
         />
         <EditorComponent
           language="css"
           displayName="CSS"
-          value={code.css}
+          value={css}
           onChange={setCss}
         />
         <EditorComponent
           language="javascript"
           displayName="JS"
-          value={code.js}
+          value={js}
           onChange={setJs}
         />
       </div>
       <div className="h-[60vh]">
         <iframe
+        className="bg-white"
           srcDoc={srcDoc}
           title="output"
           sandbox="allow-scripts"
