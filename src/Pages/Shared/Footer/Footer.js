@@ -53,16 +53,16 @@ const Footer = () => {
         <div className="text-white flex justify-center">
           <div className="mt-5 mb-5 pt-10">
             <a className="mr-2 rounded-full ..." href="">
-            <Button><ion-icon name="logo-github"></ion-icon></Button>
+            <button className="px-2 py-1 bg-lime-800 hover:bg-lime-500 border border-outline rounded-2xl "><ion-icon name="logo-github"></ion-icon></button>
             </a>
             <a className="mr-2" href="">
-              <Button><ion-icon name="logo-linkedin"></ion-icon></Button>
+              <button className="px-2 py-1 bg-lime-800 hover:bg-lime-500 border border-outline rounded-2xl "><ion-icon name="logo-linkedin"></ion-icon></button>
             </a>
             <a className="mr-2" href="">
-              <Button><ion-icon name="logo-facebook"></ion-icon></Button>
+              <button className="px-2 py-1 bg-lime-800 hover:bg-lime-500 border border-outline rounded-2xl "><ion-icon name="logo-facebook"></ion-icon></button>
             </a>
             <a className="mr-2" href="">
-              <Button><ion-icon name="logo-ionic"></ion-icon></Button>
+              <button className="px-2 py-1 bg-lime-800 hover:bg-lime-500 border border-outline rounded-2xl "><ion-icon name="logo-ionic"></ion-icon></button>
             </a>
           </div>
         </div>

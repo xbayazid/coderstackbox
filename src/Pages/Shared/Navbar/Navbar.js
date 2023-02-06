@@ -6,7 +6,7 @@ import { AuthContext } from '../../../context/AuthProvider';
 import styles from '../../../style';
 import { navVariants } from '../../../utils/motion';
 import { motion } from 'framer-motion';
-import Button from '../../../components/Buttons/Button';
+
 
 const Navbar = () => {
   const { user, logOut } = useContext(AuthContext);
@@ -76,7 +76,7 @@ const Navbar = () => {
                   </>
                   :
                   <li >
-                  <Button className="border border-outline mr-5 p-2 "><Link to="/login">Login</Link></Button>
+                  <button className="border border-outline rounded-2xl bg-lime-800 hover:bg-lime-600 mr-5 p-2 "><Link to="/login">Login</Link></button>
                     
                   </li>
               }
