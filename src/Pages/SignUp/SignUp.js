@@ -250,7 +250,7 @@ const SingUp = () => {
         </div>
         <div className="px-36 py-20 bg-emerald-900 rounded-tr-xl rounded-br-xl">
           <div className="text-white text-center xl:mt-20">
-            <div className="flex justify-around w-56 mx-auto">
+            <div className="flex items-center justify-around w-56 mx-auto">
               <div>
                 <h3 className="uppercase mb-3 -ml-10 authentication-title">
                   Signup
@@ -259,8 +259,7 @@ const SingUp = () => {
               <div>
                 <Link
                   to="/login"
-                  className="px-2 py-1 rounded-md mt-4 bg-gradient-to-l from-blue-500 to-purple-600"
-                  style={{ width: "10px" }}
+                  className="px-2 py-1 rounded-md mt-4 bg-cyan-400 text-black font-semibold"
                 >
                   <button className="">Login</button>
                 </Link>

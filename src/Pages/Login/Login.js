@@ -93,7 +93,7 @@ const Login = () => {
                                 <h3 className='uppercase mb-3 -ml-10 authentication-title'>login</h3>
                             </div>
                             <div>
-                                <Link to='/register'  className='px-2 py-1 rounded-md mt-4' style={{ width: '10px'}}>
+                                <Link to='/register'  className='px-2 py-1 rounded-md mt-4 bg-cyan-400 text-black font-semibold' >
                                     <button className="">Create An Account</button>
                                 </Link>
                             </div>
