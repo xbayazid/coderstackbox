@@ -27,3 +27,8 @@
     border-top-left-radius: 20px;
     border-bottom-right-radius: 20px;
 }
+.wrapper{
+    display:grid;
+    height:50vh;
+    place-items:center
+  }

@@ -14,8 +14,12 @@ const UserDashboardNavbar = () => {
             <nav className="bg-gray-800">
       <div className="flex items-center justify-between px-4 py-3">
         <div className="flex items-center">
-          <img src="logo.svg" alt="Logo" className="w-10 h-10" />
-          <span className="font-medium text-white ml-3">CodersStackBox</span>
+          <Link to="/" className='text-3xl text-secondary pt-2'>
+          <span className='text-3xl text-secondary  pt-2'>
+              <ion-icon name="logo-slack"></ion-icon>
+            </span>
+            <h1 className='text-white'>Coders<span className='text-secondary'>StackBox</span></h1>
+          </Link>
         </div>
         <div className="hidden md:flex">
           <Link to="/"

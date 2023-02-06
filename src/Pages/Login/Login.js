@@ -3,9 +3,9 @@ import { GithubAuthProvider, GoogleAuthProvider } from 'firebase/auth'
 import { Link, useLocation, useNavigate } from 'react-router-dom';
 import { AuthContext } from '../../context/AuthProvider';
 import { toast } from 'react-hot-toast';
-import { layout } from '../../style';
 import Navbar from '../Shared/Navbar/Navbar';
 import { Helmet } from 'react-helmet';
+import './Login.css';
 
 const Login = () => {
     const [error, setError] = useState('');
@@ -67,19 +67,34 @@ const Login = () => {
                 <meta charSet="utf-8" />
                 <title>CodersStackBox - Login</title>
             </Helmet>
-            <div className='grid gap-4 md:grid-cols-1 lg:grid-cols-2'>
-                <div className={`${layout.sectionCol}`}>
-                    <img className='extra-img w-4/5' src="https://i.ibb.co/y0x4bqb/107385-login.gif" alt="  " />
+            <Navbar></Navbar>
+            <div className='flex justify-center mt-24'>
+            <div className='bg-indigo-400 py-12 px-8 rounded-tl-xl rounded-bl-xl'>
+                    <div className='flex items-center text-3xl font-bold mt-12 mb-8'>
+                    <span className='text-3xl text-secondary  pt-2'>
+                    <ion-icon name="logo-slack"></ion-icon>
+                   </span>
+                  <h1 className='text-white ml-2'>Coders<span className='text-secondary'>StackBox</span></h1>
+                    </div>
+                    <p className='mb-5 text-white description'>Login using social media to get quick access</p>
+                    <form onSubmit={handleSubmit}>
+                    <div className='text-center p-3 text-white font-semibold rounded-md mt-4 bg-gradient-to-r from-accent to-secondary' style={{ width: '317px' }}>
+                                    <button className='uppercase' onClick={handleGoogleSignIn}>Login with Google</button>
+                                </div>
+                                <div className='text-center p-3 text-white font-semibold rounded-md mt-4 bg-gradient-to-r from-accent to-secondary' style={{ width: '317px' }}>
+                                    <button className='uppercase' onClick={handleGithubSignin}>Login with GitHub</button>
+                                </div> 
+                    </form>
                 </div>
-                <div className='extra p-2'>
+                <div className='px-36 py-20 bg-emerald-900 rounded-tr-xl rounded-br-xl'>
                     <div className='text-white text-center xl:mt-20'>
                         <div className='flex justify-around w-56 mx-auto'>
                             <div>
                                 <h3 className='uppercase mb-3 -ml-10 authentication-title'>login</h3>
                             </div>
                             <div>
-                                <Link to='/register'>
-                                    <button className="btn btn-xs ml-10">Create An Account</button>
+                                <Link to='/register'  className='px-2 py-1 rounded-md mt-4' style={{ width: '10px'}}>
+                                    <button className="">Create An Account</button>
                                 </Link>
                             </div>
 
@@ -87,20 +102,13 @@ const Login = () => {
                         <div className='mt-6'>
                             <form onSubmit={handleSubmit}>
                                 <div>
-                                    <input type="email" name='email' placeholder="Email Address" className="input input-bordered w-full max-w-xs text-black" required />
+                                    <input type="email" name='email' placeholder="Email Address" className="form-control block w-full px-3 py-1.5 text-base font-normal text-gray-700 bg-white bg-clip-padding border border-solid border-gray-300 rounded transition ease-in-out m-0 focus:text-gray-700 focus:bg-white focus:border-blue-600 focus:outline-none" required />
                                 </div>
                                 <div className='my-5'>
-                                    <input type="password" name='password' placeholder="Password" className="input input-bordered w-full max-w-xs text-black" required />
+                                    <input type="password" name='password' placeholder="Password" className="form-control block w-full px-3 py-1.5 text-base font-normal text-gray-700 bg-white bg-clip-padding border border-solid border-gray-300 rounded transition ease-in-out m-0 focus:text-gray-700 focus:bg-white focus:border-blue-600 focus:outline-none" required />
                                 </div>
                                 <div>
-                                    <button className='bg-black px-32 py-3 text-white rounded-md' type='submit'>Login</button>
-                                </div>
-                                <div className="divider w-52 mx-auto">OR</div>
-                                <div className='mx-auto p-3 rounded-md bg-gradient-to-r from-accent to-secondary' style={{ width: '317px' }}>
-                                    <button onClick={handleGoogleSignIn}>Login with Google</button>
-                                </div>
-                                <div className='mx-auto p-3 rounded-md mt-4 bg-gradient-to-r from-accent to-secondary' style={{ width: '317px' }}>
-                                    <button onClick={handleGithubSignin}>Login with GitHub</button>
+                                    <button className='bg-black px-32 py-3 text-white rounded-md uppercase' type='submit'>Login</button>
                                 </div>
                             </form>
                         </div>
