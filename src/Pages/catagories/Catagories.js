@@ -5,18 +5,8 @@ import { layout } from "../../style";
 import Category from "./Category";
 import { Helmet } from "react-helmet";
 import Loading from "../Loading/Loading";
+import { categories } from "../../constants";
 const Catagories = () => {
-  const { data: categories = [] } = useQuery({
-    queryKey: ["categories"],
-    queryFn: async () => {
-      const res = await fetch(
-        "https://coderstackbox-server.vercel.app/projectCategories"
-      );
-      const data = await res.json();
-      return data;
-    },
-  });
-
   const { data: projects = [], isLoading } = useQuery({
     queryKey: ["projects"],
     queryFn: async () => {
