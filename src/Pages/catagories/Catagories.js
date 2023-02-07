@@ -42,9 +42,7 @@ const Catagories = () => {
               </Link>
             ))}
           </div>
-        </div>
-        <div className="col-span-3 m-4">
-          <fieldset className="w-full text-gray-100  lg:flex justify-center">
+          <fieldset className="w-full text-gray-100  lg:flex mt-2">
             <div className="relative">
               <span className="absolute inset-y-0 left-0 flex items-center pl-2">
                 <button
@@ -68,7 +66,9 @@ const Catagories = () => {
               />
             </div>
           </fieldset>
-          <h2 className="hidden md:visible lg:block text-left text-3xl font-bold text-emerald-200 mt-2">
+        </div>
+        <div className="col-span-3 m-4">
+          <h2 className="hidden md:visible lg:block text-left text-3xl font-bold text-secondary mt-2">
             Look up our awesome projects.
           </h2>
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 mt-6">
