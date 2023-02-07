@@ -1,61 +1,83 @@
 import React from 'react';
+import { useState } from 'react';
 import { FaHome, FaUsers, FaSwatchbook, FaUserCircle, FaRegEnvelope, FaSignOutAlt, FaExclamationTriangle, FaBars, FaSearch } from 'react-icons/fa';
 import { Link, Outlet } from 'react-router-dom';
-import BrandIcon from '../../components/BrandIcon/BrandIcon';
-import Button from '../../components/Buttons/Button';
+
+// import Button from '../../components/Buttons/Button';
 import './AdminDashboardLayout.css';
 
-const AdminDashboard = () => {
-    return (
-        <div className="flex text-white">
-            <div className='hidden lg:block md:w-3/12 h-[100vh] bg-blue-green-gradient z-50'>
-                
-                <div className='absliute sidebar-menu ml-3 text-white text-2xl'>
-                    <BrandIcon></BrandIcon>
-                    <ul>
-                        <li>
-                            <Link to="/adminDashboard"> <FaHome className='sidebar-icon'></FaHome> <span>Dashboard</span> </Link>
-                        </li>
-                        <li>
-                            <Link to="/adminDashboard/developers"> <FaUsers className='sidebar-icon'></FaUsers> <span>Developers</span> </Link>
-                        </li>
-                        <li>
-                            <Link to="/adminDashboard/projects"> <FaSwatchbook className='sidebar-icon'></FaSwatchbook> <span>Projects</span> </Link>
-                        </li>
-                        <li>
-                            <Link to="/adminDashboard/inbox"> <FaRegEnvelope className='sidebar-icon'></FaRegEnvelope> <span>Inbox</span> </Link>
-                        </li>
-                        <li>
-                            <Link to="/adminDashboard/profile"> <FaUserCircle className='sidebar-icon'></FaUserCircle> <span>Profile</span> </Link>
-                        </li>
-                    </ul>
+const
+    AdminDashboard = () => {
+        const [isOpen, setIsOpen] = useState(false);
+        const toggle = () => setIsOpen(!isOpen);
 
-                    <div>
-                        <FaSignOutAlt className=''></FaSignOutAlt>
+        return (
+            <div className="md:flex text-white">
+                <div className={`bg-dark-1 min-h-screen ${isOpen ?'w-80' : 'w-20'} duration-500 text-white`}>
+
+                    <div style={{ width: isOpen ? '384px' : '48px' }} className='  w-96 ml-3 text-white text-2xl'>
+                        <div className=' flex items-center py-5'>
+                            
+                            <div style={{ display: isOpen ? 'block' : 'none' }} className='font-bold text-2xl cursor-pointer flex items-center font-[poppins] text-gray-800  transition-all duration-300 ease-in-out'>
+                                
+                                <h1 className='text-white '><span className='text-3xl text-secondary  pt-2'>
+                                    <ion-icon name="logo-slack"></ion-icon>
+                                </span> Coders<span className='text-secondary ml-'>StackBox</span></h1>
+                            </div>
+                            <div className=' text-3xl flex gap-x-5 items-center'>
+                                <div style={{ marginLeft: isOpen ? '20px' : '0px' }}>
+                                    <FaBars onClick={toggle} className='ml-1 '></FaBars>
+                                </div>
+                                
+                            </div>
+                        </div>
+                        <ul className=''>
+                            <div>
+                                <li>
+                                    <Link className=' flex items-center gap-2 mt-5 pl-5 pt-5 font-medium ' to="/adminDashboard"> <FaHome className={`text-2xl cursor-pointer duration-500 ${!isOpen && 'scale-0'}`} ></FaHome> <span className={`whitespace-pre duration-500 ${!isOpen && 'opacity-0 translate-x-28 overflow-hidden'} hover:bg-black rounded-full p-2`} >Dashboard</span> </Link>
+                                </li>
+                            </div>
+                            <li>
+                                <Link className=' flex items-center gap-2 mt-5 pl-5 pt-5 font-medium ' to="/adminDashboard/developers"> <FaUsers className={`text-2xl cursor-pointer duration-500 ${!isOpen && 'scale-0'}`}></FaUsers> <span className={`whitespace-pre duration-500 ${!isOpen && 'opacity-0 translate-x-28 overflow-hidden'} hover:bg-black rounded-full p-2`}>Developers</span> </Link>
+                            </li>
+                            <li>
+                                <Link className=' flex items-center gap-2 mt-5 pl-5 pt-5 font-medium ' to="/adminDashboard/projects"> <FaSwatchbook className={`text-2xl cursor-pointer duration-500 ${!isOpen && 'scale-0'}`}></FaSwatchbook> <span className={`whitespace-pre duration-500 ${!isOpen && 'opacity-0 translate-x-28 overflow-hidden'} hover:bg-black rounded-full p-2`}>Projects</span> </Link>
+                            </li>
+
+                            <li>
+                                <Link className=' flex items-center gap-2 mt-5 pl-5 pt-5 font-medium ' to="/adminDashboard/profile"> <FaUserCircle className={`text-2xl cursor-pointer duration-500 ${!isOpen && 'scale-0'}`}></FaUserCircle> <span className={`whitespace-pre duration-500 ${!isOpen && 'opacity-0 translate-x-28 overflow-hidden'} hover:bg-black rounded-full p-2`}>Profile</span> </Link>
+                            </li>
+                        </ul>
+
+                        <div className='ml-2 p-2 mt-2'>
+                            <FaSignOutAlt></FaSignOutAlt>
+                        </div>
                     </div>
                 </div>
-            </div>
 
-            <div className='main-content w-full'>
+                <div className='main-content w-full'>
 
-                <header className='bg-dark-1 p-4'>
-                    <div className='flex justify-between items-center'>
-                        <div className='header-title text-3xl flex gap-x-5 items-center'>
-                            <label htmlFor=""><FaBars></FaBars></label>Overview
+                    <header className='bg-dark-1 p-4'>
+                        <div className='flex justify-between items-center'>
+                            <div className='header-title text-3xl flex gap-x-5 items-center'>
+                                {/* <div style={{ marginLeft: isOpen ? '20px' : '0px' }}>
+                                    <FaBars onClick={toggle} className='ml-1 '></FaBars>
+                                </div> */}
+                                <label htmlFor=""></label>Overview
+                            </div>
+                            <div className='user-wrapper text-3xl '>
+                                <FaUserCircle></FaUserCircle>
+                            </div>
                         </div>
-                        <div className='user-wrapper text-3xl '>
-                            <FaUserCircle></FaUserCircle>
-                        </div>
-                    </div>
-                </header>
+                    </header>
 
-                <main className='py-5 px-10'>
-                    <Outlet></Outlet>
-                </main>
+                    <main className='py-5 px-10'>
+                        <Outlet></Outlet>
+                    </main>
+                </div>
+
             </div>
-
-        </div>
-    );
-};
+        );
+    };
 
 export default AdminDashboard;
