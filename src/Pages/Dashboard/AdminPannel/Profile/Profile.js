@@ -9,7 +9,7 @@ const Profile = () => {
                 <meta charSet="utf-8" />
                 <title>CodersStackBox - Profile</title>
             </Helmet>
-        <div className="h-full -my-3 text-white-300">
+        <div className="h-full -my-3 text-white-300 ">
         <div className="bg-dark-1 rounded-lg shadow-2xl py-5">
             {/* <div className="w-full h-[220px] bg-dark-1">
                 <img src="https://vojislavd.com/ta-template-demo/assets/img/profile-background.jpg" className="w-full h-full rounded-tl-lg rounded-tr-lg" />
