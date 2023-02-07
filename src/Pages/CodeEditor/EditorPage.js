@@ -41,7 +41,7 @@ const EditorPage = () => {
       js: js
     };
     const url = `http://localhost:5000/projects`;
-    axios.put(url, code, {
+    axios.post(url, code, {
       headers: {
         authorization: `bearer ${localStorage.getItem("CodersStackBox")}`,
       },
