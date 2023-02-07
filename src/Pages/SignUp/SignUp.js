@@ -6,9 +6,9 @@ import Navbar from "../Shared/Navbar/Navbar";
 import { Link, useLocation, useNavigate } from "react-router-dom";
 import { AuthContext } from "../../context/AuthProvider";
 import axios from "axios";
-import { setAuthToken } from "../../api/auth";
 import { useForm } from "react-hook-form";
-import './SignUp.css';
+import "./SignUp.css";
+import { setAuthToken } from "../../api/auth";
 
 const SingUp = () => {
   const [error, setError] = useState("");
@@ -31,18 +31,9 @@ const SingUp = () => {
             name: user.displayName,
             email: user.email,
           };
-          console.log(userInfo);
-          /*User Info Save To DataBase*/
-          axios
-            .post("http://localhost:5000/api/users", userInfo)
-            .then((res) => {
-              setAuthToken(userInfo);
-              navigate(from, { replace: true });
-              toast("User Registered Successfully");
-            })
-            .catch((err) => {
-              console.error(err);
-            });
+          console.log(result);
+          setAuthToken(userInfo);
+          navigate(from, { replace: true });
         }
       })
       .catch((error) => {
@@ -59,24 +50,16 @@ const SingUp = () => {
             name: user.displayName,
             email: user.email,
           };
-          console.log(userInfo);
-          /*User Info Save To DataBase*/
-          axios
-            .post("http://localhost:5000/api/users", userInfo)
-            .then((res) => {
-              setAuthToken(userInfo);
-              navigate(from, { replace: true });
-              toast("User Registered Successfully");
-            })
-            .catch((err) => {
-              console.error(err);
-            });
+          console.log(result);
+          setAuthToken(userInfo);
+          navigate(from, { replace: true });
         }
       })
       .catch((error) => {
         setError(error.message);
       });
   };
+
   const {
     register,
     formState: { errors },
@@ -142,21 +125,13 @@ const SingUp = () => {
               const userInfo = {
                 name: data.name,
                 email: data.email,
-                role: data.buyer_or_seller,
+                role: "",
                 image: imageData.data.url,
               };
               /* User Info Save To DataBase */
-              axios
-                .post("http://localhost:5000/api/users", userInfo)
-                .then((res) => {
-                  setAuthToken(userInfo);
-                  navigate(from, { replace: true });
-                  setLoading(false);
-                })
-                .catch((err) => {
-                  console.error(err);
-                  setError(err.message);
-                });
+              console.log(result);
+              setAuthToken(userInfo);
+              navigate(from, { replace: true });
             }
           })
           .catch((error) => {
@@ -217,10 +192,7 @@ const SingUp = () => {
       </div> */}
       <div className="flex justify-center mt-24">
         <div className="bg-indigo-400 py-12 px-8 rounded-tl-xl rounded-bl-xl">
-          
-        <h2 className="mt-12 text-white text-5xl title">
-            Welcome to
-          </h2>
+          <h2 className="mt-12 text-white text-5xl title">Welcome to</h2>
           <div className="flex items-center text-3xl font-bold mt-5 mb-8">
             <span className="text-3xl text-secondary  pt-2">
               <ion-icon name="logo-slack"></ion-icon>
@@ -229,7 +201,7 @@ const SingUp = () => {
               Coders<span className="text-secondary">StackBox</span>
             </h1>
           </div>
-          <form onSubmit={handleSubmit}>
+          <>
             <div
               className="text-center p-3  text-white font-semibold rounded-md mt-4 bg-gradient-to-r from-accent to-secondary"
               style={{ width: "317px" }}
@@ -246,7 +218,7 @@ const SingUp = () => {
                 signup with GitHub
               </button>
             </div>
-          </form>
+          </>
         </div>
         <div className="px-36 py-20 bg-emerald-900 rounded-tr-xl rounded-br-xl">
           <div className="text-white text-center xl:mt-20">
