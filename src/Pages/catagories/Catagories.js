@@ -68,7 +68,7 @@ const Catagories = () => {
           </fieldset>
         </div>
         <div className="col-span-3 m-4">
-          <h2 className="hidden md:visible lg:block text-left text-3xl font-bold text-emerald-200 mt-2">
+          <h2 className="hidden md:visible lg:block text-left text-3xl font-bold text-secondary mt-2">
             Look up our awesome projects.
           </h2>
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 mt-6">
