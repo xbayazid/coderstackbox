@@ -23,6 +23,7 @@ import Inbox from "../../Pages/Dashboard/AdminPannel/Inbox/Inbox";
 import Profile from "../../Pages/Dashboard/AdminPannel/Profile/Profile";
 import PrivateRoutes from "../Routes/PrivateRoutes/PrivateRoutes";
 import AdminDashboard from "../../Pages/Dashboard/AdminPannel/AdminDashboard/AdminDashboard";
+import Blog from "../../Pages/Blog/Blog";
 
 
 
@@ -46,6 +47,10 @@ const router = createBrowserRouter([
       {
         path: "/documentation",
         element: <Documentation></Documentation>,
+      },
+      {
+        path: "/blog",
+        element: <Blog></Blog>,
       },
       {
         path: "/doc",
