@@ -30,6 +30,8 @@ const SingUp = () => {
           const userInfo = {
             name: user.displayName,
             email: user.email,
+            photoURL: user.photoURL
+            ,
           };
           console.log(result);
           setAuthToken(userInfo);
@@ -45,10 +47,12 @@ const SingUp = () => {
     githubProviderLogin(githubProvider)
       .then((result) => {
         const user = result.user;
+        console.log(user)
         if (user.uid) {
           const userInfo = {
             name: user.displayName,
             email: user.email,
+            photoURL: user.photoURL,
           };
           console.log(result);
           setAuthToken(userInfo);

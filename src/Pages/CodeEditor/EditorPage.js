@@ -12,6 +12,7 @@ import axios from 'axios';
 import { toast } from 'react-hot-toast'
 
 const EditorPage = () => {
+  const [projectName, setProjectName] = useState("");
   const [html, setHtml] = useState("");
   const [css, setCss] = useState("");
   const [js, setJs] = useState("");
@@ -36,6 +37,7 @@ const EditorPage = () => {
   
   const handleSubmit = () => {
     const code = {
+      projectName: projectName,
       html: html,
       css: css,
       js: js
