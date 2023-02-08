@@ -69,7 +69,7 @@ const Login = () => {
             </Helmet>
             <Navbar></Navbar>
             <div className='flex justify-center mt-24'>
-            <div className='bg-indigo-400 py-12 px-8 rounded-tl-xl rounded-bl-xl'>
+            <div className='glassmorphism py-12 px-8 rounded-tl-xl rounded-bl-xl'>
                     <div className='flex items-center text-3xl font-bold mt-12 mb-8'>
                     <span className='text-3xl text-secondary  pt-2'>
                     <ion-icon name="logo-slack"></ion-icon>
@@ -86,7 +86,7 @@ const Login = () => {
                                 </div> 
                     </form>
                 </div>
-                <div className='px-36 py-20 bg-emerald-900 rounded-tr-xl rounded-br-xl'>
+                <div className='px-36 py-20 glassmorphism rounded-tr-xl rounded-br-xl'>
                     <div className='text-white text-center xl:mt-20'>
                         <div className='flex justify-around w-56 mx-auto'>
                             <div>
