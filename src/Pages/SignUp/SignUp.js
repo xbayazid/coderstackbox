@@ -195,7 +195,7 @@ const SingUp = () => {
         </div>
       </div> */}
       <div className="flex justify-center mt-24">
-        <div className="bg-indigo-400 py-12 px-8 rounded-tl-xl rounded-bl-xl">
+        <div className="glassmorphism py-12 px-8 rounded-tl-xl rounded-bl-xl">
           <h2 className="mt-12 text-white text-5xl title">Welcome to</h2>
           <div className="flex items-center text-3xl font-bold mt-5 mb-8">
             <span className="text-3xl text-secondary  pt-2">
@@ -224,7 +224,7 @@ const SingUp = () => {
             </div>
           </>
         </div>
-        <div className="px-36 py-20 bg-emerald-900 rounded-tr-xl rounded-br-xl">
+        <div className="px-36 py-20 glassmorphism rounded-tr-xl rounded-br-xl">
           <div className="text-white text-center xl:mt-20">
             <div className="flex items-center justify-around w-56 mx-auto">
               <div>
