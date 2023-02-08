@@ -37,7 +37,7 @@ const Hero = () => {
           variants={textVariant(0.8)}>
           <Link to="/code-editor">
             <Button>
-              Start Coding <FaArrowRight className="ml-2"></FaArrowRight>{" "}
+              <span>Start Coding </span><FaArrowRight />
             </Button>
           </Link>
           </motion.div>
