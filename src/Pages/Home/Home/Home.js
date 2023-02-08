@@ -7,6 +7,7 @@ import OurTeam from "../OurTeam/OurTeam";
 import Services from "../Services/Services";
 import { Helmet } from "react-helmet";
 import UserReviewSlider from "../../UserDashboard/UserReviewSlider/UserReviewSlider";
+import Partner from "../Partner/Partner";
 
 const Home = () => {
   return (
@@ -27,6 +28,7 @@ const Home = () => {
           <div className="gradient-04 z-[-1]" />
           <OurTeam />
         </div> */}
+        <Partner></Partner>
         <div className="relative">
           <UserReviewSlider/>
           <div className="gradient-04 z-[-1]" />
