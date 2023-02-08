@@ -224,3 +224,29 @@ export const servicesInfo = [
 
   }
 ];
+
+export const categories = [
+  {
+    _id: "63c8fda1c07f06313beca802",
+    categoryName: "Educational"
+
+  },
+  {
+    _id: "63c8fda1c07f06313beca805",
+    categoryName: "Business"
+
+  },
+  {
+    _id: "63c8fda1c07f06313beca804",
+    categoryName: "Portfolio"
+
+  },
+  {
+    _id: "63c8fda1c07f06313beca803",
+    categoryName: "News"
+  },
+  {
+    _id: "63c8fda1c07f06313beca801",
+    categoryName: "E-Commerce"
+  }
+];
