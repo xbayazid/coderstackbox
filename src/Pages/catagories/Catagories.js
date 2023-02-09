@@ -18,7 +18,6 @@ const Catagories = () => {
     },
   });
 
-
   if (isLoading) {
     return <Loading></Loading>;
   }
@@ -35,11 +34,7 @@ const Catagories = () => {
           </h2>
           <div className="">
             {categories?.map((category) => (
-              <Link to={`/category/${category._id}`}>
-                <p className="text-white text-lg mt-2">
-                  {category.categoryName}
-                </p>
-              </Link>
+              <p className="text-white text-lg mt-2">{category.categoryName}</p>
             ))}
           </div>
           <fieldset className="w-full text-gray-100  lg:flex mt-2">

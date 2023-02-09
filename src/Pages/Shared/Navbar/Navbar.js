@@ -50,11 +50,9 @@ const Navbar = () => {
             <span className="text-3xl text-secondary  pt-2">
               <ion-icon name="logo-slack"></ion-icon>
             </span>
-            <Link to="/">
-              <h1 className="text-white">
-                Coders<span className="text-secondary">StackBox</span>
-              </h1>
-            </Link>
+            <h1 className="text-white">
+              Coders<span className="text-secondary">StackBox</span>
+            </h1>
           </div>
           <div
             onClick={() => setOpen(!open)}
@@ -65,7 +63,7 @@ const Navbar = () => {
             <ion-icon name={open ? "close" : "menu"}></ion-icon>
           </div>
           <ul
-            className={`md:flex md:items-center mr-12 md:pb-0
+            className={`md:flex md:items-center md:pb-0
                 pb-12 absolute md:static text-white z-10 
                 left-0 w-full md:w-auto md:pl-0 pl-9 transition-all duration-500 ease-in
                 ${
@@ -75,22 +73,37 @@ const Navbar = () => {
                 } `}
           >
             <li>
-              <Link className="lg:ml-8 ml-0 mr-5" to="/doc">
+              <Link className="lg:ml-8 ml-0" to="/">
+                Home
+              </Link>
+            </li>
+            <li>
+              <Link className="lg:ml-8 ml-0" to="/about">
+                About Us
+              </Link>
+            </li>
+            {/* <li><Link className="lg:ml-8 ml-0" to='/documentation'>Documentation</Link></li> */}
+            <li>
+              <Link className="lg:ml-8 ml-0" to="/doc">
                 Documentation
               </Link>
             </li>
-
             <li>
-              <Link className="lg:ml-8 ml-0 mr-5" to="/blog">
-                Blog
+              <Link className="lg:ml-8 ml-0" to="/community">
+                Community Support
               </Link>
             </li>
             <li>
-              <Link className="lg:ml-8 ml-0 mr-5" to="/userDashboard">
+              <Link className="lg:ml-8 ml-0" to="/catagories">
+                Categories
+              </Link>
+            </li>
+            <li>
+              <Link className="lg:ml-8 ml-0" to="/userDashboard">
                 UserDashboard
               </Link>
             </li>
-            <li className="lg:ml-8 ml-0 mr-5">
+            <li className="lg:ml-8 ml-0">
               {user?.uid ? (
                 <>
                   <div className="lg:flex">
@@ -121,20 +134,18 @@ const Navbar = () => {
                             alt="user"
                           />
                         </button>
-                        <Dropdown userOpen={userOpen} setUserOpen={setUserOpen} user={user}/>
+                        <Dropdown
+                          userOpen={userOpen}
+                          setUserOpen={setUserOpen}
+                          user={user}
+                        />
                       </li>
                     </>
                   </div>
                 </>
               ) : (
                 <li>
-                  <label htmlFor="login">
-                    <Link to="/login">
-                      <Button id="login" styles="h-2 ">
-                        Login
-                      </Button>
-                    </Link>
-                  </label>
+                  <Link to="/login">Login</Link>
                 </li>
               )}
             </li>
