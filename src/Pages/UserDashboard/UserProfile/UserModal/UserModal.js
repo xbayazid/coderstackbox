@@ -1,23 +1,40 @@
 import React from "react";
+import { useState } from "react";
 import { useContext } from "react";
+
 import { FaRegWindowClose } from "react-icons/fa";
 import { Form } from "react-router-dom";
 import { AuthContext } from "../../../../context/AuthProvider";
 
 const UserModal = ({ setIsOpen }) => {
   const { user } = useContext(AuthContext);
-  console.log(user);
+
+  const [updatedUser, setUpdatedUser] = useState(user);
+
+  const handleUpdateUser = (e) => {
+    e.preventDefault();
+    console.log(updatedUser);
+  };
+
+  const handleInputChange = (e) => {
+    const field = e.target.name;
+    const value = e.target.value;
+    const newUser = { ...updatedUser };
+    newUser[field] = value;
+    setUpdatedUser(newUser);
+  };
+
   return (
-    <div className="fixed inset-0 overflow-hidden">
+    <div className="fixed inset-0 overflow-hidden ">
       <div className="relative w-full h-full top-1/4">
         <div
           className="absolute bg-gray-900 opacity-0"
           onClick={() => setIsOpen(false)}
         ></div>
 
-        <div className="max-w-sm mx-auto my-10 bg-gradient-to-r from-sky-400 to-sky-800 rounded-lg p-10">
+        <div className="max-w-lg mx-auto my-10 bg-gradient-to-r from-gray-500 to-gray-600  rounded-lg p-10">
           <div className="flex items-start justify-between">
-            <h2 className="text-lg font-medium">Profile Setting</h2>
+            <h2 className="text-lg font-medium text-white">Profile Setting</h2>
             <button
               className="text-blue-500 hover:text-blue-600 text-3xl cursor-pointer"
               onClick={() => setIsOpen(false)}
@@ -26,23 +43,24 @@ const UserModal = ({ setIsOpen }) => {
             </button>
           </div>
 
-          <div className="mt-5 grid grid-cols-2 bg-red-500">
-            <Form>
+          <div className="mt-5 grid grid-cols-2 ">
+            <form onSubmit={handleUpdateUser}>
               <input
+                defaultValue={user.displayName}
+                onChange={handleInputChange}
                 type="text"
-                name="name"
                 className="w-full border-2 my-2 p-2 rounded-md outline-none"
                 placeholder="Your Full Name"
               />
               <input
-                type="text"
-                name="email"
+                onChange={handleInputChange}
+                type="email"
                 className="w-full border-2 my-2 p-2 rounded-md outline-none"
                 placeholder="Email Address"
               />
               <input
+                onChange={handleInputChange}
                 type="text"
-                name="phone"
                 className="w-full border-2 my-2 p-2 rounded-md outline-none"
                 placeholder="Phone Number"
               />
@@ -53,7 +71,7 @@ const UserModal = ({ setIsOpen }) => {
               >
                 Update
               </button>
-            </Form>
+            </form>
           </div>
         </div>
       </div>

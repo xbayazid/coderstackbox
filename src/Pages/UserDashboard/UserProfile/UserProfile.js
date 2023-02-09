@@ -13,7 +13,7 @@ const UserProfile = () => {
   //modal
   const [isOpen, setIsOpen] = useState(false);
   const { user } = useContext(AuthContext);
-  console.log(user);
+
   const { data = [], isLoading } = useQuery({
     queryKey: ["usersActivityData"],
     queryFn: async () => {
@@ -82,7 +82,7 @@ const UserProfile = () => {
                     {/* <h2 className="font-semibold">Name: {user?.displayName}</h2>
                     <p>Email: {user?.email}</p>
                     <p>Phone: </p> */}
-                    <label htmlFor="">Full Name</label>
+                    <label htmlFor="">Name</label>
                     <input
                       type="text"
                       defaultValue={user?.displayName}
