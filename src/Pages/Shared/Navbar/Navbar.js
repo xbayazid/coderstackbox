@@ -105,14 +105,10 @@ const Navbar = () => {
             </li>
             <li className="lg:ml-8 ml-0">
               {user?.uid ? (
-                <>
                   <div className="lg:flex">
-                    <>
                       <li className="lg:mr-8">
                         <Link to="/adminDashboard">Dashboard</Link>
                       </li>
-                    </>
-                    <>
                       <li>
                         <label htmlFor="logout" onClick={logOut}>
                           <Button id="logout" styles="h-2 ">
@@ -120,8 +116,6 @@ const Navbar = () => {
                           </Button>
                         </label>
                       </li>
-                    </>
-                    <>
                       <li className="ml-5">
                         <button
                           onClick={() => setUserOpen(!userOpen)}
@@ -140,9 +134,7 @@ const Navbar = () => {
                           user={user}
                         />
                       </li>
-                    </>
                   </div>
-                </>
               ) : (
                 <li>
                   <Link to="/login">Login</Link>
