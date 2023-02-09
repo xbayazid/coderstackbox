@@ -81,7 +81,7 @@ const Hero = () => {
              <FaJs className="ml-3"></FaJs> <h1>JAVASCRIPT</h1>
             </div>
           </div>
-          <div className="">
+          <div>
             <img className="rounded-md" src={heroImg} alt="" />
           </div>
           <div className="-ml-16 mt-52 lg:block hidden">

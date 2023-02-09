@@ -89,8 +89,8 @@ const Navbar = () => {
               </Link>
             </li>
             <li>
-              <Link className="lg:ml-8 ml-0" to="/community">
-                Community Support
+              <Link className="lg:ml-8 ml-0" to="/blog">
+                Blog
               </Link>
             </li>
             <li>

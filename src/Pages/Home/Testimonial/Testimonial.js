@@ -4,7 +4,6 @@ const Testimonial = ({review}) => {
     const {id, name, description} = review;
     return (
         <div>
-            
         </div>
     );
 };

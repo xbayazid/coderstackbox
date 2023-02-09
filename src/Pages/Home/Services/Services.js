@@ -45,14 +45,14 @@ const Services = () => {
 
     // </div>
 
-    <div>
+    <div className={` ${styles.paddingY} relative`}>
       <h1 className="text-3xl lg:text-6xl text-white text-center font-semibold lg:font-bold">
         Codestack is a platform that allows you to build, run, and share
       </h1>
       <div id="service" className={`${layout.sectionCol} text-white`}>
         <div className="grid grid-cols-1 lg:grid-cols-2">
-          <div className="font-poppins">
-            <div className="w-3/4">
+          <div className={` ${styles.paddingY} relative`}>
+            <div className="w-3/4 font-poppins">
               <h1 className="text-2xl lg:text-5xl font-semibold">
                 We Are Focus On Your Ultimate Goal
               </h1>
