@@ -81,8 +81,8 @@ const Navbar = () => {
             </li>
 
             <li>
-              <Link className="lg:ml-8 ml-0 mr-5" to="/blog">
-                Blog
+              <Link className="lg:ml-8 ml-0 mr-5" to="/collections">
+                Collections
               </Link>
             </li>
             <li>

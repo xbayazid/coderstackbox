@@ -42,7 +42,7 @@ const Footer = () => {
           <li>
           <Link className="lg:ml-8 ml-0" to='/community'>Community Support</Link>
           </li>
-          <li><Link to='/collections'>Collection</Link></li>
+          <li><Link to='/blog'>Blog</Link></li>
         </ul>
         <div
           className="mt-5 bg-gradient-to-r from-accent to-secondary"
