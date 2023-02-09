@@ -8,6 +8,8 @@ import Services from "../Services/Services";
 import { Helmet } from "react-helmet";
 import UserReviewSlider from "../../UserDashboard/UserReviewSlider/UserReviewSlider";
 import Partner from "../Partner/Partner";
+import Testimonial from "../Testimonial/Testimonial";
+import Testimonials from "../Testimonial/Testimonials";
 
 const Home = () => {
   return (
@@ -33,6 +35,7 @@ const Home = () => {
           <UserReviewSlider/>
           <div className="gradient-04 z-[-1]" />
         </div>
+        <Testimonials></Testimonials>
         <ContactUs />
       </div>
       
