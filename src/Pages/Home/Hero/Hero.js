@@ -5,6 +5,9 @@ import heroImage from "../../../assets/heroImage.gif";
 import Button from "../../../components/Buttons/Button";
 import styles from "../../../style";
 import { motion } from "framer-motion";
+import heroImg from "../../../assets/code.png";
+import heroImgTwo from "../../../assets/tests.png";
+import heroImgThree from "../../../assets/hero.gif";
 import { slideIn, staggerContainer, textVariant } from "../../../utils/motion";
 const Hero = () => {
   return (
@@ -37,7 +40,7 @@ const Hero = () => {
           variants={textVariant(0.8)}>
           <Link to="/code-editor">
             <Button>
-              Start Coding <FaArrowRight className="ml-2"></FaArrowRight>{" "}
+              <span>Start Coding </span><FaArrowRight />
             </Button>
           </Link>
           </motion.div>
@@ -53,6 +56,31 @@ const Hero = () => {
         </motion.div>
       </motion.div>
     </section>
+    
+    // <div>
+    //  <div>
+    //  <div className="text-white w-2/3 mx-auto mb-6 font-poppins">
+    //   <h1 className=" text-3xl lg:text-6xl font-semibold">Write better code, <span className="text-emerald-200">Collabo</span><span className="text-emerald-500">ratively</span></h1>
+    //   <p className="lg:w-2/3 my-3"> Build your Front-End Web Application. Get work done quicker by building out entire projects. Isolating code to test features and animations. Want to keep it all under wraps?</p>
+    //   <div>
+    //   <Link to="/code-editor"><Button>Code Editor<FaArrowRight /></Button></Link>
+    //   </div>
+    //   </div>
+    //   <div>
+    //     <div className="flex">
+    //       <div className="w-1/2">
+    //         <img src={heroImg} alt="" />
+    //       </div>
+    //       <div className="-ml-20">
+    //         <img src={heroImgTwo} alt="" />
+    //       </div>
+    //       <div className="-ml-16 mt-52">
+    //       <img className="rounded-md" src={heroImage} alt="" />
+    //       </div>
+    //     </div>
+    //   </div>
+    //   </div> 
+    // </div>
   );
 };
 

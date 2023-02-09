@@ -1,3 +1,4 @@
+/* eslint-disable jsx-a11y/anchor-is-valid */
 import React, { useContext } from "react";
 import { useEffect } from "react";
 import { useState } from "react";
@@ -6,9 +7,12 @@ import { AuthContext } from "../../../context/AuthProvider";
 import styles from "../../../style";
 import { navVariants } from "../../../utils/motion";
 import { motion } from "framer-motion";
+import Button from "../../../components/Buttons/Button";
+import Dropdown from "../../../components/Dropdown";
 
 const Navbar = () => {
   const { user, logOut } = useContext(AuthContext);
+  const [userOpen, setUserOpen] = useState(false);
 
   const handleLogOut = () => {
     logOut()
@@ -116,11 +120,9 @@ const Navbar = () => {
                   </div>
                 </>
               ) : (
-                <>
-                  <li>
-                    <Link to="/login">Login</Link>
-                  </li>
-                </>
+                <li>
+                  <Link to="/login">Login</Link>
+                </li>
               )}
             </li>
           </ul>

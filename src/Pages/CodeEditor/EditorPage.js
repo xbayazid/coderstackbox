@@ -12,6 +12,7 @@ import axios from 'axios';
 import { toast } from 'react-hot-toast'
 
 const EditorPage = () => {
+  const [projectName, setProjectName] = useState("");
   const [html, setHtml] = useState("");
   const [css, setCss] = useState("");
   const [js, setJs] = useState("");
@@ -36,22 +37,27 @@ const EditorPage = () => {
   
   const handleSubmit = () => {
     const code = {
+      projectName: projectName,
       html: html,
       css: css,
-      js: js,
+      js: js
     };
-    const url = ``;
-    axios.put(url, code)
+    const url = `http://localhost:5000/projects`;
+    axios.post(url, code, {
+      headers: {
+        authorization: `bearer ${localStorage.getItem("CodersStackBox")}`,
+      },
+    })
       .then((res) => {
-        toast.success(`Code save successfully`);
-        if (res.data.modifiedCount > 0) {
-          console.log("first")
+        console.log(res)
+        
+        if (res.status === 200) {
+          toast.success(res.data.message);
         }
       })
       .catch((err) => {
         console.error(err);
       });
-    console.log(code);
   };
 
   return (

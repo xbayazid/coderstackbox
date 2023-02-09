@@ -26,7 +26,7 @@ const Category = ({ project }) => {
             <span className="title"> Title: </span>
             <span className="font-semibold others">{projectTitle}</span>
           </h2>
-          <h2 className="text-xltracking-wide">
+          <h2 className="text-xl tracking-wide">
             <span className="title">Project Owner: </span>{" "}
             <span className=" font-semibold others">{OnnerName}</span>
           </h2>

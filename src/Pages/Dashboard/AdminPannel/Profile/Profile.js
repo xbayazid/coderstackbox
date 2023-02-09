@@ -1,7 +1,11 @@
 import React from 'react';
+import { useContext } from 'react';
 import { Helmet } from 'react-helmet';
+import { AuthContext } from '../../../../context/AuthProvider';
 
 const Profile = () => {  
+    const {user} = useContext(AuthContext);
+    console.log(user);
 
     return (
         <main>
@@ -9,15 +13,15 @@ const Profile = () => {
                 <meta charSet="utf-8" />
                 <title>CodersStackBox - Profile</title>
             </Helmet>
-        <div className="h-full -my-3 text-white-300">
+        <div className="h-full -my-3 text-white-300 ">
         <div className="bg-dark-1 rounded-lg shadow-2xl py-5">
             {/* <div className="w-full h-[220px] bg-dark-1">
                 <img src="https://vojislavd.com/ta-template-demo/assets/img/profile-background.jpg" className="w-full h-full rounded-tl-lg rounded-tr-lg" />
             </div> */}
             <div className="flex flex-col items-center">
-                <img src="https://vojislavd.com/ta-template-demo/assets/img/profile.jpg" className="md:w-52 w-44 border-4 border-gray-300 rounded-full" />
+                <img src={user.photoURL} className="md:w-52 w-44 border-4 border-gray-300 rounded-full" />
                 <div className="flex items-center space-x-2 mt-2">
-                    <p className="text-2xl ">Amanda Ross</p>
+                    <p className="text-2xl ">{user.displayName}</p>
                     <span className="bg-blue-500 rounded-full p-1" title="Verified">
                         <svg xmlns="http://www.w3.org/2000/svg" className="text-gray-100 h-2.5 w-2.5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="4" d="M5 13l4 4L19 7"></path>
@@ -35,7 +39,7 @@ const Profile = () => {
                     <ul className="mt-3 ">
                         <li className="flex py-2">
                             <span className="font-bold w-24">Full name:</span>
-                            <span className="">Amanda S. Ross</span>
+                            <span className="">{user.displayName}</span>
                         </li>
                         <li className="flex py-2">
                             <span className="font-bold w-24">Mobile:</span>
@@ -43,7 +47,7 @@ const Profile = () => {
                         </li>
                         <li className="flex py-2">
                             <span className="font-bold w-24">Email:</span>
-                            <span className="">amandaross@example.com</span>
+                            <span className="">{user.email}</span>
                         </li>
                         <li className="flex py-2">
                             <span className="font-bold w-24">Location:</span>
