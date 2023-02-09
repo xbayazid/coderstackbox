@@ -114,7 +114,31 @@ const Navbar = () => {
                     </>
                     <>
                       <li>
-                        <button onClick={handleLogOut}>Log Out</button>
+                        <label htmlFor="logout" onClick={logOut}>
+                          <Button id="logout" styles="h-2 ">
+                            Log Out
+                          </Button>
+                        </label>
+                      </li>
+                    </>
+                    <>
+                      <li className="ml-5">
+                        <button
+                          onClick={() => setUserOpen(!userOpen)}
+                          className="flex mr-3 text-sm bg-gray-800 rounded-full md:mr-0 focus:ring-4 hover:animate-bounce focus:ring-offset-secondary "
+                        >
+                          <span className="sr-only">Open user menu</span>
+                          <img
+                            className="w-8 h-8 rounded-full"
+                            src={user?.photoURL}
+                            alt="user"
+                          />
+                        </button>
+                        <Dropdown
+                          userOpen={userOpen}
+                          setUserOpen={setUserOpen}
+                          user={user}
+                        />
                       </li>
                     </>
                   </div>
