@@ -112,12 +112,12 @@ const Navbar = () => {
                       <li className="ml-5">
                         <button
                           onClick={() => setUserOpen(!userOpen)}
-                          className="flex mr-3 text-sm bg-gray-800 rounded-full md:mr-0 focus:ring-4 hover:animate-bounce focus:ring-indigo-400 dark:focus:ring-gray-600"
+                          className="flex mr-3 text-sm bg-gray-800 rounded-full md:mr-0 focus:ring-4 hover:animate-bounce focus:ring-offset-secondary "
                         >
                           <span className="sr-only">Open user menu</span>
                           <img
                             className="w-8 h-8 rounded-full"
-                            src={user.photoURL}
+                            src={user?.photoURL}
                             alt="user"
                           />
                         </button>
