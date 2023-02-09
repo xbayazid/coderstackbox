@@ -5,7 +5,7 @@ export default function Dropdown({ setUserOpen, userOpen, user}) {
     const {name, email, photoURL,} = user;
   return (
     <div className="flex items-center md:order-2">
-      <div className={`absolute top-20  ${userOpen ? "translate-x-[500px]" : "translate-x-[-50px]"} z-50  my-4 text-base list-none  divide-y divide-gray-100 glassmorphism rounded-lg shadow  dark:divide-gray-600 transition-all duration-500 ease-in`} id="user-dropdown">
+      <div className={`absolute top-20  ${!userOpen ? "translate-x-[500px]" : "translate-x-[-50px]"} z-50  my-4 text-base list-none  divide-y divide-gray-100 glassmorphism rounded-lg shadow  dark:divide-gray-600 transition-all duration-500 ease-in`} id="user-dropdown">
         <div className="px-4 py-3">
           <span className="block text-sm text-gray-900 dark:text-white">{name}</span>
           <span className="block text-sm font-medium text-gray-500 truncate dark:text-gray-400">{email}</span>
