@@ -24,6 +24,7 @@ import Profile from "../../Pages/Dashboard/AdminPannel/Profile/Profile";
 import PrivateRoutes from "../Routes/PrivateRoutes/PrivateRoutes";
 import AdminDashboard from "../../Pages/Dashboard/AdminPannel/AdminDashboard/AdminDashboard";
 import Blog from "../../Pages/Blog/Blog";
+import Collections from "../../Pages/Collections/Collections";
 
 const router = createBrowserRouter([
   {
@@ -58,6 +59,10 @@ const router = createBrowserRouter([
       {
         path: "/catagories",
         element: <Catagories></Catagories>,
+      },
+      {
+        path: "/collections",
+        element: <Collections/>,
       },
       {
         path: "/category/:id",
