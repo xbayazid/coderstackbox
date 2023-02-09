@@ -56,7 +56,7 @@ const
                         </ul>
 
                         <div className='ml-2 p-2 mt-2'>
-                            {/* <FaSignOutAlt></FaSignOutAlt> */}
+                            <Link to='/'><FaSignOutAlt></FaSignOutAlt></Link>
                         </div>
                     </div>
                 </div>
