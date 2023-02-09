@@ -24,8 +24,6 @@ import Profile from "../../Pages/Dashboard/AdminPannel/Profile/Profile";
 import PrivateRoutes from "../Routes/PrivateRoutes/PrivateRoutes";
 import AdminDashboard from "../../Pages/Dashboard/AdminPannel/AdminDashboard/AdminDashboard";
 
-
-
 const router = createBrowserRouter([
   {
     path: "/",
@@ -51,7 +49,7 @@ const router = createBrowserRouter([
         path: "/doc",
         element: <Doc></Doc>,
       },
-      
+
       {
         path: "/catagories",
         element: <Catagories></Catagories>,
@@ -65,70 +63,82 @@ const router = createBrowserRouter([
           ),
       },
       {
-        path: '/userProfile',
-        element: <UserProfile></UserProfile>
+        path: "/userProfile",
+        element: <UserProfile></UserProfile>,
       },
       {
-        path: '/myProjects',
-        element: <MyProjects></MyProjects>
-      }
+        path: "/myProjects",
+        element: <MyProjects></MyProjects>,
+      },
     ],
   },
   {
     path: "/code-editor",
-    element: <EditorPage />
+    element: <EditorPage />,
   },
   {
     path: "/adminDashboard",
-    element: <PrivateRoutes><AdminDashboardLayout></AdminDashboardLayout></PrivateRoutes>,
+    element: (
+      <PrivateRoutes>
+        <AdminDashboardLayout></AdminDashboardLayout>
+      </PrivateRoutes>
+    ),
     children: [
       {
         path: "/adminDashboard",
-        element: <AdminDashboard></AdminDashboard> 
-      },   
+        element: <AdminDashboard></AdminDashboard>,
+      },
       {
         path: "/adminDashboard/developers",
-        element: <Developers></Developers> 
+        element: <Developers></Developers>,
       },
       {
         path: "/adminDashboard/projects",
-        element: <Projects></Projects> 
+        element: <Projects></Projects>,
       },
       {
         path: "/adminDashboard/inbox",
-        element: <Inbox></Inbox>
+        element: <Inbox></Inbox>,
       },
       {
         path: "/adminDashboard/profile",
-        element: <Profile></Profile>
-      }
-    ]
+        element: <Profile></Profile>,
+      },
+    ],
   },
   {
     path: "/userDashboard",
-    element: <PrivateRoutes><UserDashboard></UserDashboard></PrivateRoutes>,
-    children:[
+    element: (
+      <PrivateRoutes>
+        <UserDashboard></UserDashboard>
+      </PrivateRoutes>
+    ),
+    children: [
       {
-        path: '/userDashboard',
-        element: <PrivateRoutes><UserDashboard></UserDashboard></PrivateRoutes>
+        path: "/userDashboard",
+        element: (
+          <PrivateRoutes>
+            <UserDashboard></UserDashboard>
+          </PrivateRoutes>
+        ),
       },
       {
-        path: '/userDashboard/myProjects',
-        element: <MyProjects></MyProjects>
-      }
-    ]
-  },  
+        path: "/userDashboard/myProjects",
+        element: <MyProjects></MyProjects>,
+      },
+    ],
+  },
   {
-    path: '/login',
-    element: <Login></Login>
-  } ,
+    path: "/login",
+    element: <Login></Login>,
+  },
   {
     path: "/register",
     element: <SingUp></SingUp>,
   },
   {
     path: "*",
-    element: <ErrorPage></ErrorPage>
+    element: <ErrorPage></ErrorPage>,
   },
 ]);
 

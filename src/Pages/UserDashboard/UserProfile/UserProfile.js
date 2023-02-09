@@ -1,14 +1,7 @@
 import { useQuery } from "@tanstack/react-query";
 import React from "react";
 import { Helmet } from "react-helmet";
-import {
-  Legend,
-  Line,
-  LineChart,
-  Tooltip,
-  XAxis,
-  YAxis,
-} from "recharts";
+import { Legend, Line, LineChart, Tooltip, XAxis, YAxis } from "recharts";
 import Loading from "../../Loading/Loading";
 import { useState } from "react";
 import UserModal from "./UserModal/UserModal";
@@ -19,7 +12,8 @@ import UserDashboardNavbar from "../UserDashboard/UserDashboardNavbar/UserDashbo
 const UserProfile = () => {
   //modal
   const [isOpen, setIsOpen] = useState(false);
-  const {user} = useContext(AuthContext)
+  const { user } = useContext(AuthContext);
+  console.log(user);
   const { data = [], isLoading } = useQuery({
     queryKey: ["usersActivityData"],
     queryFn: async () => {
@@ -78,33 +72,56 @@ const UserProfile = () => {
               <div class="bg-gray-100 rounded-xl shadow-xl lg:w-1/2">
                 <div>
                   <div className="w-1/2 mx-auto">
-                    {
-                      user?.photoURL ?
-                      <img className="h-28 w-28 rounded-full mt-10" src="{user?.photoURL}" alt="userImg"></img>
-                      : 
                     <img
-                    className="h-28 w-28 rounded-full mt-10"
-                    src="https://i.ibb.co/199wc0y/3d-illustration-person-23-2149436179.webp"
-                    alt="userImg"
-                  />
-                    }
+                      className="h-28 w-28 rounded-full mt-10"
+                      src={user?.photoURL}
+                      alt=""
+                    ></img>
                   </div>
                   <div className="text-black w-2/3 mx-auto mt-5">
-                    <h2 className="font-semibold">Name: {user?.displayName}</h2>
+                    {/* <h2 className="font-semibold">Name: {user?.displayName}</h2>
                     <p>Email: {user?.email}</p>
-                    <p>Phone: </p>
+                    <p>Phone: </p> */}
+                    <label htmlFor="">Full Name</label>
+                    <input
+                      type="text"
+                      defaultValue={user?.displayName}
+                      disabled
+                      name="name"
+                      className="w-full border-2 my-2 p-2 rounded-md outline-none"
+                      placeholder="Your Full Name"
+                    />
+
+                    <label htmlFor="">Email Address</label>
+                    <input
+                      type="text"
+                      defaultValue={user?.email}
+                      disabled
+                      name="email"
+                      className="w-full border-2 my-2 p-2 rounded-md outline-none"
+                      placeholder="Email Address"
+                    />
+                    <label htmlFor="">Phone</label>
+                    <input
+                      type="text"
+                      name="phone"
+                      className="w-full border-2 my-2 p-2 rounded-md outline-none"
+                      placeholder="Phone Number"
+                    />
                   </div>
                   <div className="w-2/3 mx-auto my-4">
-                    <button onClick={() => setIsOpen(true)} className="bg-blue-500 text-white py-2 px-4 rounded-lg hover:bg-blue-600">Edit Profile</button>
+                    <button
+                      onClick={() => setIsOpen(true)}
+                      className="bg-blue-500 text-white py-2 px-4 rounded-lg hover:bg-blue-600"
+                    >
+                      Update Profile
+                    </button>
                   </div>
                 </div>
               </div>
               <div class={`col-span-2 bg-gray-100 rounded-xl shadow-xl`}>
-                <h2 className="text-gray-800 m-4 font-semibold">
-                  User Track
-                </h2>
+                <h2 className="text-gray-800 m-4 font-semibold">User Track</h2>
                 <LineChart width={600} height={300} data={data}>
-                  {/* <CartesianGrid strokeDasharray="3 3" /> */}
                   <XAxis dataKey="name" />
                   <YAxis yAxisId="left" />
                   <YAxis yAxisId="right" orientation="right" />
@@ -130,12 +147,18 @@ const UserProfile = () => {
             </div>
             <div className="bg-indigo-400 p-5 text-black rounded">
               <form className="lg:flex gap-4 justify-center items-center">
-              <div>
-                <textarea name="review" className="lg:w-96 p-5 rounded-md outline-none" placeholder="Your Comment"></textarea>
-              </div>
-              <div>
-              <button className="bg-amber-300 text-black p-4 rounded-3xl mt-3 lg:mt-0">Add Review</button>
-              </div>
+                <div>
+                  <textarea
+                    name="review"
+                    className="lg:w-96 p-5 rounded-md outline-none"
+                    placeholder="Your Comment"
+                  ></textarea>
+                </div>
+                <div>
+                  <button className="bg-amber-300 text-black p-4 rounded-3xl mt-3 lg:mt-0">
+                    Add Review
+                  </button>
+                </div>
               </form>
             </div>
           </main>

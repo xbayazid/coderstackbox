@@ -32,7 +32,7 @@ const Category = ({ project }) => {
           </h2>
         </div>
         <p className="text-gray-100 project-description">
-          {projectDescription.slice(0, 80)}
+          {projectDescription?.slice(0, 80)}
         </p>
       </div>
     </div>
