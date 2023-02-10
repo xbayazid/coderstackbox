@@ -4,6 +4,7 @@ import React, { useEffect, useState } from 'react'
 import styles from '../../style'
 import { motion } from 'framer-motion'
 import { fadeIn } from '../../utils/motion';
+import { HiHeart } from "react-icons/hi";
 export default function CollectionCard({props, index}) {
     const [srcDoc, setSrcDoc] = useState("");
 
@@ -79,8 +80,9 @@ export default function CollectionCard({props, index}) {
           src={user?.result[0]?.photoURL}
           alt={user?.result[0]?.name}
         />
-        <div>
+        <div className='flex items-center font-poppins'>
           <div className={`${styles.heading4}`}>{user?.result[0]?.name}</div>
+          <div className='flex items-center ml-20'><HiHeart className='text-red-700 text-3xl cursor-pointer'></HiHeart><p className='text-white'>35</p></div>
         </div>
       </div>
     </motion.div>
