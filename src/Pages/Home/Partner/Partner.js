@@ -2,8 +2,8 @@ import React from "react";
 import { motion } from "framer-motion";
 import Button from "../../../components/Buttons/Button";
 import { layout } from "../../../style";
-import { fadeIn, planetVariants, staggerContainer, zoomIn } from "../../../utils/motion";
-import { TypingText } from "../../../components/CustomText/CustomText";
+import { fadeIn, planetVariants, staggerContainer, textVariant, zoomIn } from "../../../utils/motion";
+import { TitleText, TypingText } from "../../../components/CustomText/CustomText";
 import { partnerFive, partnerFour, partnerOne, partnerThree, partnerTwo } from "../../../assets";
 
 const Partner = () => {
@@ -41,8 +41,8 @@ const Partner = () => {
           </div>
         </div>
         <motion.div variants={fadeIn('left', 'tween' , 0.5, 0.75)} className={`${layout.sectionInfoStart}`}>
-          <motion.h1 className="text-2xl lg:text-5xl font-semibold text-white">
-            See our trusted partners
+          <motion.h1 variants={textVariant(0.25)} className=" text-white">
+            <TitleText title={<>See our trusted partners</>}/>
           </motion.h1>
           <p className="my-5 lg:text-justify text-white">
             Lorem ipsum dolor sit amet consectetur adipisicing elit. Omnis eaque
