@@ -17,6 +17,7 @@ const Navbar = () => {
   const [userOpen, setUserOpen] = useState(false);
 
   const handleLogOut = () => {
+    localStorage.removeItem("CodersStackBox")
     logOut()
       .then(() => {})
       .catch((error) => console.log(error));
