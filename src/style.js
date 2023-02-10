@@ -26,6 +26,7 @@ export const layout = {
   sectionImg: `flex-1 flex ${styles.flexCenter} md:ml-10 ml-0 md:mt-0 mt-10 relative`,
 
   sectionInfo: `flex-1 ${styles.flexCenter} flex-col`,
+  sectionInfoStart: `flex-1 ${styles.flexStart} flex-col`,
 };
 
 export default styles;

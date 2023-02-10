@@ -8,7 +8,7 @@ import { motion } from "framer-motion";
 import heroImg from "../../../assets/code.png";
 import heroImgTwo from "../../../assets/tests.png";
 import heroImgThree from "../../../assets/hero.gif";
-import { slideIn, staggerContainer, textVariant } from "../../../utils/motion";
+import { fadeIn, FADE_UP_ANIMATION_VARIANTS, slideIn, staggerContainer, textVariant } from "../../../utils/motion";
 import { FaHtml5, FaCss3Alt, FaJs } from "react-icons/fa";
 import './Hero.css';
 const Hero = () => {
@@ -60,15 +60,19 @@ const Hero = () => {
     // </section>
     
     <div>
-     <div className={` ${styles.paddingY} relative`}>
-     <div className="text-white w-2/3 mx-auto mb-6 font-poppins">
-      <h1 className=" text-3xl lg:text-6xl font-semibold text-center hero-title">Write better code, <span className="text-emerald-200">Collabo</span><span className="text-emerald-500">ratively</span></h1>
-      <p className="lg:w-3/4 mx-auto my-3"> Build your Front-End Web Application. Get work done quicker by building out entire projects. Isolating code to test features and animations. Want to keep it all under wraps?</p>
-      <div className="flex justify-center">
+     <motion.div
+        variants={staggerContainer}
+        initial="hidden"
+        whileInView="show"
+        viewport={{ once: false, amount: 0.25 }} className={` ${styles.paddingY} relative`}>
+     <div  className="text-white w-2/3 mx-auto mb-6 font-poppins">
+      <motion.h1 variants={textVariant(0.3)} className=" text-3xl lg:text-6xl font-semibold text-center hero-title">Write better code, <span className="text-emerald-200">Collabo</span><span className="text-emerald-500">ratively</span></motion.h1>
+      <motion.p variants={textVariant(0.4)} className="lg:w-3/4 mx-auto my-3"> Build your Front-End Web Application. Get work done quicker by building out entire projects. Isolating code to test features and animations. Want to keep it all under wraps?</motion.p>
+      <motion.div variants={textVariant(0.5)} className="flex justify-center">
       <Link to="/code-editor"><Button>Code Editor<FaArrowRight /></Button></Link>
+      </motion.div>
       </div>
-      </div>
-      <div className="w-4/4 mx-auto">
+      <motion.div variants={fadeIn('up', 'tween', 0.6, 0.75)}   className="w-4/4 mx-auto">
         <div className="lg:flex">
           <div className="text-white h-2/3 p-5 bg-gradient-to-r from-fuchsia-400 to-violet-600 rounded-md font-poppins font-semibold gap-3 -mr-10 mt-24 z-20 lg:block hidden">
             <div className="flex gap-3 rounded-xl items-center p-2 text-2xl bg-gradient-to-l from-accent to-slate-600">
@@ -88,8 +92,8 @@ const Hero = () => {
           <img className="rounded-md" src={heroImgTwo} alt="" />
           </div>
         </div>
-      </div>
-      </div> 
+      </motion.div>
+      </motion.div> 
     </div>
   );
 };
