@@ -10,6 +10,7 @@
     "@testing-library/user-event": "^13.5.0",
     "axios": "^1.3.2",
     "firebase": "^9.15.0",
+    "focus-trap-react": "^10.0.2",
     "force": "^0.0.3",
     "framer-motion": "^9.0.1",
     "monaco-editor": "^0.34.1",

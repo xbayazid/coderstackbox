@@ -1,8 +1,34 @@
+import { useQuery } from '@tanstack/react-query';
+import axios from 'axios';
 import React, { useEffect, useState } from 'react'
 import styles from '../../style'
-
-export default function CollectionCard({props}) {
+import { motion } from 'framer-motion'
+import { fadeIn } from '../../utils/motion';
+export default function CollectionCard({props, index}) {
     const [srcDoc, setSrcDoc] = useState("");
+
+
+    const url = `http://localhost:5000/user?id=${props.user}`;
+  const {
+    data: user,
+    isLoading,
+    refetch,
+  } = useQuery({
+    queryKey: ["user", props.user],
+    queryFn: async () => {
+      try {
+        const res = await axios.get(url, {
+          headers: {
+            authorization: `bearer ${localStorage.getItem("CodersStackBox")}`,
+          },
+        });
+        return res.data;
+      } catch (error) {}
+    },
+  });
+
+  
+
 
     useEffect(() => {
         const timeout = setTimeout(() => {
@@ -20,12 +46,11 @@ export default function CollectionCard({props}) {
 
 
   return (
-    <div className="relative rounded-lg overflow-hidden glassmorphism">
+    <motion.div
+    variants={fadeIn('up', 'tween', index * 0.5, 0.75)} className="relative rounded-lg overflow-hidden glassmorphism p-1 ">
       <div className={`flex flex-col justify-center items-center`}>
-        {props?.icon}
-
         <div className={`${styles.flexCenter}`}>
-          <div className={` ${styles.heading3}`}>{props?.title}</div>
+          <div className={` ${styles.heading3}`}>{props?.projectName}</div>
         </div>
       </div>
       <div className="flex justify-center px-4">
@@ -39,13 +64,25 @@ export default function CollectionCard({props}) {
       <iframe
         className="bg-white"
           srcDoc={srcDoc}
-          title="output"
-          sandbox="allow-scripts"
+          title={props.projectName}
+          sandbox="allow-forms allow-modals allow-pointer-lock allow-same-origin allow-scripts allow-presentation"
           frameBorder="0"
+          loading="lazy"
+          scrolling="no"
           width="100%"
           height="100%"
         />
       </div>
-    </div>
+      <div className={`flex justify-start items-center ml-4 my-2 gap-4`}>
+        <img
+          className="w-12 h-12 rounded-full p-[0.1rem] ring-2 ring-offset-1 ring-offset-secondary"
+          src={user?.result[0]?.photoURL}
+          alt={user?.result[0]?.name}
+        />
+        <div>
+          <div className={`${styles.heading4}`}>{user?.result[0]?.name}</div>
+        </div>
+      </div>
+    </motion.div>
   )
 }
