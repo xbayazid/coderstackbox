@@ -9,6 +9,8 @@ import { navVariants } from "../../../utils/motion";
 import { motion } from "framer-motion";
 import Button from "../../../components/Buttons/Button";
 import Dropdown from "../../../components/Dropdown";
+import { logo } from "../../../assets";
+import Logo from "../../../components/Logo";
 
 const Navbar = () => {
   const { user, logOut } = useContext(AuthContext);
@@ -46,16 +48,7 @@ const Navbar = () => {
       <div className="absolute w-[50%] inset-0 gradient-01" />
       <div className={`${styles.paddingX} mx-auto`}>
         <div className="flex justify-between py-4 ">
-          <div className="font-bold text-2xl cursor-pointer flex items-center gap-2 font-[poppins] text-gray-800 xs:scale-100 scale-90 transition-all duration-300 ease-in-out">
-            <span className="text-3xl text-secondary  pt-2">
-              <ion-icon name="logo-slack"></ion-icon>
-            </span>
-            <Link to="/">
-              <h1 className="text-white">
-                Coders<span className="text-secondary">StackBox</span>
-              </h1>
-            </Link>
-          </div>
+          <Logo />
           <div
             onClick={() => setOpen(!open)}
             className="text-3xl text-white absolute right-8 top-6
@@ -81,8 +74,8 @@ const Navbar = () => {
             </li>
 
             <li>
-              <Link className="lg:ml-8 ml-0 mr-5" to="/blog">
-                Blog
+              <Link className="lg:ml-8 ml-0 mr-5" to="/collections">
+                Collections
               </Link>
             </li>
             <li>

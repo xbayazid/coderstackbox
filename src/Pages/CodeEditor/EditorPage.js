@@ -7,9 +7,11 @@ import CloudButton from "../../components/Buttons/CloudButton";
 import { AuthContext } from "../../context/AuthProvider";
 import "./CodeEditor.css";
 import EditorComponent from "./Editor/EditorComponent";
-import { code } from "./files";
+import { motion } from "framer-motion";
 import axios from 'axios';
 import { toast } from 'react-hot-toast'
+import { useSaveProjectModal } from "../../components/Modals/SaveProjectModal";
+import { FADE_IN_ANIMATION_SETTINGS } from "../../utils/motion";
 
 const EditorPage = () => {
   const [projectName, setProjectName] = useState("");
@@ -60,6 +62,11 @@ const EditorPage = () => {
       });
   };
 
+  function Save () {
+    setShowSaveProjectModal(true);
+    handleSubmit()
+  }
+const { SaveProjectModal, setShowSaveProjectModal } = useSaveProjectModal();
   return (
     <>
       <Helmet>
@@ -70,6 +77,7 @@ const EditorPage = () => {
       <>
         <nav className="sticky top-0 z-[3] w-full flex py-3 justify-between items-center navbar">
           <>
+          <SaveProjectModal  />
             <Link to="/" className="gap-x-4 items-center flex">
               <span className="text-3xl text-secondary  pt-2">
                 <ion-icon name="logo-slack"></ion-icon>
@@ -81,8 +89,14 @@ const EditorPage = () => {
           </>
 
           <ul className="list-none sm:flex hidden justify-end items-center flex-1">
-            <label onClick={handleSubmit}>
-              <CloudButton>Save</CloudButton>
+            <label>
+              <motion.button
+                  className="rounded-full border border-black bg-black p-1.5 px-4 text-sm text-white transition-all hover:bg-white hover:text-black"
+                  onClick={Save}
+                  {...FADE_IN_ANIMATION_SETTINGS}
+                >
+                  Save
+                </motion.button>
             </label>
           </ul>
 

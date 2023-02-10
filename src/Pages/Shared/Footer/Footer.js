@@ -36,14 +36,13 @@ const Footer = () => {
               </div>
             </Link>
           </li>
-          <li>
+          {/* <li>
           <Link className="lg:ml-8 ml-0" to='/catagories'>Categories</Link>
-          </li>
+          </li> */}
           <li>
           <Link className="lg:ml-8 ml-0" to='/community'>Community Support</Link>
           </li>
-          {/* <li><Link to=''>Login</Link></li>
-                        <li><Link to="">Sign Up</Link></li> */}
+          <li><Link to='/blog'>Blog</Link></li>
         </ul>
         <div
           className="mt-5 bg-gradient-to-r from-accent to-secondary"
