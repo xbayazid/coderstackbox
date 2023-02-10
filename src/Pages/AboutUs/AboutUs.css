@@ -1,0 +1,20 @@
+@import url('https://fonts.googleapis.com/css2?family=Abril+Fatface&display=swap');
+.semi-title{
+    border-bottom: 5px solid rgb(251, 0, 255);
+}
+
+.about-background{
+    background: linear-gradient(rgba(18, 17, 17, 0.5), rgba(25, 23, 23, 0.5)),  url(../../assets/about-1.jpg);
+    background-size: cover;
+    background-position: center;
+    padding: 120px 20px;
+}
+
+.about-icons{
+    border: 2px solid;
+    border-radius: 100%;
+}
+
+.founded-date{
+    font-family: 'Abril Fatface', cursive;
+}
