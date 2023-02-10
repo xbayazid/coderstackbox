@@ -1,9 +1,13 @@
 import React from "react";
 import styles from "../../style";
+import { motion } from 'framer-motion'
+import { fadeIn } from "../../utils/motion";
 
-const BestDevCard = ({ props }) => {
+
+const BestDevCard = ({ props, i }) => {
   return (
-    <div className="relative rounded-lg overflow-hidden glassmorphism hover:duration-150 card">
+    <motion.div
+    variants={fadeIn("right", "spring", i*0.2, 1)} className="relative rounded-lg overflow-hidden glassmorphism hover:duration-150 card">
       <div
         className="bg-gradient-to-r from-accent to-secondary"
         style={{ height: "2px" }}
@@ -29,7 +33,7 @@ const BestDevCard = ({ props }) => {
       <div className="p-4 text-justify">
         <div className={`${styles.paragraph}`}>{props.details}</div>
       </div>
-    </div>
+    </motion.div>
   );
 };
 

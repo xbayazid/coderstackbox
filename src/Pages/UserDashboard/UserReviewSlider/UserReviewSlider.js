@@ -9,7 +9,7 @@ import { motion } from 'framer-motion'
 import { userSlider } from '../../../constants';
 import TestimonialCard from '../../../components/Cards/TestimonialCard';
 import styles, { layout } from '../../../style';
-import { fadeIn, staggerContainer } from '../../../utils/motion';
+import { fadeIn, staggerContainer, textVariant } from '../../../utils/motion';
 import { TitleText, TypingText } from '../../../components/CustomText/CustomText';
 
 SwiperCore.use([ Navigation, Pagination, Scrollbar,  A11y]);
@@ -28,7 +28,9 @@ const UserReviewSlider = () => {
            
         <motion.div variants={fadeIn('up', 'tween', 0.5, 0.75)}  className='text-center mb-3'>
         <TypingText textStyles={"text-dimWhite"} title={"|What our clients says"}/>
-        <TitleText textStyles=""  title={<>Read what our customers feel about our products!</>}/>
+          <motion.h1 variants={textVariant(0.5)} className=" text-white mb-5">
+            <TitleText title={<>See our trusted partners</>}/>
+          </motion.h1>
         
             <Swiper
                  autoplay={{
@@ -37,9 +39,6 @@ const UserReviewSlider = () => {
                   }}
                   speed={2000}
                   loop={true}
-                  pagination={{
-                  clickable: true,
-                  }}
                   modules={[Autoplay, Pagination, Navigation]}
             >
                 {
