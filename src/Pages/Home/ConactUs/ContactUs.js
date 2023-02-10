@@ -1,6 +1,10 @@
 import React from "react";
 import { useForm } from "react-hook-form";
 import Button from "../../../components/Buttons/Button";
+import { motion } from 'framer-motion'
+import { staggerContainer } from "../../../utils/motion";
+import { TitleText, TypingText } from "../../../components/CustomText/CustomText";
+import { layout } from "../../../style";
 
 const ContactUs = () => {
   const {
@@ -14,9 +18,19 @@ const ContactUs = () => {
   };
 
   return (
-    <div className="ring-2 border-gradient-to-r from-accent to-secondary my-6">
-      <section className="py-6 bg--400 dark:text-gray-50">
-        <div className="grid max-w-6xl grid-cols-1 px-6 mx-auto lg:px-8 md:grid-cols-2 md:divide-x">
+    <div>
+      <motion.div 
+      variants={staggerContainer}
+      initial="hidden"
+      whileInView="show"
+      viewport={{ once: false, amount: 0.25 }} className={`${layout.sectionCol} text-center`}>
+      <TypingText title="| Contact Us" />
+          <TitleText title={<>We appreciate your opinion</>} />
+      <div
+      className="ring-2 border-gradient-to-r from-accent to-secondary my-6">
+        
+      <motion.section className="py-6 dark:text-gray-50">
+        <div className="grid max-w-6xl grid-cols-1 px-6 mx-auto lg:px-8 md:grid-cols-2 md:divide-x text-start">
           <div className="py-6 md:py-0 md:px-6">
             <h1 className="text-4xl font-bold text-white">Get in touch</h1>
             <p className="pt-2 pb-4 text-white">
@@ -63,6 +77,7 @@ const ContactUs = () => {
               </p>
             </div>
           </div>
+          <div className="">
           <form
             onSubmit={handleSubmit(handleSubmitContact)}
             className="flex flex-col py-6 space-y-6 md:py-0 md:px-6 ng-untouched ng-pristine ng-valid"
@@ -99,8 +114,11 @@ const ContactUs = () => {
             </label>
             <Button>submit</Button>
           </form>
+          </div>
         </div>
-      </section>
+      </motion.section>
+    </div>
+    </motion.div>
     </div>
   );
 };
