@@ -111,25 +111,25 @@ const AboutUs = () => {
                 </div>
                 <div className={` ${styles.paddingY} relative`}>
                     <div className='grid gap-4 lg:grid-cols-4 font-poppins'>
-                        <div className='p-4 bg-gradient-to-r from-pink-400 to-slate-500 rounded-md'>
+                        <div className='p-4 bg-gradient-to-r from-blue-400 to-slate-500 rounded-md'>
                             <div className='ml-12'>
                             <h1 className="text-5xl font-bold">07+</h1>
                             <h1 className='text-2xl'>Years of Operation</h1>
                             </div>
                         </div>
-                        <div className='p-4 bg-gradient-to-r from-pink-400 to-slate-500 rounded-md'>
+                        <div className='p-4 bg-gradient-to-r from-blue-400 to-slate-500 rounded-md'>
                             <div className="ml-12">
                             <h1 className="text-4xl font-bold">2.5M</h1>
                             <h1 className='text-2xl'>Yearly Revenue</h1>
                             </div>
                         </div>
-                        <div className='p-4 bg-gradient-to-r from-pink-400 to-slate-500 rounded-md'>
+                        <div className='p-4 bg-gradient-to-r from-blue-400 to-slate-500 rounded-md'>
                             <div className="ml-12">
                             <h1 className="text-4xl font-bold">4M+</h1>
                             <h1 className='text-2xl'>User Worldwide</h1>
                             </div>
                         </div>
-                        <div className='p-4 bg-gradient-to-r from-pink-400 to-slate-500 rounded-md'>
+                        <div className='p-4 bg-gradient-to-r from-blue-400 to-slate-500 rounded-md'>
                             <div className="ml-12">
                             <h1 className="text-4xl font-bold">2.5X</h1>
                             <h1 className='text-2xl'>Growth Rate</h1>
