@@ -1,15 +1,16 @@
 import React from 'react';
 import { Swiper, SwiperSlide } from 'swiper/react';
-import SwiperCore, { Navigation, Pagination, Scrollbar, A11y} from 'swiper';
-
-
+import SwiperCore, { Navigation, Pagination, Scrollbar, A11y, Autoplay} from 'swiper';
 import 'swiper/css';
 import 'swiper/css/navigation';
 import 'swiper/css/pagination';
 import 'swiper/css/scrollbar';
+import { motion } from 'framer-motion'
 import { userSlider } from '../../../constants';
 import TestimonialCard from '../../../components/Cards/TestimonialCard';
-import styles from '../../../style';
+import styles, { layout } from '../../../style';
+import { fadeIn, staggerContainer } from '../../../utils/motion';
+import { TitleText, TypingText } from '../../../components/CustomText/CustomText';
 
 SwiperCore.use([ Navigation, Pagination, Scrollbar,  A11y]);
 
@@ -20,15 +21,26 @@ const UserReviewSlider = () => {
 
 
     return (
-        <div id='testimonial' className='my-11'>
-        <div className='text-center mb-3'>
-        <h1 className={`${styles.heading2} `}>What Clients Says</h1>
-        </div>
+        <motion.div variants={staggerContainer}
+        initial="hidden"
+        whileInView="show"
+        viewport={{ once: false, amount: 0.25 }}  id='testimonial' className={`${layout.sectionCol} relative`}>
+           
+        <motion.div variants={fadeIn('up', 'tween', 0.5, 0.75)}  className='text-center mb-3'>
+        <TypingText textStyles={"text-dimWhite"} title={"|What our clients says"}/>
+        <TitleText textStyles=""  title={<>Read what our customers feel about our products!</>}/>
+        
             <Swiper
-                spaceBetween={20}
-                slidesPerView={3}
-                onSlideChange={() => console.log('slide change')}
-                onSwiper={(swiper) => console.log(swiper)}
+                 autoplay={{
+                    delay: 1000,
+                    disableOnInteraction: false,
+                  }}
+                  speed={2000}
+                  loop={true}
+                  pagination={{
+                  clickable: true,
+                  }}
+                  modules={[Autoplay, Pagination, Navigation]}
             >
                 {
                     userSlider.map(slide => (
@@ -39,7 +51,8 @@ const UserReviewSlider = () => {
                 }
                 
             </Swiper>
-        </div>
+            </motion.div>
+        </motion.div>
     );
 };
 
