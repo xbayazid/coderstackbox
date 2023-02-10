@@ -5,7 +5,7 @@ import {
 } from "../../../components/CustomText/CustomText";
 import styles, { layout } from "../../../style";
 import { motion } from "framer-motion";
-import { fadeIn, staggerContainer } from "../../../utils/motion";
+import { fadeIn, slideIn, staggerContainer, textVariant } from "../../../utils/motion";
 import { servicesInfo } from "../../../constants";
 import buildImg from "../../../assets/build.gif";
 import learnImg from "../../../assets/learn.gif";
@@ -44,50 +44,64 @@ const Services = () => {
     // </div>
 
     // </div>
-
-    <div className={` ${styles.paddingY} relative`}>
-      <h1 className="text-3xl lg:text-6xl text-white text-center font-semibold lg:font-bold">
-        Codestack is a platform that allows you to build, run, and share
-      </h1>
-      <div id="service" className={`${layout.sectionCol} text-white`}>
-        <div className="grid grid-cols-1 lg:grid-cols-2">
-          <div className={` ${styles.paddingY} relative`}>
-            <div className="w-3/4 font-poppins">
-              <h1 className="text-2xl lg:text-5xl font-semibold">
-                We Are Focus On Your Ultimate Goal
-              </h1>
-              <p className="mt-4">
-                Codestack is a platform that allows you to build, run, and share
-                code in three different programming languages HTMl, CSS and
-                JAVASCRIPT.
-              </p>
-            </div>
-            <div className="text-2xl mt-5">
-              <div className="bg-sky-400 p-4 lg:w-1/2 text-center flex items-center rounded-md">
-                <TiLightbulb className="ml-2 mr-2 bg-purple-300 p-2 text-5xl rounded-full"></TiLightbulb>{" "}
-                <h1>Build & Test</h1>
+    <div>
+      <motion.div
+        variants={staggerContainer}
+        initial="hidden"
+        whileInView="show"
+        viewport={{ once: false, amount: 0.25 }}
+        className={`${layout.sectionCol}  text-white`}
+      >
+        <TypingText
+          textStyles={"text-center text-dimWhite"}
+          title={"|Our Focus"}
+        />
+        <motion.h1
+          variants={textVariant(0.2)}
+          className="text-3xl lg:text-6xl text-white text-center font-semibold lg:font-bold"
+        >
+          Codestack is a platform that allows you to build, run, and share
+        </motion.h1>
+        <div id="service" className={`${layout.section} text-white`}>
+          <div className="grid grid-cols-1 lg:grid-cols-2">
+            <div className="font-poppins">
+              <div className="w-3/4">
+                <motion.h1 variants={fadeIn('right', 'spring', 0.3, 2)} className="text-2xl lg:text-5xl font-semibold">
+                  We Are Focus On Your Ultimate Goal
+                </motion.h1>
+                <motion.p variants={fadeIn('right', 'spring', 0.5, 2)} className="mt-4">
+                  Codestack is a platform that allows you to build, run, and
+                  share code in three different programming languages HTMl, CSS
+                  and JAVASCRIPT.
+                </motion.p>
               </div>
-              <div className="bg-sky-400 p-4 lg:w-1/2 text-center mt-4 flex items-center rounded-md">
-                <TiEdit className="ml-2 mr-2 bg-purple-300 p-2 text-5xl rounded-full"></TiEdit>{" "}
-                <h1>Learn & Discover</h1>
-              </div>
-              <div className="bg-sky-400 p-4 lg:w-1/2 text-center mt-4 flex items-center rounded-md">
-                <HiOutlineShare className="ml-2 mr-2 bg-purple-300 p-2 text-5xl rounded-full"></HiOutlineShare>{" "}
-                <h1>Share Your Work</h1>
+              <div className="text-2xl mt-5">
+                <motion.div variants={slideIn('left', 'spring', 0.3, 2)} className="bg-sky-400 p-4 lg:w-1/2 text-center flex items-center rounded-md">
+                  <TiLightbulb className="ml-2 mr-2 bg-purple-300 p-2 text-5xl rounded-full"></TiLightbulb>{" "}
+                  <h1>Build & Test</h1>
+                </motion.div>
+                <motion.div variants={slideIn('left', 'spring', 0.5, 2)} className="bg-sky-400 p-4 lg:w-1/2 text-center mt-4 flex items-center rounded-md">
+                  <TiEdit className="ml-2 mr-2 bg-purple-300 p-2 text-5xl rounded-full"></TiEdit>{" "}
+                  <h1>Learn & Discover</h1>
+                </motion.div>
+                <motion.div variants={slideIn('left', 'spring', 0.7, 2)} className="bg-sky-400 p-4 lg:w-1/2 text-center mt-4 flex items-center rounded-md">
+                  <HiOutlineShare className="ml-2 mr-2 bg-purple-300 p-2 text-5xl rounded-full"></HiOutlineShare>{" "}
+                  <h1>Share Your Work</h1>
+                </motion.div>
               </div>
             </div>
-          </div>
-          <div className="flex justify-center items-center gap-3 mt-5">
-            <div className="">
-              <img className="rounded-xl" src={buildImg} alt="" />
-            </div>
-            <div className="flex flex-col gap-3">
-              <img className="rounded-xl" src={learnImg} alt="" />
-              <img className="rounded-xl" src={shareImg} alt="" />
+            <div className="flex justify-center items-center gap-3 mt-5">
+              <div className="">
+                <motion.img variants={slideIn('right', 'spring', 0.3, 2)} className="rounded-xl" src={buildImg} alt="" />
+              </div>
+              <div className="flex flex-col gap-3">
+                <motion.img variants={slideIn('right', 'spring', 0.5, 2)} className="rounded-xl" src={learnImg} alt="" />
+                <motion.img variants={slideIn('right', 'spring', 0.7, 2)} className="rounded-xl" src={shareImg} alt="" />
+              </div>
             </div>
           </div>
         </div>
-      </div>
+      </motion.div>
     </div>
   );
 };

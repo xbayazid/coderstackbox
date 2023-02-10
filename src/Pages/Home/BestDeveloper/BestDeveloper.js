@@ -35,14 +35,13 @@ const BestDeveloper = () => {
           Meet our top contributors
         </div> */}
         </div>
-        <motion.div
-          variants={fadeIn("right", "tween", 0.2, 1)}
+        <div
           className="grid gap-7 md:grid-cols-2 lg:grid-cols-3 mx-auto my-5"
         >
-          {developers.map((bestDev) => (
-            <BestDevCard key={bestDev._id} props={bestDev} />
+          {developers.map((bestDev, i) => (
+            <BestDevCard key={bestDev._id} i={i} props={bestDev} />
           ))}
-        </motion.div>
+        </div>
       </motion.div>
     </div>
   );
