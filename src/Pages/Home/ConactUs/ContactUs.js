@@ -2,7 +2,7 @@ import React from "react";
 import { useForm } from "react-hook-form";
 import Button from "../../../components/Buttons/Button";
 import { motion } from 'framer-motion'
-import { staggerContainer } from "../../../utils/motion";
+import { fadeIn, staggerContainer } from "../../../utils/motion";
 import { TitleText, TypingText } from "../../../components/CustomText/CustomText";
 import { layout } from "../../../style";
 
@@ -31,7 +31,7 @@ const ContactUs = () => {
         
       <motion.section className="py-6 dark:text-gray-50">
         <div className="grid max-w-6xl grid-cols-1 px-6 mx-auto lg:px-8 md:grid-cols-2 md:divide-x text-start">
-          <div className="py-6 md:py-0 md:px-6">
+          <motion.div variants={fadeIn("right", "spring", 0.5, 2)} className="py-6 md:py-0 md:px-6">
             <h1 className="text-4xl font-bold text-white">Get in touch</h1>
             <p className="pt-2 pb-4 text-white">
               Fill in the form to start a conversation
@@ -76,8 +76,8 @@ const ContactUs = () => {
                 <span className="text-white">contact@codersstackbox.com</span>
               </p>
             </div>
-          </div>
-          <div className="">
+          </motion.div>
+          <motion.div variants={fadeIn("left", "spring", 0.5, 2)} className="">
           <form
             onSubmit={handleSubmit(handleSubmitContact)}
             className="flex flex-col py-6 space-y-6 md:py-0 md:px-6 ng-untouched ng-pristine ng-valid"
@@ -114,7 +114,7 @@ const ContactUs = () => {
             </label>
             <Button>submit</Button>
           </form>
-          </div>
+          </motion.div>
         </div>
       </motion.section>
     </div>
