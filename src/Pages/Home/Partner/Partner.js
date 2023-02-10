@@ -7,7 +7,7 @@ import partnerFour from "../../../assets/partner-4.png";
 import partnerFive from "../../../assets/partner-5.png";
 import Button from "../../../components/Buttons/Button";
 import { layout } from "../../../style";
-import { planetVariants, staggerContainer } from "../../../utils/motion";
+import { fadeIn, planetVariants, staggerContainer, zoomIn } from "../../../utils/motion";
 import { TypingText } from "../../../components/CustomText/CustomText";
 
 const Partner = () => {
@@ -23,28 +23,28 @@ const Partner = () => {
                 <TypingText textStyles={"text-center text-dimWhite"} title={"|Our Valuable Partners"}/>
 
         <div  className={`${layout.section}`}>
-        <motion.div variants={planetVariants('left')} className={`${layout.sectionImg}`}>
+        <div className={`${layout.sectionImg}`}>
           <div className="flex flex-col gap-3">
-            <div className=" bg-sky-300 w-1/2 rounded-full">
+            <motion.div variants={planetVariants('left', 'spring', 0.2, 0.75)} className=" bg-sky-300 w-1/2 rounded-full">
               <img src={partnerTwo} alt="" />
-            </div>
-            <div className="-mr-20 bg-slate-700 w-3/2 rounded-full">
+            </motion.div>
+            <motion.div variants={zoomIn('spring', 0.3, 0.75)} className="-mr-20 bg-slate-700 w-3/2 rounded-full">
               <img src={partnerOne} alt="" />
-            </div>
-            <div className=" bg-gray-300 w-1/2 rounded-full">
+            </motion.div>
+            <motion.div variants={fadeIn('left', 'spring', 0.4, 0.75)} className=" bg-gray-300 w-1/2 rounded-full">
               <img src={partnerThree} alt="" />
-            </div>
+            </motion.div>
           </div>
           <div className="flex flex-col gap-3">
-            <div className="bg-violet-500 w-1/2 rounded-full">
+            <motion.div variants={planetVariants('left', 'spring', 0, 0.75)} className="bg-violet-500 w-1/2 rounded-full">
               <img src={partnerFour} alt="" />
-            </div>
-            <div className="bg-fuchsia-300 w-1/2 rounded-full">
+            </motion.div>
+            <motion.div variants={planetVariants('left', 'spring', 0.1, 0.75)} className="bg-fuchsia-300 w-1/2 rounded-full">
               <img src={partnerFive} alt="" />
-            </div>
+            </motion.div>
           </div>
-        </motion.div>
-        <motion.div className={`${layout.sectionInfoStart}`}>
+        </div>
+        <motion.div variants={fadeIn('left', 'tween' , 0.5, 0.75)} className={`${layout.sectionInfoStart}`}>
           <h1 className="text-2xl lg:text-5xl font-semibold text-white">
             See our trusted partners
           </h1>
