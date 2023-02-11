@@ -3,7 +3,7 @@ import { Bars } from 'react-loader-spinner';
 
 const PreLoaderSpinner = () => {
     return (
-        <div className='w-full h-full flex justify-center items-center -translate-y-64'>
+        <div className='min-h-max w-full h-full flex justify-center items-center'>
             <Bars
             height="50"
             width="50"

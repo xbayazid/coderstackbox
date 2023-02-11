@@ -3,15 +3,19 @@ import { FaGit, FaGithub, FaLinkedin, FaLinkedinIn, FaTwitter } from 'react-icon
 import CountUp from 'react-countup/build';
 import { Helmet } from "react-helmet";
 import OurTeam from '../Home/OurTeam/OurTeam';
-import meetingImgOne from '../../assets/meeting-1.jpg'
-import meetingImgTwo from '../../assets/meeting-2.jpg'
-import meetingImgThree from '../../assets/meeting-3.jpg'
+import meetingImgOne from '../../assets/meeting-1.jpg';
+import meetingImgTwo from '../../assets/meeting-2.jpg';
+import meetingImgThree from '../../assets/meeting-3.jpg';
+import founderImg from '../../assets/founder.jpg';
 import foundedImg from "../../assets/founded.avif";
 import './AboutUs.css'
 import styles from '../../style';
 import Button from '../../components/Buttons/Button';
 import { Link } from 'react-router-dom';
-import { HiOutlineChevronDoubleRight, HiCheck, HiChevronRight, HiReply } from "react-icons/hi";
+import { HiOutlineChevronDoubleRight, HiCheck, HiChevronRight, HiReply, HiOutlineViewGrid, HiOutlineUserGroup } from "react-icons/hi";
+import {motion} from 'framer-motion'
+import {staggerContainer} from '../../utils/motion'
+import Logo from '../../components/Logo';
 const AboutUs = () => {
 
     return (
@@ -75,7 +79,10 @@ const AboutUs = () => {
                     We believe in open-source and the power of community,contineue that's why our code editor is open-sourced and available on GitHub. You can find the source code and contributing guidelines here and the license used here.
                 </p>
             </div> */}
-            <div  className='text-white'>
+            <motion.div variants={staggerContainer}
+        initial="hidden"
+        whileInView="show"
+        viewport={{ once: false, amount: 0.25 }} className='text-white'>
                 <div className='flex justify-around items-center uppercase'>
                 <h1 className='text-7xl font-bold'>About Us</h1>
                 <h3 className='text-2xl semi-title'>We live by the code of passion</h3>
@@ -193,19 +200,28 @@ const AboutUs = () => {
                         </div>
                     </div>
                 </div>
-                {/* <div className={` ${styles.paddingY} relative`}>
-                    <div className='bg-blue-700 p-6 font-poppins'>
-                        <div>
+                <div className={` ${styles.paddingY} relative`}>
+                    <div className='bg-blue-700 p-6 font-poppins flex gap-5'>
+                        <div className='w-2/2'>
                         <h5 className="uppercase font-semibold">Our Values</h5>
                         <h1 className='text-5xl font-bold'>We are not only a company we are a family</h1>
                         </div>
-                        <div>
-
+                        <div className='text-black grid grid-cols-2 gap-3'>
+                           <div className='bg-white p-5'>
+                            <HiOutlineViewGrid className='text-2xl text-blue-600'></HiOutlineViewGrid>
+                            <h2 className='text-2xl font-semibold my-2'>Friendly Environment</h2>
+                            <p className='text-justify'>We are not always act like a company. We are also friend of our employees</p>
+                            </div> 
+                           <div className='bg-white p-5'>
+                            <HiOutlineUserGroup className='text-2xl text-blue-600'></HiOutlineUserGroup>
+                            <h2 className='text-2xl font-semibold my-2'>A Family</h2>
+                            <p className='text-justify'>We are not always act like a company. We are also friend of our employees</p>
+                            </div>
                         </div>
                     </div>
-                </div> */}
                 </div>
-            </div>
+                </div>
+            </motion.div>
             {/* <OurTeam></OurTeam> */}
         </div>
     );
