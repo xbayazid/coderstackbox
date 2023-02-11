@@ -14,7 +14,7 @@ const Profile = () => {
 
     const [showModal, setShowModal] = useState(false);
 
-    const handleOnClose = ()=> setShowModal(false)
+    const handleOnClose = ()=> setShowModal(false);
 
     return (
         <main>
