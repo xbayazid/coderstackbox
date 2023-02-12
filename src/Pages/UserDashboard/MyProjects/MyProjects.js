@@ -35,7 +35,7 @@ const MyProjects = () => {
         <meta charSet="utf-8" />
         <title>CodersStackBox - MyProjects</title>
       </Helmet>
-      <UserDashboardNavbar></UserDashboardNavbar>
+      {/* <UserDashboardNavbar></UserDashboardNavbar> */}
       <div className="flex text-white lg:w-3/4 mx-auto">
         <div className="main-content w-full">
           <main className="py-5 px-10">
