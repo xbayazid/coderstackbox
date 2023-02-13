@@ -27,6 +27,7 @@ import Blog from "../../Pages/Blog/Blog";
 import Collections from "../../Pages/Collections/Collections";
 import BlogPage from "../../Pages/Blog/BlogPage/BlogPage";
 // import DevProfile from "../../Pages/DevProfile/DevProfile";
+import DevProfile from "../../Pages/DevProfile/DevProfile";
 
 const router = createBrowserRouter([
   {
@@ -69,6 +70,10 @@ const router = createBrowserRouter([
       //   path: '/devProfile',
       //   element: <DevProfile></DevProfile>
       // },
+      {
+        path: '/devProfile',
+        element: <DevProfile></DevProfile>
+      },
       {
         path: "/catagories",
         element: <Catagories></Catagories>,
