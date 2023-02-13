@@ -1,11 +1,16 @@
 import React from 'react';
+import { useState } from 'react';
 import { useContext } from 'react';
 import { Helmet } from 'react-helmet';
+import { FaCamera } from 'react-icons/fa';
+import ImageUpdateModal from '../../../../components/ImageUpdateModal/ImageUpdateModal';
 import { AuthContext } from '../../../../context/AuthProvider';
 
 const Profile = () => {  
     const {user} = useContext(AuthContext);
     console.log(user);
+
+    const [showModal, setShowModal] = useState(false);
 
     return (
         <main>
@@ -14,12 +19,19 @@ const Profile = () => {
                 <title>CodersStackBox - Profile</title>
             </Helmet>
         <div className="h-full -my-3 text-white-300 ">
+        <ImageUpdateModal isVisible={showModal}  onClose={ () => setShowModal(false)}></ImageUpdateModal>
+        
         <div className="bg-dark-1 rounded-lg shadow-2xl py-5">
             {/* <div className="w-full h-[220px] bg-dark-1">
                 <img src="https://vojislavd.com/ta-template-demo/assets/img/profile-background.jpg" className="w-full h-full rounded-tl-lg rounded-tr-lg" />
             </div> */}
             <div className="flex flex-col items-center">
-                <img src={user.photoURL} className="md:w-52 w-44 border-4 border-gray-300 rounded-full" />
+                <div className='border-4 md:w-52 w-44 border-gray-300 rounded-full overflow-hidden'>
+                    <img src={user.photoURL} className="md:w-52 w-44" alt='' />
+                </div>
+                <FaCamera onClick={ () => setShowModal(true)} className='-mt-6 text-xl ml-32'></FaCamera>
+                
+
                 <div className="flex items-center space-x-2 mt-2">
                     <p className="text-2xl ">{user.displayName}</p>
                     <span className="bg-blue-500 rounded-full p-1" title="Verified">
@@ -31,6 +43,8 @@ const Profile = () => {
                 <p className="">Senior Software Engineer at Coders StackBox</p>
             </div>
         </div>
+
+        
 
         <div className="my-4 flex flex-col 2xl:flex-row space-y-4 2xl:space-y-0 2xl:space-x-4">
             <div className="w-full flex flex-col 2xl:w-1/3">

@@ -61,7 +61,7 @@ const
                     </div>
                 </div>
 
-                <div className='main-content w-full'>
+                <div className='main-content w-full '>
 
                     <header className='bg-dark-1 p-4'>
                         <div className='flex justify-between items-center'>
@@ -84,7 +84,7 @@ const
                         </div>
                     </header>
 
-                    <main className='py-5 px-10'>
+                    <main className='py-5 px-10 '>
                         <Outlet></Outlet>
                     </main>
                 </div>
