@@ -25,6 +25,7 @@ import PrivateRoutes from "../Routes/PrivateRoutes/PrivateRoutes";
 import AdminDashboard from "../../Pages/Dashboard/AdminPannel/AdminDashboard/AdminDashboard";
 import Blog from "../../Pages/Blog/Blog";
 import Collections from "../../Pages/Collections/Collections";
+import BlogPage from "../../Pages/Blog/BlogPage/BlogPage";
 
 const router = createBrowserRouter([
   {
@@ -51,6 +52,14 @@ const router = createBrowserRouter([
         path: "/blog",
         element: <Blog></Blog>,
       },
+      {
+        path: "/blog/:id",
+        element: <BlogPage/>
+      },
+      // {
+      //   path: "/blog/:id",
+      //   component: {Blog}
+      // },
       {
         path: "/doc",
         element: <Doc></Doc>,
