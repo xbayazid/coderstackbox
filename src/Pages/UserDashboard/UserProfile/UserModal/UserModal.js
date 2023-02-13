@@ -9,7 +9,7 @@ import { AuthContext } from "../../../../context/AuthProvider";
 const UserModal = ({ setIsOpen }) => {
   const { user } = useContext(AuthContext);
 
-  const [updatedUser, setUpdatedUser] = useState(user);
+  const [updatedUser, setUpdatedUser] = useState({});
 
   const handleUpdateUser = (e) => {
     e.preventDefault();
