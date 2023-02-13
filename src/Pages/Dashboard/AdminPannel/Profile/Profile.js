@@ -1,23 +1,40 @@
 import { useQuery } from "@tanstack/react-query";
-import React, { useContext, useState } from "react";
+import axios from "axios";
+import React, { useContext, useEffect, useState } from "react";
 import { Helmet } from "react-helmet";
 import { AuthContext } from "../../../../context/AuthProvider";
 import UpdateModal from "./UpdateModal/UpdateModal";
 
 const Profile = () => {
-  const [isOpen, setIsOpen] = useState(false);
   const { user } = useContext(AuthContext);
 
-  const { data, isLoading } = useQuery({
-    queryKey: ["projects"],
+  const [isOpen, setIsOpen] = useState(false);
+  const [usr, setUsr] = useState({});
+  console.log(usr);
+
+  const url = `http://localhost:5000/u?email=${user?.email}`;
+
+  const {
+    data: userEmail,
+    isLoading,
+    refetch,
+  } = useQuery({
+    queryKey: ["userEmail"],
     queryFn: async () => {
-      const res = await fetch(`http://localhost:5000/u?${user?.email}`);
-      const data = await res.json();
-      return data;
+      const res = await axios.get(url, {
+        headers: {
+          "content-type": "application/json",
+          authorization: `bearer ${localStorage.getItem("CodersStackBox")}`,
+        },
+      });
+      return res.data;
     },
   });
 
-  console.log(data);
+  const onClick = () => {
+    setIsOpen(true);
+    setUsr(userEmail[0]);
+  };
 
   return (
     <main>
@@ -32,12 +49,12 @@ const Profile = () => {
             </div> */}
           <div className="flex flex-col items-center">
             <img
-              src="https://upload.wikimedia.org/wikipedia/commons/thumb/2/2b/Avatar_The_Way_of_Water_Tokyo_Press_Conference_Sam_Worthington_%2852563252594%29_%28cropped%29.jpg/800px-Avatar_The_Way_of_Water_Tokyo_Press_Conference_Sam_Worthington_%2852563252594%29_%28cropped%29.jpg"
+              // src={data?.photoURL}
               className="md:w-52 w-44 border-4 border-gray-300 rounded-full"
               alt=""
             />
             <div className="flex items-center space-x-2 mt-2">
-              {/* <p className="text-2xl ">{user.displayName}</p> */}
+              {/* <p className="text-2xl ">{data.name}</p> */}
               <span className="bg-blue-500 rounded-full p-1" title="Verified">
                 <svg
                   xmlns="http://www.w3.org/2000/svg"
@@ -66,7 +83,7 @@ const Profile = () => {
               <ul className="mt-3 ">
                 <li className="flex py-2">
                   <span className="font-bold w-24">Full name:</span>
-                  {/* <span className="">{user.displayName}</span> */}
+                  {/* <span className="">{data.name}</span> */}
                 </li>
                 <li className="flex py-2">
                   <span className="font-bold w-24">Mobile:</span>
@@ -74,7 +91,7 @@ const Profile = () => {
                 </li>
                 <li className="flex py-2">
                   <span className="font-bold w-24">Email:</span>
-                  {/* <span className="">{user.email}</span> */}
+                  {/* <span className="">{data.email}</span> */}
                 </li>
                 <li className="flex py-2">
                   <span className="font-bold w-24">Location:</span>
@@ -83,7 +100,7 @@ const Profile = () => {
               </ul>
               <div className="w-2/3 mx-auto my-4">
                 <button
-                  onClick={(user) => setIsOpen(true)}
+                  onClick={onClick}
                   className="bg-blue-500 text-white py-2 px-4 rounded-lg hover:bg-blue-600"
                 >
                   Update Profile
@@ -184,7 +201,7 @@ const Profile = () => {
             </div>
           </div>
         </div>
-        {isOpen && <UpdateModal setIsOpen={setIsOpen}></UpdateModal>}
+        {isOpen && <UpdateModal user={usr} setIsOpen={setIsOpen} />}
       </div>
     </main>
   );

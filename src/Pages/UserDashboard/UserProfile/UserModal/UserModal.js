@@ -6,7 +6,8 @@ import { FaRegWindowClose } from "react-icons/fa";
 import { Form } from "react-router-dom";
 import { AuthContext } from "../../../../context/AuthProvider";
 
-const UserModal = ({ setIsOpen }) => {
+const UserModal = ({ setIsOpen, usr }) => {
+  console.log(usr);
   const { user } = useContext(AuthContext);
 
   const [updatedUser, setUpdatedUser] = useState({});

@@ -19,7 +19,7 @@ const UserModal = ({ setIsOpen }) => {
 
   return (
     <div className="fixed inset-0 overflow-hidden backdrop-blur-lg">
-      <div className="relative w-full h-full top-1/4">
+      <div className="w-full h-full">
         <div
           className="absolute bg-gray-900 opacity-0"
           onClick={() => setIsOpen(false)}
