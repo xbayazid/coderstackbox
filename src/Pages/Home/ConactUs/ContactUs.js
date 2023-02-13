@@ -5,17 +5,36 @@ import { motion } from 'framer-motion'
 import { fadeIn, staggerContainer } from "../../../utils/motion";
 import { TitleText, TypingText } from "../../../components/CustomText/CustomText";
 import { layout } from "../../../style";
+import { useRef } from "react";
+import emailjs from '@emailjs/browser';
+
 
 const ContactUs = () => {
+
+  const form = useRef()
+
+  const sendEmail = (e) => {
+    e.preventDefault();
+
+    emailjs.sendForm('service_jex286g', 'template_z6ou9ef', form.current, '-lDPQNuG6eujOlVZC')
+      .then((result) => {
+          console.log(result.text);
+      }, (error) => {
+          console.log(error.text);
+      });
+      e.target.reset()
+  };
+
+
   const {
     register,
-    handleSubmit,
+    // handleSubmit,
     formState: { errors },
   } = useForm();
 
-  const handleSubmitContact = (data) => {
-    console.log(data);
-  };
+  // const handleSubmitContact = (data) => {
+  //   console.log(data);
+  // };
 
   return (
     <div>
@@ -79,7 +98,10 @@ const ContactUs = () => {
           </motion.div>
           <motion.div variants={fadeIn("left", "spring", 0.5, 2)} className="">
           <form
-            onSubmit={handleSubmit(handleSubmitContact)}
+            ref={form}
+            onSubmit={sendEmail}
+
+            // onSubmit={handleSubmit(handleSubmitContact)}
             className="flex flex-col py-6 space-y-6 md:py-0 md:px-6 ng-untouched ng-pristine ng-valid"
           >
             <label className="block">
@@ -87,7 +109,7 @@ const ContactUs = () => {
               <input
                 {...register("fullName", { required: true })}
                 type="text"
-                placeholder=""
+                placeholder="Type your full name"
                 className="block w-full rounded-md shadow-sm p-2"
               />
               {errors.fullName && (
@@ -99,7 +121,7 @@ const ContactUs = () => {
               <input
                 {...register("email")}
                 type="email"
-                placeholder=""
+                placeholder="Type your email"
                 className="block w-full rounded-md shadow-sm p-2"
               />
             </label>
@@ -112,7 +134,7 @@ const ContactUs = () => {
                 placeholder="Write your message in details"
               ></textarea>
             </label>
-            <Button>submit</Button>
+            <Button type='submit'>submit</Button>
           </form>
           </motion.div>
         </div>
