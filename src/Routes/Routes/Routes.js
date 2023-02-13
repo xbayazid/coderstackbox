@@ -80,7 +80,7 @@ const router = createBrowserRouter([
       },
       {
         path: "/collections",
-        element: <Collections/>,
+        element: <Collections />,
       },
       {
         path: "/category/:id",
@@ -111,6 +111,7 @@ const router = createBrowserRouter([
         <AdminDashboardLayout></AdminDashboardLayout>
       </PrivateRoutes>
     ),
+
     children: [
       {
         path: "/adminDashboard",

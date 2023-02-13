@@ -3,7 +3,7 @@ import { useContext } from 'react';
 import { FaEllipsisH } from "react-icons/fa";
 import { Helmet } from 'react-helmet';
 import { AuthContext } from '../../../../context/AuthProvider';
-import { Link } from 'react-router-dom';
+
 import ProfileCard from './ProfileCard';
 import ParModal from './ParModal';
 import { useState } from 'react';
@@ -28,7 +28,7 @@ const Profile = () => {
                 <img src="https://vojislavd.com/ta-template-demo/assets/img/profile-background.jpg" className="w-full h-full rounded-tl-lg rounded-tr-lg" />
             </div> */}
                     <div className="flex flex-col items-center">
-                        <img src={user.photoURL} className="md:w-52 w-44 border-4 border-gray-300 rounded-full" />
+                        <img src={user.photoURL} className="md:w-52 w-44 border-4 border-gray-300 rounded-full" alt='' />
                         <div className="flex items-center space-x-2 mt-2">
                             <p className="text-2xl ">{user.displayName}</p>
                             <span className="bg-blue-500 rounded-full p-1" title="Verified">
@@ -91,26 +91,7 @@ const Profile = () => {
 
                     <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-8 mt-8">
 
-                        {/* <div className="flex flex-col items-center justify-center hover:text-blue-600" title="View Profile">
-                            <img src="https://vojislavd.com/ta-template-demo/assets/img/connections/connection11.jpg" className="w-16 rounded-full" />
-                            <p className="text-center font-bold text-sm mt-1">Benjamin Farrior</p>
-                            <p className="text-xs text-center">Software Engineer Lead at Microsoft</p>
-                        </div>
-                        <div className="flex flex-col items-center justify-center hover:text-blue-600" title="View Profile">
-                            <img src="https://vojislavd.com/ta-template-demo/assets/img/connections/connection12.jpg" className="w-16 rounded-full" />
-                            <p className="text-center font-bold text-sm mt-1">Maria Heal</p>
-                            <p className="text-xs text-center">Linux System Administrator at Twitter</p>
-                        </div>
-                        <div className="flex flex-col items-center justify-center hover:text-blue-600" title="View Profile">
-                            <img src="https://vojislavd.com/ta-template-demo/assets/img/connections/connection13.jpg" className="w-16 rounded-full" />
-                            <p className="text-center font-bold text-sm mt-1">Edward Ice</p>
-                            <p className="text-xs text-center">Customer Support at Instagram</p>
-                        </div>
-                        <div className="flex flex-col items-center justify-center hover:text-blue-600" title="View Profile">
-                            <img src="https://vojislavd.com/ta-template-demo/assets/img/connections/connection14.jpg" className="w-16 rounded-full" />
-                            <p className="text-center font-bold text-sm mt-1">Jeffery Silver</p>
-                            <p className="text-xs text-center">Software Engineer at Twitter</p>
-                        </div> */}
+                        
 
                         <ProfileCard/>
 
