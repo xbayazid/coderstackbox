@@ -7,7 +7,7 @@ import { Form } from "react-router-dom";
 import { AuthContext } from "../../../../context/AuthProvider";
 
 const UserModal = ({ setIsOpen, usr }) => {
-  console.log(usr);
+  const { name, email, _id, about, phone } = usr;
   const { user } = useContext(AuthContext);
 
   const [updatedUser, setUpdatedUser] = useState({});
@@ -47,20 +47,25 @@ const UserModal = ({ setIsOpen, usr }) => {
           <div className="mt-5 grid grid-cols-2 ">
             <form onSubmit={handleUpdateUser}>
               <input
-                defaultValue={user.displayName}
                 onChange={handleInputChange}
+                defaultValue={name}
+                name="name"
                 type="text"
                 className="w-full border-2 my-2 p-2 rounded-md outline-none"
                 placeholder="Your Full Name"
               />
               <input
                 onChange={handleInputChange}
+                name="email"
+                defaultValue={email}
                 type="email"
                 className="w-full border-2 my-2 p-2 rounded-md outline-none"
                 placeholder="Email Address"
               />
               <input
                 onChange={handleInputChange}
+                defaultValue={phone}
+                name="phone"
                 type="text"
                 className="w-full border-2 my-2 p-2 rounded-md outline-none"
                 placeholder="Phone Number"

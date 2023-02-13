@@ -1,12 +1,26 @@
+import { useQuery } from "@tanstack/react-query";
+import axios from "axios";
 import { React, useState } from "react";
 import { FaRegWindowClose } from "react-icons/fa";
 
-const UserModal = ({ setIsOpen }) => {
+const UserModal = ({ setIsOpen, user }) => {
+  const { name, email, _id, about, phone } = user;
   const [updatedUser, setUpdatedUser] = useState({});
+  console.log(updatedUser);
 
   const handleUpdateUser = (e) => {
     e.preventDefault();
     console.log(updatedUser);
+
+    fetch(`http://localhost:5000/u/${_id}`, {
+      method: "PUT",
+      headers: {
+        "content-type": "application/json",
+      },
+      body: JSON.stringify(updatedUser),
+    })
+      .then((res) => res.json())
+      .then((data) => console.log(data));
   };
 
   const handleInputChange = (e) => {
@@ -42,8 +56,8 @@ const UserModal = ({ setIsOpen }) => {
                 Name
               </label>
               <input
-                // defaultValue={user.displayName}
                 onChange={handleInputChange}
+                defaultValue={name}
                 name="name"
                 type="text"
                 className="w-full border-2 my-2 p-2 rounded-md outline-none text-black"
@@ -54,6 +68,7 @@ const UserModal = ({ setIsOpen }) => {
               </label>
               <input
                 onChange={handleInputChange}
+                defaultValue={email}
                 name="email"
                 type="email"
                 className="w-full border-2 my-2 p-2 rounded-md outline-none text-black"
@@ -63,8 +78,9 @@ const UserModal = ({ setIsOpen }) => {
                 Phone
               </label>
               <input
-                name="phone"
                 onChange={handleInputChange}
+                defaultValue={phone}
+                name="phone"
                 type="number"
                 className="w-full border-2 my-2 p-2 rounded-md outline-none text-black"
                 placeholder="Phone Number"
@@ -78,6 +94,8 @@ const UserModal = ({ setIsOpen }) => {
                 </label>
 
                 <textarea
+                  onChange={handleInputChange}
+                  defaultValue={about}
                   name="about"
                   placeholder="About Me"
                   className="block  mt-2 w-full  placeholder-gray-400/70 rounded-lg border border-gray-200 bg-white px-4 h-32 py-2.5 text-gray-700 focus:border-blue-400 focus:outline-none focus:ring focus:ring-blue-300 focus:ring-opacity-40 dark:border-gray-600 dark:bg-gray-900 dark:text-gray-300 dark:focus:border-blue-300"

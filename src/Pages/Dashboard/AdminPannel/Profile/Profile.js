@@ -3,6 +3,7 @@ import axios from "axios";
 import React, { useContext, useEffect, useState } from "react";
 import { Helmet } from "react-helmet";
 import { AuthContext } from "../../../../context/AuthProvider";
+import Loading from "../../../Loading/Loading";
 import UpdateModal from "./UpdateModal/UpdateModal";
 
 const Profile = () => {
@@ -10,7 +11,6 @@ const Profile = () => {
 
   const [isOpen, setIsOpen] = useState(false);
   const [usr, setUsr] = useState({});
-  console.log(usr);
 
   const url = `http://localhost:5000/u?email=${user?.email}`;
 
@@ -30,6 +30,9 @@ const Profile = () => {
       return res.data;
     },
   });
+  if (isLoading) {
+    return <Loading></Loading>;
+  }
 
   const onClick = () => {
     setIsOpen(true);
@@ -49,12 +52,12 @@ const Profile = () => {
             </div> */}
           <div className="flex flex-col items-center">
             <img
-              // src={data?.photoURL}
+              src={userEmail[0]?.photoURL}
               className="md:w-52 w-44 border-4 border-gray-300 rounded-full"
               alt=""
             />
             <div className="flex items-center space-x-2 mt-2">
-              {/* <p className="text-2xl ">{data.name}</p> */}
+              <p className="text-2xl ">{userEmail[0]?.name}</p>
               <span className="bg-blue-500 rounded-full p-1" title="Verified">
                 <svg
                   xmlns="http://www.w3.org/2000/svg"
@@ -83,15 +86,15 @@ const Profile = () => {
               <ul className="mt-3 ">
                 <li className="flex py-2">
                   <span className="font-bold w-24">Full name:</span>
-                  {/* <span className="">{data.name}</span> */}
+                  <span className="">{userEmail[0]?.name}</span>
                 </li>
                 <li className="flex py-2">
                   <span className="font-bold w-24">Mobile:</span>
-                  <span className="">(123) 123-1234</span>
+                  <span className="">{userEmail[0]?.phone}</span>
                 </li>
                 <li className="flex py-2">
                   <span className="font-bold w-24">Email:</span>
-                  {/* <span className="">{data.email}</span> */}
+                  <span className="">{userEmail[0]?.email}</span>
                 </li>
                 <li className="flex py-2">
                   <span className="font-bold w-24">Location:</span>
@@ -110,15 +113,8 @@ const Profile = () => {
           </div>
           <div className="flex flex-col w-full 2xl:w-2/3">
             <div className="flex-1 bg-dark-1 rounded-lg shadow-xl p-8">
-              <h4 className="text-xl font-bold">About</h4>
-              <p className="mt-2 ">
-                Nesciunt voluptates obcaecati numquam error et ut fugiat
-                asperiores. Sunt nulla ad incidunt laboriosam, laudantium est
-                unde natus cum numquam, neque facere. Lorem ipsum dolor sit amet
-                consectetur adipisicing elit. Ut, magni odio magnam commodi sunt
-                ipsum eum! Voluptas eveniet aperiam at maxime, iste id dicta
-                autem odio laudantium eligendi commodi distinctio!
-              </p>
+              <h4 className="text-xl font-bold">About Me</h4>
+              <p className="mt-2 ">{userEmail[0]?.about}</p>
             </div>
           </div>
         </div>
