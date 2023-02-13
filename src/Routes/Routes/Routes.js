@@ -25,6 +25,7 @@ import PrivateRoutes from "../Routes/PrivateRoutes/PrivateRoutes";
 import AdminDashboard from "../../Pages/Dashboard/AdminPannel/AdminDashboard/AdminDashboard";
 import Blog from "../../Pages/Blog/Blog";
 import Collections from "../../Pages/Collections/Collections";
+import DevProfile from "../../Pages/DevProfile/DevProfile";
 
 const router = createBrowserRouter([
   {
@@ -55,14 +56,17 @@ const router = createBrowserRouter([
         path: "/doc",
         element: <Doc></Doc>,
       },
-
+      {
+        path: '/devProfile',
+        element: <DevProfile></DevProfile>
+      },
       {
         path: "/catagories",
         element: <Catagories></Catagories>,
       },
       {
         path: "/collections",
-        element: <Collections/>,
+        element: <Collections />,
       },
       {
         path: "/category/:id",
@@ -93,6 +97,7 @@ const router = createBrowserRouter([
         <AdminDashboardLayout></AdminDashboardLayout>
       </PrivateRoutes>
     ),
+
     children: [
       {
         path: "/adminDashboard",
