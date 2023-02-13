@@ -1,12 +1,23 @@
-import React, { useState } from "react";
-import { useContext } from "react";
+import { useQuery } from "@tanstack/react-query";
+import React, { useContext, useState } from "react";
 import { Helmet } from "react-helmet";
+import { AuthContext } from "../../../../context/AuthProvider";
 import UpdateModal from "./UpdateModal/UpdateModal";
-// import { AuthContext } from "../../../../context/AuthProvider";
 
 const Profile = () => {
-  //   const { user } = useContext(AuthContext);
   const [isOpen, setIsOpen] = useState(false);
+  const { user } = useContext(AuthContext);
+
+  const { data, isLoading } = useQuery({
+    queryKey: ["projects"],
+    queryFn: async () => {
+      const res = await fetch(`http://localhost:5000/u?${user?.email}`);
+      const data = await res.json();
+      return data;
+    },
+  });
+
+  console.log(data);
 
   return (
     <main>
@@ -72,7 +83,7 @@ const Profile = () => {
               </ul>
               <div className="w-2/3 mx-auto my-4">
                 <button
-                  onClick={() => setIsOpen(true)}
+                  onClick={(user) => setIsOpen(true)}
                   className="bg-blue-500 text-white py-2 px-4 rounded-lg hover:bg-blue-600"
                 >
                   Update Profile
