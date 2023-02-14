@@ -11,6 +11,11 @@ const Profile = () => {
     console.log(user);
 
     const [showModal, setShowModal] = useState(false);
+    const [imgCrop, setImgCrop] = useState(false);
+
+    const onCrop = (view) => {
+        setImgCrop(view)
+    }
 
     return (
         <main>
@@ -19,15 +24,15 @@ const Profile = () => {
                 <title>CodersStackBox - Profile</title>
             </Helmet>
         <div className="h-full -my-3 text-white-300 ">
-        <ImageUpdateModal isVisible={showModal}  onClose={ () => setShowModal(false)}></ImageUpdateModal>
+        <ImageUpdateModal isVisible={showModal} onCrop={onCrop}  onClose={ () => setShowModal(false)}></ImageUpdateModal>
         
         <div className="bg-dark-1 rounded-lg shadow-2xl py-5">
             {/* <div className="w-full h-[220px] bg-dark-1">
                 <img src="https://vojislavd.com/ta-template-demo/assets/img/profile-background.jpg" className="w-full h-full rounded-tl-lg rounded-tr-lg" />
             </div> */}
             <div className="flex flex-col items-center">
-                <div className='border-4 md:w-52 w-44 border-gray-300 rounded-full overflow-hidden'>
-                    <img src={user.photoURL} className="md:w-52 w-44" alt='' />
+                <div className='border-4 md:w-52 md:h-52 bg-slate-500 w-44 border-gray-300 rounded-full overflow-hidden'>
+                    <img src={user?.photoURL} className="md:w-52 w-44" alt='' />
                 </div>
                 <FaCamera onClick={ () => setShowModal(true)} className='-mt-6 text-xl ml-32'></FaCamera>
                 
