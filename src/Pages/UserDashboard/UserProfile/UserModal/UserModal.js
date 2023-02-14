@@ -46,20 +46,22 @@ const UserModal = ({ setIsOpen }) => {
           <div className="mt-5 grid grid-cols-2 ">
             <form onSubmit={handleUpdateUser}>
               <input
-                defaultValue={user.displayName}
                 onChange={handleInputChange}
+                name="name"
                 type="text"
                 className="w-full border-2 my-2 p-2 rounded-md outline-none"
                 placeholder="Your Full Name"
               />
               <input
                 onChange={handleInputChange}
+                name="email"
                 type="email"
                 className="w-full border-2 my-2 p-2 rounded-md outline-none"
                 placeholder="Email Address"
               />
               <input
                 onChange={handleInputChange}
+                name="phone"
                 type="text"
                 className="w-full border-2 my-2 p-2 rounded-md outline-none"
                 placeholder="Phone Number"

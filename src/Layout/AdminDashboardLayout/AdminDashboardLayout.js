@@ -21,17 +21,6 @@ const AdminDashboard = () => {
 
   const toggle = () => setIsOpen(!isOpen);
 
-  const { data: users } = useQuery({
-    queryKey: ["users"],
-    queryFn: async () => {
-      const res = await fetch("http://localhost:5000/users");
-      const data = await res.json();
-      return data;
-    },
-  });
-
-  console.log(users.result);
-
   return (
     <div className="flex  text-white">
       <div
