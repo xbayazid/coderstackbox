@@ -66,8 +66,13 @@ const ImageUpdateModal = ({isVisible, user, refetch, onClose}) => {
             })
               .then((res) => res.json())
               .then((data) => {
-                console.log("Update image", data);
+                // console.log("Update image", data);
+                refetch();
                 toast.success("Update Successfully");
+                setTimeout( () => {
+                    onClose();
+                }, 3500)
+                
               });
           };
       
@@ -78,10 +83,9 @@ const ImageUpdateModal = ({isVisible, user, refetch, onClose}) => {
                 <FaTimes onClick={ () => onClose()} className='text-white text-2xl' />
                 <form onSubmit={handleSubmit(handelUploadImage)} className='md:w-[600px] w-[90vw] md:p-10 p-5 h-[80vh] md:h-[500px] flex flex-col justify-between items-center bg-slate-600 rounded-md'>
                     <h2 className='text-2xl text-center'>Uplod your photo</h2>
-                    <div className='grid md:gap-20 gap-5 md:grid-cols-2 md:grid-rows grid-cols-1 rounded-full  border-green-600 justify-between items-center'>
+                    <div className='grid md:gap-20 gap-5 mx-auto md:grid-cols-2 md:grid-rows grid-cols-1 rounded-full  border-green-600 justify-between items-center'>
                         <div>
                             <label htmlFor='userImg' className='text-center'>
-                                {/* <FaUserAlt className=''></FaUserAlt> */}
                                 <FaCloudUploadAlt className='text-9xl'></FaCloudUploadAlt>
                             </label>
                         </div>
@@ -98,9 +102,6 @@ const ImageUpdateModal = ({isVisible, user, refetch, onClose}) => {
                         className='hidden' id='userImg'
                     />
                     
-                    <div>
-                        <button className='flex gap-5 justify-center items-center'>Applay</button>
-                    </div>
                     <Button className='flex gap-5 justify-center items-center'>Save</Button>
                     
                 </form>

@@ -69,8 +69,9 @@ const Profile = () => {
         <div className="bg-dark-1 rounded-lg shadow-2xl py-5">
           <div className="flex flex-col items-center">
 
-            <div className='border-4 md:w-52 md:h-52 bg-slate-500 w-44 border-gray-300 rounded-full overflow-hidden'>
-                <img src={userEmail[0]?.photoURL} className="md:w-52 w-44" alt='' />
+            <div className='border-4 md:w-52 md:h-52 bg-slate-500 border-gray-300 rounded-full overflow-hidden
+            w-44 h-44 border-r-white'>
+                <img src={userEmail[0]?.photoURL} className="md:w-full h-full" alt='' />
             </div>
             <FaCamera onClick={ () => setShowImgUpdateModal(true)} className='-mt-6 text-xl ml-32'></FaCamera>
 
