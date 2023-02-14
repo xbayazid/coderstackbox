@@ -3,16 +3,47 @@ import { useContext } from "react";
 import { FaEllipsisH } from "react-icons/fa";
 import { Helmet } from "react-helmet";
 import { AuthContext } from "../../../../context/AuthProvider";
-
 import ProfileCard from "./ProfileCard";
 import ParModal from "./ParModal";
 import { useState } from "react";
+import { useQuery } from "@tanstack/react-query";
+import axios from "axios";
+import Loading from "../../../Loading/Loading";
+import UpdateModal from "./UpdateModal/UpdateModal";
 
 const Profile = () => {
   const { user } = useContext(AuthContext);
-  console.log(user);
-
   const [showModal, setShowModal] = useState(false);
+
+  const [isOpen, setIsOpen] = useState(false);
+  const [usr, setUsr] = useState({});
+
+  const url = `http://localhost:5000/u?email=${user?.email}`;
+
+  const {
+    data: userEmail,
+    isLoading,
+    refetch,
+  } = useQuery({
+    queryKey: ["userEmail"],
+    queryFn: async () => {
+      const res = await axios.get(url, {
+        headers: {
+          "content-type": "application/json",
+          authorization: `bearer ${localStorage.getItem("CodersStackBox")}`,
+        },
+      });
+      return res.data;
+    },
+  });
+  if (isLoading) {
+    return <Loading></Loading>;
+  }
+
+  const onClick = () => {
+    setIsOpen(true);
+    setUsr(userEmail[0]);
+  };
 
   const handleOnClose = () => setShowModal(false);
 
@@ -29,12 +60,12 @@ const Profile = () => {
             </div> */}
           <div className="flex flex-col items-center">
             <img
-              src={user.photoURL}
+              src={userEmail[0]?.photoURL}
               className="md:w-52 w-44 border-4 border-gray-300 rounded-full"
               alt=""
             />
             <div className="flex items-center space-x-2 mt-2">
-              <p className="text-2xl ">{user.displayName}</p>
+              <p className="text-2xl ">{userEmail[0]?.name}</p>
               <span className="bg-blue-500 rounded-full p-1" title="Verified">
                 <svg
                   xmlns="http://www.w3.org/2000/svg"
@@ -69,21 +100,29 @@ const Profile = () => {
               <ul className="mt-3 ">
                 <li className="flex py-2">
                   <span className="font-bold w-24">Full name:</span>
-                  <span className="">{user.displayName}</span>
+                  <span className="">{userEmail[0]?.name}</span>
                 </li>
                 <li className="flex py-2">
                   <span className="font-bold w-24">Mobile:</span>
-                  <span className="">(123) 123-1234</span>
+                  <span className="">{userEmail[0]?.phone}</span>
                 </li>
                 <li className="flex py-2">
                   <span className="font-bold w-24">Email:</span>
-                  <span className="">{user.email}</span>
+                  <span className="">{userEmail[0]?.email}</span>
                 </li>
                 <li className="flex py-2">
                   <span className="font-bold w-24">Location:</span>
                   <span className="">New York, US</span>
                 </li>
               </ul>
+              <div className="w-2/3 mx-auto my-4">
+                <button
+                  onClick={onClick}
+                  className="bg-blue-500 text-white py-2 px-4 rounded-lg hover:bg-blue-600"
+                >
+                  Update Profile
+                </button>
+              </div>
             </div>
           </div>
 
@@ -130,6 +169,7 @@ const Profile = () => {
           </div>
         </div>
       </div>
+      {isOpen && <UpdateModal user={usr} setIsOpen={setIsOpen} />}
     </main>
   );
 };
