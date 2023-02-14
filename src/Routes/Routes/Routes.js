@@ -28,6 +28,7 @@ import Collections from "../../Pages/Collections/Collections";
 import BlogPage from "../../Pages/Blog/BlogPage/BlogPage";
 // import DevProfile from "../../Pages/DevProfile/DevProfile";
 import DevProfile from "../../Pages/DevProfile/DevProfile";
+import IDE from "../../Pages/CodeEditor/OnlineIDE";
 
 const router = createBrowserRouter([
   {
@@ -103,6 +104,10 @@ const router = createBrowserRouter([
   {
     path: "/code-editor",
     element: <EditorPage />,
+  },
+  {
+    path: "/ide",
+    element: <IDE></IDE>,
   },
   {
     path: "/adminDashboard",
