@@ -28,6 +28,7 @@ import Collections from "../../Pages/Collections/Collections";
 import BlogPage from "../../Pages/Blog/BlogPage/BlogPage";
 // import DevProfile from "../../Pages/DevProfile/DevProfile";
 import DevProfile from "../../Pages/DevProfile/DevProfile";
+import AdminRoute from "../AdminRoute";
 
 const router = createBrowserRouter([
   {
@@ -56,7 +57,7 @@ const router = createBrowserRouter([
       },
       {
         path: "/blog/:id",
-        element: <BlogPage/>
+        element: <BlogPage />,
       },
       // {
       //   path: "/blog/:id",
@@ -71,8 +72,8 @@ const router = createBrowserRouter([
       //   element: <DevProfile></DevProfile>
       // },
       {
-        path: '/devProfile',
-        element: <DevProfile></DevProfile>
+        path: "/devProfile",
+        element: <DevProfile></DevProfile>,
       },
       {
         path: "/catagories",

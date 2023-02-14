@@ -107,10 +107,6 @@ const Profile = () => {
                   <span className="font-bold w-24">Email:</span>
                   <span className="">{userEmail[0]?.email}</span>
                 </li>
-                <li className="flex py-2">
-                  <span className="font-bold w-24">Location:</span>
-                  <span className="">New York, US</span>
-                </li>
               </ul>
               <div className="w-2/3 mx-auto my-4">
                 <button
