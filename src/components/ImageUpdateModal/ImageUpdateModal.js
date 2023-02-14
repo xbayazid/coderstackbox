@@ -44,39 +44,30 @@ const ImageUpdateModal = ({isVisible, onClose}) => {
                 if (imageData.status) {
                     // console.log(imageData.data.url);
                     setUploadImg(imageData.data.url);
+
                     const userInfo = {
                     photoURL: imageData.data.url,
                   };
     
                   updatePhoto(userInfo)
-                    .then(() => {
-                        updatePhoto(imageData.data.url);
-                    })
+                    .then(() => {} )
                     .catch((error) => console.log(error));
                 }
               });
           }
 
           const updatePhoto = (userImage) => {
-            const user = {
-            //   role,
-            //   userName,
-            //   email,
-              userImage,
-            };
         
-            fetch("https://sokher-furniture-1md-rakibul-islam.vercel.app/users", {
-              method: "POST",
+            fetch(`http://localhost:5000/u/${_id}`, {
+              method: "PUT",
               headers: {
                 "content-type": "application/json",
-                // authorization: `bearer ${localStorage.getItem('accessToken')}`
               },
-              body: JSON.stringify(user),
+              body: JSON.stringify(userImage),
             })
               .then((res) => res.json())
               .then((data) => {
-                console.log("save user", data);
-                // setCreatedUserEmail(email);
+                console.log("Update image", data);
                 toast.success("Update Successfully");
               });
           };
