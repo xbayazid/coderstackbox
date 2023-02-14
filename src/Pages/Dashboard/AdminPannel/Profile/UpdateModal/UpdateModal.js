@@ -1,16 +1,12 @@
-import { useQuery } from "@tanstack/react-query";
-import axios from "axios";
 import { React, useState } from "react";
 import { FaRegWindowClose } from "react-icons/fa";
 
 const UserModal = ({ setIsOpen, user }) => {
   const { name, email, _id, about, phone } = user;
   const [updatedUser, setUpdatedUser] = useState({});
-  console.log(updatedUser);
 
   const handleUpdateUser = (e) => {
     e.preventDefault();
-    console.log(updatedUser);
 
     fetch(`http://localhost:5000/u/${_id}`, {
       method: "PUT",
@@ -20,7 +16,9 @@ const UserModal = ({ setIsOpen, user }) => {
       body: JSON.stringify(updatedUser),
     })
       .then((res) => res.json())
-      .then((data) => console.log(data));
+      .then((data) => {
+        setUpdatedUser("");
+      });
   };
 
   const handleInputChange = (e) => {
