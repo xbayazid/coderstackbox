@@ -55,9 +55,6 @@ const Profile = () => {
       </Helmet>
       <div className="h-full -my-3 text-white-300 ">
         <div className="bg-dark-1 rounded-lg shadow-2xl py-5">
-          {/* <div className="w-full h-[220px] bg-dark-1">
-                <img src="https://vojislavd.com/ta-template-demo/assets/img/profile-background.jpg" className="w-full h-full rounded-tl-lg rounded-tr-lg" />
-            </div> */}
           <div className="flex flex-col items-center">
             <img
               src={userEmail[0]?.photoURL}
@@ -133,14 +130,7 @@ const Profile = () => {
           <div className="flex flex-col w-full 2xl:w-2/3">
             <div className="flex-1 bg-dark-1 rounded-lg shadow-xl p-8">
               <h4 className="text-xl font-bold">About</h4>
-              <p className="mt-2 ">
-                Nesciunt voluptates obcaecati numquam error et ut fugiat
-                asperiores. Sunt nulla ad incidunt laboriosam, laudantium est
-                unde natus cum numquam, neque facere. Lorem ipsum dolor sit amet
-                consectetur adipisicing elit. Ut, magni odio magnam commodi sunt
-                ipsum eum! Voluptas eveniet aperiam at maxime, iste id dicta
-                autem odio laudantium eligendi commodi distinctio!
-              </p>
+              <p className="mt-2 ">{userEmail[0]?.about}</p>
             </div>
           </div>
         </div>
@@ -169,7 +159,9 @@ const Profile = () => {
           </div>
         </div>
       </div>
-      {isOpen && <UpdateModal user={usr} setIsOpen={setIsOpen} />}
+      {isOpen && (
+        <UpdateModal user={usr} setIsOpen={setIsOpen} refetch={refetch} />
+      )}
     </main>
   );
 };

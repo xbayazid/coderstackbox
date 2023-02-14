@@ -164,7 +164,7 @@ const UserProfile = () => {
           </main>
         </div>
       </div>
-      {isOpen && <UserModal setIsOpen={setIsOpen}></UserModal>}
+      {/* {isOpen && <UserModal setIsOpen={setIsOpen}></UserModal>} */}
     </div>
   );
 };

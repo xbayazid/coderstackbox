@@ -1,7 +1,8 @@
 import { React, useState } from "react";
+import { toast } from "react-hot-toast";
 import { FaRegWindowClose } from "react-icons/fa";
 
-const UserModal = ({ setIsOpen, user }) => {
+const UserModal = ({ setIsOpen, user, refetch }) => {
   const { name, email, _id, about, phone } = user;
   const [updatedUser, setUpdatedUser] = useState({});
 
@@ -17,7 +18,9 @@ const UserModal = ({ setIsOpen, user }) => {
     })
       .then((res) => res.json())
       .then((data) => {
-        setUpdatedUser("");
+        console.log(data);
+        toast.success("Profile Updated");
+        refetch();
       });
   };
 
@@ -84,11 +87,8 @@ const UserModal = ({ setIsOpen, user }) => {
                 placeholder="Phone Number"
               />
               <div>
-                <label
-                  for="Description"
-                  class="block text-sm text-gray-500 dark:text-gray-300"
-                >
-                  Description
+                <label className="" htmlFor="">
+                  Edit About
                 </label>
 
                 <textarea
