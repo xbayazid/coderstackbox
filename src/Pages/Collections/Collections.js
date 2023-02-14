@@ -35,19 +35,16 @@ const Collections = () => {
 
   const handleSearchInputChange = event => {
     setSearchQuery(event.target.value);
+    refetch();
   };
 
   const filteredData = collections.result?.filter(item =>
     item.projectName.toLowerCase().includes(searchQuery.toLowerCase())
   );
-  console.log(filteredData);
-
-
   if (isLoading) {
     return <Loading />;
   }
 
-  console.log(collections.result);
 
   return (
     <div className={`${layout.sectionCol}`}>
@@ -69,14 +66,17 @@ const Collections = () => {
           <h2 className={`font-poppins font-normal xs:text-[32px] text-[28px] text-dimWhite xs:leading-[76.8px] leading-[66.8px] w-full`}>Browse and share work from world-class designers and developers in the front-end community.</h2>
 
         </div>
-        <div
+        <motion.div
+          variants={fadeIn('', 'tween', 0.75, 2)} 
 
           className="grid gap-7 md:grid-cols-2 lg:grid-cols-3 mx-auto my-5"
         >
-          <div>
-            <h1 className="text-white mb-2 font-bold text-2xl">Explore ideas from the 1.8 million+ front-end designers and developers.</h1>
-            <p className="text-white mb-4">Check out the work of top-notch designers and developers in the front-end community and share it.</p>
-            <fieldset className="w-full text-gray-100  lg:flex">
+          <motion.div
+          variants={fadeIn('', 'tween', 1, 2)} 
+          >
+            <h1 className=" font-poppins font-normal xs:text-[28px] text-[24px] text-dimWhite w-full">Explore ideas from the 1.8 million+ front-end designers and developers.</h1>
+            <p className="text-dimWhite/60 mb-4">Check out the work of top-notch designers and developers in the front-end community and share it.</p>
+            <fieldset className="w-full lg:flex">
               <div className="relative">
                 <span className="absolute inset-y-0 left-0 flex items-center pl-2">
                   <button
@@ -105,11 +105,11 @@ const Collections = () => {
             </fieldset>
             <ul>
             </ul>
-          </div>
+          </motion.div>
           {filteredData?.map((collection, index) => (
             <CollectionCard key={collection._id} index={index} props={collection} />
           ))}
-        </div>
+        </motion.div>
       </motion.div>
     </div>
   );

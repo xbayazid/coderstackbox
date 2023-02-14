@@ -59,9 +59,6 @@ const CodeCell = () => {
 
 
     const [projectName, setProjectName] = useState("");
-    const [html, setHtml] = useState("");
-    const [css, setCss] = useState("");
-    const [js, setJs] = useState("");
     const [toggle, setToggle] = useState(false);
   
     const {user} = useContext(AuthContext)
@@ -70,9 +67,9 @@ const CodeCell = () => {
     const handleSubmit = () => {
       const code = {
         projectName: projectName,
-        reactProject: projectCode
+        code: projectCode
       };
-      const url = `http://localhost:5000/projects`;
+      const url = `http://localhost:5000/compiled-code`;
       axios.post(url, code, {
         headers: {
           authorization: `bearer ${localStorage.getItem("CodersStackBox")}`,
@@ -97,6 +94,8 @@ const CodeCell = () => {
   const { SaveProjectModal, setShowSaveProjectModal } = useSaveProjectModal();
 
 
+
+
     /* -------------------- */
 
 
@@ -110,7 +109,7 @@ const CodeCell = () => {
       </Helmet>
 
       <>
-        <nav className="sticky top-0 z-[3] w-full flex py-3 justify-between items-center navbar">
+        <nav className="w-full flex py-3 justify-between items-center navbar">
           <>
           <SaveProjectModal  />
             <Link to="/" className="gap-x-4 items-center flex">
@@ -179,6 +178,7 @@ const CodeCell = () => {
                 <Preview code={code} err={err} />
             </div>
         </Resizable>
+        {err && <div className='preview-error bg-white'>{err}</div>}
         </>
     )
 
