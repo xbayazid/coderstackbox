@@ -250,3 +250,73 @@ export const categories = [
     categoryName: "E-Commerce"
   }
 ];
+
+export const blogList = [
+  {
+    id:'1',
+    title:'html tools you shuld be using',
+    category:'development',
+    subCategory:'ui/ux',
+    description:'Codestack is an online code editor that allows users to collaborate and share their code in real-time. The platform is built using the latest web technologies and is designed to be user-friendly and intuitive.',
+    authorName:'Jhon Doe',
+    authorAvatar:'https://i.ibb.co/199wc0y/3d-illustration-person-23-2149436179.webp',
+    createdAt:'June 03, 2021',
+    cover:'https://i.ibb.co/cLfHMtN/share.gif',
+  },
+  {
+    id:'2',
+    title:'7 CSS tools you shuld be using',
+    category:'design',
+    subCategory:'frontened',
+    description:'Codestack is an online code editor that allows users to collaborate and share their code in real-time. The platform is built using the latest web technologies and is designed to be user-friendly and intuitive.',
+    authorName:'Jhon Doe',
+    authorAvatar:'https://i.ibb.co/199wc0y/3d-illustration-person-23-2149436179.webp',
+    createdAt:'June 03, 2021',
+    cover:'https://i.ibb.co/RgkVYVw/learn.gif',
+  },
+  {
+    id:'3',
+    title:'JS tools you shuld be using',
+    category:'frontened',
+    subCategory:'ui/ux',
+    description:'Codestack is an online code editor that allows users to collaborate and share their code in real-time. The platform is built using the latest web technologies and is designed to be user-friendly and intuitive.',
+    authorName:'Jhon Doe',
+    authorAvatar:'https://i.ibb.co/199wc0y/3d-illustration-person-23-2149436179.webp',
+    createdAt:'June 03, 2021',
+    cover:'https://i.ibb.co/5TMyCQ7/build.gif',
+  },
+  {
+    id:'4',
+    title:'React tools you shuld be using',
+    category:'backend',
+    subCategory:'server',
+    description:'Codestack is an online code editor that allows users to collaborate and share their code in real-time. The platform is built using the latest web technologies and is designed to be user-friendly and intuitive.',
+    authorName:'Jhon Doe',
+    authorAvatar:'https://i.ibb.co/199wc0y/3d-illustration-person-23-2149436179.webp',
+    createdAt:'June 03, 2021',
+    cover:'https://i.ibb.co/5TMyCQ7/build.gif',
+  },
+  {
+    id:'5',
+    title:'Angular tools you shuld be using',
+    category:'frontened',
+    subCategory:'design',
+    description:'Codestack is an online code editor that allows users to collaborate and share their code in real-time. The platform is built using the latest web technologies and is designed to be user-friendly and intuitive.',
+    authorName:'Jhon Doe',
+    authorAvatar:'https://i.ibb.co/199wc0y/3d-illustration-person-23-2149436179.webp',
+    createdAt:'June 03, 2021',
+    cover:'https://i.ibb.co/RgkVYVw/learn.gif',
+  },
+  {
+    id:'6',
+    title:'Typescript tools you shuld be using',
+    category:'Development',
+    subCategory:'frontened',
+    description:'Codestack is an online code editor that allows users to collaborate and share their code in real-time. The platform is built using the latest web technologies and is designed to be user-friendly and intuitive.',
+    authorName:'Jhon Doe',
+    authorAvatar:'https://i.ibb.co/199wc0y/3d-illustration-person-23-2149436179.webp',
+    createdAt:'June 03, 2021',
+    cover:'https://i.ibb.co/cLfHMtN/share.gif',
+  },
+]
+

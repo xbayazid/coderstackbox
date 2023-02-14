@@ -20,9 +20,13 @@ const ImageUpdateModal = ({isVisible, onClose}) => {
 
     const handelUploadImage = (data) => {
         console.log(data);
-        const imageHostKey = import.meta.env.VITE_imgbb_key;
+        
+        if (data){
+            onClose()
+        }
+
+        const imageHostKey = process.env.REACT_APP_imgbb_key;
     
-        // setSignUpError("");
             const image = data.photo[0];
             const formData = new FormData();
             formData.append("image", image);
@@ -35,7 +39,8 @@ const ImageUpdateModal = ({isVisible, onClose}) => {
               .then((res) => res.json())
               .then((imageData) => {
                 if (imageData.status) {
-                  const userInfo = {
+                    console.log(imageData.data.url);
+                    const userInfo = {
                     photoURL: imageData.data.url,
                   };
     
@@ -92,14 +97,6 @@ const ImageUpdateModal = ({isVisible, onClose}) => {
                         type="file"
                         className='hidden' id='userImg'
                     />
-
-                    {/* <input                          
-                        {...register("photo", {
-                            required: true,
-                            })}
-                            type="file"
-                            className="file-input file-input-bordered"
-                        /> */}
 
                     <Button className='flex gap-5 justify-center items-center'>Save</Button>
                     
