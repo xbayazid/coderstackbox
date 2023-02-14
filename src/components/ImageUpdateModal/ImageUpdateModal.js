@@ -5,7 +5,8 @@ import { useForm } from 'react-hook-form';
 import { toast } from 'react-hot-toast';
 import { useState } from 'react';
 
-const ImageUpdateModal = ({isVisible, onClose}) => {
+const ImageUpdateModal = ({isVisible, user, refetch, onClose}) => {
+    const { name, email, _id, about, phone } = user;
 
     const [uploadImg, setUploadImg] = useState('');
 
@@ -47,11 +48,9 @@ const ImageUpdateModal = ({isVisible, onClose}) => {
 
                     const userInfo = {
                     photoURL: imageData.data.url,
-                  };
+                    };
     
                   updatePhoto(userInfo)
-                    .then(() => {} )
-                    .catch((error) => console.log(error));
                 }
               });
           }

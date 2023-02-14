@@ -59,7 +59,12 @@ const Profile = () => {
         <title>CodersStackBox - Profile</title>
       </Helmet>
       <div className="h-full -my-3 text-white-300 ">
-        <ImageUpdateModal isVisible={showImgUpdateModal}  onClose={ () => setShowImgUpdateModal(false)}></ImageUpdateModal>
+        <ImageUpdateModal
+         isVisible={showImgUpdateModal}
+         onClose={ () => setShowImgUpdateModal(false) }
+         user={userEmail[0]}
+         refetch={refetch} 
+         ></ImageUpdateModal>
         
         <div className="bg-dark-1 rounded-lg shadow-2xl py-5">
           <div className="flex flex-col items-center">
