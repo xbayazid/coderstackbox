@@ -13,7 +13,6 @@ const Preview = ({code, err}) => {
       
     }, [code])
 
-    console.log(err)
     
 
     const html = `
@@ -55,7 +54,7 @@ const Preview = ({code, err}) => {
     sandbox="allow-scripts"
     srcDoc={html}
     />
-    {err && <div className='preview-error'>{err}</div>}
+   
    </div>
   )
 }
