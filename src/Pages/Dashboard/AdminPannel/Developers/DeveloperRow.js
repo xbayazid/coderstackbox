@@ -1,6 +1,6 @@
 import React from "react";
 import { FaTrash } from "react-icons/fa";
-import { Link } from "react-router-dom";
+
 import SmallSpinner from "../../../../components/SmallSpinner";
 
 const DeveloperRow = ({ user, handleRequest, loading }) => {
@@ -34,9 +34,7 @@ const DeveloperRow = ({ user, handleRequest, loading }) => {
       </td>
       <td className="px-5 py-5 text-sm">
         {user?.role ? (
-          <span
-            className="relative cursor-pointer inline-block px-3 py-1 font-semibold text-green-900 leading-tight"
-          >
+          <span className="relative cursor-pointer inline-block px-3 py-1 font-semibold text-green-900 leading-tight">
             <span
               aria-hidden="true"
               className="absolute inset-0 bg-green-200 opacity-50 rounded-full"
@@ -61,7 +59,13 @@ const DeveloperRow = ({ user, handleRequest, loading }) => {
         )}
       </td>
       <td className={`px-6 py-4 font-semibold text-gray-500 dark:text-white `}>
-        <FaTrash className={` ${user?.role === 'admin' ? 'disable text-gray-600 text-2xl' : 'text-red-400 hover:text-red-500 text-2xl'}`}></FaTrash>
+        <FaTrash
+          className={` ${
+            user?.role === "admin"
+              ? "disable text-gray-600 text-2xl"
+              : "text-red-400 hover:text-red-500 text-2xl"
+          }`}
+        ></FaTrash>
       </td>
     </tr>
   );

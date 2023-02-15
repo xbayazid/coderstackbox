@@ -18,7 +18,6 @@ const UserModal = ({ setIsOpen, user, refetch }) => {
     })
       .then((res) => res.json())
       .then((data) => {
-        console.log(data);
         toast.success("Profile Updated");
         refetch();
       });
