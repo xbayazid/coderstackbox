@@ -15,7 +15,6 @@ import Home from "../../Pages/Home/Home/Home";
 import Login from "../../Pages/Login/Login";
 import SingUp from "../../Pages/SignUp/SignUp";
 // import MyProjects from "../../Pages/UserDashboard/MyProjects/MyProjects";
-import UserDashboard from "../../Pages/UserDashboard/UserDashboard/UserDashboard";
 import UserProfile from "../../Pages/UserDashboard/UserProfile/UserProfile";
 import Developers from "../../Pages/Dashboard/AdminPannel/Developers/Developers";
 import Inbox from "../../Pages/Dashboard/AdminPannel/Inbox/Inbox";
@@ -152,28 +151,7 @@ const router = createBrowserRouter([
       },
     ],
   },
-  // {
-  //   path: "/userDashboard",
-  //   element: (
-  //     <PrivateRoutes>
-  //       <UserDashboard></UserDashboard>
-  //     </PrivateRoutes>
-  //   ),
-  //   children: [
-  //     {
-  //       path: "/userDashboard",
-  //       element: (
-  //         <PrivateRoutes>
-  //           <UserDashboard></UserDashboard>
-  //         </PrivateRoutes>
-  //       ),
-  //     },
-  //     {
-  //       path: "/userDashboard/myProjects",
-  //       element: <MyProjects></MyProjects>,
-  //     },
-  //   ],
-  // },
+
   {
     path: "/login",
     element: <Login></Login>,
