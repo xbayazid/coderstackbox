@@ -46,3 +46,16 @@ export const getRole = async email => {
   
     return users
   }
+
+  export const getAllUsers = async () => {
+    const response = await fetch(`http://localhost:5000/users`, {
+      method: 'GET',
+      headers: {
+        'content-type': 'application/json',
+        authorization: `Bearer ${localStorage.getItem('CodersStackBox')}`,
+      },
+    })
+    const users = await response.json()
+  
+    return users
+  }

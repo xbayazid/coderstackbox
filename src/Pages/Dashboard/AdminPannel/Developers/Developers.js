@@ -1,32 +1,37 @@
-import React from 'react';
+import React, { useEffect, useState } from 'react';
 import { useQuery } from "@tanstack/react-query";
 import { Link } from 'react-router-dom';
 import DeveloperRow from './DeveloperRow';
+import { getAllUsers } from '../../../../api/user';
+import PreLoaderSpinner from '../../../../components/PreLoaderSpinner/PreLoaderSpinner';
 
 const Developers = () => {
+    const [loading, setLoading] = useState(false)
+    const [users, setUsers] = useState([])
+    useEffect(() => {
+        getUsers()
+      }, [])
 
-    const { data: developers = [], refetch, isLoading } = useQuery({
-        queryKey: ["developers"],
-        queryFn: async () => {
-            const res = await fetch(
-                "https://coderstackbox-server.vercel.app/developers"
-            );
-            const data = await res.json();
-            return data;
-        },
-    });
+    const getUsers = () => {
+        setLoading(true)
+        getAllUsers().then(data => {
+          setUsers(data.result)
+          console.log(data.result);
+          setLoading(false)
+        })
+      }
 
 
     return (
         <div>
             <header>
-                <h2 className='text-3xl mb-5 others'>Developers</h2>
+                <h2 className='text-3xl mb-5 text-white'>Developers</h2>
             </header>
 
             <main>
 
             <div className="relative overflow-x-auto shadow-md sm:rounded-lg">
-                <div className="flex items-center justify-center py-4 bg-white dark:bg-gray-900">
+                <div className="flex items-center justify-center py-4 bg-gray-900">
                     <label for="table-search" className="sr-only">Search</label>
                     <div className="relative">
                         <div className="absolute inset-y-0 left-0 flex items-center pl-3 pointer-events-none">
@@ -36,7 +41,10 @@ const Developers = () => {
 
                     </div>
                 </div>
-                <table className="w-full text-sm text-left text-gray-500 dark:text-gray-400">
+                {
+                    loading ? <PreLoaderSpinner />
+                    :
+                    <table className="w-full text-sm text-left text-gray-500 dark:text-gray-400">
                     <thead className="text-xs text-gray-700 uppercase bg-gray-50 dark:bg-gray-700 dark:text-gray-400">
                         <tr>
                             
@@ -55,13 +63,14 @@ const Developers = () => {
                     </thead>
                     <tbody>
                        {
-                            developers?.map( (developer) => <DeveloperRow
-                                key={developer._id}
-                                developer={developer}
+                            users?.map( (user) => <DeveloperRow
+                                key={user._id}
+                                user={user}
                             ></DeveloperRow>)
                        } 
                     </tbody>
                 </table>
+                }
             </div>
 
             </main>
