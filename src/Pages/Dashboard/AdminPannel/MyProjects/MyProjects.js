@@ -2,13 +2,10 @@ import { useQuery } from "@tanstack/react-query";
 import axios from "axios";
 import { motion } from "framer-motion";
 import React, { useState } from "react";
-import { FaCaretRight } from "react-icons/fa";
-import { Link } from "react-router-dom";
-import CollectionCard from "../../components/Cards/CollectionCard";
-import { TitleText, TypingText } from "../../components/CustomText/CustomText";
-import styles, { layout } from "../../style";
-import { fadeIn, staggerContainer } from "../../utils/motion";
-import Loading from "../Loading/Loading";
+import CollectionCard from "../../../../components/Cards/CollectionCard";
+import PreLoaderSpinner from "../../../../components/PreLoaderSpinner/PreLoaderSpinner";
+import { layout } from "../../../../style";
+import { fadeIn, staggerContainer } from "../../../../utils/motion";
 
 const MyCollections = () => {
   const url = `http://localhost:5000/user-collections`;
@@ -41,7 +38,7 @@ const MyCollections = () => {
     item.projectName.toLowerCase().includes(searchQuery.toLowerCase())
   );
   if (isLoading) {
-    return <Loading />;
+    return <PreLoaderSpinner />;
   }
 
   console.log(collections)
@@ -54,18 +51,6 @@ const MyCollections = () => {
         whileInView="show"
         viewport={{ once: false, amount: 0.25 }}
       >
-        <div className={`${layout.sectionInfo} text-center z-10 text-white`}>
-          <TitleText
-            title={
-              <TypingText
-                textStyles="my-[8px] font-bold md:text-[64px] text-[40px] text-white"
-                title="Stack Collections"
-              />
-            }
-          />
-          <h2 className={`font-poppins font-normal xs:text-[32px] text-[28px] text-dimWhite xs:leading-[76.8px] leading-[66.8px] w-full`}>Browse and share work from world-class designers and developers in the front-end community.</h2>
-
-        </div>
         <motion.div
           variants={fadeIn('', 'tween', 0.75, 2)} 
 

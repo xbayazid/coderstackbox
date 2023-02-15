@@ -32,6 +32,7 @@ import RichTextEditor from "../../Pages/Blog/RichTextEditor/RichTextEditor";
 import IDE from "../../Pages/CodeEditor/OnlineIDE";
 import AdminBoard from "../../Pages/Dashboard/AdminPannel/AdminBoard/AdminBoard";
 import Dashboard from "../../Pages/Dashboard/Dashboard";
+import MyCollections from "../../Pages/Dashboard/AdminPannel/MyProjects/MyProjects";
 
 const router = createBrowserRouter([
   {
@@ -135,7 +136,7 @@ const router = createBrowserRouter([
       },
       {
         path: "/adminDashboard/myprojects",
-        element: <MyProjects></MyProjects>,
+        element: <MyCollections />,
       },
       {
         path: "/adminDashboard/inbox",
