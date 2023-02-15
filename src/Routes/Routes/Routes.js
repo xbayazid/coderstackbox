@@ -30,6 +30,7 @@ import BlogPage from "../../Pages/Blog/BlogPage/BlogPage";
 import DevProfile from "../../Pages/DevProfile/DevProfile";
 import IDE from "../../Pages/CodeEditor/OnlineIDE";
 import AdminBoard from "../../Pages/Dashboard/AdminPannel/AdminBoard/AdminBoard";
+import Dashboard from "../../Pages/Dashboard/Dashboard";
 
 const router = createBrowserRouter([
   {
@@ -114,7 +115,7 @@ const router = createBrowserRouter([
     path: "/adminDashboard",
     element: (
       <PrivateRoutes>
-        <AdminDashboardLayout></AdminDashboardLayout>
+        <Dashboard />
       </PrivateRoutes>
     ),
 

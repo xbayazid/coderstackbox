@@ -126,26 +126,12 @@ const EditorPage = () => {
       </>
 
       <div className="h-[40vh] grid md:grid-cols-2 lg:grid-cols-3">
-        <Resizable direction="verticle">
-          <div
-            style={{
-              height: "100%",
-              display: "flex",
-              flexDirection: "row",
-            }}
-          >
-            <Resizable direction="horizontal">
-              <EditorComponent
-                language="xml"
-                displayName="HTML"
-                value={html}
-                onChange={setHtml}
-              />
-            </Resizable>
-
-            
-          </div>
-        </Resizable>
+        <EditorComponent
+          language="xml"
+          displayName="HTML"
+          value={html}
+          onChange={setHtml}
+        />
 
         <EditorComponent
           language="css"
