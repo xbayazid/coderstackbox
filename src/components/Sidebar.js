@@ -1,7 +1,7 @@
 /* eslint-disable jsx-a11y/anchor-is-valid */
 import { AnimatePresence, motion } from "framer-motion";
 import React from "react";
-import { FaChartArea, FaHome, FaSwatchbook, FaUserCircle } from "react-icons/fa";
+import { FaChartArea, FaHome, FaSwatchbook, FaUserCircle, FaUsers } from "react-icons/fa";
 import { Link } from "react-router-dom";
 import Logo from "./Logo";
 
@@ -97,6 +97,20 @@ const Sidebar = ({ isOpen, desktopSidebarRef, setIsOpen }) => {
                 ></FaUserCircle>{" "}
                 <span className="group-hover:text-gray-700 dark:group-hover:text-gray-50">
                 Profile
+                </span>
+              </Link>
+            </li>
+            <li>
+              <Link to="/adminDashboard/developers"
+                className="group flex items-center space-x-4 rounded-md px-4 py-3 text-gray-600 dark:text-gray-300
+                hover:bg-gradient-to-r from-green-600 to-cyan-400  "
+              >
+                <FaUsers
+                  className={`text-lg cursor-pointer duration-500"
+                  }`}
+                ></FaUsers>{" "}
+                <span className="group-hover:text-gray-700 dark:group-hover:text-gray-50">
+                Developers
                 </span>
               </Link>
             </li>

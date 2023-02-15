@@ -2,14 +2,8 @@ import React from "react";
 import { FaTrash } from "react-icons/fa";
 import { Link } from "react-router-dom";
 
-const DeveloperRow = ({ developer }) => {
-  const {
-    developerName,
-    developerEmail,
-    developerPhone,
-    developerImage,
-    developerAddress,
-  } = developer;
+const DeveloperRow = ({ user }) => {
+
 
   return (
     <tr className="bg-white border-b dark:bg-gray-800 dark:border-gray-700 hover:bg-gray-50 dark:hover:bg-gray-600">
@@ -19,24 +13,24 @@ const DeveloperRow = ({ developer }) => {
       >
         <img
           className="w-10 h-10 rounded-full"
-          src={developerImage}
-          alt="Jese image"
+          src={user?.photoURL}
+          alt={user?.name}
         />
         <div className="pl-3">
-          <div className="text-base font-semibold">{developerName}</div>
-          <div className="font-normal text-gray-500">{developerEmail}</div>
+          <div className="text-base font-semibold">{user?.name}</div>
+          <div className="font-normal text-gray-500">{user?.email}</div>
         </div>
       </th>
-      <td className="px-6 py-4">{developerPhone}</td>
+      <td className="px-6 py-4">{user?.phone}</td>
       <td className="px-6 py-4">
         <div className="flex items-center">
           <div className="h-2.5 w-2.5 rounded-full bg-green-500 mr-2"></div>
-          {developerAddress}
+          {"address"}
         </div>
       </td>
       <td class="px-6 py-4">
-        <Link to="#" class="font-medium text-blue-500 ">
-          View
+        <Link to="/" class="font-medium text-blue-500 ">
+          {user?.role}
         </Link>
       </td>
       <td class="px-6 py-4 font-semibold text-gray-500 dark:text-white">
