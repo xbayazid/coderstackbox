@@ -6,16 +6,13 @@ const EditableElement = ({children}) => {
     const [editableMode, setEditableMode] = useState(false);
     const [editionValue, seteditionValue] = useState("");
 
-    if(editableMode) {
-        setEditableMode(`contentEditable`)
-    }
-    
+    console.log(editionValue);
+
     return (
         <div
         className={`text-2xl flex gap-x-5`}>
-        
-        <h4 editableMode>{children}</h4>
-        <FaPencilAlt className="text-2xl" onClick={() => setEditableMode(true)} ></FaPencilAlt>
+        <h4  contentEditable={editableMode ? true: false} onBlur={ t => seteditionValue(t.currentTarget.innerHTML)}  >{children}</h4>
+        <FaPencilAlt className="text-2xl hover:cursor-pointer checked:text-3xl hover:text-green-400" onClick={() => setEditableMode(true)} ></FaPencilAlt>
       </div>
     );
 };
