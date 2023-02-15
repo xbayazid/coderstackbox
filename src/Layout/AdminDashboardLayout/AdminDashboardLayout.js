@@ -7,6 +7,7 @@ import {
   FaUserCircle,
   FaSignOutAlt,
   FaBars,
+  FaChartArea,
 } from "react-icons/fa";
 import { Link, Outlet } from "react-router-dom";
 
@@ -57,6 +58,26 @@ const AdminDashboard = () => {
           </div>
           <ul className="">
             <div>
+              <li>
+                <Link
+                  className=" flex items-center gap-2 mt-5 pl-5 pt-5 font-medium "
+                  to="/adminDashboard/adminboard"
+                >
+                  {" "}
+                  <FaHome
+                    className={`text-2xl cursor-pointer duration-500 ${
+                      !isOpen && "scale-0"
+                    }`}
+                  ></FaHome>{" "}
+                  <span
+                    className={`whitespace-pre duration-500 ${
+                      !isOpen && "opacity-0 translate-x-28 overflow-hidden"
+                    } hover:bg-black rounded-full p-2`}
+                  >
+                    Admin Board
+                  </span>{" "}
+                </Link>
+              </li>
               <li>
                 <Link
                   className=" flex items-center gap-2 mt-5 pl-5 pt-5 font-medium "
@@ -125,11 +146,11 @@ const AdminDashboard = () => {
                 to="/adminDashboard/useranalytics"
               >
                 {" "}
-                <FaUserCircle
+                <FaChartArea
                   className={`text-2xl cursor-pointer duration-500 ${
                     !isOpen && "scale-0"
                   }`}
-                ></FaUserCircle>{" "}
+                ></FaChartArea>{" "}
                 <span
                   className={`whitespace-pre duration-500 ${
                     !isOpen && "opacity-0 translate-x-28 overflow-hidden"
