@@ -12,6 +12,7 @@ import Loading from "../../../Loading/Loading";
 import UpdateModal from "./UpdateModal/UpdateModal";
 import ImageUpdateModal from "../../../../components/ImageUpdateModal/ImageUpdateModal";
 import UserAnalytics from "../UserAnalytics/UserAnalytics";
+import EditableElement from "../../../../components/EditableElement/EditableElement";
 
 const Profile = () => {
     const {user} = useContext(AuthContext);
@@ -94,7 +95,8 @@ const Profile = () => {
                 </svg>
               </span>
             </div>
-            <p className="">Senior Software Engineer at Coders StackBox</p>
+            {/* <p className="">Senior Software Engineer at Coders StackBox</p> */}
+            <EditableElement>Software Enginner</EditableElement>
           </div>
         </div>
 
