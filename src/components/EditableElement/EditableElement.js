@@ -26,3 +26,11 @@ const EditableElement = ({ onSendData, onDataRef, children}) => {
 };
 
 export default EditableElement;
+
+
+// Doc this component. you can use this component then you must be follow the code on parent component.
+
+// const parentDataRef = useRef('');
+// const handleChildData = () => {
+//   console.log('Received data from child:', parentDataRef.current.innerText);
+// }
