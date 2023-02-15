@@ -1,17 +1,25 @@
 import React, { useState } from 'react';
+import { useRef } from 'react';
 import { FaPencilAlt } from 'react-icons/fa';
 
-const EditableElement = ({children}) => {
+const EditableElement = ({ onSendData, onDataRef, children}) => {
 
     const [editableMode, setEditableMode] = useState(false);
     const [editionValue, seteditionValue] = useState("");
 
-    console.log(editionValue);
+    const childDataRef = useRef('');
+
+    const handleData = () => {
+      onDataRef.current = childDataRef.current;
+      onSendData();
+    }
+
+    // console.log(editionValue);
 
     return (
         <div
         className={`text-2xl flex gap-x-5`}>
-        <h4  contentEditable={editableMode ? true: false} onBlur={ t => seteditionValue(t.currentTarget.innerHTML)}  >{children}</h4>
+        <h4 ref={childDataRef}  contentEditable={editableMode ? true: false} onBlur={ t => { seteditionValue(t.currentTarget.innerHTML); handleData()}}  >{children}</h4>
         <FaPencilAlt className="text-2xl hover:cursor-pointer checked:text-3xl hover:text-green-400" onClick={() => setEditableMode(true)} ></FaPencilAlt>
       </div>
     );

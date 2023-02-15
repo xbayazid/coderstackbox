@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useRef } from "react";
 import { useContext } from "react";
 import { FaCamera, FaEllipsisH } from "react-icons/fa";
 import { Helmet } from "react-helmet";
@@ -15,10 +15,15 @@ import UserAnalytics from "../UserAnalytics/UserAnalytics";
 import EditableElement from "../../../../components/EditableElement/EditableElement";
 
 const Profile = () => {
-    const {user} = useContext(AuthContext);
-    console.log(user);
+  const {user} = useContext(AuthContext);
+  console.log(user);
 
-    const [showImgUpdateModal, setShowImgUpdateModal] = useState(false);
+  const parentDataRef = useRef('');
+  const handleChildData = () => {
+    console.log('Received data from child:', parentDataRef.current.innerText);
+  }
+
+  const [showImgUpdateModal, setShowImgUpdateModal] = useState(false);
 
   const [showModal, setShowModal] = useState(false);
 
@@ -96,7 +101,7 @@ const Profile = () => {
               </span>
             </div>
             {/* <p className="">Senior Software Engineer at Coders StackBox</p> */}
-            <EditableElement>Software Enginner</EditableElement>
+            <EditableElement onDataRef={parentDataRef} onSendData={handleChildData} >Software Enginner</EditableElement>
           </div>
         </div>
 
