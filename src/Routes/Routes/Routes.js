@@ -32,6 +32,8 @@ import RichTextEditor from "../../Pages/Blog/RichTextEditor/RichTextEditor";
 import IDE from "../../Pages/CodeEditor/OnlineIDE";
 import AdminBoard from "../../Pages/Dashboard/AdminPannel/AdminBoard/AdminBoard";
 import Dashboard from "../../Pages/Dashboard/Dashboard";
+import MyCollections from "../../Pages/Dashboard/AdminPannel/MyProjects/MyProjects";
+import EditCollection from "../../Pages/Collections/EditCollection";
 
 const router = createBrowserRouter([
   {
@@ -109,6 +111,10 @@ const router = createBrowserRouter([
     element: <EditorPage />,
   },
   {
+    path: "/code/:id",
+    element: <EditCollection />,
+  },
+  {
     path: "/ide",
     element: <IDE></IDE>,
   },
@@ -135,7 +141,7 @@ const router = createBrowserRouter([
       },
       {
         path: "/adminDashboard/myprojects",
-        element: <MyProjects></MyProjects>,
+        element: <MyCollections />,
       },
       {
         path: "/adminDashboard/inbox",
