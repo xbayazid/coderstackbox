@@ -10,6 +10,7 @@ import { useQuery } from "@tanstack/react-query";
 import axios from "axios";
 import Loading from "../../../Loading/Loading";
 import UpdateModal from "./UpdateModal/UpdateModal";
+import UserAnalytics from "../UserAnalytics/UserAnalytics";
 
 const Profile = () => {
   const { user } = useContext(AuthContext);
@@ -39,7 +40,6 @@ const Profile = () => {
   if (isLoading) {
     return <Loading></Loading>;
   }
-
   const onClick = () => {
     setIsOpen(true);
     setUsr(userEmail[0]);

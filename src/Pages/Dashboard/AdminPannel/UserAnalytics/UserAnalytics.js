@@ -97,19 +97,19 @@ const UserProfile = () => {
                       className="w-full border-2 my-2 p-2 rounded-md outline-none"
                       placeholder="Email Address"
                     />
-                    <label htmlFor="">Phone</label>
+                    {/* <label htmlFor="">Phone</label>
                     <input
                       type="text"
                       name="phone"
                       className="w-full border-2 my-2 p-2 rounded-md outline-none"
                       placeholder="Phone Number"
-                    />
+                    /> */}
                   </div>
-                  <div className="w-2/3 mx-auto my-4">
+                  {/* <div className="w-2/3 mx-auto my-4">
                     <button className="bg-blue-500 text-white py-2 px-4 rounded-lg hover:bg-blue-600">
                       Update Profile
                     </button>
-                  </div>
+                  </div> */}
                 </div>
               </div>
               <div class={`col-span-2 bg-gray-100 rounded-xl shadow-xl`}>
