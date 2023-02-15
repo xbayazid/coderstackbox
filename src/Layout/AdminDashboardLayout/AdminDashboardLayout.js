@@ -1,4 +1,3 @@
-import { useQuery } from "@tanstack/react-query";
 import React from "react";
 import { useState } from "react";
 import {
@@ -102,7 +101,7 @@ const AdminDashboard = () => {
             <li>
               <Link
                 className=" flex items-center gap-2 mt-5 pl-5 pt-5 font-medium "
-                to="/adminDashboard/projects"
+                to="/adminDashboard/myprojects"
               >
                 {" "}
                 <FaSwatchbook
@@ -115,11 +114,31 @@ const AdminDashboard = () => {
                     !isOpen && "opacity-0 translate-x-28 overflow-hidden"
                   } hover:bg-black rounded-full p-2`}
                 >
-                  Projects
+                  My Projects
                 </span>{" "}
               </Link>
             </li>
 
+            <li>
+              <Link
+                className=" flex items-center gap-2 mt-5 pl-5 pt-5 font-medium "
+                to="/adminDashboard/useranalytics"
+              >
+                {" "}
+                <FaUserCircle
+                  className={`text-2xl cursor-pointer duration-500 ${
+                    !isOpen && "scale-0"
+                  }`}
+                ></FaUserCircle>{" "}
+                <span
+                  className={`whitespace-pre duration-500 ${
+                    !isOpen && "opacity-0 translate-x-28 overflow-hidden"
+                  } hover:bg-black rounded-full p-2`}
+                >
+                  User Analytics
+                </span>{" "}
+              </Link>
+            </li>
             <li>
               <Link
                 className=" flex items-center gap-2 mt-5 pl-5 pt-5 font-medium "
