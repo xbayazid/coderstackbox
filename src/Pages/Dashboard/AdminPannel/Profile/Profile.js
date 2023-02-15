@@ -80,9 +80,9 @@ const Profile = () => {
                   stroke="currentColor"
                 >
                   <path
-                    strokeLinecap="round"
-                    strokeLinejoin="round"
-                    strokeWidth="4"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    stroke-width="4"
                     d="M5 13l4 4L19 7"
                   ></path>
                 </svg>
@@ -160,6 +160,7 @@ const Profile = () => {
               <ProfileCard />
             </div>
           </div>
+        </div>
         </div>
       )}
       {isOpen && <UpdateModal user={usr} setIsOpen={setIsOpen} />}
