@@ -57,12 +57,7 @@ const User = ({ user }) => {
         </div>
       </th>
       <td className="px-6 py-4">{phone}</td>
-      <td className="px-6 py-4">
-        {/* <div className="flex items-center">
-          <div className="h-2.5 w-2.5 rounded-full bg-green-500 mr-2"></div>
-          {developerAddress}
-        </div> */}
-      </td>
+
       <td class="px-6 py-4">
         <button
           onClick={() => handleMakeAdmin(_id)}
@@ -71,6 +66,7 @@ const User = ({ user }) => {
         >
           Make Admin
         </button>
+        2
       </td>
       <td class="px-6 py-4 font-semibold text-gray-500 dark:text-white">
         <button>
