@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect } from "react";
 import { useContext } from "react";
 import { FaCamera, FaEllipsisH } from "react-icons/fa";
 import { Helmet } from "react-helmet";
@@ -6,16 +6,14 @@ import { AuthContext } from "../../../../context/AuthProvider";
 import ProfileCard from "./ProfileCard";
 import ParModal from "./ParModal";
 import { useState } from "react";
-import { useQuery } from "@tanstack/react-query";
-import axios from "axios";
-import Loading from "../../../Loading/Loading";
 import UpdateModal from "./UpdateModal/UpdateModal";
 import ImageUpdateModal from "../../../../components/ImageUpdateModal/ImageUpdateModal";
-import UserAnalytics from "../UserAnalytics/UserAnalytics";
+import { getUser } from "../../../../api/user";
+import PreLoaderSpinner from "../../../../components/PreLoaderSpinner/PreLoaderSpinner";
 
 const Profile = () => {
     const {user} = useContext(AuthContext);
-    console.log(user);
+    const [loading, setLoading] = useState(false)
 
     const [showImgUpdateModal, setShowImgUpdateModal] = useState(false);
 
@@ -24,30 +22,22 @@ const Profile = () => {
   const [isOpen, setIsOpen] = useState(false);
   const [usr, setUsr] = useState({});
 
-  const url = `http://localhost:5000/u?email=${user?.email}`;
-
-  const {
-    data: userEmail,
-    isLoading,
-    refetch,
-  } = useQuery({
-    queryKey: ["userEmail"],
-    queryFn: async () => {
-      const res = await axios.get(url, {
-        headers: {
-          "content-type": "application/json",
-          authorization: `bearer ${localStorage.getItem("CodersStackBox")}`,
-        },
-      });
-      return res.data;
-    },
-  });
-  if (isLoading) {
-    return <Loading></Loading>;
+  useEffect(() => {
+    getUsers()
+  }, [])
+  const getUsers = () => {
+    setLoading(true)
+    getUser(user).then(data => {
+      setUsr(data[0]);
+      console.log(data[0]);
+      setLoading(false)
+    })
   }
+  
+
   const onClick = () => {
     setIsOpen(true);
-    setUsr(userEmail[0]);
+    
   };
 
   const handleOnClose = () => setShowModal(false);
@@ -58,12 +48,14 @@ const Profile = () => {
         <meta charSet="utf-8" />
         <title>CodersStackBox - Profile</title>
       </Helmet>
-      <div className="h-full -my-3 text-white-300 ">
+      {
+        loading ? <PreLoaderSpinner />
+        :
+        <div className="h-full -my-3 text-white-300 ">
         <ImageUpdateModal
          isVisible={showImgUpdateModal}
          onClose={ () => setShowImgUpdateModal(false) }
-         user={userEmail[0]}
-         refetch={refetch} 
+         user={usr}
          ></ImageUpdateModal>
         
         <div className="bg-dark-1 rounded-lg shadow-2xl py-5">
@@ -71,12 +63,12 @@ const Profile = () => {
 
             <div className='border-4 md:w-52 md:h-52 bg-slate-500 border-gray-300 rounded-full overflow-hidden
             w-44 h-44 border-r-white'>
-                <img src={userEmail[0]?.photoURL} className="md:w-full h-full" alt='' />
+                <img src={usr?.photoURL} className="md:w-full h-full" alt='' />
             </div>
             <FaCamera onClick={ () => setShowImgUpdateModal(true)} className='-mt-6 text-xl ml-32'></FaCamera>
 
             <div className="flex items-center space-x-2 mt-2">
-              <p className="text-2xl ">{userEmail[0]?.name}</p>
+              <p className="text-2xl ">{usr?.name}</p>
               <span className="bg-blue-500 rounded-full p-1" title="Verified">
                 <svg
                   xmlns="http://www.w3.org/2000/svg"
@@ -111,15 +103,15 @@ const Profile = () => {
               <ul className="mt-3 ">
                 <li className="flex py-2">
                   <span className="font-bold w-24">Full name:</span>
-                  <span className="">{userEmail[0]?.name}</span>
+                  <span className="">{usr?.name}</span>
                 </li>
                 <li className="flex py-2">
                   <span className="font-bold w-24">Mobile:</span>
-                  <span className="">{userEmail[0]?.phone}</span>
+                  <span className="">{usr?.phone}</span>
                 </li>
                 <li className="flex py-2">
                   <span className="font-bold w-24">Email:</span>
-                  <span className="">{userEmail[0]?.email}</span>
+                  <span className="">{usr?.email}</span>
                 </li>
               </ul>
               <div className="w-2/3 mx-auto my-4">
@@ -140,7 +132,7 @@ const Profile = () => {
           <div className="flex flex-col w-full 2xl:w-2/3">
             <div className="flex-1 bg-dark-1 rounded-lg shadow-xl p-8">
               <h4 className="text-xl font-bold">About</h4>
-              <p className="mt-2 ">{userEmail[0]?.about}</p>
+              <p className="mt-2 ">{usr?.about}</p>
             </div>
           </div>
         </div>
@@ -169,8 +161,9 @@ const Profile = () => {
           </div>
         </div>
       </div>
+      }
       {isOpen && (
-        <UpdateModal user={usr} setIsOpen={setIsOpen} refetch={refetch} />
+        <UpdateModal user={usr} setIsOpen={setIsOpen}  />
       )}
     </main>
   );
