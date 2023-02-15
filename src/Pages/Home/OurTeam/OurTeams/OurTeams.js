@@ -44,20 +44,20 @@ const OurTeams = ({ card }) => {
     //     </div>
     //   </div>
     // </div>
-    <div class="wrapper bg-gray-400 antialiased text-gray-900 mb-24 xl:mb-32">
+    <div className="wrapper bg-gray-400 antialiased text-gray-900 mb-24 xl:mb-32">
       <div>
         <img src={image} alt="" />
 
-        <div class="relative px-4 -mt-16  ">
-          <div class="bg-sky-400 p-6 rounded-lg shadow-lg">
-            <h4 class="mt-1 text-xl font-semibold uppercase leading-tight truncate">
+        <div className="relative px-4 -mt-16  ">
+          <div className="bg-sky-400 p-6 rounded-lg shadow-lg">
+            <h4 className="mt-1 text-xl font-semibold uppercase leading-tight truncate">
               {name}
             </h4>
 
-            <div class="mt-1">
+            <div className="mt-1">
               <h5 className="designation">{designation}</h5>
             </div>
-            <div class="mt-4">
+            <div className="mt-4">
               <ul className="flex justify-center mt-5 text-3xl">
                 <li>
                   <a target="_blank" href={`${github}`} rel="noreferrer">

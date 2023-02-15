@@ -38,7 +38,7 @@ const BestDevCard = ({ props, i }) => {
         <div className={`${styles.paragraph}`}>{props.details}</div>
       </div>
       <div className="p-4 flex justify-end">
-        <button type="button" class="inline-block flex items-center px-6 py-2.5 bg-blue-400 text-white font-medium text-xs leading-tight uppercase rounded-full shadow-md hover:bg-blue-500 hover:shadow-lg focus:bg-blue-500 focus:shadow-lg focus:outline-none focus:ring-0 active:bg-blue-600 active:shadow-lg transition duration-150 ease-in-out" onClick={() => setShowModal(true)}>View Profile <HiArrowRight className="ml-2 text-lg"></HiArrowRight></button>
+        <button type="button" className="inline-block flex items-center px-6 py-2.5 bg-blue-400 text-white font-medium text-xs leading-tight uppercase rounded-full shadow-md hover:bg-blue-500 hover:shadow-lg focus:bg-blue-500 focus:shadow-lg focus:outline-none focus:ring-0 active:bg-blue-600 active:shadow-lg transition duration-150 ease-in-out" onClick={() => setShowModal(true)}>View Profile <HiArrowRight className="ml-2 text-lg"></HiArrowRight></button>
         {showModal ? (
           <>
             <div
@@ -49,7 +49,7 @@ const BestDevCard = ({ props, i }) => {
                   <DevDetails></DevDetails>
                   <div className="flex items-center justify-end p-6 border-t border-solid border-slate-200 rounded-b">
                     <Link to="/devProfile">
-                      <button type="button" class="inline-block flex items-center px-6 py-2.5 bg-blue-400 text-white font-medium text-xs leading-tight uppercase rounded-full shadow-md hover:bg-blue-500 hover:shadow-lg focus:bg-blue-500 focus:shadow-lg focus:outline-none focus:ring-0 active:bg-blue-600 active:shadow-lg transition duration-150 ease-in-out" onClick={() => setShowModal(false)}>View Projects <HiArrowRight className="ml-2 text-lg"></HiArrowRight></button>
+                      <button type="button" className="inline-block flex items-center px-6 py-2.5 bg-blue-400 text-white font-medium text-xs leading-tight uppercase rounded-full shadow-md hover:bg-blue-500 hover:shadow-lg focus:bg-blue-500 focus:shadow-lg focus:outline-none focus:ring-0 active:bg-blue-600 active:shadow-lg transition duration-150 ease-in-out" onClick={() => setShowModal(false)}>View Projects <HiArrowRight className="ml-2 text-lg"></HiArrowRight></button>
                     </Link>
                     <button
                       className="text-red-500 background-transparent font-bold uppercase px-6 py-2 text-sm outline-none focus:outline-none mr-1 mb-1 ease-linear transition-all duration-150"

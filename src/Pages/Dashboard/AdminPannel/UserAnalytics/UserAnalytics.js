@@ -45,13 +45,13 @@ const UserProfile = () => {
             <div>
               <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
                 {aboutUsers?.map((aboutUser) => (
-                  <div class="flex  bg-dark-1 rounded-md bg-gradient-to-r from-green-600 to-cyan-400 hover:text-white">
+                  <div class="flex  bg-dark-1 rounded-md bg-gradient-to-l from-accent to-cyan-400">
                     <div class="w-12 flex items-center p-2">
                       <img src={aboutUser.picture} className="" alt="" />
                     </div>
 
-                    <div class="w-full p-4 md:p-4 text-white">
-                      <h1 class=" dark:text-white font-semibold">
+                    <div className="w-full p-4 md:p-4 text-white">
+                      <h1 className=" dark:text-white font-semibold">
                         {aboutUser.title}
                       </h1>
 
@@ -65,7 +65,7 @@ const UserProfile = () => {
             </div>
 
             <div className="flex flex-col lg:flex-row gap-3 my-8">
-              <div class="bg-gray-100 rounded-xl shadow-xl lg:w-1/2">
+              <div className="bg-gray-100 rounded-xl shadow-xl lg:w-1/2">
                 <div>
                   <div className="w-1/2 mx-auto">
                     <img
@@ -112,7 +112,7 @@ const UserProfile = () => {
                   </div> */}
                 </div>
               </div>
-              <div class={`col-span-2 bg-gray-100 rounded-xl shadow-xl`}>
+              <div className={`col-span-2 bg-gray-100 rounded-xl shadow-xl`}>
                 <h2 className="text-gray-800 m-4 font-semibold">User Track</h2>
                 <LineChart width={600} height={300} data={data}>
                   <XAxis dataKey="name" />
