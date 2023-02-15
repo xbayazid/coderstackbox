@@ -28,6 +28,7 @@ import Collections from "../../Pages/Collections/Collections";
 import BlogPage from "../../Pages/Blog/BlogPage/BlogPage";
 // import DevProfile from "../../Pages/DevProfile/DevProfile";
 import DevProfile from "../../Pages/DevProfile/DevProfile";
+import RichTextEditor from "../../Pages/Blog/RichTextEditor/RichTextEditor";
 import IDE from "../../Pages/CodeEditor/OnlineIDE";
 import AdminBoard from "../../Pages/Dashboard/AdminPannel/AdminBoard/AdminBoard";
 import Dashboard from "../../Pages/Dashboard/Dashboard";
@@ -61,10 +62,10 @@ const router = createBrowserRouter([
         path: "/blog/:id",
         element: <BlogPage />,
       },
-      // {
-      //   path: "/blog/:id",
-      //   component: {Blog}
-      // },
+      {
+        path: "/richtext",
+        element: <RichTextEditor/>
+      },
       {
         path: "/doc",
         element: <Doc></Doc>,

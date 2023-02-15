@@ -1,5 +1,4 @@
 import React from 'react';
-import Button from '../../components/Buttons/Button';
 import styles from '../../style';
 import DevDetails from './DevDetails/DevDetails';
 import DevProjects from './DevProjects/DevProjects';
