@@ -30,6 +30,7 @@ import BlogPage from "../../Pages/Blog/BlogPage/BlogPage";
 // import DevProfile from "../../Pages/DevProfile/DevProfile";
 import DevProfile from "../../Pages/DevProfile/DevProfile";
 import IDE from "../../Pages/CodeEditor/OnlineIDE";
+import AdminBoard from "../../Pages/Dashboard/AdminPannel/AdminBoard/AdminBoard";
 
 const router = createBrowserRouter([
   {
@@ -122,6 +123,10 @@ const router = createBrowserRouter([
       {
         path: "/adminDashboard",
         element: <AdminDashboard></AdminDashboard>,
+      },
+      {
+        path: "/adminDashboard/adminboard",
+        element: <AdminBoard></AdminBoard>,
       },
       {
         path: "/adminDashboard/developers",

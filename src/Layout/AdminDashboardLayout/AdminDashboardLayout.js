@@ -7,6 +7,7 @@ import {
   FaUserCircle,
   FaSignOutAlt,
   FaBars,
+  FaChartArea,
 } from "react-icons/fa";
 import { Link, Outlet } from "react-router-dom";
 
@@ -59,12 +60,32 @@ const AdminDashboard = () => {
             <div>
               <li>
                 <Link
-                  className=" flex items-center gap-2 mt-5 pl-5 pt-5 font-medium "
+                  className=" flex items-center gap-2 mt-5 pl-5 pt-5 text-lg "
+                  to="/adminDashboard/adminboard"
+                >
+                  {" "}
+                  <FaHome
+                    className={`text-lg cursor-pointer duration-500 ${
+                      !isOpen && "scale-0"
+                    }`}
+                  ></FaHome>{" "}
+                  <span
+                    className={`whitespace-pre duration-500 ${
+                      !isOpen && "opacity-0 translate-x-28 overflow-hidden"
+                    } hover:bg-black rounded-full p-2`}
+                  >
+                    Admin Board
+                  </span>{" "}
+                </Link>
+              </li>
+              <li>
+                <Link
+                  className=" flex items-center gap-2 mt-5 pl-5 pt-5 text-lg "
                   to="/adminDashboard"
                 >
                   {" "}
                   <FaHome
-                    className={`text-2xl cursor-pointer duration-500 ${
+                    className={`text-lg cursor-pointer duration-500 ${
                       !isOpen && "scale-0"
                     }`}
                   ></FaHome>{" "}
@@ -80,12 +101,12 @@ const AdminDashboard = () => {
             </div>
             <li>
               <Link
-                className=" flex items-center gap-2 mt-5 pl-5 pt-5 font-medium "
+                className=" flex items-center gap-2 mt-5 pl-5 pt-5 text-lg "
                 to="/adminDashboard/developers"
               >
                 {" "}
                 <FaUsers
-                  className={`text-2xl cursor-pointer duration-500 ${
+                  className={`text-lg cursor-pointer duration-500 ${
                     !isOpen && "scale-0"
                   }`}
                 ></FaUsers>{" "}
@@ -100,12 +121,12 @@ const AdminDashboard = () => {
             </li>
             <li>
               <Link
-                className=" flex items-center gap-2 mt-5 pl-5 pt-5 font-medium "
+                className=" flex items-center gap-2 mt-5 pl-5 pt-5 text-lg "
                 to="/adminDashboard/myprojects"
               >
                 {" "}
                 <FaSwatchbook
-                  className={`text-2xl cursor-pointer duration-500 ${
+                  className={`text-lg cursor-pointer duration-500 ${
                     !isOpen && "scale-0"
                   }`}
                 ></FaSwatchbook>{" "}
@@ -121,15 +142,15 @@ const AdminDashboard = () => {
 
             <li>
               <Link
-                className=" flex items-center gap-2 mt-5 pl-5 pt-5 font-medium "
+                className=" flex items-center gap-2 mt-5 pl-5 pt-5 text-lg "
                 to="/adminDashboard/useranalytics"
               >
                 {" "}
-                <FaUserCircle
-                  className={`text-2xl cursor-pointer duration-500 ${
+                <FaChartArea
+                  className={`text-lg cursor-pointer duration-500 ${
                     !isOpen && "scale-0"
                   }`}
-                ></FaUserCircle>{" "}
+                ></FaChartArea>{" "}
                 <span
                   className={`whitespace-pre duration-500 ${
                     !isOpen && "opacity-0 translate-x-28 overflow-hidden"
@@ -141,12 +162,12 @@ const AdminDashboard = () => {
             </li>
             <li>
               <Link
-                className=" flex items-center gap-2 mt-5 pl-5 pt-5 font-medium "
+                className=" flex items-center gap-2 mt-5 pl-5 pt-5 text-lg "
                 to="/adminDashboard/profile"
               >
                 {" "}
                 <FaUserCircle
-                  className={`text-2xl cursor-pointer duration-500 ${
+                  className={`text-lg cursor-pointer duration-500 ${
                     !isOpen && "scale-0"
                   }`}
                 ></FaUserCircle>{" "}
