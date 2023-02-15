@@ -2,7 +2,7 @@ import React, { useEffect, useState } from 'react';
 import { useQuery } from "@tanstack/react-query";
 import { Link } from 'react-router-dom';
 import DeveloperRow from './DeveloperRow';
-import { getAllUsers } from '../../../../api/user';
+import { getAllUsers, makeAdmin } from '../../../../api/user';
 import PreLoaderSpinner from '../../../../components/PreLoaderSpinner/PreLoaderSpinner';
 
 const Developers = () => {
@@ -18,6 +18,12 @@ const Developers = () => {
           setUsers(data.result)
           console.log(data.result);
           setLoading(false)
+        })
+      }
+
+      const handleRequest = user => {
+        makeAdmin(user).then(data => {
+          getUsers()
         })
       }
 
@@ -57,7 +63,8 @@ const Developers = () => {
                             <th scope="col" className="px-6 py-3">
                                 Addres
                             </th>
-                            <th scope="col" className="px-6 py-3">Profile</th>
+                            <th scope="col" className="px-6 py-3">Role</th>
+                            <th scope="col" className="px-6 py-3">Requested</th>
                             <th scope="col" className="px-6 py-3">Delete</th>
                         </tr>
                     </thead>
@@ -66,6 +73,8 @@ const Developers = () => {
                             users?.map( (user) => <DeveloperRow
                                 key={user._id}
                                 user={user}
+                                handleRequest={handleRequest}
+                                loading={loading}
                             ></DeveloperRow>)
                        } 
                     </tbody>
