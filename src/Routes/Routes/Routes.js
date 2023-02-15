@@ -29,12 +29,9 @@ import Collections from "../../Pages/Collections/Collections";
 import BlogPage from "../../Pages/Blog/BlogPage/BlogPage";
 // import DevProfile from "../../Pages/DevProfile/DevProfile";
 import DevProfile from "../../Pages/DevProfile/DevProfile";
-<<<<<<< HEAD
 import RichTextEditor from "../../Pages/Blog/RichTextEditor/RichTextEditor";
-=======
 import IDE from "../../Pages/CodeEditor/OnlineIDE";
 import AdminBoard from "../../Pages/Dashboard/AdminPannel/AdminBoard/AdminBoard";
->>>>>>> 0f973a378f77b379c3ac8d35bf2e5d039f259755
 
 const router = createBrowserRouter([
   {

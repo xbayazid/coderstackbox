@@ -18,10 +18,11 @@
     "focus-trap-react": "^10.0.2",
     "force": "^0.0.3",
     "framer-motion": "^9.0.1",
-    
+    "i": "^0.3.7",
+    "localforage": "^1.10.0",
     "monaco-editor": "^0.34.1",
     "monaco-languageclient": "^4.0.3",
-    
+    "npm": "^9.4.2",
     "prettier": "^2.8.3",
     "re-resizable": "^6.9.9",
     "react": "^18.2.0",
