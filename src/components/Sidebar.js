@@ -67,7 +67,7 @@ const Sidebar = ({ isOpen, desktopSidebarRef, setIsOpen, user }) => {
             </li>
             <li>
               <Link
-                href="#"
+                to="/adminDashboard/myprojects"
                 className="group flex items-center space-x-4 rounded-md px-4 py-3 text-gray-600 dark:text-gray-300
                 hover:bg-gradient-to-r from-green-600 to-cyan-400 hover:text-white"
               >
