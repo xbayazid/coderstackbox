@@ -14,13 +14,14 @@ import Home from "../../Pages/Home/Home/Home";
 // import Services from "../../Pages/Home/Services/Services";
 import Login from "../../Pages/Login/Login";
 import SingUp from "../../Pages/SignUp/SignUp";
-import MyProjects from "../../Pages/UserDashboard/MyProjects/MyProjects";
+// import MyProjects from "../../Pages/UserDashboard/MyProjects/MyProjects";
 import UserDashboard from "../../Pages/UserDashboard/UserDashboard/UserDashboard";
 import UserProfile from "../../Pages/UserDashboard/UserProfile/UserProfile";
 import Developers from "../../Pages/Dashboard/AdminPannel/Developers/Developers";
-import Projects from "../../Pages/Dashboard/AdminPannel/Projects/Projects";
 import Inbox from "../../Pages/Dashboard/AdminPannel/Inbox/Inbox";
+import MyProjects from "../../Pages/UserDashboard/MyProjects/MyProjects";
 import Profile from "../../Pages/Dashboard/AdminPannel/Profile/Profile";
+import UserAnalytics from "../../Pages/Dashboard/AdminPannel/UserAnalytics/UserAnalytics";
 import PrivateRoutes from "../Routes/PrivateRoutes/PrivateRoutes";
 import AdminDashboard from "../../Pages/Dashboard/AdminPannel/AdminDashboard/AdminDashboard";
 import Blog from "../../Pages/Blog/Blog";
@@ -57,7 +58,7 @@ const router = createBrowserRouter([
       },
       {
         path: "/blog/:id",
-        element: <BlogPage/>
+        element: <BlogPage />,
       },
       // {
       //   path: "/blog/:id",
@@ -72,8 +73,8 @@ const router = createBrowserRouter([
       //   element: <DevProfile></DevProfile>
       // },
       {
-        path: '/devProfile',
-        element: <DevProfile></DevProfile>
+        path: "/devProfile",
+        element: <DevProfile></DevProfile>,
       },
       {
         path: "/catagories",
@@ -127,12 +128,16 @@ const router = createBrowserRouter([
         element: <Developers></Developers>,
       },
       {
-        path: "/adminDashboard/projects",
-        element: <Projects></Projects>,
+        path: "/adminDashboard/myprojects",
+        element: <MyProjects></MyProjects>,
       },
       {
         path: "/adminDashboard/inbox",
         element: <Inbox></Inbox>,
+      },
+      {
+        path: "/adminDashboard/useranalytics",
+        element: <UserAnalytics></UserAnalytics>,
       },
       {
         path: "/adminDashboard/profile",
@@ -140,28 +145,28 @@ const router = createBrowserRouter([
       },
     ],
   },
-  {
-    path: "/userDashboard",
-    element: (
-      <PrivateRoutes>
-        <UserDashboard></UserDashboard>
-      </PrivateRoutes>
-    ),
-    children: [
-      {
-        path: "/userDashboard",
-        element: (
-          <PrivateRoutes>
-            <UserDashboard></UserDashboard>
-          </PrivateRoutes>
-        ),
-      },
-      {
-        path: "/userDashboard/myProjects",
-        element: <MyProjects></MyProjects>,
-      },
-    ],
-  },
+  // {
+  //   path: "/userDashboard",
+  //   element: (
+  //     <PrivateRoutes>
+  //       <UserDashboard></UserDashboard>
+  //     </PrivateRoutes>
+  //   ),
+  //   children: [
+  //     {
+  //       path: "/userDashboard",
+  //       element: (
+  //         <PrivateRoutes>
+  //           <UserDashboard></UserDashboard>
+  //         </PrivateRoutes>
+  //       ),
+  //     },
+  //     {
+  //       path: "/userDashboard/myProjects",
+  //       element: <MyProjects></MyProjects>,
+  //     },
+  //   ],
+  // },
   {
     path: "/login",
     element: <Login></Login>,

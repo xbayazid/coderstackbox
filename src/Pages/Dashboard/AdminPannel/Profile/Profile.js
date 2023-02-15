@@ -10,6 +10,7 @@ import { useQuery } from "@tanstack/react-query";
 import axios from "axios";
 import Loading from "../../../Loading/Loading";
 import UpdateModal from "./UpdateModal/UpdateModal";
+import UserAnalytics from "../UserAnalytics/UserAnalytics";
 
 const Profile = () => {
   const { user } = useContext(AuthContext);
@@ -39,7 +40,6 @@ const Profile = () => {
   if (isLoading) {
     return <Loading></Loading>;
   }
-
   const onClick = () => {
     setIsOpen(true);
     setUsr(userEmail[0]);
@@ -106,10 +106,6 @@ const Profile = () => {
                 <li className="flex py-2">
                   <span className="font-bold w-24">Email:</span>
                   <span className="">{userEmail[0]?.email}</span>
-                </li>
-                <li className="flex py-2">
-                  <span className="font-bold w-24">Location:</span>
-                  <span className="">New York, US</span>
                 </li>
               </ul>
               <div className="w-2/3 mx-auto my-4">
