@@ -60,12 +60,12 @@ const AdminDashboard = () => {
             <div>
               <li>
                 <Link
-                  className=" flex items-center gap-2 mt-5 pl-5 pt-5 font-medium "
+                  className=" flex items-center gap-2 mt-5 pl-5 pt-5 text-lg "
                   to="/adminDashboard/adminboard"
                 >
                   {" "}
                   <FaHome
-                    className={`text-2xl cursor-pointer duration-500 ${
+                    className={`text-lg cursor-pointer duration-500 ${
                       !isOpen && "scale-0"
                     }`}
                   ></FaHome>{" "}
@@ -80,12 +80,12 @@ const AdminDashboard = () => {
               </li>
               <li>
                 <Link
-                  className=" flex items-center gap-2 mt-5 pl-5 pt-5 font-medium "
+                  className=" flex items-center gap-2 mt-5 pl-5 pt-5 text-lg "
                   to="/adminDashboard"
                 >
                   {" "}
                   <FaHome
-                    className={`text-2xl cursor-pointer duration-500 ${
+                    className={`text-lg cursor-pointer duration-500 ${
                       !isOpen && "scale-0"
                     }`}
                   ></FaHome>{" "}
@@ -101,12 +101,12 @@ const AdminDashboard = () => {
             </div>
             <li>
               <Link
-                className=" flex items-center gap-2 mt-5 pl-5 pt-5 font-medium "
+                className=" flex items-center gap-2 mt-5 pl-5 pt-5 text-lg "
                 to="/adminDashboard/developers"
               >
                 {" "}
                 <FaUsers
-                  className={`text-2xl cursor-pointer duration-500 ${
+                  className={`text-lg cursor-pointer duration-500 ${
                     !isOpen && "scale-0"
                   }`}
                 ></FaUsers>{" "}
@@ -121,12 +121,12 @@ const AdminDashboard = () => {
             </li>
             <li>
               <Link
-                className=" flex items-center gap-2 mt-5 pl-5 pt-5 font-medium "
+                className=" flex items-center gap-2 mt-5 pl-5 pt-5 text-lg "
                 to="/adminDashboard/myprojects"
               >
                 {" "}
                 <FaSwatchbook
-                  className={`text-2xl cursor-pointer duration-500 ${
+                  className={`text-lg cursor-pointer duration-500 ${
                     !isOpen && "scale-0"
                   }`}
                 ></FaSwatchbook>{" "}
@@ -142,12 +142,12 @@ const AdminDashboard = () => {
 
             <li>
               <Link
-                className=" flex items-center gap-2 mt-5 pl-5 pt-5 font-medium "
+                className=" flex items-center gap-2 mt-5 pl-5 pt-5 text-lg "
                 to="/adminDashboard/useranalytics"
               >
                 {" "}
                 <FaChartArea
-                  className={`text-2xl cursor-pointer duration-500 ${
+                  className={`text-lg cursor-pointer duration-500 ${
                     !isOpen && "scale-0"
                   }`}
                 ></FaChartArea>{" "}
@@ -162,12 +162,12 @@ const AdminDashboard = () => {
             </li>
             <li>
               <Link
-                className=" flex items-center gap-2 mt-5 pl-5 pt-5 font-medium "
+                className=" flex items-center gap-2 mt-5 pl-5 pt-5 text-lg "
                 to="/adminDashboard/profile"
               >
                 {" "}
                 <FaUserCircle
-                  className={`text-2xl cursor-pointer duration-500 ${
+                  className={`text-lg cursor-pointer duration-500 ${
                     !isOpen && "scale-0"
                   }`}
                 ></FaUserCircle>{" "}

@@ -2,8 +2,8 @@ import React from "react";
 import { FaTrash } from "react-icons/fa";
 
 const User = ({ user }) => {
-  const { name, email, project, photoURL, phone, about } = user;
-
+  const { _id, name, email, project, photoURL, phone, about } = user;
+  console.log(_id);
   return (
     <tr className="bg-white border-b dark:bg-gray-800 dark:border-gray-700 hover:bg-gray-50 dark:hover:bg-gray-600">
       <th
