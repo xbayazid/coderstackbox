@@ -24,14 +24,14 @@ const Dashboard = () => {
 
   return (
     <AnimatePresence>
-      <body class="bg-gray-100 dark:bg-gray-900">
+      <body className="bg-gray-100 dark:bg-gray-900">
         <Sidebar isOpen={isOpen} desktopSidebarRef={desktopSidebarRef} setIsOpen={setIsOpen} />
         
-        <div class="ml-auto mb-6 lg:w-[75%] xl:w-[80%] 2xl:w-[85%]">
+        <div className="ml-auto mb-6 lg:w-[75%] xl:w-[80%] 2xl:w-[85%]">
           <DBHeader setIsOpen={setIsOpen} />
 
-          <div class="px-6 pt-6 2xl:container">
-            <div class="min-h-screen w-full border-gray-300 dark:border-gray-600">
+          <div className="px-6 pt-6 2xl:container">
+            <div className="min-h-screen w-full border-gray-300 dark:border-gray-600">
               <Outlet />
             </div>
           </div>

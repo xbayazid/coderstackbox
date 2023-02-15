@@ -59,52 +59,52 @@ const AdminDashboard = () => {
                                 </div>
 
 
-                                <div class="relative overflow-x-auto">
-                                    <table class="w-full text-sm text-left text-gray-500 dark:text-gray-400">
-                                        <thead class="text-xs text-gray-700 uppercase bg-gray-50 dark:bg-gray-700 dark:text-gray-400">
+                                <div className="relative overflow-x-auto">
+                                    <table className="w-full text-sm text-left text-gray-500 dark:text-gray-400">
+                                        <thead className="text-xs text-gray-700 uppercase bg-gray-50 dark:bg-gray-700 dark:text-gray-400">
                                             <tr>
-                                                <th scope="col" class="px-6 py-3">
+                                                <th scope="col" className="px-6 py-3">
                                                     Project Title
                                                 </th>
-                                                <th scope="col" class="px-6 py-3">
+                                                <th scope="col" className="px-6 py-3">
                                                     Category
                                                 </th>
-                                                <th scope="col" class="px-6 py-3">
+                                                <th scope="col" className="px-6 py-3">
                                                     Owner
                                                 </th>
                                             </tr>
                                         </thead>
                                         <tbody>
-                                            <tr class="bg-white border-b dark:bg-gray-800 dark:border-gray-700">
-                                                <th scope="row" class="px-6 py-4 font-medium text-gray-900 whitespace-nowrap dark:text-white">
+                                            <tr className="bg-white border-b dark:bg-gray-800 dark:border-gray-700">
+                                                <th scope="row" className="px-6 py-4 font-medium text-gray-900 whitespace-nowrap dark:text-white">
                                                     Prothom Alo
                                                 </th>
-                                                <td class="px-6 py-4">
+                                                <td className="px-6 py-4">
                                                     News Portal
                                                 </td>
-                                                <td class="px-6 py-4">
+                                                <td className="px-6 py-4">
                                                     John Smith
                                                 </td>
                                             </tr>
-                                            <tr class="bg-white border-b dark:bg-gray-800 dark:border-gray-700">
-                                                <th scope="row" class="px-6 py-4 font-medium text-gray-900 whitespace-nowrap dark:text-white">
+                                            <tr className="bg-white border-b dark:bg-gray-800 dark:border-gray-700">
+                                                <th scope="row" className="px-6 py-4 font-medium text-gray-900 whitespace-nowrap dark:text-white">
                                                     Freemoviedrive
                                                 </th>
-                                                <td class="px-6 py-4">
+                                                <td className="px-6 py-4">
                                                     Movie Server
                                                 </td>
-                                                <td class="px-6 py-4">
+                                                <td className="px-6 py-4">
                                                     Rahim Mia
                                                 </td>
                                             </tr>
-                                            <tr class="bg-white dark:bg-gray-800">
-                                                <th scope="row" class="px-6 py-4 font-medium text-gray-900 whitespace-nowrap dark:text-white">
+                                            <tr className="bg-white dark:bg-gray-800">
+                                                <th scope="row" className="px-6 py-4 font-medium text-gray-900 whitespace-nowrap dark:text-white">
                                                     CodersStackBox
                                                 </th>
-                                                <td class="px-6 py-4">
+                                                <td className="px-6 py-4">
                                                     Online Code Editor
                                                 </td>
-                                                <td class="px-6 py-4">
+                                                <td className="px-6 py-4">
                                                     Katrina Kaif
                                                 </td>
                                             </tr>
@@ -117,39 +117,39 @@ const AdminDashboard = () => {
                             <div className='bg-dark-1 md:w-3/4'>
                                 <div className='p-5'>
                                     <h2 className='text-2xl mb-3 others'>Top Developer</h2>
-                                    <table class="w-full text-sm text-left text-gray-500 dark:text-gray-400">
-                                        <thead class="text-xs text-gray-700 uppercase bg-gray-50 dark:bg-gray-700 dark:text-gray-400">
+                                    <table className="w-full text-sm text-left text-gray-500 dark:text-gray-400">
+                                        <thead className="text-xs text-gray-700 uppercase bg-gray-50 dark:bg-gray-700 dark:text-gray-400">
                                             <tr>
-                                                <th scope="col" class="px-6 py-3">
+                                                <th scope="col" className="px-6 py-3">
                                                     Name
                                                 </th>
-                                                <th scope="col" class="px-6 py-3">
+                                                <th scope="col" className="px-6 py-3">
                                                     Total Projects
                                                 </th>
                                             </tr>
                                         </thead>
                                         <tbody>
-                                            <tr class="bg-white border-b dark:bg-gray-800 dark:border-gray-700">
-                                                <th scope="row" class="px-6 py-4 font-medium text-gray-900 whitespace-nowrap dark:text-white">
+                                            <tr className="bg-white border-b dark:bg-gray-800 dark:border-gray-700">
+                                                <th scope="row" className="px-6 py-4 font-medium text-gray-900 whitespace-nowrap dark:text-white">
                                                     Smith Kumar
                                                 </th>
-                                                <td class="px-6 py-4">
+                                                <td className="px-6 py-4">
                                                     30
                                                 </td>
                                             </tr>
-                                            <tr class="bg-white border-b dark:bg-gray-800 dark:border-gray-700">
-                                                <th scope="row" class="px-6 py-4 font-medium text-gray-900 whitespace-nowrap dark:text-white">
+                                            <tr className="bg-white border-b dark:bg-gray-800 dark:border-gray-700">
+                                                <th scope="row" className="px-6 py-4 font-medium text-gray-900 whitespace-nowrap dark:text-white">
                                                     Rasel Mia
                                                 </th>
-                                                <td class="px-6 py-4">
+                                                <td className="px-6 py-4">
                                                     29
                                                 </td>
                                             </tr>
-                                            <tr class="bg-white dark:bg-gray-800">
-                                                <th scope="row" class="px-6 py-4 font-medium text-gray-900 whitespace-nowrap dark:text-white">
+                                            <tr className="bg-white dark:bg-gray-800">
+                                                <th scope="row" className="px-6 py-4 font-medium text-gray-900 whitespace-nowrap dark:text-white">
                                                     Jhon Doe
                                                 </th>
-                                                <td class="px-6 py-4">
+                                                <td className="px-6 py-4">
                                                     20
                                                 </td>
                                             </tr>
