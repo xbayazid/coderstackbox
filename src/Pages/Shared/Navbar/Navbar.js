@@ -17,7 +17,7 @@ const Navbar = () => {
   const [userOpen, setUserOpen] = useState(false);
 
   const handleLogOut = () => {
-    localStorage.removeItem("CodersStackBox")
+    localStorage.removeItem("CodersStackBox");
     logOut()
       .then(() => {})
       .catch((error) => console.log(error));
@@ -73,17 +73,22 @@ const Navbar = () => {
                 Documentation
               </Link>
             </li>
+            <li>
+              <Link className="lg:ml-8 ml-0 mr-5" to="/ide">
+                IDE
+              </Link>
+            </li>
 
             <li>
               <Link className="lg:ml-8 ml-0 mr-5" to="/collections">
                 Collections
               </Link>
             </li>
-            <li>
+            {/* <li>
               <Link className="lg:ml-8 ml-0 mr-5" to="/userDashboard">
                 UserDashboard
               </Link>
-            </li>
+            </li> */}
             <li className="lg:ml-8 ml-0 mr-5">
               {user?.uid ? (
                 <>
@@ -115,7 +120,11 @@ const Navbar = () => {
                             alt="user"
                           />
                         </button>
-                        <Dropdown userOpen={userOpen} setUserOpen={setUserOpen} user={user}/>
+                        <Dropdown
+                          userOpen={userOpen}
+                          setUserOpen={setUserOpen}
+                          user={user}
+                        />
                       </li>
                     </>
                   </div>

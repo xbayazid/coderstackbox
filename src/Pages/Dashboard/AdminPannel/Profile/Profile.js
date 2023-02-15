@@ -1,6 +1,6 @@
 import React from "react";
 import { useContext } from "react";
-import { FaEllipsisH } from "react-icons/fa";
+import { FaCamera, FaEllipsisH } from "react-icons/fa";
 import { Helmet } from "react-helmet";
 import { AuthContext } from "../../../../context/AuthProvider";
 import ProfileCard from "./ProfileCard";
@@ -10,9 +10,15 @@ import { useQuery } from "@tanstack/react-query";
 import axios from "axios";
 import Loading from "../../../Loading/Loading";
 import UpdateModal from "./UpdateModal/UpdateModal";
+import ImageUpdateModal from "../../../../components/ImageUpdateModal/ImageUpdateModal";
+import UserAnalytics from "../UserAnalytics/UserAnalytics";
 
 const Profile = () => {
-  const { user } = useContext(AuthContext);
+    const {user} = useContext(AuthContext);
+    console.log(user);
+
+    const [showImgUpdateModal, setShowImgUpdateModal] = useState(false);
+
   const [showModal, setShowModal] = useState(false);
 
   const [isOpen, setIsOpen] = useState(false);
@@ -39,7 +45,6 @@ const Profile = () => {
   if (isLoading) {
     return <Loading></Loading>;
   }
-
   const onClick = () => {
     setIsOpen(true);
     setUsr(userEmail[0]);
@@ -54,13 +59,22 @@ const Profile = () => {
         <title>CodersStackBox - Profile</title>
       </Helmet>
       <div className="h-full -my-3 text-white-300 ">
+        <ImageUpdateModal
+         isVisible={showImgUpdateModal}
+         onClose={ () => setShowImgUpdateModal(false) }
+         user={userEmail[0]}
+         refetch={refetch} 
+         ></ImageUpdateModal>
+        
         <div className="bg-dark-1 rounded-lg shadow-2xl py-5">
           <div className="flex flex-col items-center">
-            <img
-              src={userEmail[0]?.photoURL}
-              className="md:w-52 w-44 border-4 border-gray-300 rounded-full"
-              alt=""
-            />
+
+            <div className='border-4 md:w-52 md:h-52 bg-slate-500 border-gray-300 rounded-full overflow-hidden
+            w-44 h-44 border-r-white'>
+                <img src={userEmail[0]?.photoURL} className="md:w-full h-full" alt='' />
+            </div>
+            <FaCamera onClick={ () => setShowImgUpdateModal(true)} className='-mt-6 text-xl ml-32'></FaCamera>
+
             <div className="flex items-center space-x-2 mt-2">
               <p className="text-2xl ">{userEmail[0]?.name}</p>
               <span className="bg-blue-500 rounded-full p-1" title="Verified">
@@ -106,10 +120,6 @@ const Profile = () => {
                 <li className="flex py-2">
                   <span className="font-bold w-24">Email:</span>
                   <span className="">{userEmail[0]?.email}</span>
-                </li>
-                <li className="flex py-2">
-                  <span className="font-bold w-24">Location:</span>
-                  <span className="">New York, US</span>
                 </li>
               </ul>
               <div className="w-2/3 mx-auto my-4">

@@ -8,10 +8,11 @@ import { AuthContext } from "../../context/AuthProvider";
 import "./CodeEditor.css";
 import EditorComponent from "./Editor/EditorComponent";
 import { motion } from "framer-motion";
-import axios from 'axios';
-import { toast } from 'react-hot-toast'
+import axios from "axios";
+import { toast } from "react-hot-toast";
 import { useSaveProjectModal } from "../../components/Modals/SaveProjectModal";
 import { FADE_IN_ANIMATION_SETTINGS } from "../../utils/motion";
+import Resizable from "./resizable/resizable";
 
 const EditorPage = () => {
   const [projectName, setProjectName] = useState("");
@@ -21,7 +22,7 @@ const EditorPage = () => {
   const [srcDoc, setSrcDoc] = useState("");
   const [toggle, setToggle] = useState(false);
 
-  const {user} = useContext(AuthContext)
+  const { user } = useContext(AuthContext);
 
   useEffect(() => {
     const timeout = setTimeout(() => {
@@ -36,23 +37,24 @@ const EditorPage = () => {
 
     return () => clearTimeout(timeout);
   }, [html, css, js]);
-  
+
   const handleSubmit = () => {
     const code = {
       projectName: projectName,
       html: html,
       css: css,
-      js: js
+      js: js,
     };
     const url = `http://localhost:5000/projects`;
-    axios.post(url, code, {
-      headers: {
-        authorization: `bearer ${localStorage.getItem("CodersStackBox")}`,
-      },
-    })
+    axios
+      .post(url, code, {
+        headers: {
+          authorization: `bearer ${localStorage.getItem("CodersStackBox")}`,
+        },
+      })
       .then((res) => {
-        console.log(res)
-        
+        console.log(res);
+
         if (res.status === 200) {
           toast.success(res.data.message);
         }
@@ -62,11 +64,11 @@ const EditorPage = () => {
       });
   };
 
-  function Save () {
+  function Save() {
     setShowSaveProjectModal(true);
-    handleSubmit()
+    handleSubmit();
   }
-const { SaveProjectModal, setShowSaveProjectModal } = useSaveProjectModal();
+  const { SaveProjectModal, setShowSaveProjectModal } = useSaveProjectModal();
   return (
     <>
       <Helmet>
@@ -77,7 +79,7 @@ const { SaveProjectModal, setShowSaveProjectModal } = useSaveProjectModal();
       <>
         <nav className="sticky top-0 z-[3] w-full flex py-3 justify-between items-center navbar">
           <>
-          <SaveProjectModal  />
+            <SaveProjectModal />
             <Link to="/" className="gap-x-4 items-center flex">
               <span className="text-3xl text-secondary  pt-2">
                 <ion-icon name="logo-slack"></ion-icon>
@@ -91,12 +93,12 @@ const { SaveProjectModal, setShowSaveProjectModal } = useSaveProjectModal();
           <ul className="list-none sm:flex hidden justify-end items-center flex-1">
             <label>
               <motion.button
-                  className="rounded-full border border-black bg-black p-1.5 px-4 text-sm text-white transition-all hover:bg-white hover:text-black"
-                  onClick={Save}
-                  {...FADE_IN_ANIMATION_SETTINGS}
-                >
-                  Save
-                </motion.button>
+                className="rounded-full border border-black bg-black p-1.5 px-4 text-sm text-white transition-all hover:bg-white hover:text-black"
+                onClick={Save}
+                {...FADE_IN_ANIMATION_SETTINGS}
+              >
+                Save
+              </motion.button>
             </label>
           </ul>
 
@@ -124,12 +126,27 @@ const { SaveProjectModal, setShowSaveProjectModal } = useSaveProjectModal();
       </>
 
       <div className="h-[40vh] grid md:grid-cols-2 lg:grid-cols-3">
-        <EditorComponent
-          language="xml"
-          displayName="HTML"
-          value={html}
-          onChange={setHtml}
-        />
+        <Resizable direction="verticle">
+          <div
+            style={{
+              height: "100%",
+              display: "flex",
+              flexDirection: "row",
+            }}
+          >
+            <Resizable direction="horizontal">
+              <EditorComponent
+                language="xml"
+                displayName="HTML"
+                value={html}
+                onChange={setHtml}
+              />
+            </Resizable>
+
+            
+          </div>
+        </Resizable>
+
         <EditorComponent
           language="css"
           displayName="CSS"
@@ -145,7 +162,7 @@ const { SaveProjectModal, setShowSaveProjectModal } = useSaveProjectModal();
       </div>
       <div className="h-[60vh]">
         <iframe
-        className="bg-white"
+          className="bg-white"
           srcDoc={srcDoc}
           title="output"
           sandbox="allow-scripts"

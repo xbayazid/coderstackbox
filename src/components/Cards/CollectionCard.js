@@ -47,8 +47,8 @@ export default function CollectionCard({props, index}) {
 
 
   return (
-    <motion.div
-    variants={fadeIn('up', 'tween', index * 0.5, 0.75)} className="relative rounded-lg overflow-hidden glassmorphism p-1 ">
+    <div
+    className="relative rounded-lg overflow-hidden glassmorphism p-1 ">
       <div className={`flex flex-col justify-center items-center`}>
         <div className={`${styles.flexCenter}`}>
           <div className={` ${styles.heading3}`}>{props?.projectName}</div>
@@ -85,6 +85,6 @@ export default function CollectionCard({props, index}) {
           <div className='flex items-center ml-20'><HiHeart className='text-red-700 text-3xl cursor-pointer'></HiHeart><p className='text-white'>35</p></div>
         </div>
       </div>
-    </motion.div>
+    </div>
   )
 }

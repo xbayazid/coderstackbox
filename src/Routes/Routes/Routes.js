@@ -14,13 +14,14 @@ import Home from "../../Pages/Home/Home/Home";
 // import Services from "../../Pages/Home/Services/Services";
 import Login from "../../Pages/Login/Login";
 import SingUp from "../../Pages/SignUp/SignUp";
-import MyProjects from "../../Pages/UserDashboard/MyProjects/MyProjects";
+// import MyProjects from "../../Pages/UserDashboard/MyProjects/MyProjects";
 import UserDashboard from "../../Pages/UserDashboard/UserDashboard/UserDashboard";
 import UserProfile from "../../Pages/UserDashboard/UserProfile/UserProfile";
 import Developers from "../../Pages/Dashboard/AdminPannel/Developers/Developers";
-import Projects from "../../Pages/Dashboard/AdminPannel/Projects/Projects";
 import Inbox from "../../Pages/Dashboard/AdminPannel/Inbox/Inbox";
+import MyProjects from "../../Pages/UserDashboard/MyProjects/MyProjects";
 import Profile from "../../Pages/Dashboard/AdminPannel/Profile/Profile";
+import UserAnalytics from "../../Pages/Dashboard/AdminPannel/UserAnalytics/UserAnalytics";
 import PrivateRoutes from "../Routes/PrivateRoutes/PrivateRoutes";
 import AdminDashboard from "../../Pages/Dashboard/AdminPannel/AdminDashboard/AdminDashboard";
 import Blog from "../../Pages/Blog/Blog";
@@ -28,7 +29,12 @@ import Collections from "../../Pages/Collections/Collections";
 import BlogPage from "../../Pages/Blog/BlogPage/BlogPage";
 // import DevProfile from "../../Pages/DevProfile/DevProfile";
 import DevProfile from "../../Pages/DevProfile/DevProfile";
+<<<<<<< HEAD
 import RichTextEditor from "../../Pages/Blog/RichTextEditor/RichTextEditor";
+=======
+import IDE from "../../Pages/CodeEditor/OnlineIDE";
+import AdminBoard from "../../Pages/Dashboard/AdminPannel/AdminBoard/AdminBoard";
+>>>>>>> 0f973a378f77b379c3ac8d35bf2e5d039f259755
 
 const router = createBrowserRouter([
   {
@@ -57,7 +63,7 @@ const router = createBrowserRouter([
       },
       {
         path: "/blog/:id",
-        element: <BlogPage/>
+        element: <BlogPage />,
       },
       {
         path: "/richtext",
@@ -72,8 +78,8 @@ const router = createBrowserRouter([
       //   element: <DevProfile></DevProfile>
       // },
       {
-        path: '/devProfile',
-        element: <DevProfile></DevProfile>
+        path: "/devProfile",
+        element: <DevProfile></DevProfile>,
       },
       {
         path: "/catagories",
@@ -106,6 +112,10 @@ const router = createBrowserRouter([
     element: <EditorPage />,
   },
   {
+    path: "/ide",
+    element: <IDE></IDE>,
+  },
+  {
     path: "/adminDashboard",
     element: (
       <PrivateRoutes>
@@ -119,16 +129,24 @@ const router = createBrowserRouter([
         element: <AdminDashboard></AdminDashboard>,
       },
       {
+        path: "/adminDashboard/adminboard",
+        element: <AdminBoard></AdminBoard>,
+      },
+      {
         path: "/adminDashboard/developers",
         element: <Developers></Developers>,
       },
       {
-        path: "/adminDashboard/projects",
-        element: <Projects></Projects>,
+        path: "/adminDashboard/myprojects",
+        element: <MyProjects></MyProjects>,
       },
       {
         path: "/adminDashboard/inbox",
         element: <Inbox></Inbox>,
+      },
+      {
+        path: "/adminDashboard/useranalytics",
+        element: <UserAnalytics></UserAnalytics>,
       },
       {
         path: "/adminDashboard/profile",
@@ -136,28 +154,28 @@ const router = createBrowserRouter([
       },
     ],
   },
-  {
-    path: "/userDashboard",
-    element: (
-      <PrivateRoutes>
-        <UserDashboard></UserDashboard>
-      </PrivateRoutes>
-    ),
-    children: [
-      {
-        path: "/userDashboard",
-        element: (
-          <PrivateRoutes>
-            <UserDashboard></UserDashboard>
-          </PrivateRoutes>
-        ),
-      },
-      {
-        path: "/userDashboard/myProjects",
-        element: <MyProjects></MyProjects>,
-      },
-    ],
-  },
+  // {
+  //   path: "/userDashboard",
+  //   element: (
+  //     <PrivateRoutes>
+  //       <UserDashboard></UserDashboard>
+  //     </PrivateRoutes>
+  //   ),
+  //   children: [
+  //     {
+  //       path: "/userDashboard",
+  //       element: (
+  //         <PrivateRoutes>
+  //           <UserDashboard></UserDashboard>
+  //         </PrivateRoutes>
+  //       ),
+  //     },
+  //     {
+  //       path: "/userDashboard/myProjects",
+  //       element: <MyProjects></MyProjects>,
+  //     },
+  //   ],
+  // },
   {
     path: "/login",
     element: <Login></Login>,
