@@ -60,7 +60,7 @@ const DeveloperRow = ({ user, handleRequest, loading }) => {
           </span>
         )}
       </td>
-      <td class={`px-6 py-4 font-semibold text-gray-500 dark:text-white `}>
+      <td className={`px-6 py-4 font-semibold text-gray-500 dark:text-white `}>
         <FaTrash className={` ${user?.role === 'admin' ? 'disable text-gray-600 text-2xl' : 'text-red-400 hover:text-red-500 text-2xl'}`}></FaTrash>
       </td>
     </tr>

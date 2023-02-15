@@ -69,26 +69,24 @@ const Profile = () => {
                 className="-mt-6 text-xl ml-32"
               ></FaCamera>
 
-              <div className="flex items-center space-x-2 mt-2">
-                <p className="text-2xl ">{usr?.name}</p>
-                <span className="bg-blue-500 rounded-full p-1" title="Verified">
-                  <svg
-                    xmlns="http://www.w3.org/2000/svg"
-                    className="text-gray-100 h-2.5 w-2.5"
-                    fill="none"
-                    viewBox="0 0 24 24"
-                    stroke="currentColor"
-                  >
-                    <path
-                      stroke-linecap="round"
-                      stroke-linejoin="round"
-                      stroke-width="4"
-                      d="M5 13l4 4L19 7"
-                    ></path>
-                  </svg>
-                </span>
-              </div>
-              <p className="">Senior Software Engineer at Coders StackBox</p>
+            <div className="flex items-center space-x-2 mt-2">
+              <p className="text-2xl ">{usr?.name}</p>
+              <span className="bg-blue-500 rounded-full p-1" title="Verified">
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  className="text-gray-100 h-2.5 w-2.5"
+                  fill="none"
+                  viewBox="0 0 24 24"
+                  stroke="currentColor"
+                >
+                  <path
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    stroke-width="4"
+                    d="M5 13l4 4L19 7"
+                  ></path>
+                </svg>
+              </span>
             </div>
           </div>
 
@@ -139,29 +137,30 @@ const Profile = () => {
             </div>
           </div>
 
-          <div className="bg-dark-1 rounded-lg shadow-xl p-8">
-            <div className="flex items-center justify-between">
-              <h4 className="text-xl font-bold">Admins (6)</h4>
-              <svg
-                xmlns="http://www.w3.org/2000/svg"
-                className="h-6 w-6 hover:text-blue-300"
-                fill="none"
-                viewBox="0 0 24 24"
-                stroke="currentColor"
-              >
-                <path
-                  stroke-linecap="round"
-                  stroke-linejoin="round"
-                  stroke-width="2"
-                  d="M5 12h.01M12 12h.01M19 12h.01M6 12a1 1 0 11-2 0 1 1 0 012 0zm7 0a1 1 0 11-2 0 1 1 0 012 0zm7 0a1 1 0 11-2 0 1 1 0 012 0z"
-                ></path>
-              </svg>
-            </div>
+        <div className="bg-dark-1 rounded-lg shadow-xl p-8">
+          <div className="flex items-center justify-between">
+            <h4 className="text-xl font-bold">Admins (6)</h4>
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              className="h-6 w-6 hover:text-blue-300"
+              fill="none"
+              viewBox="0 0 24 24"
+              stroke="currentColor"
+            >
+              <path
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                stroke-width="2"
+                d="M5 12h.01M12 12h.01M19 12h.01M6 12a1 1 0 11-2 0 1 1 0 012 0zm7 0a1 1 0 11-2 0 1 1 0 012 0zm7 0a1 1 0 11-2 0 1 1 0 012 0z"
+              ></path>
+            </svg>
+          </div>
 
             <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-8 mt-8">
               <ProfileCard />
             </div>
           </div>
+        </div>
         </div>
       )}
       {isOpen && <UpdateModal user={usr} setIsOpen={setIsOpen} />}

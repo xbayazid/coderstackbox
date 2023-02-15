@@ -68,7 +68,7 @@ const User = ({ user }) => {
         </button>
         2
       </td>
-      <td class="px-6 py-4 font-semibold text-gray-500 dark:text-white">
+      <td className="px-6 py-4 font-semibold text-gray-500 dark:text-white">
         <button>
           <FaTrash className="text-red-400 hover:text-red-500 text-2xl"></FaTrash>
         </button>

@@ -43,7 +43,6 @@ const Navbar = () => {
       variants={navVariants}
       initial="hidden"
       whileInView="show"
-      /* className={` w-full z-50 top-0 left-0 transition-all duration-300 ease-in-out ${fix ? "fixed top-0 z-50  navglassmorphism " : "relative"} `}  */
       className={`py-5 relative`}
     >
       <div className="absolute w-[50%] inset-0 gradient-01" />
@@ -59,7 +58,7 @@ const Navbar = () => {
             <ion-icon name={open ? "close" : "menu"}></ion-icon>
           </div>
           <ul
-            className={`md:flex md:items-center mr-12 md:pb-0
+            className={`md:flex md:items-center  md:pb-0
                 pb-12 absolute md:static text-white z-10 
                 left-0 w-full md:w-auto md:pl-0 pl-9 transition-all duration-500 ease-in
                 ${
@@ -84,15 +83,10 @@ const Navbar = () => {
                 Collections
               </Link>
             </li>
-            {/* <li>
-              <Link className="lg:ml-8 ml-0 mr-5" to="/userDashboard">
-                UserDashboard
-              </Link>
-            </li> */}
             <li className="lg:ml-8 ml-0 mr-5">
               {user?.uid ? (
                 <>
-                  <div className="lg:flex">
+                  <div className="lg:flex justify-center items-center">
                     <>
                       <li className="lg:mr-8">
                         <Link to="/adminDashboard">Dashboard</Link>

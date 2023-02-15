@@ -18,58 +18,58 @@ html : `
 
     <body>
             
-        <div class="category-name">Basic Cards</div> <br/>
+        <div className="category-name">Basic Cards</div> <br/>
             
-        <div class="card-category-1">
+        <div className="card-category-1">
             
-            <div class="basic-card basic-card-aqua">
-                <div class="card-content">
-                    <span class="card-title">Card Title</span>
-                    <p class="card-text">
+            <div className="basic-card basic-card-aqua">
+                <div className="card-content">
+                    <span className="card-title">Card Title</span>
+                    <p className="card-text">
                         Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s.
                     </p>
                 </div>
 
-                <div class="card-link">
+                <div className="card-link">
                     <a href="#" title="Read Full"><span>Read Full</span></a>
                 </div>
             </div>
 
-            <div class="basic-card basic-card-lips">
-                <div class="card-content">
-                    <span class="card-title">Card Title</span>
-                    <p class="card-text">
+            <div className="basic-card basic-card-lips">
+                <div className="card-content">
+                    <span className="card-title">Card Title</span>
+                    <p className="card-text">
                         Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s.
                     </p>
                 </div>
 
-                <div class="card-link">
+                <div className="card-link">
                     <a href="#" title="Read Full"><span>Read Full</span></a>
                 </div>
             </div>
 
-            <div class="basic-card basic-card-light">
-                <div class="card-content">
-                    <span class="card-title">Card Title</span>
-                    <p class="card-text">
+            <div className="basic-card basic-card-light">
+                <div className="card-content">
+                    <span className="card-title">Card Title</span>
+                    <p className="card-text">
                         Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s.
                     </p>
                 </div>
 
-                <div class="card-link">
+                <div className="card-link">
                     <a href="#" title="Read Full"><span>Read Full</span></a>
                 </div>
             </div>
 
-            <div class="basic-card basic-card-dark">
-                <div class="card-content">
-                    <span class="card-title">Card Title</span>
-                    <p class="card-text">
+            <div className="basic-card basic-card-dark">
+                <div className="card-content">
+                    <span className="card-title">Card Title</span>
+                    <p className="card-text">
                         Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s.
                     </p>
                 </div>
 
-                <div class="card-link">
+                <div className="card-link">
                     <a href="#" title="Read Full"><span>Read Full</span></a>
                 </div>
             </div>
@@ -80,20 +80,20 @@ html : `
         
         
         <!-- Image Cards -->
-        <div class="card-category-2">
+        <div className="card-category-2">
             
-            <span class="category-name">Image Cards</span> <br/><br/>
+            <span className="category-name">Image Cards</span> <br/><br/>
             
             <ul>
                 <li>
-                    <div class="img-card iCard-style1">
-                        <div class="card-content">
-                            <div class="card-image">
-                                <span class="card-title">Cloud Beauty</span>
+                    <div className="img-card iCard-style1">
+                        <div className="card-content">
+                            <div className="card-image">
+                                <span className="card-title">Cloud Beauty</span>
                                 <img src="https://www.dropbox.com/s/u330jm6faybxrvb/fog-3461451_640.jpg?raw=1"/>
                             </div>
                             
-                            <div class="card-text">
+                            <div className="card-text">
                                 <p>
                                     Lorem Ipsum is simply dummy text of the printing and typesetting industry. Image by <a href="https://pixabay.com/users/Hans-2/?utm_source=link-attribution&amp;utm_medium=referral&amp;utm_campaign=image&amp;utm_content=3461451" style="color:#795548">Hans Braxmeier</a> from <a href="https://pixabay.com/?utm_source=link-attribution&amp;utm_medium=referral&amp;utm_campaign=image&amp;utm_content=3461451" style="color:#795548">Pixabay</a>
                                 </p>
@@ -101,23 +101,23 @@ html : `
                             
                         </div>
                         
-                        <div class="card-link">
+                        <div className="card-link">
                             <a href="#" title="Read Full"><span>Read Full</span></a>
                         </div>
                     </div>                    
                 </li>
                 
                 <li>
-                    <div class="img-card iCard-style2">
-                        <div class="card-content">
-                            <div class="card-image">
-                                <span class="card-caption">Image Caption</span>
+                    <div className="img-card iCard-style2">
+                        <div className="card-content">
+                            <div className="card-image">
+                                <span className="card-caption">Image Caption</span>
                                 <img src="https://www.dropbox.com/s/63v40eqeq9lgz3k/bald-eagle-2715461_640.jpg?raw=1"/>
                             </div>
                             
-                            <span class="card-title">Card Title</span>
+                            <span className="card-title">Card Title</span>
                             
-                            <div class="card-text">
+                            <div className="card-text">
                                 <p>
                                     Lorem Ipsum is simply dummy text of the printing and typesetting industry. Image by <a href="https://pixabay.com/users/moonzigg-6341937/?utm_source=link-attribution&amp;utm_medium=referral&amp;utm_campaign=image&amp;utm_content=2715461" style="text-decoration: none">moonzigg</a> from <a href="https://pixabay.com/?utm_source=link-attribution&amp;utm_medium=referral&amp;utm_campaign=image&amp;utm_content=2715461" style="text-decoration: none">Pixabay</a>
                                 </p>
@@ -125,21 +125,21 @@ html : `
                             
                         </div>
                         
-                        <div class="card-link">
+                        <div className="card-link">
                             <a href="#" title="Read Full"><span>Read Full</span></a>
                         </div>
                     </div>                    
                 </li>
                 
                 <li>
-                    <div class="img-card iCard-style3">
-                        <div class="card-content">
-                            <div class="card-image">
-                                <span class="card-title">World Map</span>
+                    <div className="img-card iCard-style3">
+                        <div className="card-content">
+                            <div className="card-image">
+                                <span className="card-title">World Map</span>
                                 <img src="https://www.dropbox.com/s/tclqbz7o4u8e705/ipad-632394_640.jpg?raw=1"/>
                             </div>
                             
-                            <div class="card-text">
+                            <div className="card-text">
                                 <p>
                                     Lorem Ipsum is simply dummy text of the printing and typesetting industry. Image by <a href="https://pixabay.com/users/FirmBee-663163/?utm_source=link-attribution&amp;utm_medium=referral&amp;utm_campaign=image&amp;utm_content=632394" style="text-decoration:none">William  Iven</a> from <a href="https://pixabay.com/?utm_source=link-attribution&amp;utm_medium=referral&amp;utm_campaign=image&amp;utm_content=632394" style="text-decoration:none">Pixabay</a>
                                 </p>
@@ -147,7 +147,7 @@ html : `
                             
                         </div>
                         
-                        <div class="card-link">
+                        <div className="card-link">
                             <a href="#" title="Read Full">
                                 <span>Go To Link</span>
                             </a>
@@ -156,22 +156,22 @@ html : `
                 </li>
     
                 <li>
-                    <div class="img-card iCard-style4">
-                        <div class="card-content">
-                            <div class="card-image">
-                                <span class="card-caption">Image Caption</span>
+                    <div className="img-card iCard-style4">
+                        <div className="card-content">
+                            <div className="card-image">
+                                <span className="card-caption">Image Caption</span>
                                 <img src="https://www.dropbox.com/s/ldjzn4dwz13m3vb/pomegranate-3383814_640.jpg?raw=1"/>
                             </div>
         
-                            <div class="card-title"><span>The Title</span></div>
+                            <div className="card-title"><span>The Title</span></div>
                             <br/>
-                            <div class="toggle" onclick="showText(this)">
+                            <div className="toggle" onclick="showText(this)">
                                 <span></span>
                                 <span></span>
                                 <span></span>
                             </div>
         
-                            <div class="card-text">
+                            <div className="card-text">
                                 <p>
                                     Lorem Ipsum is simply dummy text of the printing and typesetting industry. Image by <a href="https://pixabay.com/users/megspl-8890573/?utm_source=link-attribution&amp;utm_medium=referral&amp;utm_campaign=image&amp;utm_content=3383814" style="text-decoration: none">megspl</a> from <a href="https://pixabay.com/?utm_source=link-attribution&amp;utm_medium=referral&amp;utm_campaign=image&amp;utm_content=3383814"style="text-decoration: none">Pixabay</a>
                                 </p>
@@ -179,7 +179,7 @@ html : `
                             
                         </div>
                         
-                        <div class="card-link">
+                        <div className="card-link">
                             <a href="#" title="Read Full">
                                 <span>Read More Link</span>                        
                             </a>
@@ -193,20 +193,20 @@ html : `
         <br/>
         
         <!-- Image Overlay Cards -->
-        <div class="card-category-3">
+        <div className="card-category-3">
             
-            <span class="category-name">Overlay Image Cards</span> <br/><br/>     
+            <span className="category-name">Overlay Image Cards</span> <br/><br/>     
             
             <ul>
                 <li>
-                    <div class="ioverlay-card io-card-1">
-                        <div class="card-content">
-                            <span class="card-title">Light of Ocean</span>
-                            <p class="card-text">
+                    <div className="ioverlay-card io-card-1">
+                        <div className="card-content">
+                            <span className="card-title">Light of Ocean</span>
+                            <p className="card-text">
                                 Lorem Ipsum is simply dummy text of the printing and typesetting industry.Image by <a href="https://pixabay.com/users/Mariamichelle-165491/?utm_source=link-attribution&amp;utm_medium=referral&amp;utm_campaign=image&amp;utm_content=685303" style="text-decoration:none; color:#fff">Michelle Maria</a> from <a href="https://pixabay.com/?utm_source=link-attribution&amp;utm_medium=referral&amp;utm_campaign=image&amp;utm_content=685303"style="text-decoration:none; color:#fff">Pixabay</a>
                             </p>                            
                         </div>             
-                        <span class="card-link">
+                        <span className="card-link">
                             <a href="#" title="Read Full"> This is a Link </a>
                         </span>
                         <img src="https://www.dropbox.com/s/360d3xgejuncx7l/bora-bora-685303_1280.jpg?raw=1"/>
@@ -215,14 +215,14 @@ html : `
                 </li>
 
                 <li>
-                    <div class="ioverlay-card io-card-2">
-                        <div class="card-content">
-                            <span class="card-title">Card Title</span>
-                            <p class="card-text">
+                    <div className="ioverlay-card io-card-2">
+                        <div className="card-content">
+                            <span className="card-title">Card Title</span>
+                            <p className="card-text">
                                 Image by <a href="https://pixabay.com/users/1195798-1195798/?utm_source=link-attribution&amp;utm_medium=referral&amp;utm_campaign=image&amp;utm_content=4296784"style="text-decoration: none;color:#fff">1195798</a> from <a href="https://pixabay.com/?utm_source=link-attribution&amp;utm_medium=referral&amp;utm_campaign=image&amp;utm_content=4296784"style="text-decoration: none;color:#fff">Pixabay</a>                        
                             </p>                        
                         </div>       
-                        <span class="card-link">
+                        <span className="card-link">
                             <a href="#" title="Read Full">
                                 <span>This is a Link</span>                        
                             </a>
@@ -237,75 +237,75 @@ html : `
         <br/>
 
         <!-- Product & Shop Cards-->
-        <div class="card-category-4">
+        <div className="card-category-4">
             
-            <span class="category-name">Product and Shop Cards</span> <br/><br/>
+            <span className="category-name">Product and Shop Cards</span> <br/><br/>
             
             <ul>
                 <li>
-                    <div class="sp-card-1">
+                    <div className="sp-card-1">
                         <ul>
                             <li>
-                                <div class="card-title">Trending Shoes For You</div>
-                                <div class="sub-line">7 Colors in each Sport Pair</div>
-                                <span class="off-label">UP TO 65% OFF</span>
-                                <div class="return-line">15 Days Return and Replacement<br/>
+                                <div className="card-title">Trending Shoes For You</div>
+                                <div className="sub-line">7 Colors in each Sport Pair</div>
+                                <span className="off-label">UP TO 65% OFF</span>
+                                <div className="return-line">15 Days Return and Replacement<br/>
                                     <span style="font-size: 10px">Image by <a href="https://pixabay.com/users/OpenClipart-Vectors-30363/?utm_source=link-attribution&amp;utm_medium=referral&amp;utm_campaign=image&amp;utm_content=153310" style="color: #fff">OpenClipart-Vectors</a> from <a href="https://pixabay.com/?utm_source=link-attribution&amp;utm_medium=referral&amp;utm_campaign=image&amp;utm_content=153310"style="color: #fff">Pixabay</a></span></div>
                             </li>
                             <li>
                                 <div>
                                 <img src="https://www.dropbox.com/s/pq93246lri9nb7m/chucks-153310_640.png?raw=1"/></div>
-                                <div class="price-start">Start From $35</div>                                
+                                <div className="price-start">Start From $35</div>                                
                             </li>
                         </ul>
-                        <span class="shop-button">
+                        <span className="shop-button">
                             <a href="#" title="Click for Shop Now">SHOP NOW</a>
                         </span>                        
                     </div>                    
                 </li>
 
                 <li>
-                    <div class="sp-card-2">
-                        <div class="overlap">
+                    <div className="sp-card-2">
+                        <div className="overlap">
                             <a href="#" title="View Details">View Details</a>
                         </div>
-                        <div class="card-image">
+                        <div className="card-image">
                             <img src="https://www.dropbox.com/s/sxwzjltdlviw6ra/blank-1886008_640.png?raw=1"/>                            
                         </div>
 
-                        <div class="card-content">
-                            <span class="card-title">Nike Round</span>
-                            <span class="price-start">$99</span>
-                            <div class="card-caption">
+                        <div className="card-content">
+                            <span className="card-title">Nike Round</span>
+                            <span className="price-start">$99</span>
+                            <div className="card-caption">
                                 Solid Men Round Neck<br/> 100% Pure Cotton<br/>
                                 <span style="font-size: 10px">Image by <a href="https://pixabay.com/users/nattyjeff-1836617/?utm_source=link-attribution&amp;utm_medium=referral&amp;utm_campaign=image&amp;utm_content=1886008" style="text-decoration: none;color:#717171">jeff burroughs</a> from <a href="https://pixabay.com/?utm_source=link-attribution&amp;utm_medium=referral&amp;utm_campaign=image&amp;utm_content=1886008" style="text-decoration: none;color:#717171">Pixabay</a></span>
                             </div>
-                            <div class="cloth-size">
+                            <div className="cloth-size">
                                 <span><b>Sizes:</b> </span>
                                 <span><b>S, M, L, XL</b></span>                                
                             </div>
-                            <div class="cloth-colors">
+                            <div className="cloth-colors">
                                 <span><b>Colors:</b> </span>
-                                <span class="color1"></span>
-                                <span class="color2"></span>
-                                <span class="color3"></span>
-                                <span class="color4"></span>
+                                <span className="color1"></span>
+                                <span className="color2"></span>
+                                <span className="color3"></span>
+                                <span className="color4"></span>
                             </div>
                         </div>
                     </div>
                 </li>
 
                 <li>
-                    <div class="sp-card-3">
+                    <div className="sp-card-3">
                             
-                        <div class="card-title">Camera 25 MP</div>
+                        <div className="card-title">Camera 25 MP</div>
 
-                        <ul class="product-details">
-                            <li class="product-img">
+                        <ul className="product-details">
+                            <li className="product-img">
                                 <img src="https://www.dropbox.com/s/xjjomt5hmc99nql/camera-32871_640.png?raw=1"/>                                
                             </li>
 
-                            <li class="product-description">
+                            <li className="product-description">
                                 <ul>
                                     <li>
                                         <b>Type:</b> DSLR
@@ -329,10 +329,10 @@ html : `
                             </li>
                         </ul>
                         
-                        <ul class="footer-card">
+                        <ul className="footer-card">
                             <li>
-                                <div class="buy-btn"><a href="#" title="Buy Now">Buy Now</a></div>
-                                <div class="cart-btn"><a href="#" title="Add To Cart">Add To Card</a></div>
+                                <div className="buy-btn"><a href="#" title="Buy Now">Buy Now</a></div>
+                                <div className="cart-btn"><a href="#" title="Add To Cart">Add To Card</a></div>
                             </li>
 
                             <li>
@@ -353,25 +353,25 @@ html : `
         <br/>
 
         <!-- Personal Cards </ul> -->
-        <div class="card-category-5">
-            <div class="category-name">Personal Cards</div> <br/><br/>
+        <div className="card-category-5">
+            <div className="category-name">Personal Cards</div> <br/><br/>
 
-            <ul class="all-pr-cards">
+            <ul className="all-pr-cards">
                 <li>
-                    <div class="per-card-1">
-                        <div class="card-image">
+                    <div className="per-card-1">
+                        <div className="card-image">
                             <img src="https://www.dropbox.com/s/kv60gxvmfv2nwmd/profile-2092113_640.png?raw=1">
                         </div>
 
-                        <div class="card-content">
-                            <div class="card-title">Mark Methew</div>
-                            <div class="per-position">Senior Designer</div>
-                            <div class="social-icons">
-                                <i class="fab fa-linkedin-in" title="LinkedIn"></i>
-                                <i class="fab fa-twitter" title="Twitter"></i>
-                                <i class="fab fa-facebook-f" title="Facebook"></i>
+                        <div className="card-content">
+                            <div className="card-title">Mark Methew</div>
+                            <div className="per-position">Senior Designer</div>
+                            <div className="social-icons">
+                                <i className="fab fa-linkedin-in" title="LinkedIn"></i>
+                                <i className="fab fa-twitter" title="Twitter"></i>
+                                <i className="fab fa-facebook-f" title="Facebook"></i>
                             </div>
-                            <div class="card-btn">
+                            <div className="card-btn">
                                 <button type="button" title="Send Message">Send Message</button>
                             </div>                            
                         </div>
@@ -379,56 +379,56 @@ html : `
                 </li>
                 
                 <li>
-                    <div class="per-card-2">
-                        <div class="card-image">
+                    <div className="per-card-2">
+                        <div className="card-image">
                             <ul>
                                 <li><img src="https://www.dropbox.com/s/tcf4pyscta9pt13/jigneshpanchal.JPG?raw=1"/></li>
                                 <li>
-                                    <div class="per-name">Jignesh Panchal</div>
-                                    <div class="per-position">Founder & CEO</div>
-                                    <a class="card-btn" title="Connect">
+                                    <div className="per-name">Jignesh Panchal</div>
+                                    <div className="per-position">Founder & CEO</div>
+                                    <a className="card-btn" title="Connect">
                                         <span></span>
                                     </a>
                                 </li>
                             </ul>                          
                         </div>
 
-                        <div class="card-content">
-                            <div class="card-text">
+                        <div className="card-content">
+                            <div className="card-text">
                                 <span>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.</span>
                             </div>
 
-                            <div class="social-icons">
-                                <i class="fab fa-linkedin-in" title="LinkedIn"></i>
-                                <i class="fab fa-twitter" title="Twitter"></i>
-                                <i class="fab fa-facebook-f" title="Facebook"></i>
-                                <i class="fab fa-whatsapp" title="WhatsApp"></i>
+                            <div className="social-icons">
+                                <i className="fab fa-linkedin-in" title="LinkedIn"></i>
+                                <i className="fab fa-twitter" title="Twitter"></i>
+                                <i className="fab fa-facebook-f" title="Facebook"></i>
+                                <i className="fab fa-whatsapp" title="WhatsApp"></i>
                             </div>
                         </div>
                     </div>
                 </li>
                 
                 <li>
-                    <div class="per-card-3">
-                        <div class="card-image">
+                    <div className="per-card-3">
+                        <div className="card-image">
                             <span></span>
                             <img src="https://www.dropbox.com/s/hdwp9fet5mfcd6x/girl-919048_640.jpg?raw=1"/>
                             <!--Image by <a href="https://pixabay.com/users/Free-Photos-242387/?utm_source=link-attribution&amp;utm_medium=referral&amp;utm_campaign=image&amp;utm_content=919048">Free-Photos</a> from <a href="https://pixabay.com/?utm_source=link-attribution&amp;utm_medium=referral&amp;utm_campaign=image&amp;utm_content=919048">Pixabay</a>-->
-                            <span class="per-name">Nikki Thomas</span>
+                            <span className="per-name">Nikki Thomas</span>
                         </div>
 
-                        <div class="card-content">
-                            <span class="per-position">Project Manager</span>
-                            <div class="card-text">
+                        <div className="card-content">
+                            <span className="per-position">Project Manager</span>
+                            <div className="card-text">
                                 <span>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s</span>
                             </div>
-                            <div class="social-icons">
-                                <i class="fab fa-linkedin-in" title="LinkedIn"></i>
-                                <i class="fab fa-twitter" title="Twitter"></i>
-                                <i class="far fa-envelope" title="E-Mail"></i>
-                                <i class="fab fa-facebook-f" title="Facebook"></i>
-                                <i class="fab fa-whatsapp" title="WhatsApp"></i>
-                                <div class="card-btn">
+                            <div className="social-icons">
+                                <i className="fab fa-linkedin-in" title="LinkedIn"></i>
+                                <i className="fab fa-twitter" title="Twitter"></i>
+                                <i className="far fa-envelope" title="E-Mail"></i>
+                                <i className="fab fa-facebook-f" title="Facebook"></i>
+                                <i className="fab fa-whatsapp" title="WhatsApp"></i>
+                                <div className="card-btn">
                                     <button type="button" title="Connect">Connect</button>
                                 </div>                                
                             </div>
