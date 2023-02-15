@@ -145,28 +145,28 @@ const router = createBrowserRouter([
       },
     ],
   },
-  {
-    path: "/userDashboard",
-    element: (
-      <PrivateRoutes>
-        <UserDashboard></UserDashboard>
-      </PrivateRoutes>
-    ),
-    children: [
-      {
-        path: "/userDashboard",
-        element: (
-          <PrivateRoutes>
-            <UserDashboard></UserDashboard>
-          </PrivateRoutes>
-        ),
-      },
-      {
-        path: "/userDashboard/myProjects",
-        element: <MyProjects></MyProjects>,
-      },
-    ],
-  },
+  // {
+  //   path: "/userDashboard",
+  //   element: (
+  //     <PrivateRoutes>
+  //       <UserDashboard></UserDashboard>
+  //     </PrivateRoutes>
+  //   ),
+  //   children: [
+  //     {
+  //       path: "/userDashboard",
+  //       element: (
+  //         <PrivateRoutes>
+  //           <UserDashboard></UserDashboard>
+  //         </PrivateRoutes>
+  //       ),
+  //     },
+  //     {
+  //       path: "/userDashboard/myProjects",
+  //       element: <MyProjects></MyProjects>,
+  //     },
+  //   ],
+  // },
   {
     path: "/login",
     element: <Login></Login>,

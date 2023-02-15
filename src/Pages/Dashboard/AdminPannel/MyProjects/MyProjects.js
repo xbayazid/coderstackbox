@@ -22,7 +22,7 @@ const MyProjects = () => {
         <title>CodersStackBox - MyProjects</title>
       </Helmet>
       {/* <UserDashboardNavbar></UserDashboardNavbar> */}
-      <div className="flex text-white mx-auto">
+      <div className="flex text-white lg:w-3/4 mx-auto">
         <div className="">
           <main className="py-5 px-10">
             {/* we will load the username here from email */}
@@ -41,7 +41,7 @@ const MyProjects = () => {
 
                     <p class="mt-2 text-sm  ">{myProject.about}</p>
 
-                    <div class="flex justify-between mt-3 item-center bg-red-500">
+                    <div class="flex justify-between mt-3 item-center">
                       <button class="px-2 py-1 text-sm font-medium text-white uppercase transition-colors duration-300 transform bg-gray-800 rounded dark:bg-gray-700 hover:bg-red-700 dark:hover:bg-gray-600 focus:outline-none focus:bg-gray-700 dark:focus:bg-gray-600">
                         Remove project
                       </button>
