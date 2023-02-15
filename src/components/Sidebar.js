@@ -49,7 +49,6 @@ const Sidebar = ({ isOpen, desktopSidebarRef, setIsOpen, user }) => {
             <h5 className="mt-4 text-xl font-semibold text-gray-600 lg:block dark:text-gray-300">
               {user?.name}
             </h5>
-            <span className="text-gray-400 lg:block">Admin</span>
           </div>
 
           <ul className="mt-8 space-y-2 tracking-wide">
