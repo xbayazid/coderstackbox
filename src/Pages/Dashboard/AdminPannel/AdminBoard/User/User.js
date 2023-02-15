@@ -5,7 +5,6 @@ import axios from "axios";
 
 const User = ({ user }) => {
   const { _id, name, email, project, photoURL, phone, about } = user;
-  // console.log("user ", _id);
 
   const url = `http://localhost:5000/u/admin/${_id}`;
   const {

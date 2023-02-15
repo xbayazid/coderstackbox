@@ -26,7 +26,7 @@ const AdminBoard = () => {
   if (isLoading) {
     return <Loading></Loading>;
   }
-  console.log(users.result);
+
   return (
     <div>
       <header>

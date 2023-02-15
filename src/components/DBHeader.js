@@ -1,13 +1,18 @@
-import React from 'react'
+import React from "react";
 
-const DBHeader = ({setIsOpen}) => {
-    
+const DBHeader = ({ setIsOpen }) => {
   return (
-    <div className="sticky z-[1] top-0 h-16 border-b bg-white dark:bg-gray-800 dark:border-gray-700 lg:py-2.5">
-      <div className="flex items-center justify-between space-x-4 px-6 2xl:container">
-        <h5 hidden className="text-2xl font-medium text-gray-600 lg:block dark:text-white">Dashboard</h5>
-        <button className="-mr-2 h-16 w-12 border-r lg:hidden dark:border-gray-700 dark:text-gray-300"
-        onClick={()=>setIsOpen(true)}
+    <div class="sticky z-[1] top-0 h-16 border-b bg-white dark:bg-gray-800 dark:border-gray-700 lg:py-2.5">
+      <div class="flex items-center justify-between space-x-4 px-6 2xl:container">
+        <h5
+          hidden
+          class="text-2xl font-medium text-gray-600 lg:block dark:text-white"
+        >
+          Dashboard
+        </h5>
+        <button
+          class="-mr-2 h-16 w-12 border-r lg:hidden dark:border-gray-700 dark:text-gray-300"
+          onClick={() => setIsOpen(true)}
         >
           <svg
             xmlns="http://www.w3.org/2000/svg"
@@ -24,11 +29,11 @@ const DBHeader = ({setIsOpen}) => {
             />
           </svg>
         </button>
-        <div className="flex space-x-4">
-       {/*    <!--search bar --> */}
-          <div hidden className="md:block">
-            <div className="relative flex items-center text-gray-400 focus-within:text-cyan-400">
-              <span className="absolute left-4 flex h-6 items-center border-r border-gray-300 pr-3 dark:border-gray-700">
+        <div class="flex space-x-4">
+          {/*    <!--search bar --> */}
+          <div hidden class="md:block">
+            <div class="relative flex items-center text-gray-400 focus-within:text-cyan-400">
+              <span class="absolute left-4 flex h-6 items-center border-r border-gray-300 pr-3 dark:border-gray-700">
                 <svg
                   xmlns="http://ww50w3.org/2000/svg"
                   className="w-4 fill-current"
@@ -46,11 +51,11 @@ const DBHeader = ({setIsOpen}) => {
                 name="leadingIcon"
                 id="leadingIcon"
                 placeholder="Search here"
-                className="outline-none w-full rounded-xl border border-gray-300 py-2.5 pl-14 pr-4 text-sm text-gray-600 transition focus:border-cyan-300 dark:bg-gray-900 dark:border-gray-700"
+                class="outline-none w-full rounded-xl border border-gray-300 py-2.5 pl-14 pr-4 text-sm text-gray-600 transition focus:border-cyan-300 dark:bg-gray-900 dark:border-gray-700"
               />
             </div>
           </div>
-         {/*  <!--/search bar --> */}
+          {/*  <!--/search bar --> */}
           <button
             aria-label="search"
             className="h-10 w-10 rounded-xl border bg-gray-100 active:bg-gray-200 md:hidden dark:bg-gray-700 dark:border-gray-600 dark:active:bg-gray-800"
@@ -96,15 +101,13 @@ const DBHeader = ({setIsOpen}) => {
               viewBox="0 0 20 20"
               fill="currentColor"
             >
-              <path
-                d="M10 2a6 6 0 00-6 6v3.586l-.707.707A1 1 0 004 14h12a1 1 0 00.707-1.707L16 11.586V8a6 6 0 00-6-6zM10 18a3 3 0 01-3-3h6a3 3 0 01-3 3z"
-              />
+              <path d="M10 2a6 6 0 00-6 6v3.586l-.707.707A1 1 0 004 14h12a1 1 0 00.707-1.707L16 11.586V8a6 6 0 00-6-6zM10 18a3 3 0 01-3-3h6a3 3 0 01-3 3z" />
             </svg>
           </button>
         </div>
       </div>
     </div>
-  )
-}
+  );
+};
 
-export default DBHeader
+export default DBHeader;

@@ -49,7 +49,6 @@ const Sidebar = ({ isOpen, desktopSidebarRef, setIsOpen, user }) => {
             <h5 className="mt-4 text-xl font-semibold text-gray-600 lg:block dark:text-gray-300">
               {user?.name}
             </h5>
-            <span className="text-gray-400 lg:block">Admin</span>
           </div>
 
           <ul className="mt-8 space-y-2 tracking-wide">
@@ -123,7 +122,7 @@ const Sidebar = ({ isOpen, desktopSidebarRef, setIsOpen, user }) => {
         >
           <Link
             to="/"
-            className="group flex items-center space-x-4 rounded-md px-4 py-3 text-gray-600 dark:text-gray-300
+            className="group flex items-center space-x-4 rounded-md text-gray-600 dark:text-gray-300
                 hover:bg-gradient-to-r from-green-600 to-cyan-400 hover:text-white"
           >
             <svg
