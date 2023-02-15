@@ -10,6 +10,7 @@ import {
   FaChartArea,
 } from "react-icons/fa";
 import { Link, Outlet } from "react-router-dom";
+import Logo from "../../components/Logo";
 
 import "./AdminDashboardLayout.css";
 
@@ -19,27 +20,22 @@ const AdminDashboard = () => {
   const toggle = () => setIsOpen(!isOpen);
 
   return (
-    <div className="flex  text-white">
+    <div className="flex relative text-white">
       <div
-        className={`bg-dark-1 min-h-screen ${
-          isOpen ? "w-64" : "w-0"
-        }  duration-500 text-white`}
+        className={`bg-zinc-700 z-[20] min-h-screen ${
+          isOpen ? "w-[350px]" : "w-0"
+        }  duration-500 text-white fixed`}
       >
         <div
           style={{ width: isOpen ? "384px" : "48px" }}
           className=" w-64 ml-3 text-white text-2xl"
         >
-          <div className=" flex items-center py-5">
+          <div className=" flex items-center py-3">
             <div
               style={{ display: isOpen ? "block" : "none" }}
               className="font-bold text-2xl cursor-pointer flex items-center font-[poppins] text-gray-800  transition-all duration-300 ease-in-out"
             >
-              <h1 className="text-white ">
-                <span className="text-3xl text-secondary  pt-2">
-                  <ion-icon name="logo-slack"></ion-icon>
-                </span>{" "}
-                Coders<span className="text-secondary ml-">StackBox</span>
-              </h1>
+              <Logo />
             </div>
             <div className=" text-3xl flex gap-x-5 items-center">
               {/* <div style={{ marginLeft: isOpen ? '20px' : '0px' }}>
@@ -48,9 +44,7 @@ const AdminDashboard = () => {
 
               <div
                 onClick={() => setIsOpen(!isOpen)}
-                className="text-3xl text-white absolute right-8 top-6
-                                        cursor-pointer md:block hidden lg:hidden sm:block 
-                                        "
+                className="text-3xl text-white absolute right-8 top-6 cursor-pointer md:block hidden lg:hidden sm:block"
               >
                 <ion-icon name={isOpen ? "close" : "menu"}></ion-icon>
               </div>
@@ -180,13 +174,26 @@ const AdminDashboard = () => {
                 </span>{" "}
               </Link>
             </li>
+            <li>
+              <Link
+                className=" flex items-center gap-2 mt-5 pl-5 pt-5 text-lg "
+                to="/"
+              >
+                <FaSignOutAlt
+                  className={`text-lg cursor-pointer duration-500 ${
+                    !isOpen && "scale-0"
+                  }`}
+                />
+                <span
+                  className={`whitespace-pre duration-500 ${
+                    !isOpen && "opacity-0 translate-x-28 overflow-hidden"
+                  } hover:bg-black rounded-full p-2`}
+                >
+                  Go to home
+                </span>{" "}
+              </Link>
+            </li>
           </ul>
-
-          <div className="ml-2 p-2 mt-2">
-            <Link to="/">
-              <FaSignOutAlt></FaSignOutAlt>
-            </Link>
-          </div>
         </div>
       </div>
 
@@ -194,21 +201,21 @@ const AdminDashboard = () => {
         <header className="bg-dark-1 p-4">
           <div className="flex justify-between items-center">
             <div className="header-title text-3xl flex gap-x-5 items-center">
-              <div
+              {/* <div
                 onClick={() => setIsOpen(!isOpen)}
                 className="text-3xl text-white absolute right-8 top-6
                                         cursor-pointer md:hidden block
                                         "
               >
                 <ion-icon name={isOpen ? "close" : "menu"}></ion-icon>
-              </div>
-              <div style={{ marginLeft: isOpen ? "20px" : "0px" }}>
+              </div> */}
+              <div>
                 <FaBars
-                  onClick={toggle}
-                  className="ml-1 sm:block hidden md:hidden lg:block  "
+                  onClick={() => setIsOpen(!isOpen)}
+                  className="cursor-pointer"
                 ></FaBars>
               </div>
-              <label htmlFor=""></label>Overview
+              <div >Overview</div>
             </div>
             <div className="user-wrapper text-3xl md:hidden  sm:block hidden">
               <FaUserCircle></FaUserCircle>
