@@ -29,7 +29,7 @@ const DeveloperRow = ({ user, handleRequest, loading }) => {
       </td>
       <td className="px-5 py-5  text-sm">
         <p className="text-dimWhite whitespace-no-wrap">
-          {user?.role ? user?.role : "User"}
+          {user?.role ? user.role : "User"}
         </p>
       </td>
       <td className="px-5 py-5 text-sm">
@@ -60,8 +60,8 @@ const DeveloperRow = ({ user, handleRequest, loading }) => {
           </span>
         )}
       </td>
-      <td class="px-6 py-4 font-semibold text-gray-500 dark:text-white">
-        <FaTrash className="text-red-400 hover:text-red-500 text-2xl"></FaTrash>
+      <td class={`px-6 py-4 font-semibold text-gray-500 dark:text-white `}>
+        <FaTrash className={` ${user?.role === 'admin' ? 'disable text-gray-600 text-2xl' : 'text-red-400 hover:text-red-500 text-2xl'}`}></FaTrash>
       </td>
     </tr>
   );
