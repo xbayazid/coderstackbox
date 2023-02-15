@@ -9,7 +9,7 @@ export default function CollectionCard({props, index}) {
     const [srcDoc, setSrcDoc] = useState("");
 
 
-
+console.log(props)
   
 
 
@@ -60,7 +60,7 @@ export default function CollectionCard({props, index}) {
         <img
           className="w-12 h-12 rounded-full p-[0.1rem] ring-2 ring-offset-1 ring-offset-secondary"
           src={props.user?.photoURL}
-          alt={props?.user?.name}
+          alt={props.user?.name}
         />
         <div className='flex items-center font-poppins'>
           <div className={`${styles.heading4}`}>{props?.user?.name}</div>
