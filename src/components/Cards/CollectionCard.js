@@ -5,11 +5,9 @@ import styles from '../../style'
 import { motion } from 'framer-motion'
 import { fadeIn } from '../../utils/motion';
 import { HiHeart } from "react-icons/hi";
+import { Link } from 'react-router-dom';
 export default function CollectionCard({props, index}) {
     const [srcDoc, setSrcDoc] = useState("");
-
-
-console.log(props)
   
 
 
@@ -31,7 +29,8 @@ console.log(props)
   return (
     <div
     className="relative rounded-lg overflow-hidden glassmorphism p-1 ">
-      <div className={`flex flex-col justify-center items-center`}>
+     <Link to={`/code/${props?._id}`}>
+     <div className={`flex flex-col justify-center items-center`}>
         <div className={`${styles.flexCenter}`}>
           <div className={` ${styles.heading3}`}>{props?.projectName}</div>
         </div>
@@ -67,6 +66,7 @@ console.log(props)
           <div className='flex items-center ml-20'><HiHeart className='text-red-700 text-3xl cursor-pointer'></HiHeart><p className='text-white'>35</p></div>
         </div>
       </div>
+      </Link>
     </div>
   )
 }

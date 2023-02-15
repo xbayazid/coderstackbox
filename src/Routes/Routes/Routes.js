@@ -33,6 +33,7 @@ import IDE from "../../Pages/CodeEditor/OnlineIDE";
 import AdminBoard from "../../Pages/Dashboard/AdminPannel/AdminBoard/AdminBoard";
 import Dashboard from "../../Pages/Dashboard/Dashboard";
 import MyCollections from "../../Pages/Dashboard/AdminPannel/MyProjects/MyProjects";
+import EditCollection from "../../Pages/Collections/EditCollection";
 
 const router = createBrowserRouter([
   {
@@ -108,6 +109,10 @@ const router = createBrowserRouter([
   {
     path: "/code-editor",
     element: <EditorPage />,
+  },
+  {
+    path: "/code/:id",
+    element: <EditCollection />,
   },
   {
     path: "/ide",
