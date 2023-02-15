@@ -1,9 +1,45 @@
 import React from "react";
 import { FaTrash } from "react-icons/fa";
+import { useQuery } from "@tanstack/react-query";
+import axios from "axios";
 
 const User = ({ user }) => {
   const { _id, name, email, project, photoURL, phone, about } = user;
-  console.log(_id);
+  // console.log("user ", _id);
+
+  const url = `http://localhost:5000/u/admin/${_id}`;
+  const {
+    data: makeAdmin,
+    isLoading,
+    refetch,
+  } = useQuery({
+    queryKey: ["makeAdmin"],
+    queryFn: async () => {
+      const res = await axios.put(url, {
+        method: "PUT",
+        headers: {
+          "content-type": "application/json",
+          authorization: `bearer ${localStorage.getItem("CodersStackBox")}`,
+        },
+      });
+      return res.data;
+    },
+  });
+  console.log(makeAdmin);
+
+  const handleMakeAdmin = (id) => {
+    const url = `http://localhost:5000/u/admin/${id}`;
+    fetch(url, {
+      method: "PUT",
+      headers: {
+        "content-type": "application/json",
+        authorization: `bearer ${localStorage.getItem("CodersStackBox")}`,
+      },
+    })
+      .then((res) => res.json())
+      .then((data) => console.log(data));
+  };
+
   return (
     <tr className="bg-white border-b dark:bg-gray-800 dark:border-gray-700 hover:bg-gray-50 dark:hover:bg-gray-600">
       <th
@@ -28,7 +64,11 @@ const User = ({ user }) => {
         </div> */}
       </td>
       <td class="px-6 py-4">
-        <button to="#" className="font-medium text-blue-500 ">
+        <button
+          onClick={() => handleMakeAdmin(_id)}
+          to="#"
+          className="font-medium text-blue-500 "
+        >
           Make Admin
         </button>
       </td>

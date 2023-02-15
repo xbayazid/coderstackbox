@@ -1,22 +1,31 @@
 import React from "react";
 import { useQuery } from "@tanstack/react-query";
 import User from "./User/User";
+import axios from "axios";
+import Loading from "../../../Loading/Loading";
 // import DeveloperRow from "./DeveloperRow";
 
 const AdminBoard = () => {
+  const url = `http://localhost:5000/users`;
   const {
-    data: users = [],
-    refetch,
+    data: users,
     isLoading,
+    refetch,
   } = useQuery({
     queryKey: ["users"],
     queryFn: async () => {
-      const res = await fetch("http://localhost:5000/users");
-      const data = await res.json();
-      return data;
+      const res = await axios.get(url, {
+        headers: {
+          "content-type": "application/json",
+          authorization: `bearer ${localStorage.getItem("CodersStackBox")}`,
+        },
+      });
+      return res.data;
     },
   });
-
+  if (isLoading) {
+    return <Loading></Loading>;
+  }
   console.log(users.result);
   return (
     <div>
