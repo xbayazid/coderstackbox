@@ -2,13 +2,10 @@ import { useQuery } from "@tanstack/react-query";
 import axios from "axios";
 import { motion } from "framer-motion";
 import React, { useState } from "react";
-import { FaCaretRight } from "react-icons/fa";
-import { Link } from "react-router-dom";
-import CollectionCard from "../../components/Cards/CollectionCard";
-import { TitleText, TypingText } from "../../components/CustomText/CustomText";
-import styles, { layout } from "../../style";
-import { fadeIn, staggerContainer } from "../../utils/motion";
-import Loading from "../Loading/Loading";
+import CollectionCard from "../../../../components/Cards/CollectionCard";
+import PreLoaderSpinner from "../../../../components/PreLoaderSpinner/PreLoaderSpinner";
+import { layout } from "../../../../style";
+import { fadeIn, staggerContainer } from "../../../../utils/motion";
 
 const MyCollections = () => {
   const url = `http://localhost:5000/user-collections`;
@@ -32,19 +29,17 @@ const MyCollections = () => {
 
   const [searchQuery, setSearchQuery] = useState("");
 
-  const handleSearchInputChange = event => {
+  const handleSearchInputChange = (event) => {
     setSearchQuery(event.target.value);
     refetch();
   };
 
-  const filteredData = collections.result?.filter(item =>
+  const filteredData = collections.result?.filter((item) =>
     item.projectName.toLowerCase().includes(searchQuery.toLowerCase())
   );
   if (isLoading) {
-    return <Loading />;
+    return <PreLoaderSpinner />;
   }
-
-  console.log(collections)
 
   return (
     <div className={`${layout.sectionCol}`}>
@@ -54,28 +49,19 @@ const MyCollections = () => {
         whileInView="show"
         viewport={{ once: false, amount: 0.25 }}
       >
-        <div className={`${layout.sectionInfo} text-center z-10 text-white`}>
-          <TitleText
-            title={
-              <TypingText
-                textStyles="my-[8px] font-bold md:text-[64px] text-[40px] text-white"
-                title="Stack Collections"
-              />
-            }
-          />
-          <h2 className={`font-poppins font-normal xs:text-[32px] text-[28px] text-dimWhite xs:leading-[76.8px] leading-[66.8px] w-full`}>Browse and share work from world-class designers and developers in the front-end community.</h2>
-
-        </div>
         <motion.div
-          variants={fadeIn('', 'tween', 0.75, 2)} 
-
+          variants={fadeIn("", "tween", 0.75, 2)}
           className="grid gap-7 md:grid-cols-2 lg:grid-cols-3 mx-auto my-5"
         >
-          <motion.div
-          variants={fadeIn('', 'tween', 1, 2)} 
-          >
-            <h1 className=" font-poppins font-normal xs:text-[28px] text-[24px] text-dimWhite w-full">Explore ideas from the 1.8 million+ front-end designers and developers.</h1>
-            <p className="text-dimWhite/60 mb-4">Check out the work of top-notch designers and developers in the front-end community and share it.</p>
+          <motion.div variants={fadeIn("", "tween", 1, 2)}>
+            <h1 className=" font-poppins font-normal xs:text-[28px] text-[24px] text-dimWhite w-full">
+              Explore ideas from the 1.8 million+ front-end designers and
+              developers.
+            </h1>
+            <p className="text-dimWhite/60 mb-4">
+              Check out the work of top-notch designers and developers in the
+              front-end community and share it.
+            </p>
             <fieldset className="w-full lg:flex">
               <div className="relative">
                 <span className="absolute inset-y-0 left-0 flex items-center pl-2">
@@ -103,11 +89,14 @@ const MyCollections = () => {
                 />
               </div>
             </fieldset>
-            <ul>
-            </ul>
+            <ul></ul>
           </motion.div>
           {filteredData?.map((collection, index) => (
-            <CollectionCard key={collection._id} index={index} props={collection} />
+            <CollectionCard
+              key={collection._id}
+              index={index}
+              props={collection}
+            />
           ))}
         </motion.div>
       </motion.div>

@@ -15,7 +15,6 @@ import Home from "../../Pages/Home/Home/Home";
 import Login from "../../Pages/Login/Login";
 import SingUp from "../../Pages/SignUp/SignUp";
 // import MyProjects from "../../Pages/UserDashboard/MyProjects/MyProjects";
-import UserDashboard from "../../Pages/UserDashboard/UserDashboard/UserDashboard";
 import UserProfile from "../../Pages/UserDashboard/UserProfile/UserProfile";
 import Developers from "../../Pages/Dashboard/AdminPannel/Developers/Developers";
 import Inbox from "../../Pages/Dashboard/AdminPannel/Inbox/Inbox";
@@ -33,6 +32,8 @@ import RichTextEditor from "../../Pages/Blog/RichTextEditor/RichTextEditor";
 import IDE from "../../Pages/CodeEditor/OnlineIDE";
 import AdminBoard from "../../Pages/Dashboard/AdminPannel/AdminBoard/AdminBoard";
 import Dashboard from "../../Pages/Dashboard/Dashboard";
+import MyCollections from "../../Pages/Dashboard/AdminPannel/MyProjects/MyProjects";
+import EditCollection from "../../Pages/Collections/EditCollection";
 
 const router = createBrowserRouter([
   {
@@ -110,6 +111,10 @@ const router = createBrowserRouter([
     element: <EditorPage />,
   },
   {
+    path: "/code/:id",
+    element: <EditCollection />,
+  },
+  {
     path: "/ide",
     element: <IDE></IDE>,
   },
@@ -136,7 +141,7 @@ const router = createBrowserRouter([
       },
       {
         path: "/adminDashboard/myprojects",
-        element: <MyProjects></MyProjects>,
+        element: <MyCollections />,
       },
       {
         path: "/adminDashboard/inbox",
@@ -152,28 +157,7 @@ const router = createBrowserRouter([
       },
     ],
   },
-  // {
-  //   path: "/userDashboard",
-  //   element: (
-  //     <PrivateRoutes>
-  //       <UserDashboard></UserDashboard>
-  //     </PrivateRoutes>
-  //   ),
-  //   children: [
-  //     {
-  //       path: "/userDashboard",
-  //       element: (
-  //         <PrivateRoutes>
-  //           <UserDashboard></UserDashboard>
-  //         </PrivateRoutes>
-  //       ),
-  //     },
-  //     {
-  //       path: "/userDashboard/myProjects",
-  //       element: <MyProjects></MyProjects>,
-  //     },
-  //   ],
-  // },
+
   {
     path: "/login",
     element: <Login></Login>,

@@ -1,10 +1,9 @@
 import React from "react";
 import { FaTrash } from "react-icons/fa";
-import { Link } from "react-router-dom";
 
-const DeveloperRow = ({ user }) => {
+import SmallSpinner from "../../../../components/SmallSpinner";
 
-
+const DeveloperRow = ({ user, handleRequest, loading }) => {
   return (
     <tr className="bg-white border-b dark:bg-gray-800 dark:border-gray-700 hover:bg-gray-50 dark:hover:bg-gray-600">
       <th
@@ -28,13 +27,45 @@ const DeveloperRow = ({ user }) => {
           {"address"}
         </div>
       </td>
-      <td class="px-6 py-4">
-        <Link to="/" class="font-medium text-blue-500 ">
-          {user?.role}
-        </Link>
+      <td className="px-5 py-5  text-sm">
+        <p className="text-dimWhite whitespace-no-wrap">
+          {user?.role ? user.role : "User"}
+        </p>
       </td>
-      <td class="px-6 py-4 font-semibold text-gray-500 dark:text-white">
-        <FaTrash className="text-red-400 hover:text-red-500 text-2xl"></FaTrash>
+      <td className="px-5 py-5 text-sm">
+        {user?.role ? (
+          <span className="relative cursor-pointer inline-block px-3 py-1 font-semibold text-green-900 leading-tight">
+            <span
+              aria-hidden="true"
+              className="absolute inset-0 bg-green-200 opacity-50 rounded-full"
+            ></span>
+            <span className="relative">
+              {loading ? <SmallSpinner /> : " Admin"}
+            </span>
+          </span>
+        ) : (
+          <span
+            onClick={() => handleRequest(user)}
+            className="relative cursor-pointer inline-block px-3 py-1 font-semibold text-dimWhite leading-tight"
+          >
+            <span
+              aria-hidden="true"
+              className="absolute inset-0 bg-red-200 opacity-50 rounded-full"
+            ></span>
+            <span className="relative">
+              {loading ? <SmallSpinner /> : "Make Admin"}
+            </span>
+          </span>
+        )}
+      </td>
+      <td className={`px-6 py-4 font-semibold text-gray-500 dark:text-white `}>
+        <FaTrash
+          className={` ${
+            user?.role === "admin"
+              ? "disable text-gray-600 text-2xl"
+              : "text-red-400 hover:text-red-500 text-2xl"
+          }`}
+        ></FaTrash>
       </td>
     </tr>
   );
