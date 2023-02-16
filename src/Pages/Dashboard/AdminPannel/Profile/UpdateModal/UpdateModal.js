@@ -1,8 +1,8 @@
-import { React, useState } from "react";
-import { toast } from "react-hot-toast";
-import { FaRegWindowClose } from "react-icons/fa";
+import React, { useState } from 'react'
+import toast from 'react-hot-toast';
+import { FaRegWindowClose } from 'react-icons/fa';
 
-const UserModal = ({ setIsOpen, user, refetch }) => {
+const UpdateModal = ({ setIsOpen, user, refetch }) => {
   const { name, email, _id, about, phone } = user;
   const [updatedUser, setUpdatedUser] = useState({});
 
@@ -18,17 +18,19 @@ const UserModal = ({ setIsOpen, user, refetch }) => {
     })
       .then((res) => res.json())
       .then((data) => {
-        toast.success("Profile Updated");
+        toast.success("");
         refetch();
       });
   };
 
   const handleInputChange = (e) => {
+    e.preventDefault()
     const field = e.target.name;
     const value = e.target.value;
     const newUser = { ...updatedUser };
     newUser[field] = value;
     setUpdatedUser(newUser);
+    console.log(newUser)
   };
 
   return (
@@ -101,7 +103,8 @@ const UserModal = ({ setIsOpen, user, refetch }) => {
               <button
                 className="uppercase bg-cyan-700 text-white px-5 py-3 rounded-md my-2"
                 type="submit"
-                // onClick={() => setIsOpen(false)}
+                onClick={() => {
+                  handleUpdateUser();}}
               >
                 Update
               </button>
@@ -113,4 +116,4 @@ const UserModal = ({ setIsOpen, user, refetch }) => {
   );
 };
 
-export default UserModal;
+export default UpdateModal

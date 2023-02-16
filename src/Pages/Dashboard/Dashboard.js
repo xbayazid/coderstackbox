@@ -41,7 +41,6 @@ const Dashboard = () => {
     setLoading(true);
     getUser(user).then((data) => {
       setUsr(data[0]);
-      console.log(data[0]);
       setLoading(false);
     });
   };

@@ -8,12 +8,12 @@ import ParModal from "./ParModal";
 import { useState } from "react";
 import UpdateModal from "./UpdateModal/UpdateModal";
 import ImageUpdateModal from "../../../../components/ImageUpdateModal/ImageUpdateModal";
-import { getUser } from "../../../../api/user";
 import PreLoaderSpinner from "../../../../components/PreLoaderSpinner/PreLoaderSpinner";
+import axios from "axios";
+import { useQuery } from "@tanstack/react-query";
 
 const Profile = () => {
   const { user } = useContext(AuthContext);
-  const [loading, setLoading] = useState(false);
 
   const [showImgUpdateModal, setShowImgUpdateModal] = useState(false);
 
@@ -22,38 +22,46 @@ const Profile = () => {
   const [isOpen, setIsOpen] = useState(false);
   const [usr, setUsr] = useState({});
 
-  useEffect(() => {
-    getUsers();
-  }, []);
-  const getUsers = () => {
-    setLoading(true);
-    getUser(user).then((data) => {
-      setUsr(data[0]);
-      console.log(data[0]);
-      setLoading(false);
-    });
-  };
+  const url = `http://localhost:5000/u?email=${user?.email}`;
 
+  const {
+    data: userEmail,
+    isLoading,
+    refetch,
+  } = useQuery({
+    queryKey: ["userEmail"],
+    queryFn: async () => {
+      const res = await axios.get(url, {
+        headers: {
+          "content-type": "application/json",
+          authorization: `bearer ${localStorage.getItem("CodersStackBox")}`,
+        },
+      });
+      setUsr(res.data[0])
+      return res.data;
+    },
+  });
+  if (isLoading) {
+    return <PreLoaderSpinner />;
+  }
   const onClick = () => {
     setIsOpen(true);
+    setUsr(userEmail[0]);
   };
 
   const handleOnClose = () => setShowModal(false);
-
   return (
     <main>
       <Helmet>
         <meta charSet="utf-8" />
         <title>CodersStackBox - Profile</title>
       </Helmet>
-      {loading ? (
-        <PreLoaderSpinner />
-      ) : (
-        <div className="h-full -my-3 text-white-300 ">
+        <div className="h-full -my-3 text-dimWhite">
           <ImageUpdateModal
             isVisible={showImgUpdateModal}
             onClose={() => setShowImgUpdateModal(false)}
             user={usr}
+            refetch={refetch}
           ></ImageUpdateModal>
 
           <div className="rounded-lg shadow-2xl py-5">
@@ -127,7 +135,7 @@ const Profile = () => {
 
               {/* modal  */}
 
-              <ParModal onClose={handleOnClose} visible={showModal} />
+              <ParModal onClose={handleOnClose} visible={showModal} refetch={refetch}/>
 
               <div className="flex flex-col w-full 2xl:w-2/3">
                 <div className="flex-1 rounded-lg shadow-xl p-8">
@@ -148,9 +156,9 @@ const Profile = () => {
                   stroke="currentColor"
                 >
                   <path
-                    stroke-linecap="round"
-                    stroke-linejoin="round"
-                    stroke-width="2"
+                    strokeLinecap="round"
+                    strokeLinejoin="round"
+                    strokeWidth="2"
                     d="M5 12h.01M12 12h.01M19 12h.01M6 12a1 1 0 11-2 0 1 1 0 012 0zm7 0a1 1 0 11-2 0 1 1 0 012 0zm7 0a1 1 0 11-2 0 1 1 0 012 0z"
                   ></path>
                 </svg>
@@ -162,8 +170,7 @@ const Profile = () => {
             </div>
           </div>
         </div>
-      )}
-      {isOpen && <UpdateModal user={usr} setIsOpen={setIsOpen} />}
+      {isOpen && <UpdateModal user={usr} setIsOpen={setIsOpen} refetch={refetch}/>}
     </main>
   );
 };

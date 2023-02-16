@@ -44,6 +44,8 @@ const Collections = () => {
     refetch();
   };
 
+  console.log(Projects);
+
   const filteredData = Projects?.filter((item) =>
     item.projectName.toLowerCase().includes(searchQuery.toLowerCase())
   );
@@ -78,10 +80,10 @@ const Collections = () => {
           </h2>
         </div>
         <motion.div
-          variants={fadeIn("", "tween", 0.75, 2)}
+          variants={fadeIn("", "tween", 0.2, 1)}
           className="grid gap-7 md:grid-cols-2 lg:grid-cols-3 mx-auto my-5"
         >
-          <motion.div variants={fadeIn("", "tween", 1, 2)}>
+          <motion.div variants={fadeIn("", "tween", 0.2, 1)}>
             <h1 className=" font-poppins font-normal xs:text-[28px] text-[24px] text-dimWhite w-full">
               Explore ideas from the 1.8 million+ front-end designers and
               developers.
