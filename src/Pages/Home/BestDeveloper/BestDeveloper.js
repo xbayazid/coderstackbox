@@ -19,11 +19,9 @@ const BestDeveloper = () => {
     setLoading(true);
     getAllUsers().then((data) => {
       setUsers(data.result);
-      console.log(data.result);
       setLoading(false);
     });
   };
-  console.log(users);
 
   return (
     <div className={`${layout.sectionCol}`}>

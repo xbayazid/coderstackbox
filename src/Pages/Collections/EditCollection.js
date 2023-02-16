@@ -6,7 +6,6 @@ import { motion } from "framer-motion";
 import axios from "axios";
 import { toast } from "react-hot-toast";
 import { AuthContext } from "../../context/AuthProvider";
-import { useSaveProjectModal } from "../../components/Modals/SaveProjectModal";
 import { FADE_IN_ANIMATION_SETTINGS } from "../../utils/motion";
 import { close, menu } from "../../assets";
 import CloudButton from "../../components/Buttons/CloudButton";
@@ -80,10 +79,8 @@ const EditCollection = () => {
 
   
   function Save() {
-    setShowSaveProjectModal(true);
     handleSubmit();
   }
-  const { SaveProjectModal, setShowSaveProjectModal } = useSaveProjectModal();
 
 
 
@@ -97,7 +94,6 @@ const EditCollection = () => {
       <>
         <nav className="sticky top-0 z-[3] w-full flex py-3 justify-between items-center navbar">
           <>
-            <SaveProjectModal />
             <Link to="/" className="gap-x-4 items-center flex">
               <span className="text-3xl text-secondary  pt-2">
                 <ion-icon name="logo-slack"></ion-icon>
