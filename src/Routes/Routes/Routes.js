@@ -65,7 +65,7 @@ const router = createBrowserRouter([
       },
       {
         path: "/richtext",
-        element: <RichTextEditor/>
+        element: <RichTextEditor />
       },
       {
         path: "/doc",

@@ -14,45 +14,45 @@ const Partner = () => {
         initial="hidden"
         whileInView="show"
         viewport={{ once: false, amount: 0.25 }}
-        
-      >
-                <TypingText textStyles={"text-center text-dimWhite"} title={"|Our Valuable Partners"}/>
 
-        <div  className={`${layout.section}`}>
-        <div className={`${layout.sectionImg}`}>
-          <div className="flex flex-col gap-3">
-            <motion.div variants={planetVariants('left', 'spring', 0.5, 1)} className=" bg-sky-300 w-1/2 rounded-full">
-              <img src={partnerTwo} alt="" />
-            </motion.div>
-            <motion.div variants={planetVariants('left','spring', 0.3, 2)} className="-mr-20 bg-slate-700 w-3/2 rounded-full">
-              <img src={partnerOne} alt="" />
-            </motion.div>
-            <motion.div variants={planetVariants('left', 'spring', 0.6, 2)} className=" bg-gray-300 w-1/2 rounded-full">
-              <img src={partnerThree} alt="" />
-            </motion.div>
+      >
+        <TypingText textStyles={"text-center text-dimWhite"} title={"|Our Valuable Partners"} />
+
+        <div className={`${layout.section}`}>
+          <div className={`${layout.sectionImg}`}>
+            <div className="flex flex-col gap-3">
+              <motion.div variants={planetVariants('left', 'spring', 0.5, 1)} className=" bg-sky-300 w-1/2 rounded-full">
+                <img src={partnerTwo} alt="" />
+              </motion.div>
+              <motion.div variants={planetVariants('left', 'spring', 0.3, 2)} className="-mr-20 bg-slate-700 w-3/2 rounded-full">
+                <img src={partnerOne} alt="" />
+              </motion.div>
+              <motion.div variants={planetVariants('left', 'spring', 0.6, 2)} className=" bg-gray-300 w-1/2 rounded-full">
+                <img src={partnerThree} alt="" />
+              </motion.div>
+            </div>
+            <div className="flex flex-col gap-3">
+              <motion.div variants={planetVariants('left', 'spring', 0.7, 2)} className="bg-violet-500 w-1/2 rounded-full">
+                <img src={partnerFour} alt="" />
+              </motion.div>
+              <motion.div variants={planetVariants('left', 'spring', 1, 2)} className="bg-fuchsia-300 w-1/2 rounded-full">
+                <img src={partnerFive} alt="" />
+              </motion.div>
+            </div>
           </div>
-          <div className="flex flex-col gap-3">
-            <motion.div variants={planetVariants('left', 'spring', 0.7, 2)} className="bg-violet-500 w-1/2 rounded-full">
-              <img src={partnerFour} alt="" />
-            </motion.div>
-            <motion.div variants={planetVariants('left', 'spring', 1, 2)} className="bg-fuchsia-300 w-1/2 rounded-full">
-              <img src={partnerFive} alt="" />
-            </motion.div>
-          </div>
-        </div>
-        <motion.div variants={fadeIn('left', 'tween' , 0.5, 0.75)} className={`${layout.sectionInfoStart}`}>
-          <motion.h1 variants={textVariant(0.25)} className=" text-white">
-            <TitleText title={<>See our trusted partners</>}/>
-          </motion.h1>
-          <p className="my-5 lg:text-justify text-white">
-            Lorem ipsum dolor sit amet consectetur adipisicing elit. Omnis eaque
-            soluta aspernatur nisi dignissimos illum provident sed autem
-            deserunt rem. Lorem ipsum dolor sit amet consectetur adipisicing
-            elit. Beatae quibusdam distinctio tempora repellat accusantium
-            sapiente delectus suscipit porro pariatur facere!
-          </p>
-          <Button>Get Started</Button>
-        </motion.div>
+          <motion.div variants={fadeIn('left', 'tween', 0.5, 0.75)} className={`${layout.sectionInfoStart}`}>
+            <motion.h1 variants={textVariant(0.25)} className=" text-white">
+              <TitleText title={<>See our trusted partners</>} />
+            </motion.h1>
+            <p className="my-5 lg:text-justify text-white">
+              Lorem ipsum dolor sit amet consectetur adipisicing elit. Omnis eaque
+              soluta aspernatur nisi dignissimos illum provident sed autem
+              deserunt rem. Lorem ipsum dolor sit amet consectetur adipisicing
+              elit. Beatae quibusdam distinctio tempora repellat accusantium
+              sapiente delectus suscipit porro pariatur facere!
+            </p>
+            <Button>Get Started</Button>
+          </motion.div>
         </div>
       </motion.div>
     </div>
