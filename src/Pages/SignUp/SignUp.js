@@ -2,7 +2,6 @@ import { GithubAuthProvider, GoogleAuthProvider } from "firebase/auth";
 import React, { useContext, useState } from "react";
 import { Helmet } from "react-helmet";
 import { toast } from "react-hot-toast";
-import Navbar from "../Shared/Navbar/Navbar";
 import { Link, useLocation, useNavigate } from "react-router-dom";
 import { AuthContext } from "../../context/AuthProvider";
 import axios from "axios";
@@ -77,8 +76,9 @@ const SingUp = () => {
     const image = data.image[0];
     // console.log(data);
     const formData = new FormData();
+    const imageHostKey = '0f5072fcc1857428de9b90d3cdedf5fc&fbclid=IwAR0tRNJzo6nm_4SQXkD7DKPD6bhGmadCoAwMEAwI0KMqXLxJl2sRR1D82H8';
     formData.append("image", image);
-    const url = `https://api.imgbb.com/1/upload?key=0f5072fcc1857428de9b90d3cdedf5fc`;
+    const url = `https://api.imgbb.com/1/upload?key=${imageHostKey}`;
     fetch(url, {
       method: "POST",
       body: formData,
@@ -89,7 +89,7 @@ const SingUp = () => {
           .then((result) => {
             const userInfo = {
               displayName: data.name,
-              photoURL: imageData.data.display_url,
+              photoURL: imageData.data.url,
             };
             updateUser(userInfo)
               .then(() => {})
@@ -102,11 +102,12 @@ const SingUp = () => {
                 name: data.name,
                 email: data.email,
                 role: "",
-                image: imageData.data.url,
+                photoURL: imageData.data.url,
               };
               /* User Info Save To DataBase */
-              console.log(result);
+              // console.log(result);
               setAuthToken(userInfo);
+              toast.success('User create successfully')
               navigate(from, { replace: true });
             }
           })
@@ -118,12 +119,11 @@ const SingUp = () => {
   };
 
   return (
-    <div>
+    <div className="min-h-[80vh] flex items-center justify-center">
       <Helmet>
         <meta charSet="utf-8" />
         <title>CodersStackBox - SignUp</title>
       </Helmet>
-      <Navbar></Navbar>
       <div className="flex justify-center">
         <div className="glassmorphism py-12 px-8 rounded-tl-xl rounded-bl-xl">
           <h2 className="mt-12 text-white text-5xl title">Welcome to</h2>
@@ -165,7 +165,7 @@ const SingUp = () => {
               <div>
                 <Link
                   to="/login"
-                  className="px-2 py-1 rounded-md mt-4 bg-cyan-400 text-black font-semibold"
+                  className="px-2 py-1 rounded-md mt-4 bg-cyan-400  font-semibold"
                 >
                   <button className="">Login</button>
                 </Link>
