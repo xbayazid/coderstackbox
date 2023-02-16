@@ -19,12 +19,12 @@ const BestDevCard = ({ props, i }) => {
       <div className={`${styles.flexStart} gap-4 m-5`}>
         <img
           className="w-20 h-20 rounded-full p-1 ring-2 "
-          src={props.image}
-          alt={props.alt}
+          src={props.photoURL}
+          alt={props.name}
         />
         <div>
           <div className={`${styles.heading3} hover:text-lime-600`}><Link to="/devProfile">{props.name}</Link></div>
-          <div className={`text-dimGreen`}>{props.title}</div>
+          <div className={`text-dimGreen`}>{props.role}</div>
         </div>
       </div>
 
@@ -35,7 +35,7 @@ const BestDevCard = ({ props, i }) => {
         />
       </div>
       <div className="p-4 text-justify">
-        <div className={`${styles.paragraph}`}>{props.details}</div>
+        <div className={`${styles.paragraph}`}>{props.about}</div>
       </div>
       <div className="p-4 flex justify-end">
         <button type="button" className="inline-block flex items-center px-6 py-2.5 bg-blue-400 text-white font-medium text-xs leading-tight uppercase rounded-full shadow-md hover:bg-blue-500 hover:shadow-lg focus:bg-blue-500 focus:shadow-lg focus:outline-none focus:ring-0 active:bg-blue-600 active:shadow-lg transition duration-150 ease-in-out" onClick={() => setShowModal(true)}>View Profile <HiArrowRight className="ml-2 text-lg"></HiArrowRight></button>
