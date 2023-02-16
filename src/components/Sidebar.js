@@ -90,6 +90,19 @@ const Sidebar = ({ isOpen, desktopSidebarRef, setIsOpen, user }) => {
             </li>
             <li>
               <Link
+                to="/adminDashboard/developers"
+                className="group flex items-center space-x-4 rounded-md px-4 py-3 text-gray-600 dark:text-gray-300
+                hover:bg-gradient-to-r from-green-600 to-cyan-400 hover:text-white"
+              >
+                <FaUsers
+                  className={`text-lg cursor-pointer duration-500"
+                  }`}
+                ></FaUsers>{" "}
+                <span className="mr-1 font-medium">Developers</span>
+              </Link>
+            </li>
+            <li>
+              <Link
                 to="/adminDashboard/profile"
                 className="group flex items-center space-x-4 rounded-md px-4 py-3 text-gray-600 dark:text-gray-300
                 hover:bg-gradient-to-r from-green-600 to-cyan-400 hover:text-white"
@@ -102,15 +115,14 @@ const Sidebar = ({ isOpen, desktopSidebarRef, setIsOpen, user }) => {
             </li>
             <li>
               <Link
-                to="/adminDashboard/developers"
+                to="/adminDashboard/myprojects"
                 className="group flex items-center space-x-4 rounded-md px-4 py-3 text-gray-600 dark:text-gray-300
                 hover:bg-gradient-to-r from-green-600 to-cyan-400 hover:text-white"
               >
-                <FaUsers
-                  className={`text-lg cursor-pointer duration-500"
-                  }`}
-                ></FaUsers>{" "}
-                <span className="mr-1 font-medium">Developers</span>
+                <FaSwatchbook
+                  className={`text-lg cursor-pointer duration-500 `}
+                ></FaSwatchbook>{" "}
+                <span className="mr-1 font-medium">My Projects</span>
               </Link>
             </li>
           </ul>
