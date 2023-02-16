@@ -30,6 +30,8 @@ import BlogPage from "../../Pages/Blog/BlogPage/BlogPage";
 // import DevProfile from "../../Pages/DevProfile/DevProfile";
 import DevProfile from "../../Pages/DevProfile/DevProfile";
 import IDE from "../../Pages/CodeEditor/OnlineIDE";
+import Collab from "../../Pages/Collab/Collab";
+import Editor from "../../Pages/Collab/CollabEditor/Editor/Editor";
 
 const router = createBrowserRouter([
   {
@@ -174,6 +176,13 @@ const router = createBrowserRouter([
   {
     path: "/register",
     element: <SingUp></SingUp>,
+  },{
+    path: "/collab",
+    element: <Collab></Collab>,
+  },
+  {
+    path: "/editor/:roomId",
+    element: <Editor></Editor>
   },
   {
     path: "*",

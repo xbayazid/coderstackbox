@@ -1,11 +1,13 @@
 import React from 'react';
 import { HiOutlineHeart } from "react-icons/hi2";
+import Button from '../../../components/Buttons/Button';
 
 const DevProjects = ({devProfile}) => {
     const {id, projectImg, devImg, devName, projectTitle, react} = devProfile;
     return (
         <div>
-            <div class="flex justify-center items-center">
+      <div>
+      <div class="flex justify-center items-center">
   <div class="rounded-lg shadow-lg bg-white max-w-sm">
       <img class="rounded-t-lg" src={projectImg} alt=""/>
     <div class="flex p-6">
@@ -18,6 +20,7 @@ const DevProjects = ({devProfile}) => {
     </div>
   </div>
 </div>
+      </div>
         </div>
     );
 };
