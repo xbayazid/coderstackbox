@@ -14,7 +14,6 @@ import Login from "../../Pages/Login/Login";
 import SingUp from "../../Pages/SignUp/SignUp";
 // import MyProjects from "../../Pages/UserDashboard/MyProjects/MyProjects";
 import Developers from "../../Pages/Dashboard/AdminPannel/Developers/Developers";
-import Inbox from "../../Pages/Dashboard/AdminPannel/Inbox/Inbox";
 import MyProjects from "../../Pages/UserDashboard/MyProjects/MyProjects";
 import Profile from "../../Pages/Dashboard/AdminPannel/Profile/Profile";
 import UserAnalytics from "../../Pages/Dashboard/AdminPannel/UserAnalytics/UserAnalytics";
@@ -31,6 +30,7 @@ import AdminBoard from "../../Pages/Dashboard/AdminPannel/AdminBoard/AdminBoard"
 import Dashboard from "../../Pages/Dashboard/Dashboard";
 import MyCollections from "../../Pages/Dashboard/AdminPannel/MyProjects/MyProjects";
 import EditCollection from "../../Pages/Collections/EditCollection";
+import AllProjects from "../../components/AllProjects";
 
 const router = createBrowserRouter([
   {
@@ -137,16 +137,16 @@ const router = createBrowserRouter([
         element: <MyCollections />,
       },
       {
-        path: "/adminDashboard/inbox",
-        element: <Inbox></Inbox>,
-      },
-      {
         path: "/adminDashboard/useranalytics",
         element: <UserAnalytics></UserAnalytics>,
       },
       {
         path: "/adminDashboard/profile",
         element: <Profile></Profile>,
+      },
+      {
+        path: "/adminDashboard/all-projects",
+        element: <AllProjects />,
       },
     ],
   },
