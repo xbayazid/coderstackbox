@@ -124,7 +124,7 @@ const SingUp = () => {
         <title>CodersStackBox - SignUp</title>
       </Helmet>
       <Navbar></Navbar>
-      <div className="flex justify-center mt-24">
+      <div className="flex justify-center">
         <div className="glassmorphism py-12 px-8 rounded-tl-xl rounded-bl-xl">
           <h2 className="mt-12 text-white text-5xl title">Welcome to</h2>
           <div className="flex items-center text-3xl font-bold mt-5 mb-8">
