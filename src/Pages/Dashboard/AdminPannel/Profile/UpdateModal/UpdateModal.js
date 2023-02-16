@@ -24,11 +24,13 @@ const UpdateModal = ({ setIsOpen, user, refetch }) => {
   };
 
   const handleInputChange = (e) => {
+    e.preventDefault()
     const field = e.target.name;
     const value = e.target.value;
     const newUser = { ...updatedUser };
     newUser[field] = value;
     setUpdatedUser(newUser);
+    console.log(newUser)
   };
 
   return (

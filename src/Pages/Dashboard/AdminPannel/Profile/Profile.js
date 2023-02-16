@@ -8,7 +8,6 @@ import ParModal from "./ParModal";
 import { useState } from "react";
 import UpdateModal from "./UpdateModal/UpdateModal";
 import ImageUpdateModal from "../../../../components/ImageUpdateModal/ImageUpdateModal";
-import { getUser } from "../../../../api/user";
 import PreLoaderSpinner from "../../../../components/PreLoaderSpinner/PreLoaderSpinner";
 import axios from "axios";
 import { useQuery } from "@tanstack/react-query";
@@ -157,9 +156,9 @@ const Profile = () => {
                   stroke="currentColor"
                 >
                   <path
-                    stroke-linecap="round"
-                    stroke-linejoin="round"
-                    stroke-width="2"
+                    strokeLinecap="round"
+                    strokeLinejoin="round"
+                    strokeWidth="2"
                     d="M5 12h.01M12 12h.01M19 12h.01M6 12a1 1 0 11-2 0 1 1 0 012 0zm7 0a1 1 0 11-2 0 1 1 0 012 0zm7 0a1 1 0 11-2 0 1 1 0 012 0z"
                   ></path>
                 </svg>
