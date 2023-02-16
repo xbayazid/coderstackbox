@@ -22,6 +22,12 @@ const SingUp = () => {
   const navigate = useNavigate();
   const from = location.state?.from?.pathname || "/";
 
+  const {
+    register,
+    formState: { errors },
+    handleSubmit,
+  } = useForm();
+
   const handleGoogleSignIn = () => {
     providerLogin(googleAuthProvider)
       .then((result) => {
@@ -64,11 +70,7 @@ const SingUp = () => {
       });
   };
 
-  const {
-    register,
-    formState: { errors },
-    handleSubmit,
-  } = useForm();
+
   /*   const handleSubmit = (event) => {
     event.preventDefault();
     const form = event.target;
@@ -104,6 +106,7 @@ const SingUp = () => {
     setError("");
     /* ----Upload Image---- */
     const image = data.image[0];
+    // console.log(data);
     const formData = new FormData();
     formData.append("image", image);
     const url = `https://api.imgbb.com/1/upload?key=0f5072fcc1857428de9b90d3cdedf5fc`;
@@ -144,6 +147,7 @@ const SingUp = () => {
           });
       });
   };
+
   return (
     <div>
       <Helmet>
@@ -245,8 +249,10 @@ const SingUp = () => {
               <form onSubmit={handleSubmit(handleSignUp)}>
                 <div>
                   <input
-                    type="name"
-                    name="name"
+                    type="text"
+                    {...register("name", {
+                      required: "Enter your name",
+                      })}
                     placeholder="Full Name"
                     className="form-control block w-full px-3 py-1.5 text-base font-normal text-gray-700 bg-white bg-clip-padding border border-solid border-gray-300 rounded transition ease-in-out m-0 focus:text-gray-700 focus:bg-white focus:border-blue-600 focus:outline-none"
                     required
@@ -254,8 +260,21 @@ const SingUp = () => {
                 </div>
                 <div className="my-5">
                   <input
+                    type="file"
+                    {...register("image", {
+                      required: "Plase insert a image",
+                    })}
+                    placeholder="Image"
+                    className="form-control block w-full px-3 py-1.5 text-base font-normal text-gray-700 bg-white bg-clip-padding border border-solid border-gray-300 rounded transition ease-in-out m-0 focus:text-gray-700 focus:bg-white focus:border-blue-600 focus:outline-none"
+                    required
+                  />
+                </div>
+                <div className="my-5">
+                  <input
                     type="email"
-                    name="email"
+                    {...register("email", {
+                      required: "Plase insert a email",
+                      })}
                     placeholder="Email Address"
                     className="form-control block w-full px-3 py-1.5 text-base font-normal text-gray-700 bg-white bg-clip-padding border border-solid border-gray-300 rounded transition ease-in-out m-0 focus:text-gray-700 focus:bg-white focus:border-blue-600 focus:outline-none"
                     required
@@ -264,7 +283,9 @@ const SingUp = () => {
                 <div className="my-5">
                   <input
                     type="password"
-                    name="password"
+                    {...register("password", {
+                      required: "Plase insert a password",
+                    })}
                     placeholder="Password"
                     className="form-control block w-full px-3 py-1.5 text-base font-normal text-gray-700 bg-white bg-clip-padding border border-solid border-gray-300 rounded transition ease-in-out m-0 focus:text-gray-700 focus:bg-white focus:border-blue-600 focus:outline-none"
                     required
