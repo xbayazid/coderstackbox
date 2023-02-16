@@ -47,14 +47,14 @@ const AdminDashboard = () => {
 
           <main className="py-5 px-5">
             <div className="grid lg:grid-cols-3 gap-10 md:grid-cols-2 grid-cols-1 justify-between items-center font-semibold">
-              <div className="flex justify-between items-center bg-dark-1 rounded-md hover-bg-blue-green-gradient text-3xl p-10">
+              <div className="flex justify-between items-center bg-dark-1 rounded-md text-3xl p-10">
                 <div className="flex flex-col justify-center items-center">
                   <h2>{loading ? <SmallSpinner /> : users?.length}</h2>
                   <p>Developers</p>
                 </div>
                 <FaUsers className="text-secondary text-6xl"></FaUsers>
               </div>
-              <div className="flex justify-between items-center bg-dark-1 rounded-md hover-bg-blue-green-gradient text-3xl p-10">
+              <div className="flex justify-between items-center bg-dark-1 rounded-md text-3xl p-10">
                 <div className="flex flex-col justify-center items-center">
                   <h2>{loading ? <SmallSpinner /> : collections?.length}</h2>
                   <p>Projects</p>

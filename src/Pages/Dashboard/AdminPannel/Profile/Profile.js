@@ -1,4 +1,4 @@
-import React, { useEffect } from "react";
+import React, { useEffect, useRef } from "react";
 import { useContext } from "react";
 import { FaCamera, FaEllipsisH } from "react-icons/fa";
 import { Helmet } from "react-helmet";
