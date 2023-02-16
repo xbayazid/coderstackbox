@@ -1,13 +1,11 @@
 import React from "react";
 import BestDeveloper from "../BestDeveloper/BestDeveloper";
-import Collaboration from "../Collaboration/Collaboration";
 import ContactUs from "../ConactUs/ContactUs";
 import Hero from "../Hero/Hero";
-import OurTeam from "../OurTeam/OurTeam";
 import Services from "../Services/Services";
 import { Helmet } from "react-helmet";
-import UserReviewSlider from "../../UserDashboard/UserReviewSlider/UserReviewSlider";
 import Partner from "../Partner/Partner";
+import UserReviewSlider from "../../../components/UserReviewSlider";
 
 
 const Home = () => {

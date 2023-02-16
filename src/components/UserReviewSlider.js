@@ -6,11 +6,11 @@ import 'swiper/css/navigation';
 import 'swiper/css/pagination';
 import 'swiper/css/scrollbar';
 import { motion } from 'framer-motion'
-import { userSlider } from '../../../constants';
-import TestimonialCard from '../../../components/Cards/TestimonialCard';
-import styles, { layout } from '../../../style';
-import { fadeIn, staggerContainer, textVariant } from '../../../utils/motion';
-import { TitleText, TypingText } from '../../../components/CustomText/CustomText';
+import { userSlider } from '../constants';
+import TestimonialCard from './Cards/TestimonialCard';
+import styles, { layout } from '../style';
+import { fadeIn, staggerContainer, textVariant } from '../utils/motion';
+import { TitleText, TypingText } from './CustomText/CustomText';
 
 SwiperCore.use([ Navigation, Pagination, Scrollbar,  A11y]);
 

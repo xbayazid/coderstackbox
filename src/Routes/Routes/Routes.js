@@ -1,8 +1,6 @@
 import { createBrowserRouter } from "react-router-dom";
-// import Error from "../../Error";
 import Main from "../../Layout/Main";
 import AboutUs from "../../Pages/AboutUs/AboutUs";
-import AdminDashboardLayout from "../../Layout/AdminDashboardLayout/AdminDashboardLayout";
 import Catagories from "../../Pages/catagories/Catagories";
 import SingleCategory from "../../Pages/catagories/SingleCategory";
 import EditorPage from "../../Pages/CodeEditor/EditorPage";
@@ -15,7 +13,6 @@ import Home from "../../Pages/Home/Home/Home";
 import Login from "../../Pages/Login/Login";
 import SingUp from "../../Pages/SignUp/SignUp";
 // import MyProjects from "../../Pages/UserDashboard/MyProjects/MyProjects";
-import UserProfile from "../../Pages/UserDashboard/UserProfile/UserProfile";
 import Developers from "../../Pages/Dashboard/AdminPannel/Developers/Developers";
 import Inbox from "../../Pages/Dashboard/AdminPannel/Inbox/Inbox";
 import MyProjects from "../../Pages/UserDashboard/MyProjects/MyProjects";
@@ -95,10 +92,6 @@ const router = createBrowserRouter([
           fetch(
             `https://coderstackbox-server.vercel.app/projects/${params.id}`
           ),
-      },
-      {
-        path: "/userProfile",
-        element: <UserProfile></UserProfile>,
       },
       {
         path: "/myProjects",
