@@ -1,0 +1,12 @@
+.preview{
+    overflow-y: scroll;
+    border-left: 1px solid #000;
+}
+.editor .save {
+    opacity: 0;
+    z-index: 20;
+    transition: opacity 0.3;
+}
+.editor:hover .save {
+    opacity: 1;
+}

@@ -13,7 +13,6 @@ const UserModal = ({ setIsOpen }) => {
 
   const handleUpdateUser = (e) => {
     e.preventDefault();
-    console.log(updatedUser);
   };
 
   const handleInputChange = (e) => {
