@@ -2,7 +2,6 @@ import { GithubAuthProvider, GoogleAuthProvider } from "firebase/auth";
 import React, { useContext, useState } from "react";
 import { Helmet } from "react-helmet";
 import { toast } from "react-hot-toast";
-import Navbar from "../Shared/Navbar/Navbar";
 import { Link, useLocation, useNavigate } from "react-router-dom";
 import { AuthContext } from "../../context/AuthProvider";
 import axios from "axios";
@@ -21,6 +20,12 @@ const SingUp = () => {
   const location = useLocation();
   const navigate = useNavigate();
   const from = location.state?.from?.pathname || "/";
+
+  const {
+    register,
+    formState: { errors },
+    handleSubmit,
+  } = useForm();
 
   const handleGoogleSignIn = () => {
     providerLogin(googleAuthProvider)
@@ -64,46 +69,12 @@ const SingUp = () => {
       });
   };
 
-  const {
-    register,
-    formState: { errors },
-    handleSubmit,
-  } = useForm();
-  /*   const handleSubmit = (event) => {
-    event.preventDefault();
-    const form = event.target;
-    const name = form.name.value;
-    const email = form.email.value;
-    const password = form.password.value;
-    console.log(name, email, password);
-
-    const userInfo = {
-      displayName: name,
-    };
-
-    createUser(email, password)
-      .then((result) => {
-        const user = result.user;
-        console.log(user);
-        toast("User Created Successfully");
-
-        updateUser(userInfo)
-          .then(() => {
-          })
-          .catch((error) => console.log(error));
-        form.reset();
-        setError("");
-      })
-      .catch((error) => {
-        console.error(error);
-        setError(error.message);
-      });
-  }; */
   const handleSignUp = (data) => {
     setLoading(true);
     setError("");
     /* ----Upload Image---- */
     const image = data.image[0];
+    // console.log(data);
     const formData = new FormData();
     formData.append("image", image);
     const url = `https://api.imgbb.com/1/upload?key=0f5072fcc1857428de9b90d3cdedf5fc`;
@@ -144,57 +115,14 @@ const SingUp = () => {
           });
       });
   };
+
   return (
-    <div>
+    <div className="min-h-[80vh] flex items-center justify-center">
       <Helmet>
         <meta charSet="utf-8" />
         <title>CodersStackBox - SignUp</title>
       </Helmet>
-      <Navbar></Navbar>
-      {/* <div className='grid gap-4 md:grid-cols-1 lg:grid-cols-2'>
-        <div className={`${layout.sectionCol}`}>
-          <img className='extra-img w-4/5' src="https://i.ibb.co/S3ScgR8/118046-lf20-oahmox5rjson.gif" alt="" />
-        </div>
-        <div className='extra p-2'>
-          <div className='text-white text-center xl:mt-16'>
-            <div className='flex justify-around w-56 mx-auto'>
-              <div>
-                <h3 className='uppercase mb-3 -ml-10 authentication-title'>Signup</h3>
-              </div>
-              <div>
-                <Link to='/login'>
-                  <button className="btn btn-xs ml-10">Login</button>
-                </Link>
-              </div>
-
-            </div>
-            <div className='mt-6'>
-              <form onSubmit={handleSubmit(handleSignUp)}>
-                <div className='mb-5'>
-                  <input type="name" name='name' placeholder="Full Name" className="input input-bordered w-full max-w-xs text-black" required />
-                </div>
-                <div>
-                  <input type="email" name='email' placeholder="Email Address" className="input input-bordered w-full max-w-xs text-black" required />
-                </div>
-                <div className='my-5'>
-                  <input type="password" name='password' placeholder="Password" className="input input-bordered w-full max-w-xs text-black" required />
-                </div>
-                <div>
-                  <button className='bg-black px-32 py-3 text-white rounded-md' type='submit'>Register</button>
-                </div>
-                <div className="divider w-52 mx-auto">OR</div>
-                <div className='mx-auto p-3 rounded-md bg-gradient-to-r from-accent to-secondary' style={{ width: '317px' }}>
-                  <button onClick={handleGoogleSignIn}>Register with Google</button>
-                </div>
-                <div className='mx-auto p-3 rounded-md mt-4 bg-gradient-to-r from-accent to-secondary' style={{ width: '317px' }}>
-                  <button onClick={hangleGithubSingIn}>Register with GitHub</button>
-                </div>
-              </form>
-            </div>
-          </div>
-        </div>
-      </div> */}
-      <div className="flex justify-center mt-24">
+      <div className="flex justify-center">
         <div className="glassmorphism py-12 px-8 rounded-tl-xl rounded-bl-xl">
           <h2 className="mt-12 text-white text-5xl title">Welcome to</h2>
           <div className="flex items-center text-3xl font-bold mt-5 mb-8">
@@ -235,7 +163,7 @@ const SingUp = () => {
               <div>
                 <Link
                   to="/login"
-                  className="px-2 py-1 rounded-md mt-4 bg-cyan-400 text-black font-semibold"
+                  className="px-2 py-1 rounded-md mt-4 bg-cyan-400  font-semibold"
                 >
                   <button className="">Login</button>
                 </Link>
@@ -245,8 +173,10 @@ const SingUp = () => {
               <form onSubmit={handleSubmit(handleSignUp)}>
                 <div>
                   <input
-                    type="name"
-                    name="name"
+                    type="text"
+                    {...register("name", {
+                      required: "Enter your name",
+                      })}
                     placeholder="Full Name"
                     className="form-control block w-full px-3 py-1.5 text-base font-normal text-gray-700 bg-white bg-clip-padding border border-solid border-gray-300 rounded transition ease-in-out m-0 focus:text-gray-700 focus:bg-white focus:border-blue-600 focus:outline-none"
                     required
@@ -254,8 +184,21 @@ const SingUp = () => {
                 </div>
                 <div className="my-5">
                   <input
+                    type="file"
+                    {...register("image", {
+                      required: "Plase insert a image",
+                    })}
+                    placeholder="Image"
+                    className="form-control block w-full px-3 py-1.5 text-base font-normal text-gray-700 bg-white bg-clip-padding border border-solid border-gray-300 rounded transition ease-in-out m-0 focus:text-gray-700 focus:bg-white focus:border-blue-600 focus:outline-none"
+                    required
+                  />
+                </div>
+                <div className="my-5">
+                  <input
                     type="email"
-                    name="email"
+                    {...register("email", {
+                      required: "Plase insert a email",
+                      })}
                     placeholder="Email Address"
                     className="form-control block w-full px-3 py-1.5 text-base font-normal text-gray-700 bg-white bg-clip-padding border border-solid border-gray-300 rounded transition ease-in-out m-0 focus:text-gray-700 focus:bg-white focus:border-blue-600 focus:outline-none"
                     required
@@ -264,7 +207,9 @@ const SingUp = () => {
                 <div className="my-5">
                   <input
                     type="password"
-                    name="password"
+                    {...register("password", {
+                      required: "Plase insert a password",
+                    })}
                     placeholder="Password"
                     className="form-control block w-full px-3 py-1.5 text-base font-normal text-gray-700 bg-white bg-clip-padding border border-solid border-gray-300 rounded transition ease-in-out m-0 focus:text-gray-700 focus:bg-white focus:border-blue-600 focus:outline-none"
                     required

@@ -21,7 +21,7 @@ const ImageUpdateModal = ({isVisible, user, refetch, onClose}) => {
     }
 
     const handelUploadImage = (data) => {
-        console.log(data);
+        // console.log(data);
         // if (data){
         //     onClose()
         // }

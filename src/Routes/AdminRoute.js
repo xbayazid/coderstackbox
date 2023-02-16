@@ -26,7 +26,6 @@ const AdminRoute = ({children}) => {
       )
     }
     if (user && user.uid && role === 'admin') {
-      console.log(role)
       return children
     }
     return <Navigate to='/' />

@@ -1,8 +1,6 @@
 import { createBrowserRouter } from "react-router-dom";
-// import Error from "../../Error";
 import Main from "../../Layout/Main";
 import AboutUs from "../../Pages/AboutUs/AboutUs";
-import AdminDashboardLayout from "../../Layout/AdminDashboardLayout/AdminDashboardLayout";
 import Catagories from "../../Pages/catagories/Catagories";
 import SingleCategory from "../../Pages/catagories/SingleCategory";
 import EditorPage from "../../Pages/CodeEditor/EditorPage";
@@ -15,10 +13,7 @@ import Home from "../../Pages/Home/Home/Home";
 import Login from "../../Pages/Login/Login";
 import SingUp from "../../Pages/SignUp/SignUp";
 // import MyProjects from "../../Pages/UserDashboard/MyProjects/MyProjects";
-import UserDashboard from "../../Pages/UserDashboard/UserDashboard/UserDashboard";
-import UserProfile from "../../Pages/UserDashboard/UserProfile/UserProfile";
 import Developers from "../../Pages/Dashboard/AdminPannel/Developers/Developers";
-import Inbox from "../../Pages/Dashboard/AdminPannel/Inbox/Inbox";
 import MyProjects from "../../Pages/UserDashboard/MyProjects/MyProjects";
 import Profile from "../../Pages/Dashboard/AdminPannel/Profile/Profile";
 import UserAnalytics from "../../Pages/Dashboard/AdminPannel/UserAnalytics/UserAnalytics";
@@ -33,6 +28,9 @@ import RichTextEditor from "../../Pages/Blog/RichTextEditor/RichTextEditor";
 import IDE from "../../Pages/CodeEditor/OnlineIDE";
 import AdminBoard from "../../Pages/Dashboard/AdminPannel/AdminBoard/AdminBoard";
 import Dashboard from "../../Pages/Dashboard/Dashboard";
+import MyCollections from "../../Pages/Dashboard/AdminPannel/MyProjects/MyProjects";
+import EditCollection from "../../Pages/Collections/EditCollection";
+import AllProjects from "../../components/AllProjects";
 
 const router = createBrowserRouter([
   {
@@ -96,18 +94,26 @@ const router = createBrowserRouter([
           ),
       },
       {
-        path: "/userProfile",
-        element: <UserProfile></UserProfile>,
-      },
-      {
         path: "/myProjects",
         element: <MyProjects></MyProjects>,
+      },
+      {
+        path: "/login",
+        element: <Login></Login>,
+      },
+      {
+        path: "/register",
+        element: <SingUp></SingUp>,
       },
     ],
   },
   {
     path: "/code-editor",
     element: <EditorPage />,
+  },
+  {
+    path: "/code/:id",
+    element: <EditCollection />,
   },
   {
     path: "/ide",
@@ -136,11 +142,7 @@ const router = createBrowserRouter([
       },
       {
         path: "/adminDashboard/myprojects",
-        element: <MyProjects></MyProjects>,
-      },
-      {
-        path: "/adminDashboard/inbox",
-        element: <Inbox></Inbox>,
+        element: <MyCollections />,
       },
       {
         path: "/adminDashboard/useranalytics",
@@ -150,38 +152,14 @@ const router = createBrowserRouter([
         path: "/adminDashboard/profile",
         element: <Profile></Profile>,
       },
+      {
+        path: "/adminDashboard/all-projects",
+        element: <AllProjects />,
+      },
     ],
   },
-  // {
-  //   path: "/userDashboard",
-  //   element: (
-  //     <PrivateRoutes>
-  //       <UserDashboard></UserDashboard>
-  //     </PrivateRoutes>
-  //   ),
-  //   children: [
-  //     {
-  //       path: "/userDashboard",
-  //       element: (
-  //         <PrivateRoutes>
-  //           <UserDashboard></UserDashboard>
-  //         </PrivateRoutes>
-  //       ),
-  //     },
-  //     {
-  //       path: "/userDashboard/myProjects",
-  //       element: <MyProjects></MyProjects>,
-  //     },
-  //   ],
-  // },
-  {
-    path: "/login",
-    element: <Login></Login>,
-  },
-  {
-    path: "/register",
-    element: <SingUp></SingUp>,
-  },
+
+  
   {
     path: "*",
     element: <ErrorPage></ErrorPage>,

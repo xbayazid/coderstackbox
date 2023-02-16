@@ -1,36 +1,31 @@
-import React, { useEffect, useState } from "react";
-import { useQuery } from "@tanstack/react-query";
-import { Link } from "react-router-dom";
-import DeveloperRow from "./DeveloperRow";
-import { getAllUsers, makeAdmin } from "../../../../api/user";
-import PreLoaderSpinner from "../../../../components/PreLoaderSpinner/PreLoaderSpinner";
+import React, { useEffect } from 'react'
+import { useState } from 'react';
+import { getAllCollections } from '../api/collections';
+import ProjectTableRow from './ProjectTableRow'
 
-const Developers = () => {
-  const [loading, setLoading] = useState(false);
-  const [users, setUsers] = useState([]);
-  useEffect(() => {
-    getUsers();
-  }, []);
+const AllProjects = () => {
+    const [loading, setLoading] = useState(false)
+    const [collections, setCollections] = useState([])
 
-  const getUsers = () => {
-    setLoading(true);
-    getAllUsers().then((data) => {
-      setUsers(data.result);
-      console.log(data.result);
-      setLoading(false);
-    });
-  };
-
-  const handleRequest = (user) => {
-    makeAdmin(user).then((data) => {
-      getUsers();
-    });
-  };
-
+    useEffect(() => {
+        getCollections();
+      }, []);
+    
+      const getCollections = () => {
+        setLoading(true);
+        getAllCollections().then((data) => {
+          setCollections(data.result);
+          setLoading(false);
+        });
+      };
+      const handleRequest = (id) => {
+        console.log("delete")
+      };
+    
   return (
     <div>
       <header>
-        <h2 className="text-3xl mb-5 text-gray-800">Developers</h2>
+        <h2 className="text-3xl mb-5 text-dimWhite">Developers</h2>
       </header>
 
       <main>
@@ -63,26 +58,20 @@ const Developers = () => {
               />
             </div>
           </div>
-          {loading ? (
-            <PreLoaderSpinner />
-          ) : (
             <table className="w-full text-sm text-left text-gray-500 dark:text-gray-400">
               <thead className="text-xs text-gray-700 uppercase bg-gray-50 dark:bg-gray-700 dark:text-gray-400">
                 <tr>
                   <th scope="col" className="px-6 py-3">
-                    Name
+                    No.
                   </th>
                   <th scope="col" className="px-6 py-3">
-                    Phone
+                    Project Name
                   </th>
                   <th scope="col" className="px-6 py-3">
-                    Addres
+                    Creator
                   </th>
                   <th scope="col" className="px-6 py-3">
-                    Role
-                  </th>
-                  <th scope="col" className="px-6 py-3">
-                    Requested
+                    User Role
                   </th>
                   <th scope="col" className="px-6 py-3">
                     Delete
@@ -90,21 +79,21 @@ const Developers = () => {
                 </tr>
               </thead>
               <tbody>
-                {users?.map((user) => (
-                  <DeveloperRow
-                    key={user._id}
-                    user={user}
+                {collections?.map((collection, i) => (
+                  <ProjectTableRow
+                    key={collection._id}
+                    collection={collection}
                     handleRequest={handleRequest}
                     loading={loading}
-                  ></DeveloperRow>
+                    i={i}
+                  ></ProjectTableRow>
                 ))}
               </tbody>
             </table>
-          )}
         </div>
       </main>
     </div>
-  );
-};
+  )
+}
 
-export default Developers;
+export default AllProjects

@@ -17,9 +17,8 @@ export const getRole = async email => {
   }
 
   export const makeAdmin = async user => {
-    delete user._id
     const response = await fetch(
-      `http://localhost:5000/user/${user?.email}`,
+      `http://localhost:5000/u/admin/${user?._id}`,
       {
         method: 'PUT',
         headers: {
