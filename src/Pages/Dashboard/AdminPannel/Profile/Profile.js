@@ -38,6 +38,7 @@ const Profile = () => {
           authorization: `bearer ${localStorage.getItem("CodersStackBox")}`,
         },
       });
+      setUsr(res.data[0])
       return res.data;
     },
   });
@@ -50,14 +51,13 @@ const Profile = () => {
   };
 
   const handleOnClose = () => setShowModal(false);
-
   return (
     <main>
       <Helmet>
         <meta charSet="utf-8" />
         <title>CodersStackBox - Profile</title>
       </Helmet>
-        <div className="h-full -my-3 text-white-300 ">
+        <div className="h-full -my-3 text-dimWhite">
           <ImageUpdateModal
             isVisible={showImgUpdateModal}
             onClose={() => setShowImgUpdateModal(false)}
@@ -171,7 +171,7 @@ const Profile = () => {
             </div>
           </div>
         </div>
-      {isOpen && <UpdateModal user={usr} setIsOpen={setIsOpen} />}
+      {isOpen && <UpdateModal user={usr} setIsOpen={setIsOpen} refetch={refetch}/>}
     </main>
   );
 };
