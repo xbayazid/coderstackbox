@@ -68,7 +68,7 @@ const Login = () => {
                 <title>CodersStackBox - Login</title>
             </Helmet>
             <Navbar></Navbar>
-            <div className='flex justify-center mt-24'>
+            <div className='flex justify-center mt-16'>
             <div className='glassmorphism py-12 px-8 rounded-tl-xl rounded-bl-xl'>
                     <div className='flex items-center text-3xl font-bold mt-12 mb-8'>
                     <span className='text-3xl text-secondary  pt-2'>
