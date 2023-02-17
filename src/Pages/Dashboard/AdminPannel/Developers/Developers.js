@@ -17,7 +17,6 @@ const Developers = () => {
     setLoading(true);
     getAllUsers().then((data) => {
       setUsers(data.result);
-      console.log(data.result);
       setLoading(false);
     });
   };
@@ -28,9 +27,8 @@ const Developers = () => {
     });
   };
 
-  const handleDelete = (user) => {
-    setLoading(true)
-    fetch(`http://localhost:5000/user/${user?._id}`, {
+  const handleDelete = (id) => {
+    fetch(`http://localhost:5000/user/${id}`, {
       method: "DELETE",
       headers: {
         authorization: `bearer ${localStorage.getItem("CodersStackBox")}`,
@@ -38,22 +36,23 @@ const Developers = () => {
     })
       .then((res) => res.json())
       .then((data) => {
-        if (data.deletedCount > 0) {
-          toast.success(`${user?.name} Deleted Successfully`);
+        if (data) {
+          console.log(data.message);
           setLoading(false)
+          getUsers();
         }
       });
   };
 
-  if (loading) {
+  /* if (loading) {
     return <PreLoaderSpinner />;
-  }
+  } */
 
 
   return (
     <div>
       <header>
-        <h2 className="text-3xl mb-5 text-gray-800">Developers</h2>
+        <h2 className="text-3xl mb-5 text-dimWhite">Developers</h2>
       </header>
 
       <main>
@@ -86,9 +85,6 @@ const Developers = () => {
               />
             </div>
           </div>
-          {loading ? (
-            <PreLoaderSpinner />
-          ) : (
             <table className="w-full text-sm text-left text-gray-500 dark:text-gray-400">
               <thead className="text-xs text-gray-700 uppercase bg-gray-50 dark:bg-gray-700 dark:text-gray-400">
                 <tr>
@@ -124,7 +120,6 @@ const Developers = () => {
                 ))}
               </tbody>
             </table>
-          )}
         </div>
       </main>
     </div>

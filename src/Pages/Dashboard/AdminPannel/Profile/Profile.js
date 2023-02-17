@@ -1,10 +1,8 @@
-import React, { useEffect, useRef } from "react";
+import React from "react";
 import { useContext } from "react";
-import { FaCamera, FaEllipsisH } from "react-icons/fa";
+import { FaCamera } from "react-icons/fa";
 import { Helmet } from "react-helmet";
 import { AuthContext } from "../../../../context/AuthProvider";
-import ProfileCard from "./ProfileCard";
-import ParModal from "./ParModal";
 import { useState } from "react";
 import UpdateModal from "./UpdateModal/UpdateModal";
 import ImageUpdateModal from "../../../../components/ImageUpdateModal/ImageUpdateModal";
@@ -21,7 +19,6 @@ const Profile = () => {
 
   const [isOpen, setIsOpen] = useState(false);
   const [usr, setUsr] = useState({});
-console.log(usr)
   const url = `http://localhost:5000/u?email=${user?.email}`;
 
   const {
@@ -44,13 +41,11 @@ console.log(usr)
   if (isLoading) {
     return <PreLoaderSpinner />;
   }
-  console.log(userEmail)
   const onClick = () => {
     setIsOpen(true);
     setUsr(userEmail);
   };
 
-  // const handleOnClose = () => setShowModal(false);
   return (
     <main>
       <Helmet>
