@@ -32,8 +32,6 @@ const AdminDashboard = () => {
       setLoading(false);
     });
   };
-
-  console.log(loading);
   return (
     <div>
       <Helmet>
