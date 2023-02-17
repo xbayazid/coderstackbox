@@ -31,6 +31,10 @@ import Dashboard from "../../Pages/Dashboard/Dashboard";
 import MyCollections from "../../Pages/Dashboard/AdminPannel/MyProjects/MyProjects";
 import EditCollection from "../../Pages/Collections/EditCollection";
 import AllProjects from "../../components/AllProjects";
+<<<<<<< HEAD
+=======
+import TextEditor from "../../Pages/CodeEditor/OnlineIDE/component/text-editor";
+>>>>>>> 3b5f7b14510dd27fc02d04eaccdfbc660349cf75
 
 const router = createBrowserRouter([
   {
@@ -118,6 +122,10 @@ const router = createBrowserRouter([
   {
     path: "/ide",
     element: <IDE></IDE>,
+  },
+  {
+    path: "/text-editor",
+    element: <TextEditor />,
   },
   {
     path: "/adminDashboard",

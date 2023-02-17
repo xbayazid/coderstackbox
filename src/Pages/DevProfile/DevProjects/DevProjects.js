@@ -1,5 +1,6 @@
 import React from 'react';
 import { HiOutlineHeart } from "react-icons/hi2";
+import Button from '../../../components/Buttons/Button';
 
 const DevProjects = ({devProfile}) => {
     const {id, projectImg, devImg, devName, projectTitle, react} = devProfile;
@@ -18,7 +19,7 @@ const DevProjects = ({devProfile}) => {
     </div>
   </div>
 </div>
-        </div>
+      </div>
     );
 };
 

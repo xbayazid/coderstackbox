@@ -1,9 +1,9 @@
 import axios from 'axios';
-import React, { useContext, useEffect, useState } from 'react'
+import React, { useContext, useEffect, useRef, useState } from 'react'
 import { Helmet } from 'react-helmet';
 import toast from 'react-hot-toast';
 import { Link } from 'react-router-dom';
-import { close, menu } from '../../../../assets';
+import { close, logo, menu } from '../../../../assets';
 import { useSaveProjectModal } from '../../../../components/Modals/SaveProjectModal';
 import { AuthContext } from '../../../../context/AuthProvider';
 import { FADE_IN_ANIMATION_SETTINGS } from '../../../../utils/motion';
@@ -13,6 +13,8 @@ import Preview from './Preview';
 import Resizable from './resizable';
 import { motion } from 'framer-motion'
 import CloudButton from '../../../../components/Buttons/CloudButton';
+import { useLogInModal } from '../../../../components/Modals/LoginModal';
+import { FaPencilAlt } from 'react-icons/fa';
 const CodeCell = () => {
     // const ref = useRef();
     const [code, setCode] = useState('');
@@ -62,9 +64,33 @@ const CodeCell = () => {
     const [toggle, setToggle] = useState(false);
   
     const {user} = useContext(AuthContext)
+    const ref = useRef(null);
+    const [editing, setEditing] = useState(false)
+    const [value, setValue] = useState('Untitled')
+    useEffect(() => {
+      const listener = (event) => {
+        if (ref.current && event.target && ref.current.contains(event.target)) {
+          setEditing(true)
+          return
+        }
+        setEditing(false)
+      }
+      document.addEventListener('click', listener, { capture: true });
+      return () => {
+        document.removeEventListener('click', listener, { capture: true });
+      };
   
+    }, [])
     
+    const { LogInModal, setShowLogInModal } = useLogInModal()
     const handleSubmit = () => {
+      if (!user?.uid) {
+        setShowLogInModal(true);
+        return;
+      } if (!projectCode) {
+        console.log(projectCode);
+        toast("🥺 Hey! You have blank space! 🥺")
+      } else {
       const code = {
         projectName: projectName,
         code: projectCode
@@ -76,24 +102,22 @@ const CodeCell = () => {
         },
       })
         .then((res) => {
-          console.log(res)
-          
           if (res.status === 200) {
             toast.success(res.data.message);
+            setShowSaveProjectModal(true);
           }
         })
         .catch((err) => {
           console.error(err);
         });
+      }
     };
   
     function Save () {
-      setShowSaveProjectModal(true);
       handleSubmit()
     }
-  const { SaveProjectModal, setShowSaveProjectModal } = useSaveProjectModal();
 
-
+    const { SaveProjectModal, setShowSaveProjectModal } = useSaveProjectModal();
 
 
     /* -------------------- */
@@ -109,28 +133,32 @@ const CodeCell = () => {
       </Helmet>
 
       <>
-        <nav className="w-full flex py-3 justify-between items-center navbar">
+        <nav className="sticky top-0 z-[3] w-full flex py-3 justify-between items-center navbar">
           <>
-          <SaveProjectModal  />
-            <Link to="/" className="gap-x-4 items-center flex">
-              <span className="text-3xl text-secondary  pt-2">
-                <ion-icon name="logo-slack"></ion-icon>
+            <SaveProjectModal />
+            <LogInModal />
+            <Link to="/" className=" items-center flex mr-4">
+              <span className="pl-2">
+                <img className="w-12" src={logo} alt="" />
               </span>
-              <h1 className="text-white">
-                Coders<span className="text-secondary">StackBox</span>
+              </Link>
+              <h1 ref={ref} contentEditable = {
+                editing ? true : false
+              }
+              onBlur={(t)=>setValue(t.currentTarget.innerHTML)}
+              className={`text-white text-xl font-bold tracking-wider mr-2 ${!editing && "cursor-pointer"}`}>
+               {value}
               </h1>
-            </Link>
+              <FaPencilAlt className="text-lg hover:cursor-pointer checked:text-3xl 
+              text-white hover:text-green-500" onClick={() => setEditing(true)} ></FaPencilAlt>
+            
           </>
 
           <ul className="list-none sm:flex hidden justify-end items-center flex-1">
-            <label>
-              <motion.button
-                  className="rounded-full border border-black bg-black p-1.5 px-4 text-sm text-white transition-all hover:bg-white hover:text-black"
-                  onClick={Save}
-                  {...FADE_IN_ANIMATION_SETTINGS}
-                >
-                  Save
-                </motion.button>
+          <label   onClick={handleSubmit}>
+              <>
+                  <CloudButton>Save</CloudButton>
+              </>
             </label>
           </ul>
 
@@ -141,18 +169,6 @@ const CodeCell = () => {
               className="w-[28px] h-[28px] object-contain"
               onClick={() => setToggle(!toggle)}
             />
-
-            <div
-              className={`${
-                !toggle ? "hidden" : "flex"
-              } p-6 bg-black-gradient absolute top-20 right-0 mx-4 my-2 min-w-[140px] rounded-xl sidebar`}
-            >
-              <ul className="list-none flex justify-end items-start flex-1 flex-col">
-                <label onClick={handleSubmit}>
-                  <CloudButton>Save</CloudButton>
-                </label>
-              </ul>
-            </div>
           </div>
         </nav>
       </>

@@ -6,7 +6,10 @@ import Services from "../Services/Services";
 import { Helmet } from "react-helmet";
 import Partner from "../Partner/Partner";
 import UserReviewSlider from "../../../components/UserReviewSlider";
+<<<<<<< HEAD
 
+=======
+>>>>>>> 3b5f7b14510dd27fc02d04eaccdfbc660349cf75
 
 const Home = () => {
   return (
@@ -19,24 +22,27 @@ const Home = () => {
         <Hero />
         <div className="relative">
           <Services />
-          <div className="gradient-03 z-[-1]" />
           <BestDeveloper />
+          <div className="gradient-03 z-[-1]" />
         </div>
         {/* <div className="relative">
           <Collaboration />
           <div className="gradient-04 z-[-1]" />
           <OurTeam />
         </div> */}
-        <Partner></Partner>
         <div className="relative">
-          <UserReviewSlider/>
+        <Partner />
+
+        <UserReviewSlider />
           <div className="gradient-04 z-[-1]" />
         </div>
-        <ContactUs />
+        <div className="relative">
+      <ContactUs />
+      <div className="gradient-05 z-[-1]" />
+        </div>
+       
       </div>
-      
     </div>
-
   );
 };
 

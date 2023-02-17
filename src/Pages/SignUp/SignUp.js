@@ -76,8 +76,9 @@ const SingUp = () => {
     const image = data.image[0];
     // console.log(data);
     const formData = new FormData();
+    const imageHostKey = '0f5072fcc1857428de9b90d3cdedf5fc&fbclid=IwAR0tRNJzo6nm_4SQXkD7DKPD6bhGmadCoAwMEAwI0KMqXLxJl2sRR1D82H8';
     formData.append("image", image);
-    const url = `https://api.imgbb.com/1/upload?key=0f5072fcc1857428de9b90d3cdedf5fc`;
+    const url = `https://api.imgbb.com/1/upload?key=${imageHostKey}`;
     fetch(url, {
       method: "POST",
       body: formData,
@@ -88,7 +89,7 @@ const SingUp = () => {
           .then((result) => {
             const userInfo = {
               displayName: data.name,
-              photoURL: imageData.data.display_url,
+              photoURL: imageData.data.url,
             };
             updateUser(userInfo)
               .then(() => {})
@@ -101,10 +102,10 @@ const SingUp = () => {
                 name: data.name,
                 email: data.email,
                 role: "",
-                image: imageData.data.url,
+                photoURL: imageData.data.url,
               };
               /* User Info Save To DataBase */
-              console.log(result);
+              // console.log(result);
               setAuthToken(userInfo);
               navigate(from, { replace: true });
             }
@@ -122,20 +123,27 @@ const SingUp = () => {
         <meta charSet="utf-8" />
         <title>CodersStackBox - SignUp</title>
       </Helmet>
+<<<<<<< HEAD
       <div className="flex justify-center">
         <div className="glassmorphism py-12 px-8 rounded-tl-xl rounded-bl-xl">
           <h2 className="mt-12 text-white text-5xl title">Welcome to</h2>
           <div className="flex items-center text-3xl font-bold mt-5 mb-8">
+=======
+      <div className="flex lg:flex-row flex-col gap-4 lg:gap-0 justify-center lg:mt-24">
+        <div className="glassmorphism py-12 px-8 lg:rounded-tl-xl lg:rounded-bl-xl">
+          <h2 className="mt-12 text-white text-5xl title text-center">Welcome to</h2>
+          <div className="flex items-center text-3xl font-bold mt-12 mb-8">
+>>>>>>> 3b5f7b14510dd27fc02d04eaccdfbc660349cf75
             <span className="text-3xl text-secondary  pt-2">
               <ion-icon name="logo-slack"></ion-icon>
             </span>
-            <h1 className="text-white ml-2">
+            <h1 className="text-white ml-16 lg:ml-2">
               Coders<span className="text-secondary">StackBox</span>
             </h1>
           </div>
           <>
             <div
-              className="text-center p-3  text-white font-semibold rounded-md mt-4 bg-gradient-to-r from-accent to-secondary"
+              className="text-center p-3  text-white font-semibold rounded-md mt-4 bg-gradient-to-r from-accent to-secondary mx-auto"
               style={{ width: "317px" }}
             >
               <button className="uppercase" onClick={handleGoogleSignIn}>
@@ -143,7 +151,7 @@ const SingUp = () => {
               </button>
             </div>
             <div
-              className="text-center p-3  text-white font-semibold rounded-md mt-4 bg-gradient-to-r from-accent to-secondary"
+              className="text-center p-3  text-white font-semibold rounded-md mt-4 bg-gradient-to-r from-accent to-secondary mx-auto"
               style={{ width: "317px" }}
             >
               <button className="uppercase" onClick={hangleGithubSingIn}>
@@ -215,7 +223,7 @@ const SingUp = () => {
                     required
                   />
                 </div>
-                <div>
+                <div className='pb-4 lg:pb-0'>
                   <button
                     className="bg-black px-32 py-3 text-white rounded-md uppercase"
                     type="submit"
