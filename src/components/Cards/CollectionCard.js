@@ -63,7 +63,7 @@ export default function CollectionCard({props, index}) {
         />
         <div className='flex items-center font-poppins'>
           <div className={`${styles.heading4}`}>{props?.user?.name}</div>
-          <div className='flex items-center ml-20'><HiHeart className='text-red-700 text-3xl cursor-pointer'></HiHeart><p className='text-white'>35</p></div>
+          {/* <div className='flex items-center ml-20'><HiHeart className='text-red-700 text-3xl cursor-pointer'></HiHeart><p className='text-white'>35</p></div> */}
         </div>
       </div>
       </Link>

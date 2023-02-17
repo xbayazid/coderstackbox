@@ -3,14 +3,14 @@ import React from 'react';
 const CommunityVision = () => {
     return (
         <div>
-            <div className='flex text-white font-poppins'>
-                <div className='bg-sky-600 p-5 w-2/3'>
+            <div className='lg:flex text-white font-poppins'>
+                <div className='bg-sky-600 p-5 lg:w-2/3'>
                     <h1 className='text-4xl font-bold'>Vision</h1>
                     <p className="mt-10 mb-4 text-justify">Become the world's first largest and most useful community platform connecting people.</p>
                     <hr />
                     <p className='my-4  text-justify'>Let's connect with people who share the same interests as you. Together improve yourself and establish relationship for your self-improvement.Let's connect with people who share the same interests as you. Together improve yourself and establish relationship for your self-improvement.Let's connect with people who share the same interests as you. Together improve yourself and establish relationship for your self-improvement.</p>
                 </div>
-                <div className='bg-gray-700 p-5'>
+                <div className='bg-gray-700 p-5 mt-4 lg:mt-0'>
                     <h1 className='text-4xl font-bold'>Mission</h1>
                     <div>
                         <div className='my-4'>
