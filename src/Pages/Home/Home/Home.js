@@ -6,10 +6,6 @@ import Services from "../Services/Services";
 import { Helmet } from "react-helmet";
 import Partner from "../Partner/Partner";
 import UserReviewSlider from "../../../components/UserReviewSlider";
-<<<<<<< HEAD
-
-=======
->>>>>>> 3b5f7b14510dd27fc02d04eaccdfbc660349cf75
 
 const Home = () => {
   return (
