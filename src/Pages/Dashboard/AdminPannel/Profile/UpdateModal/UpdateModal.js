@@ -35,7 +35,7 @@ const UpdateModal = ({ setIsOpen, user, refetch }) => {
 
   return (
     <div className="fixed inset-0 bg-black bg-opacity-25 backdrop-blur-sm flex
-    justify-center items-center">
+    justify-center items-center z-50">
       <div className="flex items-end flex-col">
         <div
           className="absolute bg-gray-900 opacity-0"
