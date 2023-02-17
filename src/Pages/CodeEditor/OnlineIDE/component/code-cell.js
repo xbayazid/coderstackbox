@@ -85,7 +85,11 @@ const CodeCell = () => {
     const { LogInModal, setShowLogInModal } = useLogInModal()
     const handleSubmit = () => {
       if (!user?.uid) {
-        setShowLogInModal(true)
+        setShowLogInModal(true);
+        return;
+      } if (!projectCode) {
+        console.log(projectCode);
+        toast("🥺 Hey! You have blank space! 🥺")
       } else {
       const code = {
         projectName: projectName,
@@ -98,8 +102,6 @@ const CodeCell = () => {
         },
       })
         .then((res) => {
-          console.log(res)
-          
           if (res.status === 200) {
             toast.success(res.data.message);
             setShowSaveProjectModal(true);
@@ -153,7 +155,7 @@ const CodeCell = () => {
           </>
 
           <ul className="list-none sm:flex hidden justify-end items-center flex-1">
-          <label   onClick={Save}>
+          <label   onClick={handleSubmit}>
               <>
                   <CloudButton>Save</CloudButton>
               </>

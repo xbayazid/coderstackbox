@@ -61,7 +61,10 @@ const EditorPage = () => {
 const { LogInModal, setShowLogInModal } = useLogInModal()
   const handleSubmit = () => {
     if (!user?.uid) {
-      setShowLogInModal(true)
+      setShowLogInModal(true);
+      return;
+    } else if (html===""| css==="" |js==="") {
+      toast("🥺 Hey! You have blank space! 🥺")
     } else {
     const code = {
       projectName: value,
@@ -78,8 +81,6 @@ const { LogInModal, setShowLogInModal } = useLogInModal()
         },
       })
       .then((res) => {
-        console.log(res);
-
         if (res.status === 200) {
           toast.success(res.data.message);
           setShowSaveProjectModal(true);
@@ -91,10 +92,6 @@ const { LogInModal, setShowLogInModal } = useLogInModal()
     }
   };
 
-  function Save() {
-    
-    handleSubmit();
-  }
   const { SaveProjectModal, setShowSaveProjectModal } = useSaveProjectModal(srcDoc);
   return (
     <>
@@ -104,7 +101,7 @@ const { LogInModal, setShowLogInModal } = useLogInModal()
       </Helmet>
 
       <>
-        <nav className="sticky top-0 z-[3] w-full flex py-3 justify-between items-center navbar">
+        <nav className="z-[3] w-full flex py-3 justify-between items-center navbar">
           <>
             <SaveProjectModal />
             <LogInModal />
@@ -126,7 +123,7 @@ const { LogInModal, setShowLogInModal } = useLogInModal()
           </>
 
           <ul className="list-none sm:flex hidden justify-end items-center flex-1 mr-5">
-            <label   onClick={Save}>
+            <label   onClick={handleSubmit}>
               <>
                   <CloudButton>Save</CloudButton>
               </>

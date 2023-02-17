@@ -33,10 +33,6 @@ const EditCollection = () => {
   const [editing, setEditing] = useState(false)
   const [value, setValue] = useState('Untitled')
   const { LogInModal, setShowLogInModal } = useLogInModal();
-  function Save() {
-    
-    handleSubmit();
-  }
   const { SaveProjectModal, setShowSaveProjectModal } = useSaveProjectModal(srcDoc);
 
   useEffect(() => {
@@ -76,12 +72,18 @@ const EditCollection = () => {
     return () => clearTimeout(timeout);
   }, [html, css, js]);
 
+
+
   const handleSubmit = () => {
     if (!user?.uid) {
-      setShowLogInModal(true)
-    } else {
+      setShowLogInModal(true);
+      return;
+    } else if (html===""| css==="" |js==="") {
+      toast("🥺 Hey! You have blank space! 🥺")
+    }
+    else {
     const code = {
-      projectName: projectName,
+      projectName: value,
       html: html,
       css: css,
       js: js,
@@ -97,6 +99,7 @@ const EditCollection = () => {
         if (res.status === 200) {
           toast.success(res.data.message);
           setShowSaveProjectModal(true);
+          console.log(res.status)
         }
       })
       .catch((err) => {
@@ -106,9 +109,7 @@ const EditCollection = () => {
   };
 
   
-  function Save() {
-    handleSubmit();
-  }
+
 
 
 
@@ -120,7 +121,7 @@ const EditCollection = () => {
       </Helmet>
 
       <>
-      <nav className="sticky top-0 z-[3] w-full flex py-3 justify-between items-center navbar">
+      <nav className="z-[3] w-full flex py-3 justify-between items-center navbar">
           <>
             <SaveProjectModal />
             <LogInModal />
@@ -142,7 +143,7 @@ const EditCollection = () => {
           </>
 
           <ul className="list-none sm:flex hidden justify-end items-center flex-1 mr-5">
-            <label   onClick={Save}>
+            <label   onClick={handleSubmit}>
               <>
                   <CloudButton>Save</CloudButton>
               </>
