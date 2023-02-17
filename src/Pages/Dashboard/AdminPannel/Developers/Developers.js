@@ -37,8 +37,8 @@ const Developers = () => {
       .then((res) => res.json())
       .then((data) => {
         if (data) {
-          console.log(data.message);
-          setLoading(false)
+          toast.error(data.message);
+          setLoading(false);
           getUsers();
         }
       });
