@@ -17,7 +17,7 @@ const Profile = () => {
 
   const [showImgUpdateModal, setShowImgUpdateModal] = useState(false);
 
-  const [showModal, setShowModal] = useState(false);
+  // const [showModal, setShowModal] = useState(false);
 
   const [isOpen, setIsOpen] = useState(false);
   const [usr, setUsr] = useState({});
@@ -49,7 +49,7 @@ const Profile = () => {
     setUsr(userEmail[0]);
   };
 
-  const handleOnClose = () => setShowModal(false);
+  // const handleOnClose = () => setShowModal(false);
   return (
     <main>
       <Helmet>
@@ -103,10 +103,16 @@ const Profile = () => {
                 <div className="flex-1 rounded-lg shadow-xl p-8">
                   <div className="flex justify-between items-center">
                     <h4 className="text-xl font-bold">Personal Info</h4>
-                    <FaEllipsisH
+                    {/* <FaEllipsisH
                       onClick={() => setShowModal(true)}
                       className="hover:bg-black rounded-md"
-                    ></FaEllipsisH>
+                    ></FaEllipsisH> */}
+                    <button
+                      onClick={onClick}
+                      className="bg-blue-500 text-white py-2 px-4 rounded-lg hover:bg-blue-600"
+                    >
+                      Update Profile
+                    </button>
                   </div>
                   <ul className="mt-3 ">
                     <li className="flex py-2">
@@ -122,20 +128,20 @@ const Profile = () => {
                       <span className="">{usr?.email}</span>
                     </li>
                   </ul>
-                  <div className="w-2/3 mx-auto my-4">
+                  {/* <div className="w-2/3 mx-auto my-4">
                     <button
                       onClick={onClick}
                       className="bg-blue-500 text-white py-2 px-4 rounded-lg hover:bg-blue-600"
                     >
                       Update Profile
                     </button>
-                  </div>
+                  </div> */}
                 </div>
               </div>
 
               {/* modal  */}
 
-              <ParModal onClose={handleOnClose} visible={showModal} refetch={refetch}/>
+              {/* <ParModal onClose={handleOnClose} visible={showModal} refetch={refetch}/> */}
 
               <div className="flex flex-col w-full 2xl:w-2/3">
                 <div className="flex-1 rounded-lg shadow-xl p-8">
