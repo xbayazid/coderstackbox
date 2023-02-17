@@ -5,7 +5,7 @@ import { textContainer, textVariant2 } from "../../utils/motion";
 export const TypingText = ({ title, textStyles }) => (
   <motion.p
     variants={textContainer}
-    className={`font-poppins font-semibold xs:text-[24px] text-[16px] text-dimWhite xs:leading-[76.8px] leading-[66.8px] w-full ${textStyles}`}
+    className={`font-poppins font-semibold xs:text-[24px] text-[40px] text-dimWhite xs:leading-[76.8px] leading-[66.8px] w-full ${textStyles}`}
   >
     {
       Array.from(title).map((letter, index) => (
