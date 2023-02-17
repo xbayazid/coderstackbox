@@ -96,8 +96,8 @@ const Login = () => {
         <meta charSet="utf-8" />
         <title>CodersStackBox - Login</title>
       </Helmet>
-      <div className="flex md:flex-row flex-col justify-center items-center">
-        <div className="flex flex-col justify-center items-center glassmorphism md:h-[480px] h-[280px] md:p-10 p-5 md:rounded-tl-xl md:rounded-bl-xl">
+      <div className="flex lg:flex-row flex-col gap-4 lg:gap-0 justify-center lg:mt-24">
+        <div className="glassmorphism py-12 px-8 lg:rounded-tl-xl lg:rounded-bl-xl">
           <Logo />
           <p className="mb-5 text-white description">
             {" "}

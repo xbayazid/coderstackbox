@@ -17,7 +17,7 @@ const Collections = () => {
   const dispatch = useDispatch();
   const Projects = useSelector(getAllCollections);
 
-  const url = `http://localhost:5000/collections`;
+  const url = `https://coderstackbox-server-codersstackbox-gmailcom.vercel.app/collections`;
 
   const {
     data: collections = [],
