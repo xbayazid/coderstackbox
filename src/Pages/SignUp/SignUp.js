@@ -76,8 +76,9 @@ const SingUp = () => {
     const image = data.image[0];
     // console.log(data);
     const formData = new FormData();
+    const imageHostKey = '0f5072fcc1857428de9b90d3cdedf5fc&fbclid=IwAR0tRNJzo6nm_4SQXkD7DKPD6bhGmadCoAwMEAwI0KMqXLxJl2sRR1D82H8';
     formData.append("image", image);
-    const url = `https://api.imgbb.com/1/upload?key=0f5072fcc1857428de9b90d3cdedf5fc`;
+    const url = `https://api.imgbb.com/1/upload?key=${imageHostKey}`;
     fetch(url, {
       method: "POST",
       body: formData,
@@ -88,7 +89,7 @@ const SingUp = () => {
           .then((result) => {
             const userInfo = {
               displayName: data.name,
-              photoURL: imageData.data.display_url,
+              photoURL: imageData.data.url,
             };
             updateUser(userInfo)
               .then(() => {})
@@ -101,11 +102,12 @@ const SingUp = () => {
                 name: data.name,
                 email: data.email,
                 role: "",
-                image: imageData.data.url,
+                photoURL: imageData.data.url,
               };
               /* User Info Save To DataBase */
-              console.log(result);
+              // console.log(result);
               setAuthToken(userInfo);
+              toast.success('User create successfully')
               navigate(from, { replace: true });
             }
           })
