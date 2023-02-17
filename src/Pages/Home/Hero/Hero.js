@@ -70,7 +70,7 @@ const Hero = () => {
       <motion.h1 variants={textVariant(0.3)} className=" text-3xl lg:text-6xl font-semibold text-center hero-title">Write better code, <span className="text-emerald-200">Collabo</span><span className="text-emerald-500">ratively</span></motion.h1>
       <motion.p variants={textVariant(0.4)} className="lg:w-3/4 mx-auto my-3"> Build your Front-End Web Application. Get work done quicker by building out entire projects. Isolating code to test features and animations. Want to keep it all under wraps?</motion.p>
       <motion.div variants={textVariant(0.5)} className="flex justify-center items-center gap-4">
-      <Link to="/code-editor"><OutlinedButton>Mark Down Editor</OutlinedButton></Link>
+      <Link to="/text-editor"><OutlinedButton>Text Editor</OutlinedButton></Link>
       <Link to="/code-editor"><Button>Code Editor<FaArrowRight /></Button></Link>
       </motion.div>
       </div>
