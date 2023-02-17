@@ -69,7 +69,7 @@ const Collections = () => {
             }
           />
           <h2
-            className={`font-poppins font-normal xs:text-[32px] text-[28px] text-dimWhite xs:leading-[76.8px] leading-[66.8px] w-full`}
+            className={`font-poppins font-normal xs:text-[32px] text-[28px] text-dimWhite leading-[32px] md:leading-[76.8px]  w-full sm:flex hidden`}
           >
             Browse and share work from world-class designers and developers in
             the front-end community.
