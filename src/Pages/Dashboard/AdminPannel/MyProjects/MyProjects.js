@@ -1,56 +1,36 @@
 import { useQuery } from "@tanstack/react-query";
 import axios from "axios";
-import { motion } from "framer-motion";
+import { AnimatePresence, motion } from "framer-motion";
 import React, { useState } from "react";
+import { useSelector } from "react-redux";
 import CollectionCard from "../../../../components/Cards/CollectionCard";
 import PreLoaderSpinner from "../../../../components/PreLoaderSpinner/PreLoaderSpinner";
+import { getUsersCollections } from "../../../../features/collectionSlice/userCollectionSlice";
 import { layout } from "../../../../style";
-import { fadeIn, staggerContainer } from "../../../../utils/motion";
+import { fadeIn, FADE_UP_ANIMATION_VARIANTS, staggerContainer } from "../../../../utils/motion";
 
 const MyCollections = () => {
-  const url = `http://localhost:5000/user-collections`;
-
-  const {
-    data: collections = [],
-    isLoading,
-    refetch,
-  } = useQuery({
-    queryKey: ["collections"],
-    queryFn: async () => {
-      const res = await axios.get(url, {
-        headers: {
-          "content-type": "application/json",
-          authorization: `bearer ${localStorage.getItem("CodersStackBox")}`,
-        },
-      });
-      return res.data;
-    },
-  });
-
   const [searchQuery, setSearchQuery] = useState("");
-
+  const userCollections = useSelector(getUsersCollections);
+  console.log(userCollections);
   const handleSearchInputChange = (event) => {
     setSearchQuery(event.target.value);
-    refetch();
   };
 
-  const filteredData = collections.result?.filter((item) =>
+  const filteredData = userCollections?.project?.filter((item) =>
     item.projectName.toLowerCase().includes(searchQuery.toLowerCase())
   );
-  if (isLoading) {
-    return <PreLoaderSpinner />;
+  if(filteredData?.length === 0) {
+    return (
+      <div className="text-white">You don't have any previous work</div>
+    )
   }
 
   return (
     <div className={`${layout.sectionCol}`}>
-      <motion.div
-        variants={staggerContainer}
-        initial="hidden"
-        whileInView="show"
-        viewport={{ once: false, amount: 0.25 }}
-      >
+      <AnimatePresence>
         <motion.div
-          variants={fadeIn("", "tween", 0.75, 2)}
+          {...FADE_UP_ANIMATION_VARIANTS}
           className="grid gap-7 md:grid-cols-2 lg:grid-cols-3 mx-auto my-5"
         >
           <motion.div variants={fadeIn("", "tween", 1, 2)}>
@@ -95,11 +75,12 @@ const MyCollections = () => {
             <CollectionCard
               key={collection._id}
               index={index}
-              props={collection}
+              collection={collection}
+              user={userCollections}
             />
           ))}
         </motion.div>
-      </motion.div>
+      </AnimatePresence>
     </div>
   );
 };

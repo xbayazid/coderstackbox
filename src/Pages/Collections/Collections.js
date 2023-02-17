@@ -122,7 +122,8 @@ const Collections = () => {
             <CollectionCard
               key={collection._id}
               index={index}
-              props={collection}
+              collection={collection}
+              user={collection.user}
             />
           ))}
         </motion.div>
