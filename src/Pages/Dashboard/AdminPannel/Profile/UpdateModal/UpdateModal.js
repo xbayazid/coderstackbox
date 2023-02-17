@@ -34,8 +34,9 @@ const UpdateModal = ({ setIsOpen, user, refetch }) => {
   };
 
   return (
-    <div className="fixed inset-0 overflow-hidden backdrop-blur-lg">
-      <div className="w-full h-full">
+    <div className="fixed inset-0 bg-black bg-opacity-25 backdrop-blur-sm flex
+    justify-center items-center">
+      <div className="flex items-end flex-col">
         <div
           className="absolute bg-gray-900 opacity-0"
           onClick={() => setIsOpen(false)}
