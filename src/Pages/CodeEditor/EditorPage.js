@@ -108,7 +108,7 @@ const { LogInModal, setShowLogInModal } = useLogInModal()
           <>
             <SaveProjectModal />
             <LogInModal />
-            <Link to="/" className=" items-center flex mr-4">
+            <Link to="/" className=" items-center flex mr-4 ml-5">
               <span className="pl-2">
                 <img className="w-12" src={logo} alt="" />
               </span>
@@ -125,15 +125,11 @@ const { LogInModal, setShowLogInModal } = useLogInModal()
             
           </>
 
-          <ul className="list-none sm:flex hidden justify-end items-center flex-1">
-            <label>
-              <motion.button
-                className="rounded-full border border-black bg-black p-1.5 px-4 text-sm text-white transition-all hover:bg-white hover:text-black"
-                onClick={Save}
-                {...FADE_IN_ANIMATION_SETTINGS}
-              >
-                Save
-              </motion.button>
+          <ul className="list-none sm:flex hidden justify-end items-center flex-1 mr-5">
+            <label   onClick={Save}>
+              <>
+                  <CloudButton>Save</CloudButton>
+              </>
             </label>
           </ul>
 
@@ -150,11 +146,7 @@ const { LogInModal, setShowLogInModal } = useLogInModal()
                 !toggle ? "hidden" : "flex"
               } p-6 bg-black-gradient absolute top-20 right-0 mx-4 my-2 min-w-[140px] rounded-xl sidebar`}
             >
-              <ul className="list-none flex justify-end items-start flex-1 flex-col">
-                <label onClick={handleSubmit}>
-                  <CloudButton>Save</CloudButton>
-                </label>
-              </ul>
+              
             </div>
           </div>
         </nav>
