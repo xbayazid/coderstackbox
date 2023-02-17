@@ -43,24 +43,24 @@ const Navbar = () => {
             className={`list-none lg:flex hidden justify-end items-center flex-1 text-white`}
           >
             <li>
-              <Link className="font-bold cursor-pointer  mr-6 " to="/doc">
+              <Link className="font-normal font-poppins text-[16px] sm:text-[24px] cursor-pointer  mr-6 " to="/doc">
                 Documentation
               </Link>
             </li>
             <li>
-              <Link className="font-bold cursor-pointer  mr-6 " to="/ide">
+              <Link className="font-normal font-poppins text-[16px] sm:text-[24px] cursor-pointer  mr-6 " to="/ide">
                 IDE
               </Link>
             </li>
 
             <li>
-              <Link className="font-bold cursor-pointer  mr-6 " to="/collections">
+              <Link className="font-normal font-poppins text-[16px] sm:text-[24px] cursor-pointer  mr-6 " to="/collections">
                 Collections
               </Link>
             </li>
               {user?.uid ? (
                     <>
-                      <li className="font-bold cursor-pointer  mr-6 ">
+                      <li className="font-normal font-poppins text-[16px] sm:text-[24px] cursor-pointer  mr-6 ">
                         <Link to="/adminDashboard">Dashboard</Link>
                       </li>
                       <li className="font-bold cursor-pointer ">
