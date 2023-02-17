@@ -3,6 +3,7 @@ import { useQuery } from "@tanstack/react-query";
 import { Link } from "react-router-dom";
 import DeveloperRow from "./DeveloperRow";
 import { getAllUsers, makeAdmin } from "../../../../api/user";
+import toast from 'react-hot-toast'
 import PreLoaderSpinner from "../../../../components/PreLoaderSpinner/PreLoaderSpinner";
 
 const Developers = () => {
@@ -26,6 +27,28 @@ const Developers = () => {
       getUsers();
     });
   };
+
+  const handleDelete = (user) => {
+    setLoading(true)
+    fetch(`http://localhost:5000/user/${user?._id}`, {
+      method: "DELETE",
+      headers: {
+        authorization: `bearer ${localStorage.getItem("CodersStackBox")}`,
+      },
+    })
+      .then((res) => res.json())
+      .then((data) => {
+        if (data.deletedCount > 0) {
+          toast.success(`${user?.name} Deleted Successfully`);
+          setLoading(false)
+        }
+      });
+  };
+
+  if (loading) {
+    return <PreLoaderSpinner />;
+  }
+
 
   return (
     <div>
@@ -96,6 +119,7 @@ const Developers = () => {
                     user={user}
                     handleRequest={handleRequest}
                     loading={loading}
+                    handleDelete={handleDelete}
                   ></DeveloperRow>
                 ))}
               </tbody>

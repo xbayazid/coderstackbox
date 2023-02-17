@@ -3,7 +3,7 @@ import { FaTrash } from "react-icons/fa";
 
 import SmallSpinner from "../../../../components/SmallSpinner";
 
-const DeveloperRow = ({ user, handleRequest, loading }) => {
+const DeveloperRow = ({ user, handleRequest, loading, handleDelete }) => {
   return (
     <tr className="bg-white border-b dark:bg-gray-800 dark:border-gray-700 hover:bg-gray-50 dark:hover:bg-gray-600">
       <th
@@ -60,6 +60,7 @@ const DeveloperRow = ({ user, handleRequest, loading }) => {
       </td>
       <td className={`px-6 py-4 font-semibold text-gray-500 dark:text-white `}>
         <FaTrash
+        onClick={handleDelete}
           className={` ${
             user?.role === "admin"
               ? "disable text-gray-600 text-2xl"

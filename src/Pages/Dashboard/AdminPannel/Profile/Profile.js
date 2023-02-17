@@ -21,7 +21,7 @@ const Profile = () => {
 
   const [isOpen, setIsOpen] = useState(false);
   const [usr, setUsr] = useState({});
-
+console.log(usr)
   const url = `http://localhost:5000/u?email=${user?.email}`;
 
   const {
@@ -37,16 +37,17 @@ const Profile = () => {
           authorization: `bearer ${localStorage.getItem("CodersStackBox")}`,
         },
       });
-      setUsr(res.data[0])
-      return res.data;
+     setUsr(res.data.result[0])
+      return res.data.result[0];
     },
   });
   if (isLoading) {
     return <PreLoaderSpinner />;
   }
+  console.log(userEmail)
   const onClick = () => {
     setIsOpen(true);
-    setUsr(userEmail[0]);
+    setUsr(userEmail);
   };
 
   // const handleOnClose = () => setShowModal(false);
