@@ -44,7 +44,7 @@ const AdminDashboard = () => {
           <h2 className="text-3xl mb-5 others">Hello, Welcome back!</h2>
 
           <main className="py-5 px-5">
-            <div className="grid lg:grid-cols-3 gap-10 md:grid-cols-2 grid-cols-1 justify-between items-center font-semibold">
+            <div className="grid gap-10 md:grid-cols-2 grid-cols-1 justify-between items-center font-semibold">
               <div className="flex justify-between items-center bg-dark-1 rounded-md text-3xl p-10">
                 <div className="flex flex-col justify-center items-center">
                   <h2>{loading ? <SmallSpinner /> : users?.length}</h2>
@@ -75,7 +75,9 @@ const AdminDashboard = () => {
                     Recent Projects
                   </h2>
                   <Link to="/adminDashboard/all-projects">
-                  <Button>All Project</Button>
+                  <Button id="logout" styles="h-2 ">
+                    All Project
+                  </Button>
                   </Link>
                 </div>
 
