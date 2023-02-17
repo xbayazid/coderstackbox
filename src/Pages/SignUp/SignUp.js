@@ -107,7 +107,6 @@ const SingUp = () => {
               /* User Info Save To DataBase */
               // console.log(result);
               setAuthToken(userInfo);
-              toast.success('User create successfully')
               navigate(from, { replace: true });
             }
           })
