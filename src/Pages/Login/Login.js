@@ -90,6 +90,60 @@ const Login = () => {
       });
   };
 
+<<<<<<< HEAD
+    return (
+        <div className='min-h-[80vh] flex items-center justify-center'>
+            <Helmet>
+                <meta charSet="utf-8" />
+                <title>CodersStackBox - Login</title>
+            </Helmet>
+            <div className='flex justify-center'>
+            <div className='glassmorphism py-12 px-8 rounded-tl-xl rounded-bl-xl'>
+                    <div className='flex items-center text-3xl font-bold mt-12 mb-8'>
+                    <span className='text-3xl text-secondary  pt-2'>
+                    <ion-icon name="logo-slack"></ion-icon>
+                   </span>
+                  <h1 className='text-white ml-2'>Coders<span className='text-secondary'>StackBox</span></h1>
+                    </div>
+                    <p className='mb-5 text-white description'>Login using social media to get quick access</p>
+                    <form onSubmit={handleSubmit}>
+                    <div className='text-center p-3 text-white font-semibold rounded-md mt-4 bg-gradient-to-r from-accent to-secondary' style={{ width: '317px' }}>
+                                    <button className='uppercase' onClick={handleGoogleSignIn}>Login with Google</button>
+                                </div>
+                                <div className='text-center p-3 text-white font-semibold rounded-md mt-4 bg-gradient-to-r from-accent to-secondary' style={{ width: '317px' }}>
+                                    <button className='uppercase' onClick={handleGithubSignin}>Login with GitHub</button>
+                                </div> 
+                    </form>
+                </div>
+                <div className='px-36 py-20 glassmorphism rounded-tr-xl rounded-br-xl'>
+                    <div className='text-white text-center xl:mt-20'>
+                        <div className='flex justify-around w-56 mx-auto'>
+                            <div>
+                                <h3 className='uppercase mb-3 -ml-10 authentication-title'>login</h3>
+                            </div>
+                            <div>
+                                <Link to='/register'  className='px-2 py-1 rounded-md mt-4 bg-cyan-400  font-semibold' >
+                                    <button className="">Create An Account</button>
+                                </Link>
+                            </div>
+
+                        </div>
+                        <div className='mt-6'>
+                            <form onSubmit={handleSubmit}>
+                                <div>
+                                    <input type="email" name='email' placeholder="Email Address" className="form-control block w-full px-3 py-1.5 text-base font-normal text-gray-700 bg-white bg-clip-padding border border-solid border-gray-300 rounded transition ease-in-out m-0 focus:text-gray-700 focus:bg-white focus:border-blue-600 focus:outline-none" required />
+                                </div>
+                                <div className='my-5'>
+                                    <input type="password" name='password' placeholder="Password" className="form-control block w-full px-3 py-1.5 text-base font-normal text-gray-700 bg-white bg-clip-padding border border-solid border-gray-300 rounded transition ease-in-out m-0 focus:text-gray-700 focus:bg-white focus:border-blue-600 focus:outline-none" required />
+                                </div>
+                                <div>
+                                    <button className='bg-black px-32 py-3 text-white rounded-md uppercase' type='submit'>Login</button>
+                                </div>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+=======
   return (
     <div className="min-h-[80vh] flex items-center justify-center">
       <Helmet>
@@ -108,6 +162,7 @@ const Login = () => {
               <button className="uppercase w-full" onClick={handleGoogleSignIn}>
                 Login with Google
               </button>
+>>>>>>> 3b5f7b14510dd27fc02d04eaccdfbc660349cf75
             </div>
             <div className="text-center p-3 text-white font-semibold rounded-md mt-4 bg-gradient-to-r from-accent to-secondary">
               <button className="uppercase w-full" onClick={handleGithubSignin}>
