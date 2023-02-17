@@ -69,7 +69,7 @@ function handleChange(value, event) {
         options={MONACO_OPTIONS}
         onChange={handleChange}
         defaultLanguage={language}
-        defaultValue={value}
+        value={value}
         editorDidMount={editorDidMount}
       />
     </div>

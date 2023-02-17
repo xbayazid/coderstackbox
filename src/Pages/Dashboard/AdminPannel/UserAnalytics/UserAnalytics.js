@@ -50,8 +50,8 @@ const UserProfile = () => {
                       <img src={aboutUser.picture} className="" alt="" />
                     </div>
 
-                    <div class="w-full p-4 md:p-4 text-white">
-                      <h1 class=" dark:text-white font-semibold">
+                    <div className="w-full p-4 md:p-4 text-white">
+                      <h1 className=" dark:text-white font-semibold">
                         {aboutUser.title}
                       </h1>
 
@@ -65,7 +65,7 @@ const UserProfile = () => {
             </div>
 
             <div className="flex flex-col lg:flex-row gap-3 my-8">
-              <div class="bg-gray-100 rounded-xl shadow-xl lg:w-1/2">
+              <div className="bg-gray-100 rounded-xl shadow-xl lg:w-1/2">
                 <div>
                   <div className="w-1/2 mx-auto">
                     <img
@@ -112,7 +112,7 @@ const UserProfile = () => {
                   </div> */}
                 </div>
               </div>
-              <div class={`col-span-2 bg-gray-100 rounded-xl shadow-xl`}>
+              <div className={`col-span-2 bg-gray-100 rounded-xl shadow-xl`}>
                 <h2 className="text-gray-800 m-4 font-semibold">User Track</h2>
                 <LineChart width={600} height={300} data={data}>
                   <XAxis dataKey="name" />

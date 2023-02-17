@@ -6,7 +6,7 @@ const IDE = () => {
   return (
     <>
     
-      <CodeCell />
+      <TextEditor />
     </>
   );
 };

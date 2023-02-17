@@ -5,17 +5,21 @@ import App from "./App";
 import reportWebVitals from "./reportWebVitals";
 import AuthProvider from "./context/AuthProvider";
 import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
+import { Provider } from 'react-redux';
+import { store } from "./features/store";
 
 const queryClient = new QueryClient();
 
 const root = ReactDOM.createRoot(document.getElementById("root"));
 root.render(
   <React.StrictMode>
+    <Provider store={store}>
     <QueryClientProvider client={queryClient}>
       <AuthProvider>
         <App />
       </AuthProvider>
     </QueryClientProvider>
+    </Provider>
   </React.StrictMode>
 );
 

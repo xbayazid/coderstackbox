@@ -62,12 +62,11 @@ const Login = () => {
     }
 
     return (
-        <div>
+        <div className='min-h-[80vh] flex items-center justify-center'>
             <Helmet>
                 <meta charSet="utf-8" />
                 <title>CodersStackBox - Login</title>
             </Helmet>
-            <Navbar></Navbar>
             <div className='flex lg:flex-row flex-col gap-4 lg:gap-0 justify-center lg:mt-24'>
             <div className='glassmorphism py-12 px-8 lg:rounded-tl-xl lg:rounded-bl-xl'>
                     <div className='flex items-center text-3xl font-bold mt-12 mb-8'>
@@ -93,7 +92,7 @@ const Login = () => {
                                 <h3 className='uppercase mb-3 -ml-10 authentication-title text-[30px] lg:text-[17px]'>login</h3>
                             </div>
                             <div>
-                                <Link to='/register'  className='px-2 py-1 rounded-md mt-4 bg-cyan-400 text-black font-semibold' >
+                                <Link to='/register'  className='px-2 py-1 rounded-md mt-4 bg-cyan-400  font-semibold' >
                                     <button className="">Create An Account</button>
                                 </Link>
                             </div>

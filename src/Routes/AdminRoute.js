@@ -1,22 +1,33 @@
-import React, { useContext } from "react";
-import { Navigate, useLocation } from "react-router-dom";
-import useAdmin from "../components/hooks/useAdmin";
+import React, { useContext, useEffect, useState } from 'react';
+import { Navigate } from 'react-router-dom';
+import { getRole } from '../api/user';
+import PreLoaderSpinner from '../components/PreLoaderSpinner/PreLoaderSpinner';
+import { AuthContext } from '../context/AuthProvider';
 
-import { AuthContext } from "../context/AuthProvider";
-import Loading from "../Pages/Loading/Loading";
+const AdminRoute = ({children}) => {
+  const { user, loading} = useContext(AuthContext);
+  const [roleLoading, setRoleLoading] = useState(true);
+  const [role, setRole] = useState(null)
 
-const AdminRoute = ({ children }) => {
-  const { user, loading } = useContext(AuthContext);
+  useEffect(() => {
+      setRoleLoading(true)
+      getRole(user?.email).then(data => {
+        setRole(data)
+        setRoleLoading(false)
+      })
+    }, [user])
 
-  const [isAdmin, isAdminLoading] = useAdmin(user?.email);
-  const location = useLocation();
-  if (loading || isAdminLoading) {
-    return <Loading></Loading>;
-  }
-  if (user && isAdmin) {
-    return children;
-  }
-  return <Navigate to="/login" state={{ from: location }} replace></Navigate>;
+
+    if (loading || roleLoading) {
+      return (
+        <div className='min-h-screen'>
+          <PreLoaderSpinner />
+        </div>
+      )
+    }
+    if (user && user.uid && role === 'admin') {
+      return children
+    }
+    return <Navigate to='/' />
 };
-
 export default AdminRoute;
