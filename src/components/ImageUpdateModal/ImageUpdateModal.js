@@ -6,9 +6,9 @@ import { toast } from 'react-hot-toast';
 import { useState } from 'react';
 
 const ImageUpdateModal = ({isVisible, user, refetch, onClose}) => {
-    const { name, email, _id, about, phone } = user;
+    const { _id, photoURL} = user;
 
-    const [uploadImg, setUploadImg] = useState('');
+    const [uploadImg, setUploadImg] = useState(photoURL);
 
     const {
         register,
@@ -31,7 +31,7 @@ const ImageUpdateModal = ({isVisible, user, refetch, onClose}) => {
     
             const image = data.photo[0];
             // console.log(image?.name);
-            setUploadImg(image?.name)
+            setUploadImg(image?.name);
             const formData = new FormData();
             formData.append("image", image);
     
