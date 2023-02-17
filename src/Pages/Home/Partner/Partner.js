@@ -18,7 +18,7 @@ const Partner = () => {
       >
                 <TypingText textStyles={"text-center text-dimWhite"} title={"|Our Valuable Partners"}/>
 
-        <div  className={`${layout.section}`}>
+        <div  className={`${layout.sectionReverse}`}>
         <div className={`${layout.sectionImg}`}>
           <div className="flex flex-col gap-3">
             <motion.div variants={planetVariants('left', 'spring', 0.5, 1)} className=" bg-sky-300 w-1/2 rounded-full">

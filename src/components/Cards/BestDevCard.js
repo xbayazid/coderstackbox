@@ -10,8 +10,8 @@ import DevDetails from "../../Pages/DevProfile/DevDetails/DevDetails";
 const BestDevCard = ({ props, i }) => {
   const [showModal, setShowModal] = React.useState(false);
   return (
-    <motion.div
-      variants={fadeIn("right", "spring", i * 0.2, 1)} className="relative rounded-lg overflow-hidden glassmorphism hover:duration-150 card">
+    <div
+       className="relative rounded-lg overflow-hidden glassmorphism hover:duration-150 card">
       <div
         className="bg-gradient-to-r from-accent to-secondary"
         style={{ height: "2px" }}
@@ -66,7 +66,7 @@ const BestDevCard = ({ props, i }) => {
           </>
         ) : null}
       </div>
-    </motion.div>
+    </div>
   );
 };
 

@@ -155,9 +155,14 @@ body {
 }
 
 .gradient-05 {
-  background: linear-gradient(180deg,
-      rgba(255, 255, 255, 0.04) 0%,
-      rgba(255, 255, 255, 0) 100%);
+  position: absolute;
+  width: 104px;
+  height: 60vh;
+  left: 45%;
+  top: 45%;
+  background: rgba(25, 125,50, 0.75);
+  filter: blur(200px);
+  transform: rotate(45deg);
 }
 
 .bg-blue-gradient {
@@ -308,7 +313,7 @@ body {
 }
 
 .white__gradient {
-  background: rgba(255, 255, 255, 0.6);
+  background: rgba(0, 0, 0, 0.6);
   filter: blur(750px);
 }
 
