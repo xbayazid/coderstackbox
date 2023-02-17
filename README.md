@@ -22,5 +22,3 @@
 ***Error Page***
 ![](images/error.png)
 
-
-# npm i --save-exact esbuild-wasm@0.8.27
