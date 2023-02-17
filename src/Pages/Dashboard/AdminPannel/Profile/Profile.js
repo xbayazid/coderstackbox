@@ -151,7 +151,7 @@ const Profile = () => {
               </div>
             </div>
 
-            <div className="bg-dark-1 rounded-lg shadow-xl p-8">
+            {/* <div className="bg-dark-1 rounded-lg shadow-xl p-8">
               <div className="flex items-center justify-between">
                 <h4 className="text-xl font-bold">Admins (6)</h4>
               </div>
@@ -160,6 +160,7 @@ const Profile = () => {
                 <ProfileCard />
               </div>
             </div>
+             */}
           </div>
         </div>
       {isOpen && <UpdateModal user={usr} setIsOpen={setIsOpen} refetch={refetch}/>}
