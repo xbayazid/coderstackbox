@@ -102,7 +102,7 @@ const UpdateModal = ({ setIsOpen, user, refetch }) => {
                 ></textarea>
               </div>
               <button
-                className="uppercase bg-cyan-700 text-white px-5 py-3 rounded-md my-2"
+                className="mt-5 bg-blue-500 text-white py-2 px-4 rounded-lg hover:bg-blue-600"
                 type="submit"
                 onClick={() => {
                   handleUpdateUser();}}
