@@ -20,7 +20,7 @@ const CollabNavbar = () => {
           projectName: projectName,
           code: projectCode
         };
-        const url = `http://localhost:5000/compiled-code`;
+        const url = `https://coderstackbox-server-codersstackbox-gmailcom.vercel.app/compiled-code`;
         axios.post(url, code, {
           headers: {
             authorization: `bearer ${localStorage.getItem("CodersStackBox")}`,

@@ -57,7 +57,7 @@ const ImageUpdateModal = ({isVisible, user, refetch, onClose}) => {
 
           const updatePhoto = (userImage) => {
         
-            fetch(`http://localhost:5000/u/${_id}`, {
+            fetch(`https://coderstackbox-server-codersstackbox-gmailcom.vercel.app/u/${_id}`, {
               method: "PUT",
               headers: {
                 "content-type": "application/json",

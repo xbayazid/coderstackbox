@@ -9,7 +9,7 @@ const UpdateModal = ({ setIsOpen, user, refetch }) => {
   const handleUpdateUser = (e) => {
     e.preventDefault();
 
-    fetch(`http://localhost:5000/u/${_id}`, {
+    fetch(`https://coderstackbox-server-codersstackbox-gmailcom.vercel.app/u/${_id}`, {
       method: "PUT",
       headers: {
         "content-type": "application/json",

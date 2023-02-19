@@ -6,7 +6,7 @@ import axios from "axios";
 const User = ({ user }) => {
   const { _id, name, email, project, photoURL, phone, about } = user;
 
-  const url = `http://localhost:5000/u/admin/${_id}`;
+  const url = `https://coderstackbox-server-codersstackbox-gmailcom.vercel.app/u/admin/${_id}`;
   const {
     data: makeAdmin,
     isLoading,
@@ -27,7 +27,7 @@ const User = ({ user }) => {
   console.log(makeAdmin);
 
   const handleMakeAdmin = (id) => {
-    const url = `http://localhost:5000/u/admin/${id}`;
+    const url = `https://coderstackbox-server-codersstackbox-gmailcom.vercel.app/u/admin/${id}`;
     fetch(url, {
       method: "PUT",
       headers: {

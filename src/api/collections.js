@@ -4,7 +4,7 @@ import axios from "axios";
 
 //get all homes
 export const getAllCollections = async () => {
-    const url = `http://localhost:5000/collections`;
+    const url = `https://coderstackbox-server-codersstackbox-gmailcom.vercel.app/collections`;
 
     const response = await fetch(url, {
       method: 'GET',

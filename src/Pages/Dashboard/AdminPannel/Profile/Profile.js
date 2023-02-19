@@ -19,7 +19,8 @@ const Profile = () => {
 
   const [isOpen, setIsOpen] = useState(false);
   const [usr, setUsr] = useState({});
-  const url = `http://localhost:5000/u?email=${user?.email}`;
+
+  const url = `https://coderstackbox-server-codersstackbox-gmailcom.vercel.app/u?email=${user?.email}`;
 
   const {
     data: userEmail,

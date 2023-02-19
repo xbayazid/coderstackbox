@@ -9,7 +9,7 @@ const Leftcategory = () => {
 
 
     return (
-        <div className='category left w-64 '>
+        <div className='category left w-64 hidden lg:block'>
             <div className=' leftcatagory pl-10'>
                 <ul className=''>
                    {
