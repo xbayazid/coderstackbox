@@ -3,6 +3,7 @@ import { useQuery } from "@tanstack/react-query";
 import { Link } from "react-router-dom";
 import DeveloperRow from "./DeveloperRow";
 import { getAllUsers, makeAdmin } from "../../../../api/user";
+import toast from 'react-hot-toast'
 import PreLoaderSpinner from "../../../../components/PreLoaderSpinner/PreLoaderSpinner";
 
 const Developers = () => {
@@ -16,7 +17,6 @@ const Developers = () => {
     setLoading(true);
     getAllUsers().then((data) => {
       setUsers(data.result);
-      console.log(data.result);
       setLoading(false);
     });
   };
@@ -27,10 +27,32 @@ const Developers = () => {
     });
   };
 
+  const handleDelete = (id) => {
+    fetch(`http://localhost:5000/user/${id}`, {
+      method: "DELETE",
+      headers: {
+        authorization: `bearer ${localStorage.getItem("CodersStackBox")}`,
+      },
+    })
+      .then((res) => res.json())
+      .then((data) => {
+        if (data) {
+          toast.error(data.message);
+          setLoading(false);
+          getUsers();
+        }
+      });
+  };
+
+  /* if (loading) {
+    return <PreLoaderSpinner />;
+  } */
+
+
   return (
     <div>
       <header>
-        <h2 className="text-3xl mb-5 text-gray-800">Developers</h2>
+        <h2 className="text-3xl mb-5 text-dimWhite">Developers</h2>
       </header>
 
       <main>
@@ -63,9 +85,6 @@ const Developers = () => {
               />
             </div>
           </div>
-          {loading ? (
-            <PreLoaderSpinner />
-          ) : (
             <table className="w-full text-sm text-left text-gray-500 dark:text-gray-400">
               <thead className="text-xs text-gray-700 uppercase bg-gray-50 dark:bg-gray-700 dark:text-gray-400">
                 <tr>
@@ -96,11 +115,11 @@ const Developers = () => {
                     user={user}
                     handleRequest={handleRequest}
                     loading={loading}
+                    handleDelete={handleDelete}
                   ></DeveloperRow>
                 ))}
               </tbody>
             </table>
-          )}
         </div>
       </main>
     </div>

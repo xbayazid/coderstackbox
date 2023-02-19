@@ -3,7 +3,7 @@ import { FaTrash } from "react-icons/fa";
 
 import SmallSpinner from "../../../../components/SmallSpinner";
 
-const DeveloperRow = ({ user, handleRequest, loading }) => {
+const DeveloperRow = ({ id, handleRequest, loading, handleDelete, user }) => {
   return (
     <tr className="bg-white border-b dark:bg-gray-800 dark:border-gray-700 hover:bg-gray-50 dark:hover:bg-gray-600">
       <th
@@ -44,7 +44,7 @@ const DeveloperRow = ({ user, handleRequest, loading }) => {
             </span>
           </span>
         ) : (
-          <span
+          <button
             onClick={() => handleRequest(user)}
             className="relative cursor-pointer inline-block px-3 py-1 font-semibold text-dimWhite leading-tight"
           >
@@ -55,17 +55,24 @@ const DeveloperRow = ({ user, handleRequest, loading }) => {
             <span className="relative">
               {loading ? <SmallSpinner /> : "Make Admin"}
             </span>
-          </span>
+          </button>
         )}
       </td>
-      <td className={`px-6 py-4 font-semibold text-gray-500 dark:text-white `}>
-        <FaTrash
+      <td className={`px-6 py-4 font-semibold text-gray-500 dark:text-white cursor-pointer`}>
+        {
+          loading? <SmallSpinner /> : <button
+          onClick={()=>handleDelete(user._id)}
+          >
+            <FaTrash
+          
           className={` ${
             user?.role === "admin"
               ? "disable text-gray-600 text-2xl"
               : "text-red-400 hover:text-red-500 text-2xl"
           }`}
         ></FaTrash>
+          </button>
+        }
       </td>
     </tr>
   );

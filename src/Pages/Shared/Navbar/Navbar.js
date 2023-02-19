@@ -40,18 +40,7 @@ const Navbar = () => {
           <Logo />
           
           <ul
-<<<<<<< HEAD
-            className={`md:flex md:items-center  md:pb-0
-                pb-12 absolute md:static text-white z-10 
-                left-0 w-full md:w-auto md:pl-0 pl-9 transition-all duration-500 ease-in
-                ${
-                  open
-                    ? "top-20 opacity-100 navglassmorphism p-5 "
-                    : "top-[-490px]"
-                } `}
-=======
             className={`list-none lg:flex hidden justify-end items-center flex-1 text-white`}
->>>>>>> 3b5f7b14510dd27fc02d04eaccdfbc660349cf75
           >
             <li>
               <Link className="font-normal font-poppins text-[16px]  cursor-pointer  mr-6 " to="/doc">
@@ -69,14 +58,7 @@ const Navbar = () => {
                 Collections
               </Link>
             </li>
-<<<<<<< HEAD
-            <li className="lg:ml-8 ml-0 mr-5">
               {user?.uid ? (
-                <>
-                  <div className="lg:flex justify-center items-center">
-=======
-              {user?.uid ? (
->>>>>>> 3b5f7b14510dd27fc02d04eaccdfbc660349cf75
                     <>
                       <li className="font-normal font-poppins text-[16px]  cursor-pointer  mr-6 ">
                         <Link to="/adminDashboard">Dashboard</Link>

@@ -7,16 +7,20 @@ import React, {
   useRef,
   useState,
 } from "react";
+import { useDispatch, useSelector } from "react-redux";
 import { Outlet } from "react-router-dom";
 import { getUser } from "../../api/user";
 import DBHeader from "../../components/DBHeader";
 import Sidebar from "../../components/Sidebar";
 import { AuthContext } from "../../context/AuthProvider";
+import { addUserCollections, getUsersCollections } from "../../features/collectionSlice/userCollectionSlice";
 
 const Dashboard = () => {
   const { user } = useContext(AuthContext);
   const [isOpen, setIsOpen] = useState(false);
+  const [usr, setUsr] = useState({});
   const desktopSidebarRef = useRef(null);
+  const dispatch = useDispatch();
   const onKeyDown = useCallback(
     (e) => {
       if (e.key === "Escape") {
@@ -31,16 +35,16 @@ const Dashboard = () => {
     return () => document.removeEventListener("keydown", onKeyDown);
   }, [onKeyDown]);
 
-  const [usr, setUsr] = useState({});
+  
   const [loading, setLoading] = useState(true);
-
   useEffect(() => {
     getUsers();
   }, []);
   const getUsers = () => {
     setLoading(true);
     getUser(user).then((data) => {
-      setUsr(data[0]);
+      setUsr(data?.result[0]);
+      dispatch(addUserCollections(data?.result[0]))
       setLoading(false);
     });
   };

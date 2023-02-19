@@ -12,7 +12,6 @@ const AdminDashboard = () => {
   const [loading, setLoading] = useState(false);
   const [users, setUsers] = useState([]);
   const [collections, setCollections] = useState([]);
-  // console.log(users);
 
   useEffect(() => {
     getUsers();
@@ -44,23 +43,16 @@ const AdminDashboard = () => {
         <div className="main-content w-full">
           <h2 className="text-3xl mb-5 others">Hello, Welcome back!</h2>
 
-          <main className="py-5 md:px-5">
+          <main className="py-5 px-5">
             <div className="grid gap-10 md:grid-cols-2 grid-cols-1 justify-between items-center font-semibold">
-              <div className="flex justify-between items-center bg-dark-1 rounded-md text-3xl p-5 md:p-10">
-                <div className="flex flex-col justify-between items-center">
+              <div className="flex justify-between items-center bg-dark-1 rounded-md text-3xl p-10">
+                <div className="flex flex-col justify-center items-center">
                   <h2>{loading ? <SmallSpinner /> : users?.length}</h2>
                   <p>Developers</p>
                 </div>
-                <div>
-                <div class="mt-3 md:w-44 w-28 flex -space-x-2 overflow-hidden p-1">
-                    {
-                      users?.map( u => <img class="inline-block h-12 w-12 rounded-full ring-2 ring-secondary" src={`${u?.photoURL}`} alt=""/>)
-                    }
-                  </div>
-                  {/* <FaUsers className="text-secondary text-6xl"></FaUsers> */}
-                </div>
+                <FaUsers className="text-secondary text-6xl"></FaUsers>
               </div>
-              <div className="flex justify-between items-center bg-dark-1 rounded-md text-3xl p-5 md:p-10">
+              <div className="flex justify-between items-center bg-dark-1 rounded-md text-3xl p-10">
                 <div className="flex flex-col justify-center items-center">
                   <h2>{loading ? <SmallSpinner /> : collections?.length}</h2>
                   <p>Projects</p>

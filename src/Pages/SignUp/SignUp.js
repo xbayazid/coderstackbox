@@ -123,17 +123,10 @@ const SingUp = () => {
         <meta charSet="utf-8" />
         <title>CodersStackBox - SignUp</title>
       </Helmet>
-<<<<<<< HEAD
-      <div className="flex justify-center">
-        <div className="glassmorphism py-12 px-8 rounded-tl-xl rounded-bl-xl">
-          <h2 className="mt-12 text-white text-5xl title">Welcome to</h2>
-          <div className="flex items-center text-3xl font-bold mt-5 mb-8">
-=======
       <div className="flex lg:flex-row flex-col gap-4 lg:gap-0 justify-center lg:mt-24">
         <div className="glassmorphism py-12 px-8 lg:rounded-tl-xl lg:rounded-bl-xl">
           <h2 className="mt-12 text-white text-5xl title text-center">Welcome to</h2>
           <div className="flex items-center text-3xl font-bold mt-12 mb-8">
->>>>>>> 3b5f7b14510dd27fc02d04eaccdfbc660349cf75
             <span className="text-3xl text-secondary  pt-2">
               <ion-icon name="logo-slack"></ion-icon>
             </span>
