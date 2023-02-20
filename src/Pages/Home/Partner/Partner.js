@@ -18,7 +18,7 @@ const Partner = () => {
       >
                 <TypingText textStyles={"text-center text-dimWhite"} title={"|Our Valuable Partners"}/>
 
-        <div  className={`${layout.section}`}>
+        <div  className={`${layout.sectionReverse}`}>
         <div className={`${layout.sectionImg}`}>
           <div className="flex flex-col gap-3">
             <motion.div variants={planetVariants('left', 'spring', 0.5, 1)} className=" bg-sky-300 w-1/2 rounded-full">
@@ -45,11 +45,7 @@ const Partner = () => {
             <TitleText title={<>See our trusted partners</>}/>
           </motion.h1>
           <p className="my-5 lg:text-justify text-white">
-            Lorem ipsum dolor sit amet consectetur adipisicing elit. Omnis eaque
-            soluta aspernatur nisi dignissimos illum provident sed autem
-            deserunt rem. Lorem ipsum dolor sit amet consectetur adipisicing
-            elit. Beatae quibusdam distinctio tempora repellat accusantium
-            sapiente delectus suscipit porro pariatur facere!
+            These partners provide us with invaluable insights and feedback that enable us to continously improve our product. We ahve carefully chosen these partners based on their expertise in the coding industry, and our shared commitment to innovation and excellence. Tus
           </p>
           <Button>Get Started</Button>
         </motion.div>

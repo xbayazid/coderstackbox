@@ -1,13 +1,13 @@
 import { useQuery } from "@tanstack/react-query";
 import axios from "axios";
-import { motion } from "framer-motion";
+import { AnimatePresence, motion } from "framer-motion";
 import React, { useState } from "react";
 import { FaCaretRight } from "react-icons/fa";
 import { Link } from "react-router-dom";
 import CollectionCard from "../../components/Cards/CollectionCard";
 import { TitleText, TypingText } from "../../components/CustomText/CustomText";
 import styles, { layout } from "../../style";
-import { fadeIn, staggerContainer } from "../../utils/motion";
+import { fadeIn, FADE_IN_ANIMATION_SETTINGS, FADE_UP_ANIMATION_VARIANTS, slideIn, staggerContainer } from "../../utils/motion";
 import Search from "../catagories/Search";
 import Loading from "../Loading/Loading";
 import { useDispatch, useSelector } from "react-redux";
@@ -17,7 +17,7 @@ const Collections = () => {
   const dispatch = useDispatch();
   const Projects = useSelector(getAllCollections);
 
-  const url = `http://localhost:5000/collections`;
+  const url = `https://coderstackbox-server-codersstackbox-gmailcom.vercel.app/collections`;
 
   const {
     data: collections = [],
@@ -57,12 +57,8 @@ const Collections = () => {
 
   return (
     <div className={`${layout.sectionCol}`}>
-      <motion.div
-        variants={staggerContainer}
-        initial="hidden"
-        whileInView="show"
-        viewport={{ once: false, amount: 0.25 }}
-      >
+     <AnimatePresence>
+      <div>
         <div className={`${layout.sectionInfo} text-center z-10 text-white`}>
           <TitleText
             title={
@@ -73,17 +69,18 @@ const Collections = () => {
             }
           />
           <h2
-            className={`font-poppins font-normal xs:text-[32px] text-[28px] text-dimWhite xs:leading-[76.8px] leading-[66.8px] w-full`}
+            className={`font-poppins font-normal xs:text-[32px] text-[28px] text-dimWhite leading-[32px] md:leading-[76.8px]  w-full sm:flex hidden`}
           >
             Browse and share work from world-class designers and developers in
             the front-end community.
           </h2>
         </div>
-        <motion.div
-          variants={fadeIn("", "tween", 0.2, 1)}
-          className="grid gap-7 md:grid-cols-2 lg:grid-cols-3 mx-auto my-5"
+       
+         <motion.div
+          {...FADE_UP_ANIMATION_VARIANTS}
+          className="grid gap-7 grid-cols-1 md:grid-cols-2 lg:grid-cols-3 mx-auto my-5"
         >
-          <motion.div variants={fadeIn("", "tween", 0.2, 1)}>
+          <div>
             <h1 className=" font-poppins font-normal xs:text-[28px] text-[24px] text-dimWhite w-full">
               Explore ideas from the 1.8 million+ front-end designers and
               developers.
@@ -120,16 +117,19 @@ const Collections = () => {
               </div>
             </fieldset>
             <ul></ul>
-          </motion.div>
+          </div>
           {filteredData?.map((collection, index) => (
             <CollectionCard
               key={collection._id}
               index={index}
-              props={collection}
+              collection={collection}
+              user={collection.user}
             />
           ))}
         </motion.div>
-      </motion.div>
+      
+      </div>
+      </AnimatePresence>
     </div>
   );
 };

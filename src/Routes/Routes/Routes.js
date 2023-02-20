@@ -1,8 +1,6 @@
 import { createBrowserRouter } from "react-router-dom";
-// import Error from "../../Error";
 import Main from "../../Layout/Main";
 import AboutUs from "../../Pages/AboutUs/AboutUs";
-import AdminDashboardLayout from "../../Layout/AdminDashboardLayout/AdminDashboardLayout";
 import Catagories from "../../Pages/catagories/Catagories";
 import SingleCategory from "../../Pages/catagories/SingleCategory";
 import EditorPage from "../../Pages/CodeEditor/EditorPage";
@@ -15,9 +13,7 @@ import Home from "../../Pages/Home/Home/Home";
 import Login from "../../Pages/Login/Login";
 import SingUp from "../../Pages/SignUp/SignUp";
 // import MyProjects from "../../Pages/UserDashboard/MyProjects/MyProjects";
-import UserProfile from "../../Pages/UserDashboard/UserProfile/UserProfile";
 import Developers from "../../Pages/Dashboard/AdminPannel/Developers/Developers";
-import Inbox from "../../Pages/Dashboard/AdminPannel/Inbox/Inbox";
 import MyProjects from "../../Pages/UserDashboard/MyProjects/MyProjects";
 import Profile from "../../Pages/Dashboard/AdminPannel/Profile/Profile";
 import UserAnalytics from "../../Pages/Dashboard/AdminPannel/UserAnalytics/UserAnalytics";
@@ -34,6 +30,8 @@ import AdminBoard from "../../Pages/Dashboard/AdminPannel/AdminBoard/AdminBoard"
 import Dashboard from "../../Pages/Dashboard/Dashboard";
 import MyCollections from "../../Pages/Dashboard/AdminPannel/MyProjects/MyProjects";
 import EditCollection from "../../Pages/Collections/EditCollection";
+import AllProjects from "../../components/AllProjects";
+import TextEditor from "../../Pages/CodeEditor/OnlineIDE/component/text-editor";
 
 const router = createBrowserRouter([
   {
@@ -66,7 +64,7 @@ const router = createBrowserRouter([
       },
       {
         path: "/richtext",
-        element: <RichTextEditor/>
+        element: <RichTextEditor />
       },
       {
         path: "/doc",
@@ -97,12 +95,16 @@ const router = createBrowserRouter([
           ),
       },
       {
-        path: "/userProfile",
-        element: <UserProfile></UserProfile>,
-      },
-      {
         path: "/myProjects",
         element: <MyProjects></MyProjects>,
+      },
+      {
+        path: "/login",
+        element: <Login></Login>,
+      },
+      {
+        path: "/register",
+        element: <SingUp></SingUp>,
       },
     ],
   },
@@ -117,6 +119,10 @@ const router = createBrowserRouter([
   {
     path: "/ide",
     element: <IDE></IDE>,
+  },
+  {
+    path: "/text-editor",
+    element: <TextEditor />,
   },
   {
     path: "/adminDashboard",
@@ -144,10 +150,6 @@ const router = createBrowserRouter([
         element: <MyCollections />,
       },
       {
-        path: "/adminDashboard/inbox",
-        element: <Inbox></Inbox>,
-      },
-      {
         path: "/adminDashboard/useranalytics",
         element: <UserAnalytics></UserAnalytics>,
       },
@@ -155,17 +157,14 @@ const router = createBrowserRouter([
         path: "/adminDashboard/profile",
         element: <Profile></Profile>,
       },
+      {
+        path: "/adminDashboard/all-projects",
+        element: <AllProjects />,
+      },
     ],
   },
 
-  {
-    path: "/login",
-    element: <Login></Login>,
-  },
-  {
-    path: "/register",
-    element: <SingUp></SingUp>,
-  },
+  
   {
     path: "*",
     element: <ErrorPage></ErrorPage>,

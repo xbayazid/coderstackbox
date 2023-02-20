@@ -9,7 +9,7 @@ const UpdateModal = ({ setIsOpen, user, refetch }) => {
   const handleUpdateUser = (e) => {
     e.preventDefault();
 
-    fetch(`http://localhost:5000/u/${_id}`, {
+    fetch(`https://coderstackbox-server-codersstackbox-gmailcom.vercel.app/u/${_id}`, {
       method: "PUT",
       headers: {
         "content-type": "application/json",
@@ -34,8 +34,9 @@ const UpdateModal = ({ setIsOpen, user, refetch }) => {
   };
 
   return (
-    <div className="fixed inset-0 overflow-hidden backdrop-blur-lg">
-      <div className="w-full h-full">
+    <div className="fixed inset-0 bg-black bg-opacity-25 backdrop-blur-sm flex
+    justify-center items-center z-50">
+      <div className="flex items-end flex-col">
         <div
           className="absolute bg-gray-900 opacity-0"
           onClick={() => setIsOpen(false)}
@@ -101,7 +102,7 @@ const UpdateModal = ({ setIsOpen, user, refetch }) => {
                 ></textarea>
               </div>
               <button
-                className="uppercase bg-cyan-700 text-white px-5 py-3 rounded-md my-2"
+                className="mt-5 bg-blue-500 text-white py-2 px-4 rounded-lg hover:bg-blue-600"
                 type="submit"
                 onClick={() => {
                   handleUpdateUser();}}

@@ -6,7 +6,7 @@ import Loading from "../../../Loading/Loading";
 // import DeveloperRow from "./DeveloperRow";
 
 const AdminBoard = () => {
-  const url = `http://localhost:5000/users`;
+  const url = `https://coderstackbox-server-codersstackbox-gmailcom.vercel.app/users`;
   const {
     data: users,
     isLoading,

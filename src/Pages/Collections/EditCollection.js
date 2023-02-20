@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react";
+import React, { useEffect, useRef, useState } from "react";
 import { useContext } from "react";
 import { Helmet } from "react-helmet";
 import { Link, useParams } from "react-router-dom";
@@ -6,13 +6,15 @@ import { motion } from "framer-motion";
 import axios from "axios";
 import { toast } from "react-hot-toast";
 import { AuthContext } from "../../context/AuthProvider";
-import { useSaveProjectModal } from "../../components/Modals/SaveProjectModal";
 import { FADE_IN_ANIMATION_SETTINGS } from "../../utils/motion";
-import { close, menu } from "../../assets";
+import { close, logo, menu } from "../../assets";
 import CloudButton from "../../components/Buttons/CloudButton";
 import EditorComponent from "../CodeEditor/Editor/EditorComponent";
 import { useSelector } from "react-redux";
 import { getAllCollections } from "../../features/collectionSlice/collectionSlice";
+import { useLogInModal } from "../../components/Modals/LoginModal";
+import { useSaveProjectModal } from "../../components/Modals/SaveProjectModal";
+import { FaPencilAlt } from "react-icons/fa";
 
 const EditCollection = () => {
   const [projectName, setProjectName] = useState("");
@@ -27,8 +29,26 @@ const EditCollection = () => {
   const { id } = useParams()
   const Projects = useSelector(getAllCollections);
 
+  const ref = useRef(null);
+  const [editing, setEditing] = useState(false)
+  const [value, setValue] = useState('Untitled')
+  const { LogInModal, setShowLogInModal } = useLogInModal();
+  const { SaveProjectModal, setShowSaveProjectModal } = useSaveProjectModal(srcDoc);
 
+  useEffect(() => {
+    const listener = (event) => {
+      if (ref.current && event.target && ref.current.contains(event.target)) {
+        setEditing(true)
+        return
+      }
+      setEditing(false)
+    }
+    document.addEventListener('click', listener, { capture: true });
+    return () => {
+      document.removeEventListener('click', listener, { capture: true });
+    };
 
+  }, [])
 
   useEffect(() => {
     let code = Projects.find(c => c?._id === (id));
@@ -52,14 +72,23 @@ const EditCollection = () => {
     return () => clearTimeout(timeout);
   }, [html, css, js]);
 
+
+
   const handleSubmit = () => {
+    if (!user?.uid) {
+      setShowLogInModal(true);
+      return;
+    } else if (html===""| css==="" |js==="") {
+      toast("🥺 Hey! You have blank space! 🥺")
+    }
+    else {
     const code = {
-      projectName: projectName,
+      projectName: value,
       html: html,
       css: css,
       js: js,
     };
-    const url = `http://localhost:5000/code/${id}`;
+    const url = `https://coderstackbox-server-codersstackbox-gmailcom.vercel.app/code/${id}`;
     axios
       .put(url, code, {
         headers: {
@@ -67,23 +96,20 @@ const EditCollection = () => {
         },
       })
       .then((res) => {
-        console.log(res);
-
         if (res.status === 200) {
           toast.success(res.data.message);
+          setShowSaveProjectModal(true);
+          console.log(res.status)
         }
       })
       .catch((err) => {
         console.error(err);
       });
+    }
   };
 
   
-  function Save() {
-    setShowSaveProjectModal(true);
-    handleSubmit();
-  }
-  const { SaveProjectModal, setShowSaveProjectModal } = useSaveProjectModal();
+
 
 
 
@@ -95,34 +121,35 @@ const EditCollection = () => {
       </Helmet>
 
       <>
-        <nav className="sticky top-0 z-[3] w-full flex py-3 justify-between items-center navbar">
+      <nav className="z-[3] w-full flex py-3 justify-between items-center navbar">
           <>
             <SaveProjectModal />
-            <Link to="/" className="gap-x-4 items-center flex">
-              <span className="text-3xl text-secondary  pt-2">
-                <ion-icon name="logo-slack"></ion-icon>
+            <LogInModal />
+            <Link to="/" className=" items-center flex mr-4 ml-5">
+              <span className="pl-2">
+                <img className="w-12" src={logo} alt="" />
               </span>
-              <h1 className="text-white">
-                Coders<span className="text-secondary">StackBox</span>
+              </Link>
+              <h1 ref={ref} contentEditable = {
+                editing ? true : false
+              }
+              onBlur={(t)=>setValue(t.currentTarget.innerHTML)}
+              className={`text-white text-xl font-bold tracking-wider mr-2 ${!editing && "cursor-pointer"}`}>
+               {value}
               </h1>
-            </Link>
+              <FaPencilAlt className="text-lg hover:cursor-pointer checked:text-3xl 
+              text-white hover:text-green-500" onClick={() => setEditing(true)} ></FaPencilAlt>
+            
           </>
 
-          <div className={`${user?.email === project?.user?.email ? "block" : "hidden"}`}>
-          <ul className="list-none sm:flex hidden justify-end items-center flex-1 ">
-            <label>
-              <motion.button
-              disabled
-                className={`rounded-full border border-black bg-black p-1.5 px-4 text-sm text-white transition-all hover:bg-white hover:text-black `}
-                onClick={Save}
-                {...FADE_IN_ANIMATION_SETTINGS}
-              >
-                Save
-              </motion.button>
+          <ul className="list-none sm:flex hidden justify-end items-center flex-1 mr-5">
+            <label   onClick={handleSubmit}>
+              <>
+                  <CloudButton>Save</CloudButton>
+              </>
             </label>
           </ul>
 
-          </div>
           <div className="sm:hidden flex flex-1 justify-end items-center">
             <img
               src={toggle ? close : menu}
@@ -136,11 +163,7 @@ const EditCollection = () => {
                 !toggle ? "hidden" : "flex"
               } p-6 bg-black-gradient absolute top-20 right-0 mx-4 my-2 min-w-[140px] rounded-xl sidebar`}
             >
-              <ul className="list-none flex justify-end items-start flex-1 flex-col">
-                <label onClick={handleSubmit}>
-                  <CloudButton>Save</CloudButton>
-                </label>
-              </ul>
+              
             </div>
           </div>
         </nav>

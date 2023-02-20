@@ -31,7 +31,7 @@ const DBHeader = ({ setIsOpen }) => {
         </button>
         <div class="flex space-x-4">
           {/*    <!--search bar --> */}
-          <div hidden class="md:block">
+          {/* <div hidden class="md:block">
             <div class="relative flex items-center text-gray-400 focus-within:text-cyan-400">
               <span class="absolute left-4 flex h-6 items-center border-r border-gray-300 pr-3 dark:border-gray-700">
                 <svg
@@ -54,7 +54,7 @@ const DBHeader = ({ setIsOpen }) => {
                 class="outline-none w-full rounded-xl border border-gray-300 py-2.5 pl-14 pr-4 text-sm text-gray-600 transition focus:border-cyan-300 dark:bg-gray-900 dark:border-gray-700"
               />
             </div>
-          </div>
+          </div> */}
           {/*  <!--/search bar --> */}
           <button
             aria-label="search"

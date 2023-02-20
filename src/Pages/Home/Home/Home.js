@@ -1,14 +1,11 @@
 import React from "react";
 import BestDeveloper from "../BestDeveloper/BestDeveloper";
-import Collaboration from "../Collaboration/Collaboration";
 import ContactUs from "../ConactUs/ContactUs";
 import Hero from "../Hero/Hero";
-import OurTeam from "../OurTeam/OurTeam";
 import Services from "../Services/Services";
 import { Helmet } from "react-helmet";
-import UserReviewSlider from "../../UserDashboard/UserReviewSlider/UserReviewSlider";
 import Partner from "../Partner/Partner";
-
+import UserReviewSlider from "../../../components/UserReviewSlider";
 
 const Home = () => {
   return (
@@ -21,24 +18,27 @@ const Home = () => {
         <Hero />
         <div className="relative">
           <Services />
-          <div className="gradient-03 z-[-1]" />
           <BestDeveloper />
+          <div className="gradient-03 z-[-1]" />
         </div>
         {/* <div className="relative">
           <Collaboration />
           <div className="gradient-04 z-[-1]" />
           <OurTeam />
         </div> */}
-        <Partner></Partner>
         <div className="relative">
-          <UserReviewSlider/>
+        <Partner />
+
+        <UserReviewSlider />
           <div className="gradient-04 z-[-1]" />
         </div>
-        <ContactUs />
+        <div className="relative">
+      <ContactUs />
+      <div className="gradient-05 z-[-1]" />
+        </div>
+       
       </div>
-      
     </div>
-
   );
 };
 

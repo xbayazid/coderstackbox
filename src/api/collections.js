@@ -4,24 +4,18 @@ import axios from "axios";
 
 //get all homes
 export const getAllCollections = async () => {
-    const url = `http://localhost:5000/collections`;
+    const url = `https://coderstackbox-server-codersstackbox-gmailcom.vercel.app/collections`;
 
-  const {
-    data: collections = [],
-    isLoading,
-    refetch,
-  } = useQuery({
-    queryKey: ["collections"],
-    queryFn: async () => {
-      const res = await axios.get(url, {
-        headers: {
-          "content-type": "application/json",
-          authorization: `bearer ${localStorage.getItem("CodersStackBox")}`,
-        },
-      });
-      return res.data;
-    },
-  });
+    const response = await fetch(url, {
+      method: 'GET',
+      headers: {
+        'content-type': 'application/json',
+        authorization: `Bearer ${localStorage.getItem('CodersStackBox')}`,
+      },
+    })
+    const collections = await response.json()
+  
+    return collections
   }
 
   

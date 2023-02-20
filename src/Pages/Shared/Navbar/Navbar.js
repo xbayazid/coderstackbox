@@ -9,13 +9,14 @@ import { navVariants } from "../../../utils/motion";
 import { motion } from "framer-motion";
 import Button from "../../../components/Buttons/Button";
 import Dropdown from "../../../components/Dropdown";
-import { logo } from "../../../assets";
+import { close, logo, menu } from "../../../assets";
 import Logo from "../../../components/Logo";
+import useScrollPosition from "../../../hooks/useScrollPosition";
 
 const Navbar = () => {
   const { user, logOut } = useContext(AuthContext);
   const [userOpen, setUserOpen] = useState(false);
-
+  const [toggle, setToggle] = useState(false);
   const handleLogOut = () => {
     localStorage.removeItem("CodersStackBox");
     logOut()
@@ -23,20 +24,8 @@ const Navbar = () => {
       .catch((error) => console.log(error));
   };
 
-  let [open, setOpen] = useState(false);
 
-  const [fix, setFix] = useState(false);
-  useEffect(() => {
-    const fixedHeader = () => {
-      if (window.scrollY >= 390) {
-        setFix(true);
-      } else {
-        setFix(false);
-      }
-    };
-    window.addEventListener("scroll", fixedHeader);
-    return () => window.removeEventListener("scroll", fixedHeader);
-  }, []);
+  const scrolled = useScrollPosition(50);
 
   return (
     <motion.nav
@@ -49,59 +38,38 @@ const Navbar = () => {
       <div className={`${styles.paddingX} mx-auto`}>
         <div className="flex justify-between py-4 ">
           <Logo />
-          <div
-            onClick={() => setOpen(!open)}
-            className="text-3xl text-white absolute right-8 top-6
-                cursor-pointer md:hidden block
-                "
-          >
-            <ion-icon name={open ? "close" : "menu"}></ion-icon>
-          </div>
+          
           <ul
-            className={`md:flex md:items-center  md:pb-0
-                pb-12 absolute md:static text-white z-10 
-                left-0 w-full md:w-auto md:pl-0 pl-9 transition-all duration-500 ease-in
-                ${
-                  open
-                    ? "top-20 opacity-100 navglassmorphism p-5 "
-                    : "top-[-490px]"
-                } `}
+            className={`list-none lg:flex hidden justify-end items-center flex-1 text-white`}
           >
             <li>
-              <Link className="lg:ml-8 ml-0 mr-5" to="/doc">
+              <Link className="font-normal font-poppins text-[16px]  cursor-pointer  mr-6 " to="/doc">
                 Documentation
               </Link>
             </li>
             <li>
-              <Link className="lg:ml-8 ml-0 mr-5" to="/ide">
+              <Link className="font-normal font-poppins text-[16px]  cursor-pointer  mr-6 " to="/ide">
                 IDE
               </Link>
             </li>
 
             <li>
-              <Link className="lg:ml-8 ml-0 mr-5" to="/collections">
+              <Link className="font-normal font-poppins text-[16px]  cursor-pointer  mr-6 " to="/collections">
                 Collections
               </Link>
             </li>
-            <li className="lg:ml-8 ml-0 mr-5">
               {user?.uid ? (
-                <>
-                  <div className="lg:flex justify-center items-center">
                     <>
-                      <li className="lg:mr-8">
+                      <li className="font-normal font-poppins text-[16px]  cursor-pointer  mr-6 ">
                         <Link to="/adminDashboard">Dashboard</Link>
                       </li>
-                    </>
-                    <>
-                      <li>
-                        <label htmlFor="logout" onClick={logOut}>
+                      <li className="font-bold cursor-pointer ">
+                        <label htmlFor="logout" onClick={handleLogOut}>
                           <Button id="logout" styles="h-2 ">
                             Log Out
                           </Button>
                         </label>
                       </li>
-                    </>
-                    <>
                       <li className="ml-5">
                         <button
                           onClick={() => setUserOpen(!userOpen)}
@@ -120,8 +88,6 @@ const Navbar = () => {
                           user={user}
                         />
                       </li>
-                    </>
-                  </div>
                 </>
               ) : (
                 <li>
@@ -134,8 +100,85 @@ const Navbar = () => {
                   </label>
                 </li>
               )}
-            </li>
           </ul>
+          <div className="lg:hidden flex flex-1 justify-end items-center">
+        <img
+          src={toggle ? close : menu}
+          alt="menu"
+          className="w-[28px] h-[28px] object-contain"
+          onClick={() => setToggle(!toggle)}
+        />
+
+        <div
+          className={`${
+            !toggle ? "hidden" : "flex"
+          } p-6 bg-black-gradient absolute top-20 right-0 mx-4 my-2 min-w-[140px] rounded-xl sidebar z-30 box-shadow`}
+        >
+          <ul className="list-none flex justify-end items-start flex-1 flex-col gap-4">
+              <li
+                className={`font-poppins font-medium cursor-pointer text-[16px] text-white`}
+              
+              >
+                <Link to="/doc">Documentation</Link>
+              </li>
+              <li
+                className={`font-poppins font-medium cursor-pointer text-[16px] text-white`}
+              
+              >
+                <Link to="/ide">IDE</Link>
+              </li>
+              <li
+                className={`font-poppins font-medium cursor-pointer text-[16px] text-white`}
+              
+              >
+                <Link to="/collections">Collections</Link>
+              </li>
+              {user?.uid ? (
+                <>
+                  <li className="font-poppins font-medium cursor-pointer text-[16px] text-white  mr-6 ">
+                        <Link to="/adminDashboard">Dashboard</Link>
+                      </li>
+                      <li className="font-poppins font-medium cursor-pointer text-[16px] text-white ">
+                        <label htmlFor="logout" onClick={handleLogOut}>
+                          <Button id="logout" styles="h-2 ">
+                            Log Out
+                          </Button>
+                        </label>
+                      </li>
+                      <li className="">
+                        <button
+                          onClick={() => setUserOpen(!userOpen)}
+                          className="text-sm bg-gray-800 rounded-full md:mr-0 focus:ring-4 hover:animate-bounce focus:ring-offset-secondary "
+                        >
+                          <span className="sr-only">Open user menu</span>
+                          <img
+                            className="w-8 h-8 rounded-full"
+                            src={user?.photoURL}
+                            alt="user"
+                          />
+                        </button>
+                        <Dropdown
+                          userOpen={userOpen}
+                          setUserOpen={setUserOpen}
+                          user={user}
+                        />
+                      </li>
+                </>
+              ) : (
+                <li>
+                  <label htmlFor="login">
+                    <Link to="/login">
+                      <Button id="login" styles="h-2 ">
+                        Login
+                      </Button>
+                    </Link>
+                  </label>
+                </li>
+              )} 
+            
+          </ul>
+        </div>
+      </div>
         </div>
       </div>
     </motion.nav>
@@ -143,3 +186,5 @@ const Navbar = () => {
 };
 
 export default Navbar;
+
+

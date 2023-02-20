@@ -1,5 +1,5 @@
 /* eslint-disable jsx-a11y/anchor-is-valid */
-import { AnimatePresence, motion } from "framer-motion";
+import { motion } from "framer-motion";
 import React from "react";
 import {
   FaChartArea,
@@ -30,7 +30,7 @@ const Sidebar = ({ isOpen, desktopSidebarRef, setIsOpen, user }) => {
         } flex h-screen w-full flex-col justify-between border-r bg-white px-6 pb-3 transition-all duration-700 md:w-4/12 lg:ml-0 lg:w-[25%] xl:w-[20%] 2xl:w-[15%] dark:bg-gray-800 dark:border-gray-700`}
       >
         <div>
-          <div className="-mx-6 px-6 py-4 flex justify-between items-center">
+          <div className="-mx-8 px-6 py-4 flex justify-between items-center">
             <Logo styles="w-32" />
             <div
               onClick={() => setIsOpen(false)}
@@ -66,18 +66,6 @@ const Sidebar = ({ isOpen, desktopSidebarRef, setIsOpen, user }) => {
             </li>
             <li>
               <Link
-                to="/adminDashboard/myprojects"
-                className="group flex items-center space-x-4 rounded-md px-4 py-3 text-gray-600 dark:text-gray-300
-                hover:bg-gradient-to-r from-green-600 to-cyan-400 hover:text-white"
-              >
-                <FaSwatchbook
-                  className={`text-lg cursor-pointer duration-500 `}
-                ></FaSwatchbook>{" "}
-                <span className="mr-1 font-medium">My Projects</span>
-              </Link>
-            </li>
-            <li>
-              <Link
                 to="/adminDashboard/useranalytics"
                 className="group flex items-center space-x-4 rounded-md px-4 py-3 text-gray-600 dark:text-gray-300
                 hover:bg-gradient-to-r from-green-600 to-cyan-400 hover:text-white "
@@ -86,18 +74,6 @@ const Sidebar = ({ isOpen, desktopSidebarRef, setIsOpen, user }) => {
                   className={`text-lg cursor-pointer duration-500 `}
                 ></FaChartArea>{" "}
                 <span className="mr-1 font-medium">User Analytics</span>
-              </Link>
-            </li>
-            <li>
-              <Link
-                to="/adminDashboard/profile"
-                className="group flex items-center space-x-4 rounded-md px-4 py-3 text-gray-600 dark:text-gray-300
-                hover:bg-gradient-to-r from-green-600 to-cyan-400 hover:text-white"
-              >
-                <FaUserCircle
-                  className={`text-lg cursor-pointer duration-500 `}
-                ></FaUserCircle>{" "}
-                <span className="mr-1 font-medium">Profile</span>
               </Link>
             </li>
             <li>
@@ -111,6 +87,30 @@ const Sidebar = ({ isOpen, desktopSidebarRef, setIsOpen, user }) => {
                   }`}
                 ></FaUsers>{" "}
                 <span className="mr-1 font-medium">Developers</span>
+              </Link>
+            </li>
+            <li>
+              <Link
+                to="/adminDashboard/myprojects"
+                className="group flex items-center space-x-4 rounded-md px-4 py-3 text-gray-600 dark:text-gray-300
+                hover:bg-gradient-to-r from-green-600 to-cyan-400 hover:text-white"
+              >
+                <FaSwatchbook
+                  className={`text-lg cursor-pointer duration-500 `}
+                ></FaSwatchbook>{" "}
+                <span className="mr-1 font-medium">My Projects</span>
+              </Link>
+            </li>
+            <li>
+              <Link
+                to="/adminDashboard/profile"
+                className="group flex items-center space-x-4 rounded-md px-4 py-3 text-gray-600 dark:text-gray-300
+                hover:bg-gradient-to-r from-green-600 to-cyan-400 hover:text-white"
+              >
+                <FaUserCircle
+                  className={`text-lg cursor-pointer duration-500 `}
+                ></FaUserCircle>{" "}
+                <span className="mr-1 font-medium">Profile</span>
               </Link>
             </li>
           </ul>

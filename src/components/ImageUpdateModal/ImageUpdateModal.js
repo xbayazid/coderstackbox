@@ -1,14 +1,14 @@
 import React from 'react';
-import { FaCloudUploadAlt, FaTimes, } from 'react-icons/fa';
+import { FaCloudUploadAlt, FaRegWindowClose, FaTimes, } from 'react-icons/fa';
 import Button from '../Buttons/Button';
 import { useForm } from 'react-hook-form';
 import { toast } from 'react-hot-toast';
 import { useState } from 'react';
 
 const ImageUpdateModal = ({isVisible, user, refetch, onClose}) => {
-    const { name, email, _id, about, phone } = user;
+    const { _id, photoURL} = user;
 
-    const [uploadImg, setUploadImg] = useState('');
+    const [uploadImg, setUploadImg] = useState(photoURL);
 
     const {
         register,
@@ -21,7 +21,7 @@ const ImageUpdateModal = ({isVisible, user, refetch, onClose}) => {
     }
 
     const handelUploadImage = (data) => {
-        console.log(data);
+        // console.log(data);
         // if (data){
         //     onClose()
         // }
@@ -31,7 +31,7 @@ const ImageUpdateModal = ({isVisible, user, refetch, onClose}) => {
     
             const image = data.photo[0];
             // console.log(image?.name);
-            setUploadImg(image?.name)
+            setUploadImg(image?.name);
             const formData = new FormData();
             formData.append("image", image);
     
@@ -57,7 +57,7 @@ const ImageUpdateModal = ({isVisible, user, refetch, onClose}) => {
 
           const updatePhoto = (userImage) => {
         
-            fetch(`http://localhost:5000/u/${_id}`, {
+            fetch(`https://coderstackbox-server-codersstackbox-gmailcom.vercel.app/u/${_id}`, {
               method: "PUT",
               headers: {
                 "content-type": "application/json",
@@ -78,11 +78,19 @@ const ImageUpdateModal = ({isVisible, user, refetch, onClose}) => {
       
     return (
         <div className='fixed inset-0 bg-black bg-opacity-25 backdrop-blur-sm flex
-         justify-center items-center '>
-            <div className='flex items-end flex-col'>
-                <FaTimes onClick={ () => onClose()} className='text-white text-2xl' />
-                <form onSubmit={handleSubmit(handelUploadImage)} className='md:w-[600px] w-[90vw] md:p-10 p-5 h-[80vh] md:h-[500px] flex flex-col justify-between items-center bg-slate-600 rounded-md'>
-                    <h2 className='text-2xl text-center'>Uplod your photo</h2>
+        justify-center items-center z-50'>
+            <div className='mb-2 md:w-[600px] w-[90vw] md:p-8 p-5 h-[80vh] md:h-[500px]  bg-slate-600 rounded-md'>
+                <div className="flex justify-end items-end flex-col ">
+                    <button
+                      className="text-blue-500 hover:text-blue-600 text-3xl cursor-pointer"
+                      onClick={ () => onClose()}
+                    >
+                      <FaRegWindowClose className="text-white"></FaRegWindowClose>
+                    </button>
+                </div>
+                <h2 className='mb-20 mt-5 text-2xl text-center'>Uplod your photo</h2>
+                {/* <FaTimes onClick={ () => onClose()} className='text-white text-2xl' /> */}
+                <form onSubmit={handleSubmit(handelUploadImage)} className='flex flex-col justify-between items-center'>
                     <div className='grid md:gap-20 gap-5 mx-auto md:grid-cols-2 md:grid-rows grid-cols-1 rounded-full  border-green-600 justify-between items-center'>
                         <div>
                             <label htmlFor='userImg' className='text-center'>
@@ -102,7 +110,7 @@ const ImageUpdateModal = ({isVisible, user, refetch, onClose}) => {
                         className='hidden' id='userImg'
                     />
                     
-                    <Button className='flex gap-5 justify-center items-center'>Save</Button>
+                    <button className='mt-8 bg-blue-500 text-white py-2 px-4 rounded-lg hover:bg-blue-600'>Save</button>
                     
                 </form>
             </div>
