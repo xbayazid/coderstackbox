@@ -16,15 +16,29 @@ const Footer = () => {
       className={`${styles.boxWidth} mx-auto  py-10 text-white relative flex justify-center `}
     >
       <div className="footer-gradient" />
-      <div className="flex flex-col justify-center w-full">
-        <ul className="lg:flex md:flex sm:flex items-center text-bold justify-around text-white">
+      <div className="sm:center flex flex-col justify-center w-full">
+        <ul className="lg:flex md:flex sm:flex items-center text-center text-bold justify-around text-white">
+         
+        <li className="lg:hidden md:hidden">
+            <Link to="/">
+              <div className="font-bold text-2xl cursor-pointer flex items-center ml-10 font-[poppins] text-gray-800">
+                <span className="text-3xl text-secondary mr-1 pt-2">
+                  <ion-icon name="logo-slack"></ion-icon>
+                </span>
+                <h1 className="text-white">
+                  Coders<span className="text-secondary">StackBox</span>
+                </h1>
+              </div>
+            </Link>
+          </li>
+
           <li>
             <Link to="/">Home</Link>
           </li>
           <li>
             <li><Link className="lg:ml-8 ml-0" to='/about'>About Us</Link></li>
           </li>
-          <li>
+          <li className="sm:block hidden">
             <Link to="/">
               <div className="font-bold text-2xl cursor-pointer flex items-center font-[poppins] text-gray-800">
                 <span className="text-3xl text-secondary mr-1 pt-2">
