@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import SearchBar from './SearchBar/SearchBar';
 // import BlogLeft from './BlogLeft';
-// import BlogRight from './BlogRight';
+import BlogRight from './BlogRight';
 import BlogList from './BlogList/BlogList';
 import { blogList } from '../../constants';
 import EmptyList from './EmptyList/EmptyList';
@@ -37,8 +37,8 @@ const Blog = () => {
 
     return (
         <div>
-            <div className='mb-10 '>
-                <h1 className='text-3xl text-white flex justify-center font-bold'>" Blog "</h1>
+            <div className='mb-10 w-full px-10 blogLeft text-xl text-white'>
+                <h1 className='text-3xl text-white flex justify-center font-bold'> Blog </h1>
                 <p className='text-xl text-white flex justify-center items-center mt-5'> Awesome place to make oneself</p>
                 <p className='text-xl text-white flex justify-center items-center'>
                     productive and entertaind through daily updates</p>
@@ -53,23 +53,17 @@ const Blog = () => {
                     formSubmit={handleSearchSubmit}
                     handleSearchKey={e => setSearchKey(e.target.value)} />
 
+                <div className="flex gap-2 border-2 p-2">
                 {!blogs.length ? <EmptyList /> : <BlogList blogs={blogs} />}
+                <div className='md:flex'>
 
+                    <BlogRight />
+                </div>
 
+                </div>
             </div>
 
 
-
-
-
-
-
-
-
-            {/* <div className='md:flex'>
-                <BlogLeft />
-                <BlogRight />
-            </div> */}
         </div>
     );
 };
