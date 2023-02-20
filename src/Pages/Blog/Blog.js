@@ -53,7 +53,7 @@ const Blog = () => {
                     formSubmit={handleSearchSubmit}
                     handleSearchKey={e => setSearchKey(e.target.value)} />
 
-                <div className="flex gap-2 border-2 p-2">
+                <div className="md:flex gap-2 border-2 p-2">
                 {!blogs.length ? <EmptyList /> : <BlogList blogs={blogs} />}
                 <div className='md:flex'>
 
