@@ -28,14 +28,18 @@ const Navbar = () => {
   const scrolled = useScrollPosition(50);
 
   return (
-    <motion.nav
-      variants={navVariants}
-      initial="hidden"
-      whileInView="show"
-      className={`py-5 relative`}
+   <nav
+      className={`relative `}
     >
-      <div className="absolute w-[50%] inset-0 gradient-01" />
-      <div className={`${styles.paddingX} mx-auto`}>
+      
+      <div className={`
+      fixed top-0 w-full ${
+        scrolled
+          ? "border-b border-gray-200/30 bg-white/20 navmorphism backdrop-blur-xl"
+          : "bg-white/0"
+      } z-30 transition-all 
+      ${styles.paddingX} mx-auto`}>
+        <div className="absolute w-[50%] inset-0 gradient-01" />
         <div className="flex justify-between py-4 ">
           <Logo />
           
@@ -181,7 +185,8 @@ const Navbar = () => {
       </div>
         </div>
       </div>
-    </motion.nav>
+    
+   </nav>
   );
 };
 

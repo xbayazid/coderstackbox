@@ -52,9 +52,7 @@ const AdminDashboard = () => {
                   </div>
                   <div>
                   <div class="mt-3 md:w-44 w-28 flex -space-x-2 overflow-hidden p-1">
-                      {
-                        users?.map( u => <img class="inline-block h-12 w-12 rounded-full ring-2 ring-secondary" src={`${u?.photoURL}`} alt=""/>)
-                      }
+                  {loading ? <SmallSpinner /> : users?.map( u => <img class="inline-block h-12 w-12 rounded-full ring-2 ring-secondary" src={`${u?.photoURL}`} alt=""/>)}
                     </div>
                     {/* <FaUsers className="text-secondary text-6xl"></FaUsers> */}
                   </div>

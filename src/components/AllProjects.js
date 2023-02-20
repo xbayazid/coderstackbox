@@ -25,7 +25,7 @@ const AllProjects = () => {
   return (
     <div>
       <header>
-        <h2 className="text-3xl mb-5 text-dimWhite">Developers</h2>
+        <h2 className="text-3xl mb-5 text-dimWhite">Projects</h2>
       </header>
 
       <main>
