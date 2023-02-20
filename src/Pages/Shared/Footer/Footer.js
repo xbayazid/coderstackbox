@@ -5,6 +5,7 @@ import { Link } from "react-router-dom";
 import styles from "../../../style";
 import { motion } from "framer-motion";
 import { footerVariants } from "../../../utils/motion";
+import Logo from "../../../components/Logo";
 
 
 const Footer = () => {
@@ -16,68 +17,53 @@ const Footer = () => {
       className={`${styles.boxWidth} mx-auto  py-10 text-white relative flex justify-center `}
     >
       <div className="footer-gradient" />
-      <div className="sm:center flex flex-col justify-center w-full">
-        <ul className="lg:flex md:flex sm:flex items-center text-center text-bold justify-around text-white">
-         
-        <li className="lg:hidden md:hidden">
-            <Link to="/">
-              <div className="font-bold text-2xl cursor-pointer flex items-center ml-10 font-[poppins] text-gray-800">
-                <span className="text-3xl text-secondary mr-1 pt-2">
-                  <ion-icon name="logo-slack"></ion-icon>
-                </span>
-                <h1 className="text-white">
-                  Coders<span className="text-secondary">StackBox</span>
-                </h1>
-              </div>
-            </Link>
+      <div className="md:items-center flex flex-col justify-center w-full">
+        <ul className="w-full mb-5 flex md:flex-row flex-col items-center md:justify-between justify-center text-bold text-white">
+
+          <li className=" md:hidden block">
+
+            <div className="font-bold text-2xl cursor-pointer flex justify-center items-center ml-10 font-[poppins] text-gray-800">
+              <Logo />
+            </div>
           </li>
 
           <li>
             <Link to="/">Home</Link>
           </li>
           <li>
-            <li><Link className="lg:ml-8 ml-0" to='/about'>About Us</Link></li>
+            <li><Link className="" to='/about'>About Us</Link></li>
           </li>
-          <li className="sm:block hidden">
-            <Link to="/">
-              <div className="font-bold text-2xl cursor-pointer flex items-center font-[poppins] text-gray-800">
-                <span className="text-3xl text-secondary mr-1 pt-2">
-                  <ion-icon name="logo-slack"></ion-icon>
-                </span>
-                <h1 className="text-white">
-                  Coders<span className="text-secondary">StackBox</span>
-                </h1>
-              </div>
-            </Link>
+          <li className="md:block hidden">
+            <Logo />
           </li>
-          {/* <li>
-          <Link className="lg:ml-8 ml-0" to='/catagories'>Categories</Link>
-          </li> */}
+
           <li>
-          <Link className="lg:ml-8 ml-0" to='/community'>Community Support</Link>
+            <Link className="" to='/community'>Community Support</Link>
           </li>
           <li><Link to='/blog'>Blog</Link></li>
         </ul>
-        <div
+      
+        <div 
           className="mt-5 bg-gradient-to-r from-accent to-secondary"
           style={{ height: "2px" }}
         />
+        
 
-        <div className="text-white flex justify-center">
-          <div className="mt-5 mb-5 pt-10">
-            <a className="mr-2 rounded-full ..." href="">
-            <button className="px-2 py-1 bg-lime-800 hover:bg-lime-500 border border-outline rounded-2xl "><ion-icon name="logo-github"></ion-icon></button>
+        <div className="text-white mt-5 flex gap-2 justify-center">
+          <>
+            <a className=" rounded-full ..." href="">
+              <button className="px-2 py-1 bg-lime-800 hover:bg-lime-500 border border-outline rounded-2xl "><ion-icon name="logo-github"></ion-icon></button>
             </a>
-            <a className="mr-2" href="">
+            <a className="" href="">
               <button className="px-2 py-1 bg-lime-800 hover:bg-lime-500 border border-outline rounded-2xl "><ion-icon name="logo-linkedin"></ion-icon></button>
             </a>
-            <a className="mr-2" href="">
+            <a className="" href="">
               <button className="px-2 py-1 bg-lime-800 hover:bg-lime-500 border border-outline rounded-2xl "><ion-icon name="logo-facebook"></ion-icon></button>
             </a>
-            <a className="mr-2" href="">
+            <a className="" href="">
               <button className="px-2 py-1 bg-lime-800 hover:bg-lime-500 border border-outline rounded-2xl "><ion-icon name="logo-ionic"></ion-icon></button>
             </a>
-          </div>
+          </>
         </div>
         <div className="text-white flex justify-center">
           <a className="mt-5 mb-5 pt-5" href="">
