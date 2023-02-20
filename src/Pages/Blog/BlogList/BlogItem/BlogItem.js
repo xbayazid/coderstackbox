@@ -17,7 +17,7 @@ const BlogItem = ({
         },
     }) => {
     return (
-        <div className='blogItem-wrap'>
+        <div className='blogItem-wrap '>
             <img className='rounded-lg blogItem-cover mt-5' src={cover} alt="cover" />
             <Chip label={category}/>
             <h3 className='text-2xl text-white font-bold'>{title}</h3>
@@ -31,8 +31,8 @@ const BlogItem = ({
                         <h6 className="text-white mt-5">{authorName}</h6>
                         <p className="text-white">{createdAt}</p>
                     </div>
-                </div>
-                <Link className='blogItem-link' to={`/blog/${id}`}> <FaArrowRight className="text-white"/></Link>
+                </div><Link className='blogItem-link text-white text-sm btn btn-prymary flex justify-center items-center gap-1' to={`/blog/${id}`}> Read More<FaArrowRight/>  </Link>
+                
             </footer>
         </div>
     );
