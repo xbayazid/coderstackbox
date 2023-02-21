@@ -24,12 +24,14 @@ const Collections = () => {
   const [loading, setLoading] = useState(false);
   // const [projects, setProjects] = useState([]);
 
+  // const url = `https://coderstackbox-server-codersstackbox-gmailcom.vercel.app/collections?page=${pageNumber}&limit=${5}`;
+  const url = `http://localhost:5000/collections?page=${pageNumber}&limit=${5}`
 
   const pages = new Array(numberOfPages).fill(null).map((v, i) => i);
 
   useEffect(() => {
     setLoading(true);
-    fetch(`http://localhost:5000/collections?page=${pageNumber}&limit=${5}`, {
+    fetch(url, {
             headers: {
               "content-type": "application/json",
               authorization: `bearer ${localStorage.getItem("CodersStackBox")}`,
@@ -46,12 +48,6 @@ const Collections = () => {
       return result;
     })
   }, [pageNumber]);
-
-
-  // const url = `https://coderstackbox-server-codersstackbox-gmailcom.vercel.app/collections`;
-  // const url = `http://localhost:5000/collections?page=1&limit=4`;
-  // const url = `http://localhost:5000/collections?page=${pageNumber}&limit=${3}`;
-
 
   const [searchQuery, setSearchQuery] = useState("");
 
