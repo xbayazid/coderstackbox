@@ -29,7 +29,7 @@ const ContributeSlider = ({ user, i }) => {
         variants={staggerContainer}
         initial="hidden"
         whileInView="show"
-        viewport={{ once: false, amount: 0.25 }}
+        viewport={{ once: true, amount: 0.25 }}
       >
         <div className={`${layout.sectionReverse}`}>
           <motion.div
@@ -37,7 +37,10 @@ const ContributeSlider = ({ user, i }) => {
             className={`${layout.sectionInfoStart}`}
           >
             <motion.h1 variants={textVariant(0.25)} className=" text-white">
-              <TitleText textStyles={`md:text-[48px] text-[40px] font-thin`} title={<>{name}</>} />
+              <TitleText
+                textStyles={`md:text-[48px] text-[40px] font-thin`}
+                title={<>{name}</>}
+              />
             </motion.h1>
             <p className={`${styles.paragraph}`}>
               {truncate(`${about}`, 20)} ...
@@ -46,13 +49,15 @@ const ContributeSlider = ({ user, i }) => {
               <OutlinedButton styles={`py-2`}>View Projects</OutlinedButton>
             </Link>
           </motion.div>
-          <div className={`flex-1 flex justify-end items-center  mr-0 md:mt-0 mt-10 relative`}>
-            <img className="w-1/2 rounded-lg " src={photoURL} alt={name} />
+          <div
+            className={`flex-1 flex justify-end items-center  mr-0 md:mt-0 mt-10 relative`}
+          >
+            <img className="w-4/5 rounded-lg " src={photoURL} alt={name} />
             {/* gradient start */}
-      <div className="absolute z-[0] w-[40%] h-[35%] top-0 pink__gradient" />
-              <div className="absolute z-[-1] w-[80%] h-[80%] rounded-full white__gradient bottom-40" />
-              <div className="absolute z-[-1] w-[50%] h-[50%] right-20 bottom-20 blue__gradient" />
-              {/* gradient end */}
+            <div className="absolute z-[0] w-[40%] h-[35%] top-0 pink__gradient" />
+            <div className="absolute z-[-1] w-[80%] h-[80%] rounded-full white__gradient bottom-40" />
+            <div className="absolute z-[-1] w-[50%] h-[50%] right-20 bottom-20 blue__gradient" />
+            {/* gradient end */}
           </div>
         </div>
       </motion.div>

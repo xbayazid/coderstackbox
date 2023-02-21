@@ -26,7 +26,7 @@ const Hero = () => {
         variants={staggerContainer}
         initial="hidden"
         whileInView="show"
-        viewport={{ once: false, amount: 0.25 }}
+        viewport={{ once: true, amount: 0.25 }}
         className={` ${styles.paddingY} relative`}
       >
         <div className="text-white w-full lg:w-2/3 mx-auto mb-6 font-poppins">
