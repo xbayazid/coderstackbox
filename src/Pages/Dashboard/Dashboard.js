@@ -51,7 +51,7 @@ const Dashboard = () => {
 
   return (
     <AnimatePresence>
-      <body class="bg-gray-100 dark:bg-gray-900">
+      <body class="bg-gray-900">
         <Sidebar
           isOpen={isOpen}
           desktopSidebarRef={desktopSidebarRef}
@@ -63,7 +63,7 @@ const Dashboard = () => {
           <DBHeader setIsOpen={setIsOpen} />
 
           <div className="px-6 pt-6 2xl:container">
-            <div className="min-h-screen w-full border-gray-300 dark:border-gray-600">
+            <div className="min-h-screen w-full border-gray-600">
               <Outlet />
             </div>
           </div>
