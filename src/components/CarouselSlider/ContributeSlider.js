@@ -42,6 +42,9 @@ const ContributeSlider = ({ user, i }) => {
                 title={<>{name}</>}
               />
             </motion.h1>
+            <p className="text-white font-thin text-xl my-3">
+              -{" "}{role}
+            </p>
             <p className={`${styles.paragraph}`}>
               {truncate(`${about}`, 20)} ...
             </p>
