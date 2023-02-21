@@ -4,6 +4,7 @@ import { Link, useLocation, useNavigate } from "react-router-dom";
 import { AuthContext } from "../../context/AuthProvider";
 import { toast } from "react-hot-toast";
 import Navbar from "../Shared/Navbar/Navbar";
+import { FaGoogle, FaGithub } from "react-icons/fa";
 import { Helmet } from "react-helmet";
 import "./Login.css";
 import Logo from "../../components/Logo";
@@ -96,29 +97,11 @@ const Login = () => {
         <meta charSet="utf-8" />
         <title>CodersStackBox - Login</title>
       </Helmet>
-      <div className="flex lg:flex-row flex-col gap-4 lg:gap-0 justify-center lg:mt-24">
-        <div className="glassmorphism py-12 px-8 lg:rounded-tl-xl lg:rounded-bl-xl">
-          <Logo />
-          <p className="mb-5 text-white description">
-            {" "}
-            Login using social media to get quick access{" "}
-          </p>
-          <form onSubmit={handleSubmit}>
-            <div className="text-center p-3 text-white font-semibold rounded-md bg-gradient-to-r from-accent to-secondary">
-              <button className="uppercase w-full" onClick={handleGoogleSignIn}>
-                Login with Google
-              </button>
-            </div>
-            <div className="text-center p-3 text-white font-semibold rounded-md mt-4 bg-gradient-to-r from-accent to-secondary">
-              <button className="uppercase w-full" onClick={handleGithubSignin}>
-                Login with GitHub
-              </button>
-            </div>
-          </form>
-        </div>
-
-        <div className="flex flex-col justify-center items-center glassmorphism md:h-[480px] h-[280px] md:p-10 p-5 md:rounded-tr-xl md:rounded-br-xl">
+        <div className=" glassmorphism  md:p-10 p-5 rounded-lg">
           <div className="text-white text-center ">
+            <div className="mb-6">
+              <Logo></Logo>
+            </div>
             <div className="flex justify-around ">
               <div>
                 <h3 className="uppercase mb-3 authentication-title">login</h3>
@@ -163,11 +146,19 @@ const Login = () => {
                   </button>
                 </div>
               </form>
+              <div className="mt-4">------------- OR ------------- </ div>
+              <div className="flex justify-center gap-5">
+              <div>
+                <button  className="text-center text-2xl p-3 text-white font-semibold rounded-full mt-4 bg-gradient-to-r from-accent to-secondary" onClick={handleGoogleSignIn}><FaGoogle></FaGoogle></button>
+              </div>
+              <div>
+                <button className="text-center text-2xl p-3 text-white font-semibold rounded-full mt-4 bg-gradient-to-r from-accent to-secondary" onClick={handleGithubSignin}><FaGithub></FaGithub></button>
+              </div>
+              </div>
             </div>
           </div>
         </div>
       </div>
-    </div>
   );
 };
 

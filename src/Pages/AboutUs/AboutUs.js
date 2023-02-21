@@ -27,7 +27,7 @@ const AboutUs = () => {
             <motion.div variants={staggerContainer}
              initial="hidden"
              whileInView="show"
-             viewport={{ once: false, amount: 0.25 }} className='text-white'>
+             viewport={{ once: true, amount: 0.25 }} className='text-white'>
                 <div className='lg:flex justify-around items-center uppercase'>
                 <h1 className='text-7xl font-bold'>About Us</h1>
                 <h3 className='text-2xl semi-title mt-3'>We live by the code of passion</h3>

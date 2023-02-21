@@ -6,8 +6,10 @@ import { Link, useLocation, useNavigate } from "react-router-dom";
 import { AuthContext } from "../../context/AuthProvider";
 import axios from "axios";
 import { useForm } from "react-hook-form";
+import { FaGoogle, FaGithub } from "react-icons/fa";
 import "./SignUp.css";
 import { setAuthToken } from "../../api/auth";
+import Logo from "../../components/Logo";
 
 const SingUp = () => {
   const [error, setError] = useState("");
@@ -123,38 +125,11 @@ const SingUp = () => {
         <meta charSet="utf-8" />
         <title>CodersStackBox - SignUp</title>
       </Helmet>
-      <div className="flex lg:flex-row flex-col gap-4 lg:gap-0 justify-center lg:mt-24">
-        <div className="glassmorphism py-12 px-8 lg:rounded-tl-xl lg:rounded-bl-xl">
-          <h2 className="mt-12 text-white text-5xl title text-center">Welcome to</h2>
-          <div className="flex items-center text-3xl font-bold mt-12 mb-8">
-            <span className="text-3xl text-secondary  pt-2">
-              <ion-icon name="logo-slack"></ion-icon>
-            </span>
-            <h1 className="text-white ml-16 lg:ml-2">
-              Coders<span className="text-secondary">StackBox</span>
-            </h1>
+        <div className="px-24 py-16 glassmorphism rounded-lg">
+          <div>
+            <Logo></Logo>
           </div>
-          <>
-            <div
-              className="text-center p-3  text-white font-semibold rounded-md mt-4 bg-gradient-to-r from-accent to-secondary mx-auto"
-              style={{ width: "317px" }}
-            >
-              <button className="uppercase" onClick={handleGoogleSignIn}>
-                signup with Google
-              </button>
-            </div>
-            <div
-              className="text-center p-3  text-white font-semibold rounded-md mt-4 bg-gradient-to-r from-accent to-secondary mx-auto"
-              style={{ width: "317px" }}
-            >
-              <button className="uppercase" onClick={hangleGithubSingIn}>
-                signup with GitHub
-              </button>
-            </div>
-          </>
-        </div>
-        <div className="px-36 py-20 glassmorphism rounded-tr-xl rounded-br-xl">
-          <div className="text-white text-center xl:mt-20">
+          <div className="text-white text-center xl:mt-12">
             <div className="flex items-center justify-around w-56 mx-auto">
               <div>
                 <h3 className="uppercase mb-3 -ml-10 authentication-title">
@@ -225,11 +200,19 @@ const SingUp = () => {
                   </button>
                 </div>
               </form>
+              <div className="mt-4">------------- OR ------------- </ div>
+              <div className="flex justify-center gap-5">
+              <div>
+                <button  className="text-center text-2xl p-3 text-white font-semibold rounded-full mt-4 bg-gradient-to-r from-accent to-secondary" onClick={handleGoogleSignIn}><FaGoogle></FaGoogle></button>
+              </div>
+              <div>
+                <button className="text-center text-2xl p-3 text-white font-semibold rounded-full mt-4 bg-gradient-to-r from-accent to-secondary" onClick={hangleGithubSingIn}><FaGithub></FaGithub></button>
+              </div>
+              </div>
             </div>
           </div>
         </div>
       </div>
-    </div>
   );
 };
 
