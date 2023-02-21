@@ -1,23 +1,14 @@
-import React, { useEffect } from "react";
+import React from "react";
 import { motion } from "framer-motion";
-import { HiArrowRight } from "react-icons/hi2";
 import { Link } from "react-router-dom";
-import DevDetails from "../../Pages/DevProfile/DevDetails/DevDetails";
 import styles, { layout } from "../../style";
 import "./Carousel.css";
 import { fadeIn, staggerContainer, textVariant } from "../../utils/motion";
-import { TitleText, TypingText } from "../CustomText/CustomText";
-import Button from "../Buttons/Button";
-import { useDispatch } from "react-redux";
-import {
-  addUserCollections,
-  getAllUserCollections,
-} from "../../features/userCollections";
+import { TitleText } from "../CustomText/CustomText";
 import OutlinedButton from "../Buttons/OutlinedButton";
 
 const ContributeSlider = ({ user, i }) => {
-  const { _id, email, photoURL, name, about, role, project } = user;
-  const [showModal, setShowModal] = React.useState(false);
+  const { _id, email, photoURL, name, about, role } = user;
 
   function truncate(str, no_words) {
     return str.split(" ").splice(0, no_words).join(" ");
