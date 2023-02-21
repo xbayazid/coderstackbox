@@ -13,7 +13,7 @@ import { getUser } from "../../api/user";
 import DBHeader from "../../components/DBHeader";
 import Sidebar from "../../components/Sidebar";
 import { AuthContext } from "../../context/AuthProvider";
-import { addUserCollections, getUsersCollections } from "../../features/collectionSlice/userCollectionSlice";
+import { addUserCollections } from "../../features/collectionSlice/userCollectionSlice";
 
 const Dashboard = () => {
   const { user } = useContext(AuthContext);

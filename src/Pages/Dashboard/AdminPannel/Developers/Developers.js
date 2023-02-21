@@ -37,8 +37,8 @@ const Developers = () => {
       .then((res) => res.json())
       .then((data) => {
         if (data) {
-          console.log(data.message);
-          setLoading(false)
+          toast.error(data.message);
+          setLoading(false);
           getUsers();
         }
       });
@@ -51,10 +51,6 @@ const Developers = () => {
 
   return (
     <div>
-      <header>
-        <h2 className="text-3xl mb-5 text-dimWhite">Developers</h2>
-      </header>
-
       <main>
         <div className="relative overflow-x-auto shadow-md sm:rounded-lg">
           <div className="flex items-center justify-center py-4 bg-gray-900">
