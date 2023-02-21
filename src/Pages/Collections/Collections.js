@@ -53,7 +53,6 @@ const Collections = () => {
 
   const handleSearchInputChange = (event) => {
     setSearchQuery(event.target.value);
-    // refetch();
   };
 
   // console.log(Projects);
@@ -61,7 +60,7 @@ const Collections = () => {
   const filteredData = Projects?.filter((item) =>
     item.projectName.toLowerCase().includes(searchQuery.toLowerCase())
   );
-  
+
   if (loading) {
     return <PreLoaderSpinner />;
   }
@@ -160,9 +159,7 @@ const Collections = () => {
                   pages.map((pageIndex) => (
                     <li>
                       <button onClick={() => setPageNumber(pageIndex)} key={pageIndex} 
-                      className={`px-3 py-2 leading-tight text-gray-500 
-                      bg-white border border-gray-300 hover:bg-gray-100 hover:text-gray-700 dark:bg-gray-800 
-                      dark:border-gray-700 dark:text-gray-400 dark:hover:bg-gray-700 dark:hover:text-white 
+                      className={`px-3 py-2 leading-tight border bg-gray-800 border-gray-700 text-gray-400 hover:bg-gray-700 hover:text-white 
                       `}>
                         {pageIndex + 1}
                       </button>
