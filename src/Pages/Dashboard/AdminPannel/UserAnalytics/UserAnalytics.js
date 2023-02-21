@@ -45,8 +45,8 @@ const UserProfile = () => {
             <div>
               <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
                 {aboutUsers?.map((aboutUser) => (
-                  <div class="flex  bg-dark-1 rounded-md bg-gradient-to-l from-accent to-cyan-400">
-                    <div class="w-12 flex items-center p-2">
+                  <div className="flex  bg-dark-1 rounded-md bg-gradient-to-l from-accent to-cyan-400">
+                    <div className="w-12 flex items-center p-2">
                       <img src={aboutUser.picture} className="" alt="" />
                     </div>
 

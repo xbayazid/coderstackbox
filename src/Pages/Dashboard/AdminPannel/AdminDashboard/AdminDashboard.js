@@ -51,8 +51,8 @@ const AdminDashboard = () => {
                     <p>Developers</p>
                   </div>
                   <div>
-                  <div class="mt-3 md:w-44 w-28 flex -space-x-2 overflow-hidden p-1">
-                  {loading ? <SmallSpinner /> : users?.map( u => <img class="inline-block h-12 w-12 rounded-full ring-2 ring-secondary" src={`${u?.photoURL}`} alt=""/>)}
+                  <div className="mt-3 md:w-44 w-28 flex -space-x-2 overflow-hidden p-1">
+                  {loading ? <SmallSpinner /> : users?.map( u => <img className="inline-block h-12 w-12 rounded-full ring-2 ring-secondary" src={`${u?.photoURL}`} alt=""/>)}
                     </div>
                     {/* <FaUsers className="text-secondary text-6xl"></FaUsers> */}
                   </div>
@@ -125,44 +125,44 @@ const AdminDashboard = () => {
               <div className="bg-dark-1 md:w-3/4">
                 <div className="p-5">
                   <h2 className="text-2xl mb-3 others">Top Developer</h2>
-                  <table class="w-full text-sm text-left text-gray-500 dark:text-gray-400">
-                    <thead class="text-xs text-gray-700 uppercase bg-gray-50 dark:bg-gray-700 dark:text-gray-400">
+                  <table className="w-full text-sm text-left text-gray-500 dark:text-gray-400">
+                    <thead className="text-xs text-gray-700 uppercase bg-gray-50 dark:bg-gray-700 dark:text-gray-400">
                       <tr>
-                        <th scope="col" class="px-6 py-3">
+                        <th scope="col" className="px-6 py-3">
                           Name
                         </th>
-                        <th scope="col" class="px-6 py-3">
+                        <th scope="col" className="px-6 py-3">
                           Total Projects
                         </th>
                       </tr>
                     </thead>
                     <tbody>
-                      <tr class="bg-white border-b dark:bg-gray-800 dark:border-gray-700">
+                      <tr className="bg-white border-b dark:bg-gray-800 dark:border-gray-700">
                         <th
                           scope="row"
-                          class="px-6 py-4 font-medium text-gray-900 whitespace-nowrap dark:text-white"
+                          className="px-6 py-4 font-medium text-gray-900 whitespace-nowrap dark:text-white"
                         >
                           Smith Kumar
                         </th>
-                        <td class="px-6 py-4">30</td>
+                        <td className="px-6 py-4">30</td>
                       </tr>
-                      <tr class="bg-white border-b dark:bg-gray-800 dark:border-gray-700">
+                      <tr className="bg-white border-b dark:bg-gray-800 dark:border-gray-700">
                         <th
                           scope="row"
-                          class="px-6 py-4 font-medium text-gray-900 whitespace-nowrap dark:text-white"
+                          className="px-6 py-4 font-medium text-gray-900 whitespace-nowrap dark:text-white"
                         >
                           Rasel Mia
                         </th>
-                        <td class="px-6 py-4">29</td>
+                        <td className="px-6 py-4">29</td>
                       </tr>
-                      <tr class="bg-white dark:bg-gray-800">
+                      <tr className="bg-white dark:bg-gray-800">
                         <th
                           scope="row"
-                          class="px-6 py-4 font-medium text-gray-900 whitespace-nowrap dark:text-white"
+                          className="px-6 py-4 font-medium text-gray-900 whitespace-nowrap dark:text-white"
                         >
                           Jhon Doe
                         </th>
-                        <td class="px-6 py-4">20</td>
+                        <td className="px-6 py-4">20</td>
                       </tr>
                     </tbody>
                   </table>
