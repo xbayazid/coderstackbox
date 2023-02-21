@@ -9,7 +9,7 @@ import { TitleText, TypingText } from "../../components/CustomText/CustomText";
 import styles, { layout } from "../../style";
 import { fadeIn, FADE_IN_ANIMATION_SETTINGS, FADE_UP_ANIMATION_VARIANTS, slideIn, staggerContainer } from "../../utils/motion";
 import Search from "../catagories/Search";
-import Loading from "../Loading/Loading";
+import PreLoaderSpinner from "../../components/PreLoaderSpinner/PreLoaderSpinner";
 import { useDispatch, useSelector } from "react-redux";
 import { addCollections, getAllCollections } from "../../features/collectionSlice/collectionSlice";
 import i from "rechart/lib/chart";
@@ -61,8 +61,9 @@ const Collections = () => {
   const filteredData = Projects?.filter((item) =>
     item.projectName.toLowerCase().includes(searchQuery.toLowerCase())
   );
+  
   if (loading) {
-    return <Loading />;
+    return <PreLoaderSpinner />;
   }
 
   const previousPage = () => {
