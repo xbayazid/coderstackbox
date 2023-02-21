@@ -21,7 +21,7 @@ import OutlinedButton from "../../../components/Buttons/OutlinedButton";
 const Hero = () => {
   return (
     <section 
-    className="mt-32">
+    className="">
       <motion.div
         variants={staggerContainer}
         initial="hidden"
