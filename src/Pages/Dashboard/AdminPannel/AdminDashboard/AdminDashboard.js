@@ -45,7 +45,7 @@ const AdminDashboard = () => {
 
           <main className="py-5 px-5">
             <div className="grid gap-10 md:grid-cols-2 grid-cols-1 justify-between items-center font-semibold">
-                <div className="flex justify-between items-center bg-dark-1 rounded-md text-3xl p-5 md:p-10">
+                <div className="flex justify-between items-center bg-dark-1 rounded-xl text-3xl p-5 md:p-10">
                   <div className="flex flex-col justify-between items-center">
                     <h2>{loading ? <SmallSpinner /> : users?.length}+</h2>
                     <p>Developers</p>
@@ -57,14 +57,14 @@ const AdminDashboard = () => {
                     {/* <FaUsers className="text-secondary text-6xl"></FaUsers> */}
                   </div>
                 </div>
-              <div className="flex justify-between items-center bg-dark-1 rounded-md text-3xl p-10">
+              <div className="flex justify-between items-center bg-dark-1 rounded-xl text-3xl p-10">
                 <div className="flex flex-col justify-center items-center">
                   <h2>{loading ? <SmallSpinner /> : collections?.length}+</h2>
                   <p>Projects</p>
                 </div>
                 <FaSwatchbook className="text-secondary text-6xl"></FaSwatchbook>
               </div>
-              {/*    <div className="flex justify-between items-center bg-dark-1 rounded-md hover-bg-blue-green-gradient text-3xl p-10">
+              {/*    <div className="flex justify-between items-center bg-dark-1 rounded-xl hover-bg-blue-green-gradient text-3xl p-10">
                 <div className="flex flex-col justify-center items-center">
                   <h2>652</h2>
                   <p>Message</p>
@@ -79,16 +79,16 @@ const AdminDashboard = () => {
                   <h2 className="text-2xl mb-5 lg:mb-0 others">
                     Recent Projects
                   </h2>
-                  <Link to="/adminDashboard/all-projects">
+                  {/* <Link to="/adminDashboard/all-projects">
                     <Button id="logout" styles="h-2 ">
                       All Project
                     </Button>
-                  </Link>
+                  </Link> */}
                 </div>
 
                 <div className="relative overflow-x-auto">
-                  <table className="w-full text-sm text-left text-gray-500 dark:text-gray-400">
-                    <thead className="text-xs text-gray-700 uppercase bg-gray-50 dark:bg-gray-700 dark:text-gray-400">
+                  <table className="w-full text-sm text-left text-gray-400">
+                    <thead className="text-xs uppercase  bg-gray-700 text-gray-400">
                       <tr>
                         <th scope="col" className="px-6 py-3">
                           Project Title
@@ -103,13 +103,13 @@ const AdminDashboard = () => {
                     </thead>
                     <tbody>
                       {collections?.slice(0, 3).map((collection, i) => (
-                        <tr className="bg-white border-b dark:bg-gray-800 dark:border-gray-700"
+                        <tr className="border-b bg-gray-800 border-gray-700"
                           key={collection._id}
                         >
                           <td className="px-6 py-4">{i + 1}</td>
                           <th
                             scope="row"
-                            className="px-6 py-4 font-medium text-gray-900 whitespace-nowrap dark:text-white"
+                            className="px-6 py-4 font-medium whitespace-nowrap text-white"
                           >
                             {collection?.projectName ? collection.projectName : "Untitled"}
                           </th>
@@ -123,10 +123,18 @@ const AdminDashboard = () => {
               </div>
 
               <div className="bg-dark-1 md:w-3/4">
-                <div className="p-5">
-                  <h2 className="text-2xl mb-3 others">Top Developer</h2>
-                  <table className="w-full text-sm text-left text-gray-500 dark:text-gray-400">
-                    <thead className="text-xs text-gray-700 uppercase bg-gray-50 dark:bg-gray-700 dark:text-gray-400">
+                <div className="lg:flex justify-between items-center p-5">
+                  <h2 className="text-2xl mb-5 lg:mb-0 others">
+                    Top Developer
+                  </h2>
+                  {/* <Link to="/adminDashboard/all-projects">
+                    <Button id="logout" styles="h-2 ">
+                      All Project
+                    </Button>
+                  </Link> */}
+                </div>
+                <table className="w-full text-sm text-left  text-gray-400">
+                    <thead className="text-xs  uppercase bg-gray-700 text-gray-400">
                       <tr>
                         <th scope="col" className="px-6 py-3">
                           Name
@@ -137,36 +145,35 @@ const AdminDashboard = () => {
                       </tr>
                     </thead>
                     <tbody>
-                      <tr className="bg-white border-b dark:bg-gray-800 dark:border-gray-700">
+                      <tr className=" border-b bg-gray-800 border-gray-700">
                         <th
                           scope="row"
-                          className="px-6 py-4 font-medium text-gray-900 whitespace-nowrap dark:text-white"
+                          className="px-6 py-4 font-medium  whitespace-nowrap text-white"
                         >
                           Smith Kumar
                         </th>
                         <td className="px-6 py-4">30</td>
                       </tr>
-                      <tr className="bg-white border-b dark:bg-gray-800 dark:border-gray-700">
+                      <tr className=" border-b bg-gray-800 border-gray-700">
                         <th
                           scope="row"
-                          className="px-6 py-4 font-medium text-gray-900 whitespace-nowrap dark:text-white"
+                          className="px-6 py-4 font-medium whitespace-nowrap text-white"
                         >
                           Rasel Mia
                         </th>
                         <td className="px-6 py-4">29</td>
                       </tr>
-                      <tr className="bg-white dark:bg-gray-800">
+                      <tr className=" bg-gray-800">
                         <th
                           scope="row"
-                          className="px-6 py-4 font-medium text-gray-900 whitespace-nowrap dark:text-white"
+                          className="px-6 py-4 font-medium  whitespace-nowrap text-white"
                         >
                           Jhon Doe
                         </th>
                         <td className="px-6 py-4">20</td>
                       </tr>
                     </tbody>
-                  </table>
-                </div>
+                </table>
               </div>
             </div>
           </main>
