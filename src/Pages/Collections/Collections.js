@@ -12,45 +12,69 @@ import Search from "../catagories/Search";
 import Loading from "../Loading/Loading";
 import { useDispatch, useSelector } from "react-redux";
 import { addCollections, getAllCollections } from "../../features/collectionSlice/collectionSlice";
+import i from "rechart/lib/chart";
+import { useEffect } from "react";
 
 const Collections = () => {
   const dispatch = useDispatch();
   const Projects = useSelector(getAllCollections);
 
-  const url = `https://coderstackbox-server-codersstackbox-gmailcom.vercel.app/collections`;
+  const [pageNumber, setPageNumber] = useState(0);
+  const [numberOfPages, setNumberOfPages] = useState(0);
+  const [loading, setLoading] = useState(false);
+  // const [projects, setProjects] = useState([]);
 
-  const {
-    data: collections = [],
-    isLoading,
-    refetch,
-  } = useQuery({
-    queryKey: ["collections"],
-    queryFn: async () => {
-      const res = await axios.get(url, {
-        headers: {
-          "content-type": "application/json",
-          authorization: `bearer ${localStorage.getItem("CodersStackBox")}`,
-        },
-      });
-      dispatch(addCollections(res.data.result))
-      return res.data;
-    },
-  });
+
+  const pages = new Array(numberOfPages).fill(null).map((v, i) => i);
+
+  useEffect(() => {
+    setLoading(true);
+    fetch(`http://localhost:5000/collections?page=${pageNumber}&limit=${5}`, {
+            headers: {
+              "content-type": "application/json",
+              authorization: `bearer ${localStorage.getItem("CodersStackBox")}`,
+            },
+          })
+    .then(res => res.json())
+    .then(({totalPages, result}) => {
+      console.log(totalPages, result);
+      // console.log(data.result);
+      // setProjects(result);
+      dispatch(addCollections(result));
+      setNumberOfPages(totalPages);
+      setLoading(false);
+      return result;
+    })
+  }, [pageNumber]);
+
+
+  // const url = `https://coderstackbox-server-codersstackbox-gmailcom.vercel.app/collections`;
+  // const url = `http://localhost:5000/collections?page=1&limit=4`;
+  // const url = `http://localhost:5000/collections?page=${pageNumber}&limit=${3}`;
+
 
   const [searchQuery, setSearchQuery] = useState("");
 
   const handleSearchInputChange = (event) => {
     setSearchQuery(event.target.value);
-    refetch();
+    // refetch();
   };
 
-  console.log(Projects);
+  // console.log(Projects);
 
   const filteredData = Projects?.filter((item) =>
     item.projectName.toLowerCase().includes(searchQuery.toLowerCase())
   );
-  if (isLoading) {
+  if (loading) {
     return <Loading />;
+  }
+
+  const previousPage = () => {
+    setPageNumber(Math.max(0, pageNumber - 1));
+  }
+
+  const nextPage = () => {
+    setPageNumber(Math.min(numberOfPages - 1, pageNumber + 1));
   }
 
   
@@ -126,7 +150,38 @@ const Collections = () => {
               user={collection.user}
             />
           ))}
+          
+
         </motion.div>
+        <div className="mt-4 flex justify-end">
+            <nav aria-label="Page navigation">
+              <ul className="inline-flex -space-x-px">
+                <li>
+                  <button onClick={previousPage} className="px-3 py-2 ml-0 leading-tight text-gray-500 bg-white border border-gray-300 rounded-l-lg hover:bg-gray-100 hover:text-gray-700 dark:bg-gray-800 dark:border-gray-700 dark:text-gray-400 dark:hover:bg-gray-700 dark:hover:text-white">Previous</button>
+                </li>
+                {
+                  pages.map((pageIndex) => (
+                    <li>
+                      <button onClick={() => setPageNumber(pageIndex)} key={pageIndex} 
+                      className={`px-3 py-2 leading-tight text-gray-500 
+                      bg-white border border-gray-300 hover:bg-gray-100 hover:text-gray-700 dark:bg-gray-800 
+                      dark:border-gray-700 dark:text-gray-400 dark:hover:bg-gray-700 dark:hover:text-white 
+                      `}>
+                        {pageIndex + 1}
+                      </button>
+                    </li>
+                  ))
+                }
+                {/* <li>
+                  <button aria-current="page" className="px-3 py-2 text-blue-600 border border-gray-300 bg-blue-50 hover:bg-blue-100 hover:text-blue-700 dark:border-gray-700 dark:bg-gray-700 dark:text-white">3</button>
+                </li> */}
+                <li>
+                  <button onClick={nextPage} className="px-3 py-2 leading-tight text-gray-500 bg-white border border-gray-300 rounded-r-lg hover:bg-gray-100 hover:text-gray-700 dark:bg-gray-800 dark:border-gray-700 dark:text-gray-400 dark:hover:bg-gray-700 dark:hover:text-white">Next</button>
+                </li>
+              </ul>
+            </nav>
+
+          </div>
       
       </div>
       </AnimatePresence>
