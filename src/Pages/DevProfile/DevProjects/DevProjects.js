@@ -1,26 +1,51 @@
-import React from 'react';
-import { HiOutlineHeart } from "react-icons/hi2";
-import Button from '../../../components/Buttons/Button';
+import React, { useEffect, useState } from "react";
 
-const DevProjects = ({devProfile}) => {
-    const {id, projectImg, devImg, devName, projectTitle, react} = devProfile;
-    return (
-        <div>
-            <div className="flex justify-center items-center">
-  <div className="rounded-lg shadow-lg bg-white max-w-sm">
-      <img className="rounded-t-lg" src={projectImg} alt=""/>
-    <div className="flex p-6">
-        <img className='h-12 w-12 rounded-full' src={devImg} alt="" />
-      <div className='ml-3'>
-        <h3 className='text-black font-serif font-semibold'>{projectTitle}</h3>
-        <p className="text-gray-900 font-medium mb-2 font-poppins">{devName}</p>
+const DevProjects = ({ devProfile }) => {
+  const { projectName, html, css, js } =
+    devProfile;
+
+  const [srcDoc, setSrcDoc] = useState("");
+
+  useEffect(() => {
+    const timeout = setTimeout(() => {
+      setSrcDoc(`
+            <html>
+              <body>${html}</body>
+              <style>${css}</style>
+              <script>${js}</script>
+            </html>
+          `);
+    }, 250);
+
+    return () => clearTimeout(timeout);
+  }, [html, css, js]);
+
+  return (
+    <div>
+      <div className="flex justify-center items-center">
+        <div className="rounded-lg shadow-lg bg-gradient-to-br from-accent/30 via-secondary/5 to-primary/75  max-w-sm">
+          <div className="flex flex-col gap-5">
+            <iframe
+              className="rounded-t-lg"
+              srcDoc={srcDoc}
+              title={projectName}
+              sandbox="allow-forms allow-modals allow-pointer-lock allow-same-origin allow-scripts allow-presentation"
+              frameBorder="0"
+              loading="lazy"
+              scrolling="no"
+              width="100%"
+              height="100%"
+            />
+          <div className="p-5">
+              <h3 className=" font-serif font-semibold">
+                {projectName}
+              </h3>
+            </div>
+          </div>
+        </div>
       </div>
-      {/* <div className='ml-9 flex items-center'><HiOutlineHeart className='bg-red-900 rounded-full p-2 text-4xl'></HiOutlineHeart><span className='text-black  text-2xl font-poppins'>{react}</span></div> */}
     </div>
-  </div>
-</div>
-      </div>
-    );
+  );
 };
 
 export default DevProjects;

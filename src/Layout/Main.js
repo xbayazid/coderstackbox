@@ -8,7 +8,7 @@ const Main = () => {
   return (
     <div className="overflow-hidden">
       <Navbar />
-      <div className={` ${styles.paddingX} ${styles.flexCenter}`}>
+      <div className={`mt-24 ${styles.paddingX} ${styles.flexCenter}`}>
         <div className={`${styles.boxWidth}`}>
           <Outlet />
         </div>
