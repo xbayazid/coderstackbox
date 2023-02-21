@@ -42,7 +42,7 @@ const ContactUs = () => {
       variants={staggerContainer}
       initial="hidden"
       whileInView="show"
-      viewport={{ once: false, amount: 0.25 }} className={`${layout.sectionCol} text-center`}>
+      viewport={{ once: true, amount: 0.25 }} className={`${layout.sectionCol} text-center`}>
       <TypingText title="| Contact Us" />
           <TitleText title={<>We appreciate your opinion</>} />
       <div

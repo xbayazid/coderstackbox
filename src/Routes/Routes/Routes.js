@@ -75,7 +75,7 @@ const router = createBrowserRouter([
       //   element: <DevProfile></DevProfile>
       // },
       {
-        path: "/devProfile",
+        path: "/:id",
         element: <DevProfile></DevProfile>,
       },
       {
@@ -85,14 +85,6 @@ const router = createBrowserRouter([
       {
         path: "/collections",
         element: <Collections />,
-      },
-      {
-        path: "/category/:id",
-        element: <SingleCategory></SingleCategory>,
-        loader: ({ params }) =>
-          fetch(
-            `https://coderstackbox-server.vercel.app/projects/${params.id}`
-          ),
       },
       {
         path: "/myProjects",
