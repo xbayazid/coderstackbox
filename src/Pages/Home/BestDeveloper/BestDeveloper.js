@@ -42,7 +42,7 @@ const BestDeveloper = () => {
         variants={staggerContainer}
         initial="hidden"
         whileInView="show"
-        viewport={{ once: false, amount: 0.25 }}
+        viewport={{ once: true, amount: 0.25 }}
       >
         <div
           variants={fadeIn("", "spring", 0.5, 1)}

@@ -28,7 +28,7 @@ const Partner = () => {
         variants={staggerContainer}
         initial="hidden"
         whileInView="show"
-        viewport={{ once: false, amount: 0.25 }}
+        viewport={{ once: true, amount: 0.25 }}
       >
         <TypingText
           textStyles={"text-center text-dimWhite"}

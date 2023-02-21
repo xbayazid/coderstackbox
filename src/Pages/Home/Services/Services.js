@@ -20,7 +20,7 @@ const Services = () => {
     //         variants={staggerContainer}
     //         initial="hidden"
     //         whileInView="show"
-    //         viewport={{ once: false, amount: 0.25 }}>
+    //         viewport={{ once: true, amount: 0.25 }}>
     //         <div className={`${layout.sectionInfo} text-center`}>
     //             <TypingText title="| Our Services" />
     //             <TitleText title={<>Codestack is a platform that allows you to build, run, and share </>} />
@@ -49,7 +49,7 @@ const Services = () => {
         variants={staggerContainer}
         initial="hidden"
         whileInView="show"
-        viewport={{ once: false, amount: 0.25 }}
+        viewport={{ once: true, amount: 0.25 }}
         className={`${layout.sectionCol}  text-white`}
       >
         <TypingText

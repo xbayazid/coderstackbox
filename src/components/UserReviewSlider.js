@@ -24,7 +24,7 @@ const UserReviewSlider = () => {
         <motion.div variants={staggerContainer}
         initial="hidden"
         whileInView="show"
-        viewport={{ once: false, amount: 0.25 }}  id='testimonial' className={`${layout.sectionCol} relative`}>
+        viewport={{ once: true, amount: 0.25 }}  id='testimonial' className={`${layout.sectionCol} relative`}>
            
         <motion.div variants={fadeIn('up', 'tween', 0.5, 0.75)}  className='text-center mb-3'>
         <TypingText textStyles={"text-dimWhite"} title={"|What our clients says"}/>
