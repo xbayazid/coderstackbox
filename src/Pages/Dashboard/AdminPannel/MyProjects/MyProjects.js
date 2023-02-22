@@ -12,7 +12,7 @@ import { fadeIn, FADE_UP_ANIMATION_VARIANTS, staggerContainer } from "../../../.
 const MyCollections = () => {
   const [searchQuery, setSearchQuery] = useState("");
   const userCollections = useSelector(getUsersCollections);
-  console.log(userCollections);
+  // console.log(userCollections);
   const handleSearchInputChange = (event) => {
     setSearchQuery(event.target.value);
   };

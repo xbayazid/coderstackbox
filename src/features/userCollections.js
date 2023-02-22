@@ -16,5 +16,5 @@ const userCollectionsSlice = createSlice({
 
 export const { addUserCollections } = userCollectionsSlice.actions;
 export const getAllUserCollections = (state) => state.userCollections.userCollections;
-console.log(getAllUserCollections);
+// console.log(getAllUserCollections);
 export default userCollectionsSlice.reducer;

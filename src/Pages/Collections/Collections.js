@@ -25,7 +25,7 @@ const Collections = () => {
   // const [projects, setProjects] = useState([]);
 
   // const url = `https://coderstackbox-server-codersstackbox-gmailcom.vercel.app/collections?page=${pageNumber}&limit=${5}`;
-  const url = `http://localhost:5000/collections?page=${pageNumber}&limit=${5}`
+  const url = `https://coderstackbox-server-codersstackbox-gmailcom.vercel.app/collections?page=${pageNumber}&limit=${5}`
 
   const pages = new Array(numberOfPages).fill(null).map((v, i) => i);
 

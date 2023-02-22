@@ -57,7 +57,7 @@ const User = ({ user }) => {
       </th>
       <td className="px-6 py-4">{phone}</td>
 
-      <td class="px-6 py-4">
+      <td className="px-6 py-4">
         <button
           onClick={() => handleMakeAdmin(_id)}
           to="#"
