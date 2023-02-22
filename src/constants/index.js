@@ -57,6 +57,30 @@ export const sidebarMenuItem = [
     name: 'Plans and Billing'
   },
 ]
+// right side blog//
+export const blogRightSide = [
+  {
+    id:'1',
+    href:'#development',
+    name:'Development'
+  },
+  {
+    id:'2',
+    href:'#design',
+    name:'Design'
+  },
+  {
+    id:'3',
+    href:'#frontened',
+    name:'Frontened'
+  },
+  {
+    id:'4',
+    href:'#backend',
+    name:'Backend'
+  },
+]
+
 
 //user review data //
 
