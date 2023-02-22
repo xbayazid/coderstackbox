@@ -7,7 +7,11 @@ import CollectionCard from "../../../../components/Cards/CollectionCard";
 import PreLoaderSpinner from "../../../../components/PreLoaderSpinner/PreLoaderSpinner";
 import { getUsersCollections } from "../../../../features/collectionSlice/userCollectionSlice";
 import { layout } from "../../../../style";
-import { fadeIn, FADE_UP_ANIMATION_VARIANTS, staggerContainer } from "../../../../utils/motion";
+import {
+  fadeIn,
+  FADE_UP_ANIMATION_VARIANTS,
+  staggerContainer,
+} from "../../../../utils/motion";
 
 const MyCollections = () => {
   const [searchQuery, setSearchQuery] = useState("");
@@ -20,11 +24,6 @@ const MyCollections = () => {
   const filteredData = userCollections?.project?.filter((item) =>
     item.projectName.toLowerCase().includes(searchQuery.toLowerCase())
   );
-  if(filteredData?.length === 0) {
-    return (
-      <div className="text-white">You don't have any previous work</div>
-    )
-  }
 
   return (
     <div className={`${layout.sectionCol}`}>
@@ -71,14 +70,21 @@ const MyCollections = () => {
             </fieldset>
             <ul></ul>
           </motion.div>
-          {filteredData?.map((collection, index) => (
-            <CollectionCard
-              key={collection._id}
-              index={index}
-              collection={collection}
-              user={userCollections}
-            />
-          ))}
+          {filteredData?.length === 0 ? (
+            <>
+            <p className="text-4xl font-bold text-dimWhite">No item found</p>
+
+            </>
+          ) : (
+            filteredData?.map((collection, index) => (
+              <CollectionCard
+                key={collection._id}
+                index={index}
+                collection={collection}
+                user={userCollections}
+              />
+            ))
+          )}
         </motion.div>
       </AnimatePresence>
     </div>
