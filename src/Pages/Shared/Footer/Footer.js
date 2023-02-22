@@ -42,7 +42,6 @@ const Footer = () => {
           </li>
           <li><Link to='/blog'>Blog</Link></li>
         </ul>
-      
         <div 
           className="mt-5 bg-gradient-to-r from-accent to-secondary"
           style={{ height: "2px" }}
