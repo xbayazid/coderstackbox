@@ -32,7 +32,7 @@ const Login = () => {
             photoURL: user.photoURL
             ,
           };
-          console.log(result);
+          // console.log(result);
           setAuthToken(userInfo);
         navigate(from, { replace: true });
         }

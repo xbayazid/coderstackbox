@@ -60,7 +60,7 @@ const Developers = () => {
             <div className="relative">
               <div className="absolute inset-y-0 left-0 flex items-center pl-3 pointer-events-none">
                 <svg
-                  className="w-5 h-5 text-gray-500 dark:text-gray-400"
+                  className="w-5 h-5 text-gray-400"
                   aria-hidden="true"
                   fill="currentColor"
                   viewBox="0 0 20 20"
@@ -76,13 +76,13 @@ const Developers = () => {
               <input
                 type="text"
                 id="table-search-users"
-                className="block p-2 pl-10 text-sm text-gray-900 border border-gray-300 rounded-lg w-80 bg-gray-50 focus:ring-blue-500 focus:border-blue-500 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
+                className="block p-2 pl-10 text-sm border rounded-lg w-80 bg-gray-700 border-gray-600 placeholder-gray-400 text-white focus:ring-blue-500 focus:border-blue-500"
                 placeholder="Search for users"
               />
             </div>
           </div>
-            <table className="w-full text-sm text-left text-gray-500 dark:text-gray-400">
-              <thead className="text-xs text-gray-700 uppercase bg-gray-50 dark:bg-gray-700 dark:text-gray-400">
+            <table className="w-full text-sm text-left text-gray-400">
+              <thead className="text-xs uppercase bg-gray-700 text-gray-400">
                 <tr>
                   <th scope="col" className="px-6 py-3">
                     Name

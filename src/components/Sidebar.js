@@ -27,7 +27,7 @@ const Sidebar = ({ isOpen, desktopSidebarRef, setIsOpen, user }) => {
         }}
         className={`fixed top-0 z-10 ${
           !isOpen && "ml-[-100%]"
-        } flex h-screen w-full flex-col justify-between border-r bg-white px-6 pb-3 transition-all duration-700 md:w-4/12 lg:ml-0 lg:w-[25%] xl:w-[20%] 2xl:w-[15%] dark:bg-gray-800 dark:border-gray-700`}
+        } flex h-screen w-full flex-col justify-between border-r  px-6 pb-3 transition-all duration-700 md:w-4/12 lg:ml-0 lg:w-[25%] xl:w-[20%] 2xl:w-[15%] bg-gray-800 border-gray-700`}
       >
         <div>
           <div className="-mx-8 px-6 py-4 flex justify-between items-center">
@@ -46,7 +46,7 @@ const Sidebar = ({ isOpen, desktopSidebarRef, setIsOpen, user }) => {
               alt=""
               className="m-auto h-10 w-10 rounded-full object-cover lg:h-28 lg:w-28"
             />
-            <h5 className="mt-4 text-xl font-semibold text-gray-600 lg:block dark:text-gray-300">
+            <h5 className="mt-4 text-xl font-semibold lg:block text-gray-300">
               {user?.name}
             </h5>
           </div>
@@ -56,7 +56,7 @@ const Sidebar = ({ isOpen, desktopSidebarRef, setIsOpen, user }) => {
               <Link
                 to="/adminDashboard"
                 aria-label="dashboard"
-                className="relative flex items-center space-x-4 rounded-xl hover:bg-gradient-to-r from-green-600 to-cyan-400  px-4 py-3  text-gray-600 dark:text-gray-300 hover:text-white"
+                className="relative flex items-center space-x-4 rounded-xl hover:bg-gradient-to-r from-green-600 to-cyan-400  px-4 py-3 text-gray-300 hover:text-white"
               >
                 <FaHome
                   className={`text-lg cursor-pointer duration-500 `}
@@ -67,7 +67,7 @@ const Sidebar = ({ isOpen, desktopSidebarRef, setIsOpen, user }) => {
             <li>
               <Link
                 to="/adminDashboard/useranalytics"
-                className="group flex items-center space-x-4 rounded-md px-4 py-3 text-gray-600 dark:text-gray-300
+                className="group flex items-center space-x-4 rounded-md px-4 py-3 text-gray-300
                 hover:bg-gradient-to-r from-green-600 to-cyan-400 hover:text-white "
               >
                 <FaChartArea
@@ -79,7 +79,7 @@ const Sidebar = ({ isOpen, desktopSidebarRef, setIsOpen, user }) => {
             <li>
               <Link
                 to="/adminDashboard/developers"
-                className="group flex items-center space-x-4 rounded-md px-4 py-3 text-gray-600 dark:text-gray-300
+                className="group flex items-center space-x-4 rounded-md px-4 py-3 text-gray-300
                 hover:bg-gradient-to-r from-green-600 to-cyan-400 hover:text-white"
               >
                 <FaUsers
@@ -92,7 +92,7 @@ const Sidebar = ({ isOpen, desktopSidebarRef, setIsOpen, user }) => {
             <li>
               <Link
                 to="/adminDashboard/myprojects"
-                className="group flex items-center space-x-4 rounded-md px-4 py-3 text-gray-600 dark:text-gray-300
+                className="group flex items-center space-x-4 rounded-md px-4 py-3 text-gray-300
                 hover:bg-gradient-to-r from-green-600 to-cyan-400 hover:text-white"
               >
                 <FaSwatchbook
@@ -104,7 +104,7 @@ const Sidebar = ({ isOpen, desktopSidebarRef, setIsOpen, user }) => {
             <li>
               <Link
                 to="/adminDashboard/profile"
-                className="group flex items-center space-x-4 rounded-md px-4 py-3 text-gray-600 dark:text-gray-300
+                className="group flex items-center space-x-4 rounded-md px-4 py-3 text-gray-300
                 hover:bg-gradient-to-r from-green-600 to-cyan-400 hover:text-white"
               >
                 <FaUserCircle
@@ -117,12 +117,12 @@ const Sidebar = ({ isOpen, desktopSidebarRef, setIsOpen, user }) => {
         </div>
 
         <div
-          className="-mx-6 flex items-center justify-between border-t px-6 pt-4 dark:border-gray-700
+          className="-mx-6 flex items-center justify-between border-t px-6 pt-4 border-gray-700
         hover:bg-gradient-to-r from-green-600 to-cyan-400 "
         >
           <Link
             to="/"
-            className="group flex items-center space-x-4 rounded-md text-gray-600 dark:text-gray-300
+            className="group flex items-center space-x-4 rounded-md text-gray-300
                 hover:bg-gradient-to-r from-green-600 to-cyan-400 hover:text-white"
           >
             <svg

@@ -5,10 +5,10 @@ import SmallSpinner from "../../../../components/SmallSpinner";
 
 const DeveloperRow = ({ id, handleRequest, loading, handleDelete, user }) => {
   return (
-    <tr className="bg-white border-b dark:bg-gray-800 dark:border-gray-700 hover:bg-gray-50 dark:hover:bg-gray-600">
+    <tr className=" border-b bg-gray-800 border-gray-700 hover:bg-gray-600">
       <th
         scope="row"
-        className="flex items-center px-6 py-4 font-medium text-gray-900 whitespace-nowrap dark:text-white"
+        className="flex items-center px-6 py-4 font-medium whitespace-nowrap text-white"
       >
         <img
           className="w-10 h-10 rounded-full"
@@ -58,7 +58,7 @@ const DeveloperRow = ({ id, handleRequest, loading, handleDelete, user }) => {
           </button>
         )}
       </td>
-      <td className={`px-6 py-4 font-semibold text-gray-500 dark:text-white cursor-pointer`}>
+      <td className={`px-6 py-4 font-semibold text-white cursor-pointer`}>
         {
           loading? <SmallSpinner /> : <button
           onClick={()=>handleDelete(user._id)}
