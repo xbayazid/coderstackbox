@@ -7,16 +7,31 @@
 ***Home***
 ![](images/home.png)
 
+***IDE***
+![](images/ide.png)
+
+***Text Editor***
+![](images/textEditor.png)
+
+***Code Editor***
+![](images/codeEditor.png)
+
+***Collection***
+![](images/collection.png)
+
 ***About Us***
 ![](images/about.png)
 
 ***Community Support***
 ![](images/support.png)
 
+***Documentation***
+![](images/documentation.png)
+
 ***Login***
 ![](images/login.png)
 
-***Register***
+***Sign Up***
 ![](images/register.png)
 
 ***Error Page***
