@@ -31,7 +31,7 @@ const RichTextEditor = () => {
     const handleSubmit = () => {
         const blog = {blog:value}
 
-        const url = `http://localhost:5000/blog`;
+        const url = `https://coderstackbox-server-codersstackbox-gmailcom.vercel.app/blog`;
         
         axios.post(url, blog, {
           headers: {
