@@ -5,17 +5,21 @@ import DeveloperRow from "./DeveloperRow";
 import { getAllUsers, makeAdmin } from "../../../../api/user";
 import toast from 'react-hot-toast'
 import PreLoaderSpinner from "../../../../components/PreLoaderSpinner/PreLoaderSpinner";
+import { useContext } from "react";
+import { AuthContext } from "../../../../context/AuthProvider";
 
 const Developers = () => {
   const [loading, setLoading] = useState(false);
   const [users, setUsers] = useState([]);
+  const {user} = useContext(AuthContext);
+
   useEffect(() => {
     getUsers();
   }, []);
 
   const getUsers = () => {
     setLoading(true);
-    getAllUsers().then((data) => {
+    getAllUsers(user?.email).then((data) => {
       setUsers(data.result);
       setLoading(false);
     });
