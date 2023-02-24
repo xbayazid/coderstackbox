@@ -12,12 +12,19 @@ import { Link } from "react-router-dom";
 import { AuthContext } from "../context/AuthProvider";
 import useAdmin from "./hooks/useAdmin";
 import Logo from "./Logo";
+import PreLoaderSpinner from "./PreLoaderSpinner/PreLoaderSpinner";
 
-const Sidebar = ({ isOpen, desktopSidebarRef, setIsOpen, user }) => {
+const Sidebar = ({ isOpen, desktopSidebarRef, setIsOpen, usr }) => {
 
-  // const [user] = useContext(AuthContext);
+  const {user} = useContext(AuthContext);
 
   const [isAdmin, isAdminLoading] = useAdmin(user?.email);
+
+  if(isAdminLoading){
+    return <PreLoaderSpinner />
+  }
+
+  // console.log(isAdmin);
 
   return (
     <>
@@ -49,19 +56,18 @@ const Sidebar = ({ isOpen, desktopSidebarRef, setIsOpen, user }) => {
 
           <div className="mt-8 text-center">
             <img
-              src={user?.photoURL}
+              src={usr?.photoURL}
               alt=""
               className="m-auto h-10 w-10 rounded-full object-cover lg:h-28 lg:w-28"
             />
             <h5 className="mt-4 text-xl font-semibold lg:block text-gray-300">
-              {user?.name}
+              {usr?.name}
             </h5>
           </div>
 
           <ul className="mt-8 space-y-2 tracking-wide">
             {
-              // isAdmin && <>
-              <>
+              isAdmin && <>
                 <li>
                   <Link
                     to="/adminDashboard"
