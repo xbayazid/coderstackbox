@@ -8,7 +8,7 @@ const useAdmin = (email) => {
 
   useEffect(() => {
     if (email) {
-      fetch(`http://localhost:5000/admin?email=${email}`)
+      fetch(`https://coderstackbox-server.vercel.app/admin?email=${email}`)
         .then((res) => res.json())
         .then((data) => {
           if (data) {
