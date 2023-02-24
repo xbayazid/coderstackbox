@@ -1,4 +1,5 @@
 import React, { useEffect, useState } from "react";
+import { useContext } from "react";
 import { Helmet } from "react-helmet";
 import { FaUsers, FaSwatchbook, FaRegEnvelope } from "react-icons/fa";
 import { Link } from "react-router-dom";
@@ -7,11 +8,14 @@ import { getAllUsers } from "../../../../api/user";
 import Button from "../../../../components/Buttons/Button";
 import PreLoaderSpinner from "../../../../components/PreLoaderSpinner/PreLoaderSpinner";
 import SmallSpinner from "../../../../components/SmallSpinner";
+import { AuthContext } from "../../../../context/AuthProvider";
 
 const AdminDashboard = () => {
   const [loading, setLoading] = useState(false);
   const [users, setUsers] = useState([]);
   const [collections, setCollections] = useState([]);
+  const {user} = useContext(AuthContext);
+
 
   useEffect(() => {
     getUsers();
@@ -20,7 +24,7 @@ const AdminDashboard = () => {
 
   const getUsers = () => {
     setLoading(true);
-    getAllUsers().then((data) => {
+    getAllUsers(user?.email).then((data) => {
       setUsers(data.result);
       setLoading(false);
     });

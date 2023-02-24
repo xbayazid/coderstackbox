@@ -44,8 +44,7 @@ export const getRole = async email => {
   }
 
   export const getAllUsers = async (email) => {
-    const response = await fetch(`http://localhost:5000/users?email=${email}`, {
-    // const response = await fetch(`https://coderstackbox-server-codersstackbox-gmailcom.vercel.app/users`, {
+    const response = await fetch(`https://coderstackbox-server-codersstackbox-gmailcom.vercel.app/users?email=${email}`, {
       method: 'GET',
       headers: {
         'content-type': 'application/json',
