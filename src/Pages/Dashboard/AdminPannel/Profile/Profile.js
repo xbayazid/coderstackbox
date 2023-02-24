@@ -61,7 +61,7 @@ const Profile = () => {
           refetch={refetch}
         ></ImageUpdateModal>
 
-        <div className="rounded-lg shadow-2xl py-5">
+        <div className="rounded-lg py-5">
           <div className="flex flex-col items-center">
             <div
               className="border-4 md:w-52 md:h-52 border-gray-300 rounded-full overflow-hidden
@@ -95,9 +95,9 @@ const Profile = () => {
             </div>
           </div>
 
-          <div className="my-4 flex flex-col 2xl:flex-row space-y-4 2xl:space-y-0 2xl:space-x-4">
+          <div className="my-10 flex flex-col 2xl:flex-row space-y-4 2xl:space-y-0 2xl:space-x-4">
             <div className="w-full flex flex-col 2xl:w-1/3">
-              <div className="flex-1 rounded-lg shadow-2xl p-8">
+              <div className="flex-1 rounded-lg shadow-2xl  p-8">
                 <div className="flex justify-between items-center">
                   <h4 className="text-xl font-bold">Personal Info</h4>
                   {/* <FaEllipsisH
@@ -141,14 +141,14 @@ const Profile = () => {
             {/* <ParModal onClose={handleOnClose} visible={showModal} refetch={refetch}/> */}
 
             <div className="flex flex-col w-full 2xl:w-2/3">
-              <div className="flex-1 rounded-lg shadow-xl p-8">
+              <div className="flex-1 rounded-lg shadow-2xl  p-8">
                 <h4 className="text-xl font-bold">About</h4>
                 <p className="mt-2 ">{usr?.about}</p>
               </div>
             </div>
           </div>
 
-          {/* <div className="bg-dark-1 rounded-lg shadow-xl p-8">
+          {/* <div className="bg-dark-1 rounded-lg shadow-2xl  p-8">
               <div className="flex items-center justify-between">
                 <h4 className="text-xl font-bold">Admins (6)</h4>
               </div>
