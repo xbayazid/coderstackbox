@@ -52,8 +52,10 @@ const AdminDashboard = () => {
                   </div>
                   <div>
                   <div className="mt-3 md:w-44 w-28 flex -space-x-2 overflow-hidden p-1">
-                  {loading ? <SmallSpinner /> : users?.map( u => <img className="inline-block h-12 w-12 rounded-full ring-2 ring-secondary" src={`${u?.photoURL}`} alt=""/>)}
-                    </div>
+                    {
+                      loading ? <SmallSpinner /> : users?.map( u => <img className="inline-block h-12 w-12 rounded-full ring-2 ring-secondary" src={`${u?.photoURL}`} alt=""/>)
+                    }
+                  </div>
                     {/* <FaUsers className="text-secondary text-6xl"></FaUsers> */}
                   </div>
                 </div>
@@ -102,7 +104,7 @@ const AdminDashboard = () => {
                       </tr>
                     </thead>
                     <tbody>
-                      {collections?.slice(0, 3).map((collection, i) => (
+                      {collections?.slice(0, 4).map((collection, i) => (
                         <tr className="border-b bg-gray-800 border-gray-700"
                           key={collection._id}
                         >

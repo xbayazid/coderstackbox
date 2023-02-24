@@ -1,8 +1,5 @@
 import axios from "axios"
 
-
-
-
 export const getRole = async email => {
     const response = await axios.get(
       `https://coderstackbox-server-codersstackbox-gmailcom.vercel.app/${email}`,
@@ -46,8 +43,9 @@ export const getRole = async email => {
     return users
   }
 
-  export const getAllUsers = async () => {
-    const response = await fetch(`https://coderstackbox-server-codersstackbox-gmailcom.vercel.app/users`, {
+  export const getAllUsers = async (email) => {
+    const response = await fetch(`http://localhost:5000/users?email=${email}`, {
+    // const response = await fetch(`https://coderstackbox-server-codersstackbox-gmailcom.vercel.app/users`, {
       method: 'GET',
       headers: {
         'content-type': 'application/json',

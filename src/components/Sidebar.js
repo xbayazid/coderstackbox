@@ -1,6 +1,6 @@
 /* eslint-disable jsx-a11y/anchor-is-valid */
 import { motion } from "framer-motion";
-import React from "react";
+import React, { useContext } from "react";
 import {
   FaChartArea,
   FaHome,
@@ -9,9 +9,16 @@ import {
   FaUsers,
 } from "react-icons/fa";
 import { Link } from "react-router-dom";
+import { AuthContext } from "../context/AuthProvider";
+import useAdmin from "./hooks/useAdmin";
 import Logo from "./Logo";
 
 const Sidebar = ({ isOpen, desktopSidebarRef, setIsOpen, user }) => {
+
+  // const [user] = useContext(AuthContext);
+
+  const [isAdmin, isAdminLoading] = useAdmin(user?.email);
+
   return (
     <>
       <motion.div
@@ -52,43 +59,49 @@ const Sidebar = ({ isOpen, desktopSidebarRef, setIsOpen, user }) => {
           </div>
 
           <ul className="mt-8 space-y-2 tracking-wide">
-            <li>
-              <Link
-                to="/adminDashboard"
-                aria-label="dashboard"
-                className="relative flex items-center space-x-4 rounded-xl hover:bg-gradient-to-r from-green-600 to-cyan-400  px-4 py-3 text-gray-300 hover:text-white"
-              >
-                <FaHome
-                  className={`text-lg cursor-pointer duration-500 `}
-                ></FaHome>{" "}
-                <span className="mr-1 font-medium">Dashboard</span>
-              </Link>
-            </li>
-            <li>
-              <Link
-                to="/adminDashboard/useranalytics"
-                className="group flex items-center space-x-4 rounded-md px-4 py-3 text-gray-300
-                hover:bg-gradient-to-r from-green-600 to-cyan-400 hover:text-white "
-              >
-                <FaChartArea
-                  className={`text-lg cursor-pointer duration-500 `}
-                ></FaChartArea>{" "}
-                <span className="mr-1 font-medium">User Analytics</span>
-              </Link>
-            </li>
-            <li>
-              <Link
-                to="/adminDashboard/developers"
-                className="group flex items-center space-x-4 rounded-md px-4 py-3 text-gray-300
-                hover:bg-gradient-to-r from-green-600 to-cyan-400 hover:text-white"
-              >
-                <FaUsers
-                  className={`text-lg cursor-pointer duration-500"
-                  }`}
-                ></FaUsers>{" "}
-                <span className="mr-1 font-medium">Developers</span>
-              </Link>
-            </li>
+            {
+              // isAdmin && <>
+              <>
+                <li>
+                  <Link
+                    to="/adminDashboard"
+                    aria-label="dashboard"
+                    className="relative flex items-center space-x-4 rounded-xl hover:bg-gradient-to-r from-green-600 to-cyan-400  px-4 py-3 text-gray-300 hover:text-white"
+                  >
+                    <FaHome
+                      className={`text-lg cursor-pointer duration-500 `}
+                    ></FaHome>{" "}
+                    <span className="mr-1 font-medium">Dashboard</span>
+                  </Link>
+                </li>
+                {/* <li>
+                  <Link
+                    to="/adminDashboard/useranalytics"
+                    className="group flex items-center space-x-4 rounded-md px-4 py-3 text-gray-300
+                    hover:bg-gradient-to-r from-green-600 to-cyan-400 hover:text-white "
+                  >
+                    <FaChartArea
+                      className={`text-lg cursor-pointer duration-500 `}
+                    ></FaChartArea>{" "}
+                    <span className="mr-1 font-medium">User Analytics</span>
+                  </Link>
+                </li> */}
+                <li>
+                  <Link
+                    to="/adminDashboard/developers"
+                    className="group flex items-center space-x-4 rounded-md px-4 py-3 text-gray-300
+                    hover:bg-gradient-to-r from-green-600 to-cyan-400 hover:text-white"
+                  >
+                    <FaUsers
+                      className={`text-lg cursor-pointer duration-500"
+                      }`}
+                    ></FaUsers>{" "}
+                    <span className="mr-1 font-medium">Developers</span>
+                  </Link>
+                </li>
+              
+              </>
+            }
             <li>
               <Link
                 to="/adminDashboard/myprojects"
