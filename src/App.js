@@ -11,7 +11,7 @@ function App() {
   useEffect( () => {
     setTimeout( () => {
       setIsPreLoading(false);
-    }, 500)
+    }, 1000)
   })
 
   return (

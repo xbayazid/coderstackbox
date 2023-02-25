@@ -8,7 +8,6 @@ import EmptyList from './EmptyList/EmptyList';
 import { Link } from 'react-router-dom';
 
 
-
 const Blog = () => {
 
     const [blogs, setBlogs] = useState(blogList);
@@ -44,7 +43,7 @@ const Blog = () => {
                 <p className='text-xl text-white flex justify-center items-center'>
                     productive and entertaind through daily updates</p>
                 <Link className=' flex justify-center items-center mt-5' to='/richtext'>
-                    <button className='btn btn-secondary bg-blue-500 p-2 rounded-md text-white shadow'>
+                    <button class="bg-blue-500 hover:bg-blue-400 text-white font-bold py-2 px-4 border-b-4 border-blue-700 hover:border-blue-500 rounded">
                         Creat Post
                     </button>
                 </Link>
@@ -55,11 +54,11 @@ const Blog = () => {
                     handleSearchKey={e => setSearchKey(e.target.value)} />
 
                 <div className="md:flex gap-2">
-                {!blogs.length ? <EmptyList /> : <BlogList blogs={blogs} />}
-                <div className='md:flex'>
+                    {!blogs.length ? <EmptyList /> : <BlogList blogs={blogs} />}
+                    <div className='md:flex'>
 
-                    <BlogRight />
-                </div>
+                        <BlogRight />
+                    </div>
 
                 </div>
             </div>

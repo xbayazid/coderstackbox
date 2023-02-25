@@ -32,6 +32,7 @@ import MyCollections from "../../Pages/Dashboard/AdminPannel/MyProjects/MyProjec
 import EditCollection from "../../Pages/Collections/EditCollection";
 import AllProjects from "../../components/AllProjects";
 import TextEditor from "../../Pages/CodeEditor/OnlineIDE/component/text-editor";
+import AdminRoute from "../AdminRoute";
 
 const router = createBrowserRouter([
   {
@@ -128,6 +129,7 @@ const router = createBrowserRouter([
       {
         path: "/adminDashboard",
         element: <AdminDashboard></AdminDashboard>,
+        // element: <AdminRoute><AdminDashboard></AdminDashboard></AdminRoute>,
       },
       {
         path: "/adminDashboard/adminboard",
