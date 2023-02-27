@@ -3,7 +3,7 @@ import toast from "react-hot-toast";
 export const setAuthToken = (user) => {
 
   // console.log(user);
-  fetch(`https://coderstackbox-server-codersstackbox-gmailcom.vercel.app/user/${user?.email}`, {
+  fetch(`http://localhost:5000/user/${user?.email}`, {
     method: "PUT",
     headers: {
       "content-type": "application/json",

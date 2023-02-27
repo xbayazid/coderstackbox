@@ -32,7 +32,7 @@ const Developers = () => {
   };
 
   const handleDelete = (id) => {
-    fetch(`https://coderstackbox-server-codersstackbox-gmailcom.vercel.app/user/${id}`, {
+    fetch(`http://localhost:5000/user/${id}`, {
       method: "DELETE",
       headers: {
         authorization: `bearer ${localStorage.getItem("CodersStackBox")}`,

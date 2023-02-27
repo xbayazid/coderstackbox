@@ -2,7 +2,7 @@ import axios from "axios"
 
 export const getRole = async email => {
     const response = await axios.get(
-      `https://coderstackbox-server-codersstackbox-gmailcom.vercel.app/${email}`,
+      `http://localhost:5000/${email}`,
       {
         headers: {
           authorization: `Bearer ${localStorage.getItem('CodersStackBox')}`,
@@ -15,7 +15,7 @@ export const getRole = async email => {
 
   export const makeAdmin = async user => {
     const response = await fetch(
-      `https://coderstackbox-server-codersstackbox-gmailcom.vercel.app/u/admin/${user?._id}`,
+      `http://localhost:5000/u/admin/${user?._id}`,
       {
         method: 'PUT',
         headers: {
@@ -31,7 +31,7 @@ export const getRole = async email => {
   }
 
   export const getUser = async user => {
-    const response = await fetch(`https://coderstackbox-server-codersstackbox-gmailcom.vercel.app/u?email=${user?.email}`, {
+    const response = await fetch(`http://localhost:5000/u?email=${user?.email}`, {
       method: 'GET',
       headers: {
         'content-type': 'application/json',
@@ -44,7 +44,7 @@ export const getRole = async email => {
   }
 
   export const getAllUsers = async (email) => {
-    const response = await fetch(`https://coderstackbox-server-codersstackbox-gmailcom.vercel.app/users?email=${email}`, {
+    const response = await fetch(`http://localhost:5000/users?email=${email}`, {
       method: 'GET',
       headers: {
         'content-type': 'application/json',

@@ -41,9 +41,9 @@ const UserReviewSlider = () => {
           textStyles={"text-dimWhite"}
           title={"|What our clients says"}
         />
-        <motion.h1 variants={textVariant(0.5)} className=" text-white mb-5">
+        <motion.div variants={textVariant(0.5)} className=" text-white mb-5">
           <TitleText title={<>See our trusted partners</>} />
-        </motion.h1>
+        </motion.div>
 
         <Swiper
           autoplay={{
