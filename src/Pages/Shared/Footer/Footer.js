@@ -30,9 +30,9 @@ const Footer = () => {
           <li>
             <Link to="/">Home</Link>
           </li>
-
-          <li><Link className="" to='/about'>About Us</Link></li>
-
+          <li>
+            <Link className="" to='/about'>About Us</Link>
+          </li>
           <li className="md:block hidden">
             <Logo />
           </li>

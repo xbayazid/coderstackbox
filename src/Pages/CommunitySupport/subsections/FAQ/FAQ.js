@@ -13,13 +13,13 @@ const FAQ = () => {
   const [quesAndAns, setQuesAndAns] = useState([]);
   console.log(quesAnsAns)
   useEffect(() => {
-    fetch('https://coderstackbox-server-codersstackbox-gmailcom.vercel.app/questions')
+    fetch('http://localhost:5000/questions')
       .then(res => res.json())
       .then(data => setQuesAndAns(data))
   }, []);
 
   const handleSubmitContact = () => {
-    const postURL = "https://coderstackbox-server-codersstackbox-gmailcom.vercel.app/questions"
+    const postURL = "http://localhost:5000/questions"
     console.log(postURL)
     fetch(postURL, {
       method: 'POST',
