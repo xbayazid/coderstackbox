@@ -59,19 +59,23 @@ const DeveloperRow = ({ id, handleRequest, loading, handleDelete, user }) => {
         )}
       </td>
       <td className={`px-6 py-4 font-semibold text-white cursor-pointer`}>
-        {
-          loading? <SmallSpinner /> : <button
-          onClick={()=>handleDelete(user._id)}
-          >
-            <FaTrash
-          
-          className={` ${
-            user?.role === "admin"
-              ? "disable text-gray-600 text-2xl"
-              : "text-red-400 hover:text-red-500 text-2xl"
-          }`}
-        ></FaTrash>
-          </button>
+        {user?.role == "admin" ? <></>
+          :
+        <>
+            {loading ? (
+              <SmallSpinner />
+            ) : (
+              <button onClick={() => handleDelete(user._id)}>
+                <FaTrash
+                  className={` ${
+                    user?.role === "admin"
+                      ? "disable text-gray-600 text-2xl"
+                      : "text-red-400 hover:text-red-500 text-2xl"
+                  }`}
+                ></FaTrash>
+              </button>
+            )}
+          </> 
         }
       </td>
     </tr>
