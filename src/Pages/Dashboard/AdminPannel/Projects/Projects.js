@@ -2,10 +2,12 @@ import { useQuery } from "@tanstack/react-query";
 import axios from "axios";
 import { AnimatePresence, motion } from "framer-motion";
 import React, { useState } from "react";
+import toast from "react-hot-toast";
 import { useSelector } from "react-redux";
 import CollectionCard from "../../../../components/Cards/CollectionCard";
 import PreLoaderSpinner from "../../../../components/PreLoaderSpinner/PreLoaderSpinner";
 import { getUsersCollections } from "../../../../features/collectionSlice/userCollectionSlice";
+import { getUsers } from "../../../../features/usersSlice";
 import { layout } from "../../../../style";
 import {
   fadeIn,
@@ -16,15 +18,53 @@ import ProjectRow from "./ProjectRow";
 
 const Projects = () => {
   const [searchQuery, setSearchQuery] = useState("");
-  const userCollections = useSelector(getUsersCollections);
-  // console.log(userCollections);
-  const handleSearchInputChange = (event) => {
-    setSearchQuery(event.target.value);
-  };
+  const [loading, setLoading] = useState(false)
+  const user = useSelector(getUsersCollections);
+//   // console.log(userCollections);
+//   const handleSearchInputChange = (event) => {
+//     setSearchQuery(event.target.value);
+//   };
 
-  const filteredData = userCollections?.project?.filter((item) =>
-    item.projectName.toLowerCase().includes(searchQuery.toLowerCase())
-  );
+//   const filteredData = userCollections?.project?.filter((item) =>
+//     item.projectName.toLowerCase().includes(searchQuery.toLowerCase())
+//   );
+
+const url = `http://localhost:5000/user-collections?id=${user._id}`;
+  const {
+    data: project,
+    isLoading,
+    refetch,
+  } = useQuery({
+    queryKey: ["project"],
+    queryFn: async () => {
+      const res = await axios.get(url, {
+        headers: {
+          "content-type": "application/json",
+          authorization: `bearer ${localStorage.getItem("CodersStackBox")}`,
+        },
+      });
+      return res.data.result;
+    },
+  });
+
+
+
+
+  const handleDelete = (id) => {
+    fetch(`http://localhost:5000/code/${id}`, {
+      method: "DELETE",
+      headers: {
+        authorization: `bearer ${localStorage.getItem("CodersStackBox")}`,
+      },
+    })
+      .then((res) => res.json())
+      .then((data) => {
+        if (data) {
+          toast.error(data.message);
+          refetch()
+        }
+      });
+  };
 
 
     return (
@@ -69,18 +109,19 @@ const Projects = () => {
                         </thead>
                         <tbody>
                             
-                            {filteredData?.length === 0 ? (
+                            {project?.length === 0 ? (
                                 <>
                                 <p className="text-4xl font-bold text-dimWhite">No item found</p>
                     
                                 </>
                               ) : (
-                                filteredData?.map((collection, index) => (
+                                project?.map((collection, index) => (
                                   <ProjectRow
+                                  handleDelete={handleDelete}
                                     key={collection._id}
                                     index={index}
                                     project={collection}
-                                    user={userCollections}
+                                    user={user}
                                   />
                                 ))
                               )}
