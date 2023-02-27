@@ -33,6 +33,8 @@ import EditCollection from "../../Pages/Collections/EditCollection";
 import AllProjects from "../../components/AllProjects";
 import TextEditor from "../../Pages/CodeEditor/OnlineIDE/component/text-editor";
 import AdminRoute from "../AdminRoute";
+import Projects from "../../Pages/Dashboard/AdminPannel/Projects/Projects";
+import UserProjectView from "../../Pages/Dashboard/AdminPannel/Projects/UserProjectView";
 
 const router = createBrowserRouter([
   {
@@ -141,11 +143,15 @@ const router = createBrowserRouter([
       },
       {
         path: "/adminDashboard/myprojects",
-        element: <MyCollections />,
+        element: <Projects />,
       },
       {
         path: "/adminDashboard/useranalytics",
         element: <UserAnalytics></UserAnalytics>,
+      },
+      {
+        path: "/adminDashboard/edit-user-project/:id",
+        element: <UserProjectView />,
       },
       {
         path: "/adminDashboard/profile",

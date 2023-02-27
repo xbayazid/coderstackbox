@@ -57,6 +57,7 @@ const EditCollection = () => {
     setCss(code?.css)
     setJs(code?.js)
 }, [id])
+console.log(project);
 
   useEffect(() => {
     const timeout = setTimeout(() => {
