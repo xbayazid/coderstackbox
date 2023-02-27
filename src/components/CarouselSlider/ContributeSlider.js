@@ -27,12 +27,12 @@ const ContributeSlider = ({ user, i }) => {
             variants={fadeIn("left", "tween", 0.5, 0.75)}
             className={`${layout.sectionInfoStart}`}
           >
-            <motion.h1 variants={textVariant(0.25)} className=" text-white">
+            <motion.div variants={textVariant(0.25)} className=" text-white">
               <TitleText
                 textStyles={`md:text-[48px] text-[40px] font-thin`}
                 title={<>{name}</>}
               />
-            </motion.h1>
+            </motion.div>
             <p className="text-white font-thin text-xl my-3">
               -{" "}{role}
             </p>

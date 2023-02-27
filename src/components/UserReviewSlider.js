@@ -28,9 +28,9 @@ const UserReviewSlider = () => {
            
         <motion.div variants={fadeIn('up', 'tween', 0.5, 0.75)}  className='text-center mb-3'>
         <TypingText textStyles={"text-dimWhite"} title={"|What our clients says"}/>
-          <motion.h1 variants={textVariant(0.5)} className=" text-white mb-5">
+          <motion.div variants={textVariant(0.5)} className=" text-white mb-5">
             <TitleText title={<>See our trusted partners</>}/>
-          </motion.h1>
+          </motion.div>
         
             <Swiper
                  autoplay={{

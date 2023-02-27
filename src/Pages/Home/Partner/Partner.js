@@ -76,9 +76,9 @@ const Partner = () => {
             variants={fadeIn("left", "tween", 0.5, 0.75)}
             className={`${layout.sectionInfoStart}`}
           >
-            <motion.h1 variants={textVariant(0.25)} className=" text-white">
+            <motion.div variants={textVariant(0.25)} className=" text-white">
               <TitleText title={<>See our trusted partners</>} />
-            </motion.h1>
+            </motion.div>
             <p className="my-5 lg:text-justify text-white">
               These partners provide us with invaluable insights and feedback
               that enable us to continously improve our product. We ahve

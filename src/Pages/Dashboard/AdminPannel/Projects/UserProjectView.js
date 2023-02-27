@@ -1,32 +1,38 @@
 import React, { useEffect, useRef, useState } from "react";
 import { useContext } from "react";
 import { Helmet } from "react-helmet";
-import { Link, Navigate, useLocation, useNavigate } from "react-router-dom";
-import { close, logo, menu } from "../../assets";
-import CloudButton from "../../components/Buttons/CloudButton";
-import { AuthContext } from "../../context/AuthProvider";
-import "./CodeEditor.css";
-import EditorComponent from "./Editor/EditorComponent";
+import { Link, useParams } from "react-router-dom";
 import { motion } from "framer-motion";
 import axios from "axios";
 import { toast } from "react-hot-toast";
-import { useSaveProjectModal } from "../../components/Modals/SaveProjectModal";
-import { FADE_IN_ANIMATION_SETTINGS } from "../../utils/motion";
-import Resizable from "./resizable/resizable";
+import { useSelector } from "react-redux";
 import { FaPencilAlt } from "react-icons/fa";
-import { useLogInModal } from "../../components/Modals/LoginModal";
+import { AuthContext } from "../../../../context/AuthProvider";
+import { getUsersCollections } from "../../../../features/collectionSlice/userCollectionSlice";
+import { useLogInModal } from "../../../../components/Modals/LoginModal";
+import { useSaveProjectModal } from "../../../../components/Modals/SaveProjectModal";
+import CloudButton from "../../../../components/Buttons/CloudButton";
+import { close, logo, menu } from "../../../../assets";
+import EditorComponent from "../../../CodeEditor/Editor/EditorComponent";
 
-const EditorPage = () => {
+const UserProjectView = () => {
   const [projectName, setProjectName] = useState("");
   const [html, setHtml] = useState("");
   const [css, setCss] = useState("");
   const [js, setJs] = useState("");
   const [srcDoc, setSrcDoc] = useState("");
   const [toggle, setToggle] = useState(false);
+  const [project, setProject] = useState();
+  const { user } = useContext(AuthContext);
+
+  const { id } = useParams();
+  const User = useSelector(getUsersCollections);
+
   const ref = useRef(null);
   const [editing, setEditing] = useState(false)
   const [value, setValue] = useState('Untitled')
-  const { LogInModal, setShowLogInModal } = useLogInModal()
+  const { SaveProjectModal, setShowSaveProjectModal } = useSaveProjectModal(srcDoc);
+
   useEffect(() => {
     const listener = (event) => {
       if (ref.current && event.target && ref.current.contains(event.target)) {
@@ -42,7 +48,14 @@ const EditorPage = () => {
 
   }, [])
 
-  const { user } = useContext(AuthContext);
+  useEffect(() => {
+    let code = User?.project?.find(c => c?._id === (id));
+    setProject(code)
+    setHtml(code?.html)
+    setCss(code?.css)
+    setJs(code?.js)
+}, [User?.project, id])
+
 
   useEffect(() => {
     const timeout = setTimeout(() => {
@@ -61,37 +74,34 @@ const EditorPage = () => {
 
 
   const handleSubmit = () => {
-    if (!user?.uid) {
-      setShowLogInModal(true);
-      return;
-    } else {
+
     const code = {
       projectName: value,
       html: html,
       css: css,
       js: js,
     };
-    console.log(code)
-    const url = `http://localhost:5000/projects`;
+    const url = `http://localhost:5000/code/${id}`;
+   
     axios
-      .post(url, code, {
-        headers: {
-          authorization: `bearer ${localStorage.getItem("CodersStackBox")}`,
-        },
-      })
+      .put(url, code)
       .then((res) => {
-        if (res.status === 200) {
+        if (res.status === 201) {
           toast.success(res.data.message);
           setShowSaveProjectModal(true);
+          console.log(res.status)
         }
       })
       .catch((err) => {
         console.error(err);
       });
-    }
-  };
+    };
 
-  const { SaveProjectModal, setShowSaveProjectModal } = useSaveProjectModal(srcDoc);
+  
+
+
+
+
   return (
     <>
       <Helmet>
@@ -100,15 +110,10 @@ const EditorPage = () => {
       </Helmet>
 
       <>
-        <nav className="z-[3] w-full flex py-3 justify-between items-center navbar">
+      <nav className="z-[3] w-full flex py-3 justify-between items-center navbar">
           <>
             <SaveProjectModal />
-            <LogInModal />
-            <Link to="/" className=" items-center flex mr-4 ml-5">
-              <span className="pl-2">
-                <img className="w-12" src={logo} alt="" />
-              </span>
-              </Link>
+
               <h1 ref={ref} contentEditable = {
                 editing ? true : false
               }
@@ -183,4 +188,4 @@ const EditorPage = () => {
     </>
   );
 };
-export default EditorPage;
+export default UserProjectView;

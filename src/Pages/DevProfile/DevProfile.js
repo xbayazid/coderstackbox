@@ -13,7 +13,7 @@ import DevProjects from "./DevProjects/DevProjects";
 const DevProfile = () => {
   const { id } = useParams();
 
-  const url = `https://coderstackbox-server-codersstackbox-gmailcom.vercel.app/user?id=${id}`;
+  const url = `http://localhost:5000/user?id=${id}`;
   const {
     data: user,
     isLoading,

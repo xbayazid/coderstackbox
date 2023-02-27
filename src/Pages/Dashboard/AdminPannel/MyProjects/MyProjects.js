@@ -68,7 +68,6 @@ const MyCollections = () => {
                 />
               </div>
             </fieldset>
-            <ul></ul>
           </motion.div>
           {filteredData?.length === 0 ? (
             <>
