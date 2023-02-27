@@ -88,7 +88,7 @@ const EditCollection = () => {
       css: css,
       js: js,
     };
-    const url = `https://coderstackbox-server-codersstackbox-gmailcom.vercel.app/code/${id}`;
+    const url = `http://localhost:5000/code/${id}`;
     axios
       .put(url, code, {
         headers: {

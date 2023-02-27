@@ -6,7 +6,7 @@ import axios from "axios";
 
 
 export const getUsers = createAsyncThunk('getUser', async () => {
-    const response = await fetch(`https://coderstackbox-server-codersstackbox-gmailcom.vercel.app/users`, {
+    const response = await fetch(`http://localhost:5000/users`, {
       method: 'GET',
       headers: {
         'content-type': 'application/json',
