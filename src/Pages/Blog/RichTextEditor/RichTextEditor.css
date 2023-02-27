@@ -17,8 +17,4 @@
     height: 685px !important;
 }
 
-@media screen and (max-width: 1024px) {
-    .ql-editor{
-        height: 685px !important;
-    }
-  }
+
