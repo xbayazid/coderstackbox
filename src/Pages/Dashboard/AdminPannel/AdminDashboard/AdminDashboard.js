@@ -34,6 +34,7 @@ const AdminDashboard = () => {
       setLoading(false);
     });
   };
+  
   const getCollections = () => {
     setLoading(true);
     getAllCollections().then((data) => {

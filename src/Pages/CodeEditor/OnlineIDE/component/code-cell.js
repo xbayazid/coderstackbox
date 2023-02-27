@@ -19,7 +19,41 @@ const CodeCell = () => {
     // const ref = useRef();
     const [code, setCode] = useState('');
     const [err, setErr] = useState('')
-    const [input, setInput] = useState('');
+    const [input, setInput] = useState(`import 'bootstrap@4.3.1/dist/css/bootstrap.min.css';
+    import 'react/umd/react.production.min.js';
+    
+    import React from 'react';
+    import ReactDOM from 'react-dom';
+    
+    const App = () => {
+      return (
+        <div
+          class="card"
+          style={{
+            width: '18rem',
+          }}
+        >
+          <img
+            class="card-img-top"
+            src="https://avatars.githubusercontent.com/u/106759894?v=4"
+            alt="Card image cap"
+          />
+          <div class="card-body">
+            <h5 class="card-title">Card title</h5>
+            <p class="card-text">
+              Some quick example text to build on the card title and make up the
+              bulk of the card's content.
+            </p>
+            <a href="#" class="btn btn-primary">
+              Go somewhere
+            </a>
+          </div>
+        </div>
+      );
+    };
+    
+    ReactDOM.render(<App />, document.getElementById('root'));`);
+    
     const [projectCode, setProjectCode] = useState('');
     // const startService = async () => {
     //     ref.current = 
@@ -88,7 +122,6 @@ const CodeCell = () => {
         setShowLogInModal(true);
         return;
       } if (!projectCode) {
-        console.log(projectCode);
         toast("🥺 Hey! You have blank space! 🥺")
       } else {
       const code = {
@@ -184,7 +217,7 @@ const CodeCell = () => {
                 >
                     <CodeEditor
 
-                        initialValue={'const a = 1;'}
+                        initialValue={input}
                         onChange={(value) => {
                             setInput(value);
                         }}

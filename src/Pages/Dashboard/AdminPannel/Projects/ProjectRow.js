@@ -2,7 +2,7 @@ import React, { useEffect, useState } from 'react';
 import { FaTrash } from 'react-icons/fa';
 import { Link } from 'react-router-dom';
 
-const ProjectRow = ({project, user}) => {
+const ProjectRow = ({project, user, handleDelete}) => {
 
     const { _id, projectName, date  } = project;
     const { name, email, photoURL } = user;
@@ -49,10 +49,10 @@ const ProjectRow = ({project, user}) => {
             {date}
         </td>
         <td className="px-6 py-4">
-        <Link to={`/adminDashboard/edit-user-project/${_id}`} className="font-medium text-blue-500 ">View</Link>
+        <Link to={`/adminDashboard/edit-user-project/${_id}`} className="font-medium text-blue-500 ">Edit</Link>
         </td>
         <td className="px-6 py-4 font-semibold text-gray-500 dark:text-white">
-            <FaTrash className='text-red-400 hover:text-red-500 text-2xl'></FaTrash>
+            <FaTrash onClick={()=>handleDelete(_id)} className='text-red-400 hover:text-red-500 text-2xl cursor-pointer' />
         </td>
     </tr>
     );
