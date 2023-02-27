@@ -30,9 +30,9 @@ const Footer = () => {
           <li>
             <Link to="/">Home</Link>
           </li>
-          <li>
-            <li><Link className="" to='/about'>About Us</Link></li>
-          </li>
+
+          <li><Link className="" to='/about'>About Us</Link></li>
+
           <li className="md:block hidden">
             <Logo />
           </li>
@@ -42,11 +42,11 @@ const Footer = () => {
           </li>
           <li><Link to='/blog'>Blog</Link></li>
         </ul>
-        <div 
+        <div
           className="mt-5 bg-gradient-to-r from-accent to-secondary"
           style={{ height: "2px" }}
         />
-        
+
 
         <div className="text-white mt-5 flex gap-2 justify-center">
           <>
