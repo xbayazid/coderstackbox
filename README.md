@@ -1,24 +1,47 @@
-**Project Title:** ***"CodersStackBox"*** <br>
-<p> CodersStackBox is a online code compiler. Using our code editor users can easily write code, run them & save them to our database. Our main goal is to create a development environment where they can share their design, and code with other’s developers without any cost.</p>
 
-**Front-End Technology**
-<ul>
-<li>ReactJS</li>
-<li>Tailwind CSS</li>
-<li>Monaco-Editor</li>
-<li>Framer-Motion</li>
-</ul>
+# CodersStackBox - Online Code Compiler
 
-**Back-End Technology**
-<ul>
-<li>Mongoose</li>
-<li>NodeJS</li>
-<li>ExpressJS</li>
-</ul>
 
-<br>
 
-**[Live Site](https://codersstackbox-c9449.web.app/)** 
+[Live Site](https://codersstackbox-c9449.web.app/)
+
+## Documentation
+
+"CodersStackBox" is a online code compiler. Using our code editor users can easily write code, run them & save them to our database. Our main goal is to create a development environment where they can share their design, and code with other’s developers without any cost.
+## Front-End Technologies
+
+- React.js
+
+- Tailwind CSS
+- Monaco-Editor
+- Framer-Motion
+- React-router-dom
+
+## Back-End Technologies
+
+- Mongoose
+
+- Node.js
+- Express.js
+
+## Authentication & Hosting Technologies
+
+- Firebase
+
+- Vercel
+
+
+## Authors
+
+- [@xbayazid](https://github.com/xbayazid)
+
+- [@Tamjid-Mostafa](https://github.com/Tamjid-Mostafa)
+- [@chayon8080](https://github.com/chayon8080)
+- [@Noman02](https://github.com/Noman02)
+- [@0178811jes](https://github.com/0178811jes)
+- [@1Md-Rakibul-Islam](https://github.com/1Md-Rakibul-Islam)
+
+
 
 **Preview Images** <br>
 ***Home***
